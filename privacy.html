@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy & Confidentiality | David M. Freshwater, LMHC</title>
+    <meta name="description" content="Privacy policy and confidentiality practices for Lacanian psychoanalysis. Learn how we protect the analytic space with bank-level encryption and HIPAA compliance.">
+    <meta name="robots" content="noindex, follow">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #0f0f23;
+            overflow-x: hidden;
+        }
+
+        .container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: 
+                radial-gradient(circle at 25% 25%, white 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, white 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .content-wrap {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: float 20s ease-in-out infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            font-weight: normal;
+            letter-spacing: -1px;
+        }
+
+        .page-tagline {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-style: italic;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background: rgba(52, 73, 94, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        nav li {
+            margin: 0.25rem 0.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin: 0 0 2rem 0;
+            font-size: clamp(1.6rem, 3vw, 2rem);
+            position: relative;
+            font-weight: normal;
+        }
+
+        h3 {
+            color: #34495e;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.3rem;
+            font-weight: normal;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .privacy-highlight {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 4px solid #3498db;
+            text-align: center;
+            font-style: italic;
+        }
+
+        ul {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #34495e;
+            color: #ecf0f1;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            nav li {
+                margin: 0.25rem;
+            }
+
+            nav a {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .section {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="noise-overlay"></div>
+        
+        <div class="content-wrap">
+            <header>
+                <h1>Privacy & Confidentiality</h1>
+                <div class="page-tagline">The confidentiality of the analytic space is fundamental to the work of the unconscious</div>
+            </header>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="approach.html">How It Works</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="blog.html">Resources</a></li>
+                    <li><a href="contact.html">Begin</a></li>
+                </ul>
+            </nav>
+
+            <section class="section">
+                <div class="privacy-highlight">
+                    <p>"The unconscious speaks only when it knows it will be heard in absolute confidence."</p>
+                </div>
+
+                <h2>Our Commitment to Your Privacy</h2>
+
+                <p>The relationship between analyst and analysand rests on a foundation of absolute confidentiality. This privacy policy outlines how we protect not just your personal information, but the sacred space of analysis itself.</p>
+
+                <h3>The Analytic Frame</h3>
+
+                <p>Everything spoken in our sessions remains strictly confidential. This confidentiality extends beyond legal requirements—it is an ethical commitment fundamental to psychoanalytic work. The only exceptions to confidentiality are those required by Massachusetts law:</p>
+
+                <ul>
+                    <li>Imminent risk of harm to yourself or others</li>
+                    <li>Suspected abuse of a child, elderly person, or disabled individual</li>
+                    <li>Court order requiring disclosure</li>
+                </ul>
+
+                <p>Should any of these situations arise, I would discuss with you what information must be shared and with whom, to the extent possible.</p>
+
+                <h3>Digital Security & HIPAA Compliance</h3>
+
+                <p>All electronic communications employ bank-level encryption that exceeds HIPAA requirements:</p>
+
+                <ul>
+                    <li><strong>Video Sessions:</strong> Conducted through HIPAA-compliant platforms with end-to-end encryption</li>
+                    <li><strong>Email Communications:</strong> Encrypted email available upon request for sensitive communications</li>
+                    <li><strong>Record Storage:</strong> Any clinical notes are stored in HIPAA-compliant systems with 256-bit encryption</li>
+                    <li><strong>Payment Processing:</strong> Secure, PCI-compliant payment systems that never store full credit card information</li>
+                </ul>
+
+                <h3>Your Rights Under HIPAA</h3>
+
+                <p>As my client, you have specific rights regarding your health information:</p>
+
+                <ul>
+                    <li>Right to request restrictions on uses and disclosures of your information</li>
+                    <li>Right to request confidential communications</li>
+                    <li>Right to inspect and copy your clinical record (though in psychoanalysis, this is rarely therapeutically indicated)</li>
+                    <li>Right to request amendments to your record</li>
+                    <li>Right to receive an accounting of disclosures</li>
+                </ul>
+
+                <h3>Online Presence & Discovery</h3>
+
+                <p>I maintain clear boundaries regarding online interactions:</p>
+
+                <ul>
+                    <li>I do not accept friend or contact requests from current or former clients on social media</li>
+                    <li>I do not search for clients online unless there is a compelling clinical reason, which would be discussed with you</li>
+                    <li>Any testimonials or case examples on this website are completely anonymized composites</li>
+                </ul>
+
+                <h3>Record Keeping</h3>
+
+                <p>In keeping with psychoanalytic tradition and Massachusetts law, I maintain minimal records focused on:</p>
+
+                <ul>
+                    <li>Dates of sessions</li>
+                    <li>Fee arrangements</li>
+                    <li>Any formal diagnoses (if required for billing)</li>
+                    <li>Essential contact information</li>
+                </ul>
+
+                <p>Detailed process notes, if kept, remain separate from your official record and are used only to enhance our work together.</p>
+
+                <h3>Questions or Concerns</h3>
+
+                <p>If you have any questions about this privacy policy or how your information is protected, please don't hesitate to discuss them with me. The trust required for analytic work demands complete transparency about these matters.</p>
+
+                <div class="privacy-highlight" style="margin-top: 3rem;">
+                    <p>Last updated: December 2024</p>
+                    <p style="margin-bottom: 0;">David M. Freshwater, LMHC #10001743</p>
+                </div>
+            </section>
+            
+            <footer>
+                <div style="max-width: 1200px; margin: 0 auto;">
+                    <p style="font-size: 1.1rem; margin-bottom: 1rem;">David M. Freshwater, LMHC #10001743</p>
+                    <p style="margin-bottom: 1rem;">Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
+                    <p style="margin-bottom: 2rem;">Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

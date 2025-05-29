@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Lacanian Psychoanalysis Questions | David M. Freshwater, LMHC</title>
+    <meta name="description" content="Common questions about Lacanian psychoanalysis, the process, duration, fees, and what to expect. Learn if this approach is right for you.">
+    <meta name="keywords" content="psychoanalysis FAQ, Lacanian analysis questions, therapy duration, private pay therapy, online psychoanalysis">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #0f0f23;
+            overflow-x: hidden;
+        }
+
+        .container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: 
+                radial-gradient(circle at 25% 25%, white 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, white 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .content-wrap {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: float 20s ease-in-out infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            font-weight: normal;
+            letter-spacing: -1px;
+        }
+
+        .page-tagline {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-style: italic;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background: rgba(52, 73, 94, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        nav li {
+            margin: 0.25rem 0.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        nav a.active {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin: 0 0 3rem 0;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            position: relative;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            border-radius: 2px;
+        }
+
+        h3 {
+            color: #34495e;
+            margin: 3rem 0 1rem 0;
+            font-size: 1.4rem;
+            font-weight: normal;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        .faq-container {
+            margin: 3rem 0;
+        }
+
+        .faq-category {
+            margin: 4rem 0;
+        }
+
+        .faq-category h3 {
+            text-align: center;
+            color: #8e44ad;
+            margin-bottom: 2rem;
+        }
+
+        .faq-item {
+            background: rgba(241, 196, 15, 0.05);
+            margin: 1rem 0;
+            border-radius: 15px;
+            border-left: 4px solid #f39c12;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            font-weight: bold;
+            color: #d35400;
+            cursor: pointer;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-question::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+            padding: 0 2rem 1.5rem 2rem;
+        }
+
+        .still-questions {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            text-align: center;
+            border-left: 5px solid #3498db;
+        }
+
+        .still-questions h3 {
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .still-questions p {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1.25rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 2rem 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+
+        .divider {
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            margin: 4rem auto;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '◊';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            color: #e74c3c;
+            padding: 0 10px;
+            font-size: 1rem;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            nav li {
+                margin: 0.25rem;
+            }
+
+            nav a {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .section {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="noise-overlay"></div>
+        
+        <div class="content-wrap">
+            <header>
+                <h1>Frequently Asked Questions</h1>
+                <div class="page-tagline">Understanding Lacanian psychoanalysis</div>
+            </header>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="approach.html">How It Works</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="faq.html" class="active">FAQ</a></li>
+                    <li><a href="contact.html">Begin</a></li>
+                </ul>
+            </nav>
+
+            <section class="section fade-in">
+                <h2>Questions People Wonder About</h2>
+                
+                <p class="intro-text">These are the questions I hear most often from people considering analysis. If your question isn't answered here, please don't hesitate to reach out.</p>
+
+                <div class="faq-container">
+                    <div class="faq-category">
+                        <h3>About the Process</h3>
+                        
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">How does this differ from other therapeutic approaches?</div>
+                            <div class="faq-answer">
+                                <p>Most therapies aim to eliminate symptoms through changing thoughts, behaviors, or brain chemistry. Lacanian analysis recognizes symptoms as meaningful communications from your unconscious. Through speaking freely and being heard in a particular way, transformation happens—not just understanding.</p>
+                                <p>Unlike CBT or solution-focused approaches, we don't work toward predetermined goals. Instead, we follow where your unconscious leads, allowing for discoveries that neither of us can anticipate.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">What happens during sessions?</div>
+                            <div class="faq-answer">
+                                <p>You speak freely about whatever comes to mind while I listen for patterns, repetitions, and contradictions in your speech. There's no agenda except following where your associations lead. I might offer interpretations that open new avenues of exploration, but the real work happens in your own process of articulation and discovery.</p>
+                                <p>Sessions end when something essential has been articulated, not by the clock. This respects the natural rhythm of the unconscious.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">How is online analysis effective?</div>
+                            <div class="faq-answer">
+                                <p>The essence of psychoanalysis is in speech and listening. Whether in person or online, the unconscious manifests through language, slips, dreams, and associations. Many analysands find that online work allows for deep engagement while offering practical flexibility.</p>
+                                <p>The analytic frame—regular sessions, consistent presence, focused attention—remains intact regardless of the medium.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category">
+                        <h3>Duration and Commitment</h3>
+                        
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">How long does analytic work typically continue?</div>
+                            <div class="faq-answer">
+                                <p>There is no standard duration. Some analyses last months, others years. The process concludes when you've experienced sufficient transformation—when the repetitive patterns that brought you here have given way to new possibilities. Analysis continues until you are sufficiently satisfied with the changes you've experienced.</p>
+                                <p>This isn't about meeting external criteria but about your own sense of fundamental shift in how you experience yourself and your world.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">How often are sessions?</div>
+                            <div class="faq-answer">
+                                <p>Most people meet 1-2 times per week, though this can vary. Some periods of analysis benefit from more frequent meetings, while other times less frequency serves the work better. We determine this together based on what the material demands.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">Can I take breaks or pause the work?</div>
+                            <div class="faq-answer">
+                                <p>Life circumstances sometimes require pauses in analytic work. What matters is how these breaks are handled—they often become important material for analysis itself. The unconscious continues working even during interruptions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category">
+                        <h3>Financial Considerations</h3>
+                        
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">Why private pay rather than insurance?</div>
+                            <div class="faq-answer">
+                                <p>Insurance requires diagnostic categories, treatment goals, and measurable outcomes—all antithetical to analytic exploration. This work isn't medical treatment of mental illness but investigation into the structure of subjectivity itself. That kind of open-ended inquiry requires complete freedom from external evaluation and the commitment that comes with personal investment.</p>
+                                <p>Private pay also protects your privacy completely and allows the work to unfold according to its own logic rather than insurance company requirements.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">What does this investment involve?</div>
+                            <div class="faq-answer">
+                                <p>Following Lacanian practice, session length is variable—ending when something essential has been articulated rather than by the clock. Sessions typically range from 20 minutes to an hour. Fees are discussed during the consultation and structured to reflect the transformative nature of this work.</p>
+                                <p>I maintain a limited number of reduced-fee slots for those facing genuine financial constraints who are deeply committed to the work. The financial investment often becomes part of the analytic process itself.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">Can psychoanalysis work online?</div>
+                            <div class="faq-answer">
+                                <p>Yes, psychoanalysis is particularly well-suited to online work. Since Lacanian analysis operates through speech and language—through the symbolic register—physical presence isn't essential. The unconscious reveals itself through your words, dreams, and associations regardless of the medium.</p>
+                                <p>Many analysands find online sessions allow for deep engagement while offering practical flexibility. The key elements—free association, careful listening, and the analytic frame—remain fully intact through video or phone.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">Why choose private pay over insurance?</div>
+                            <div class="faq-answer">
+                                <p>Private pay offers several crucial advantages for psychoanalytic work:</p>
+                                <ul style="list-style: disc; margin-left: 2rem; color: #d35400;">
+                                    <li>Complete confidentiality without diagnoses sent to insurance databases</li>
+                                    <li>Freedom to work at the pace your unconscious requires</li>
+                                    <li>No arbitrary session limits or treatment plans</li>
+                                    <li>Support for variable session length central to Lacanian work</li>
+                                    <li>Your commitment through investment often deepens the work</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">While I can provide Superbills for out-of-network benefits, this requires a formal diagnosis that some find contradictory to analysis's open-ended nature.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">How is Lacanian analysis different from therapy?</div>
+                            <div class="faq-answer">
+                                <p>Traditional therapy often focuses on symptom management, coping strategies, and conscious problem-solving. Lacanian analysis works differently:</p>
+                                <ul style="list-style: disc; margin-left: 2rem; color: #d35400;">
+                                    <li>We don't aim to eliminate symptoms but understand their unconscious logic</li>
+                                    <li>Sessions end at significant moments rather than by the clock</li>
+                                    <li>The analyst doesn't offer advice or interpretations but helps you hear your own unconscious</li>
+                                    <li>Change happens through your own discoveries rather than applied techniques</li>
+                                    <li>The goal is structural transformation, not just feeling better</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">This approach takes more time but creates lasting change at the level of your fundamental relationship to desire and enjoyment.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category">
+                        <h3>Is This Right for You?</h3>
+                        
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">How do I know if this approach is right for me?</div>
+                            <div class="faq-answer">
+                                <p>This work serves those who can tolerate ambiguity, who are curious about their own mental processes, and who sense that genuine transformation is possible. If you're seeking immediate symptom relief or concrete problem-solving, other modalities would serve you better.</p>
+                                <p>The 90-minute consultation helps determine if this approach aligns with what you're seeking. Good candidates often describe feeling like they're "living someone else's life" or sensing there's more to their symptoms than meets the eye.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">What if I'm already in therapy?</div>
+                            <div class="faq-answer">
+                                <p>Some people transition from therapy to analysis when they feel they've reached the limits of what their current approach can offer. Others may pause therapy to engage in analysis. This is something we can discuss during the consultation based on your specific situation.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">Do you work with specific issues or diagnoses?</div>
+                            <div class="faq-answer">
+                                <p>I don't organize my practice around diagnostic categories or specific symptoms. People seek analysis for various reasons—relationship patterns, anxiety, depression, creative blocks, existential questions. What matters is your willingness to engage with your unconscious material, not the particular form your suffering takes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category">
+                        <h3>Getting Started</h3>
+                        
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">What happens in the initial consultation?</div>
+                            <div class="faq-answer">
+                                <p>The initial consultation (roughly 1 hour, $200) is an opportunity to speak about what brings you to seek analysis and to experience what it might be like to work together. This isn't an evaluation or intake—it's a genuine encounter that helps both of us determine whether to proceed.</p>
+                                <p>You'll have space to speak freely, and I'll listen in the particular way that characterizes analytic work. By the end, we'll both have a sense of whether this approach resonates with your needs.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">How do I prepare for the consultation?</div>
+                            <div class="faq-answer">
+                                <p>There's nothing specific to prepare. Come as you are, with whatever is on your mind. The consultation works best when you can speak openly about what brings you to consider analysis. Some people find it helpful to think about what they hope might be different in their lives, but even this isn't necessary.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">What if I decide not to proceed after the consultation?</div>
+                            <div class="faq-answer">
+                                <p>The consultation helps both of us determine if analytic work makes sense. If either of us feels it's not the right fit, I'm happy to provide referrals to other practitioners who might better serve your needs. There's no pressure to commit to ongoing work.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="still-questions">
+                    <h3>Still Have Questions?</h3>
+                    <p>Every journey into analysis is unique. If you have questions not addressed here, I welcome you to reach out directly.</p>
+                    <a href="contact.html" class="cta-button">Contact Me</a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function toggleFaq(element) {
+            element.classList.toggle('open');
+        }
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add parallax effect to background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.noise-overlay');
+            if (parallax) {
+                const speed = scrolled * 0.2;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
