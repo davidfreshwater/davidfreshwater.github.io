@@ -139,14 +139,52 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: white;
+        }
+
+        .mobile-menu-button span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-button.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-button.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-button.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
+            margin: 0;
+            padding: 0;
         }
 
         nav li {
@@ -345,12 +383,6 @@
         }
 
         .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -399,23 +431,47 @@
         }
 
         @media (max-width: 768px) {
+            .mobile-menu-button {
+                display: block;
+            }
+
             nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: rgba(52, 73, 94, 0.98);
+                flex-direction: column;
+                padding: 1rem 0;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+                max-height: calc(100vh - 60px);
+                overflow-y: auto;
+            }
+
+            nav ul.active {
+                transform: translateY(0);
+            }
+
+            nav li {
+                width: 100%;
+                text-align: center;
+                margin: 0;
             }
 
             nav li:not(:last-child)::after {
                 display: none;
             }
 
-            nav li {
-                margin: 0.25rem 0.5rem;
+            nav a {
+                display: block;
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
             }
 
-            nav a {
-                padding: 0.6rem 1rem;
-                font-size: 0.85rem;
-                display: inline-block;
+            nav li:last-child a {
+                border-bottom: none;
             }
 
             .section {
@@ -424,6 +480,11 @@
             
             .info-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .hero-text::before,
+            .hero-text::after {
+                display: none;
             }
         }
 
@@ -448,15 +509,22 @@
             </header>
 
             <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="approach.html">How It Works</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="stories.html">Stories</a></li>
-                    <li><a href="faq.html">Questions</a></li>
-                    <li><a href="blog.html">Resources</a></li>
-                    <li><a href="contact.html">Begin</a></li>
-                </ul>
+                <div class="nav-container">
+                    <button class="mobile-menu-button" id="mobileMenuButton" aria-label="Toggle navigation menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul id="navMenu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="approach.html">How It Works</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="stories.html">Stories</a></li>
+                        <li><a href="faq.html">Questions</a></li>
+                        <li><a href="blog.html">Resources</a></li>
+                        <li><a href="contact.html">Begin</a></li>
+                    </ul>
+                </div>
             </nav>
 
             <section class="section fade-in">
@@ -565,23 +633,30 @@
     </div>
 
     <script>
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const navMenu = document.getElementById('navMenu');
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuButton.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuButton.classList.remove('active');
+                navMenu.classList.remove('active');
             });
-        }, observerOptions);
+        });
 
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav') && navMenu.classList.contains('active')) {
+                mobileMenuButton.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
         });
 
         // Add parallax effect to background
