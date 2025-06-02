@@ -189,23 +189,17 @@
             border-radius: 10px;
         }
 
-        .case-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin: 3rem 0;
+        .case-container {
+            margin-bottom: 2rem;
         }
 
         .case-card {
             background: rgba(46, 204, 113, 0.05);
-            padding: 0;
             border-radius: 15px;
             border-left: 4px solid #2ecc71;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
             cursor: pointer;
-            margin-bottom: 0;
+            overflow: hidden;
         }
 
         .case-card:hover {
@@ -258,7 +252,6 @@
 
         .case-card.open .case-content {
             max-height: none;
-            overflow: visible;
         }
 
         .case-content-inner {
@@ -397,7 +390,7 @@
                 padding: 3rem 1.5rem;
             }
             
-            .case-grid, .testimonial-grid {
+            .testimonial-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
@@ -440,7 +433,7 @@
                 
                 <p class="disclaimer">The following narratives illustrate the process of psychoanalytic work. They are composite accounts based on various clinical experiences, with all identifying details altered to protect confidentiality.</p>
 
-                <div class="case-grid">
+                <div class="case-container">
                     <div class="case-card" onclick="toggleCase(this)">
                         <div class="case-header">
                             <div class="case-title">Spirits and Spirit: Michael's Journey</div>
@@ -505,7 +498,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
+                <div class="case-container">
                     <div class="case-card" onclick="toggleCase(this)">
                         <div class="case-header">
                             <div class="case-title">The Mourning After: Sarah's Journey</div>
@@ -578,7 +573,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
+                <div class="case-container">
                     <div class="case-card" onclick="toggleCase(this)">
                         <div class="case-header">
                             <div class="case-title">The Distance Between: James's Story</div>
@@ -655,7 +652,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
+                <div class="case-container">
                     <div class="case-card" onclick="toggleCase(this)">
                         <div class="case-header">
                             <div class="case-title">Presence and Presents: Elena's Story</div>
@@ -802,21 +801,17 @@
 
     <script>
         function toggleCase(element) {
-            // Close all other open case cards first
+            // Close all other open case cards
             const allCards = document.querySelectorAll('.case-card');
             const isCurrentlyOpen = element.classList.contains('open');
             
             allCards.forEach(card => {
-                if (card !== element) {
-                    card.classList.remove('open');
-                }
+                card.classList.remove('open');
             });
             
             // Toggle the clicked card
             if (!isCurrentlyOpen) {
                 element.classList.add('open');
-            } else {
-                element.classList.remove('open');
             }
         }
 
@@ -828,21 +823,6 @@
                 const speed = scrolled * 0.2;
                 parallax.style.transform = `translateY(${speed}px)`;
             }
-        });
-
-        // Add hover effects to case cards
-        document.querySelectorAll('.case-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                if (!this.classList.contains('open')) {
-                    this.style.transform = 'translateY(-10px) scale(1.02)';
-                }
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                if (!this.classList.contains('open')) {
-                    this.style.transform = 'translateY(0) scale(1)';
-                }
-            });
         });
     </script>
 </body>
