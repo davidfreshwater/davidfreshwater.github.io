@@ -801,7 +801,22 @@
 
     <script>
         function toggleCase(element) {
-            element.classList.toggle('open');
+            // Close all other open case cards first
+            const allCards = document.querySelectorAll('.case-card');
+            const isCurrentlyOpen = element.classList.contains('open');
+            
+            allCards.forEach(card => {
+                if (card !== element) {
+                    card.classList.remove('open');
+                }
+            });
+            
+            // Toggle the clicked card
+            if (!isCurrentlyOpen) {
+                element.classList.add('open');
+            } else {
+                element.classList.remove('open');
+            }
         }
 
         // Add parallax effect to background
