@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About David M. Freshwater, LMHC - Lacanian Psychoanalyst in Massachusetts</title>
-    <meta name="description" content="David M. Freshwater, LMHC brings nearly a decade of experience in Lacanian psychoanalysis. Licensed in Massachusetts, offering transformative online analysis for adults.">
+    <meta name="description" content="David M. Freshwater, LMHC brings eight years of experience in Lacanian psychoanalysis. Licensed in Massachusetts, offering transformative online analysis for adults.">
     <meta name="keywords" content="David Freshwater LMHC, Lacanian psychoanalyst Massachusetts, online psychoanalysis, depth psychology practitioner">
     
     <style>
@@ -115,6 +115,7 @@
             flex-wrap: wrap;
             max-width: 800px;
             margin: 0 auto;
+            padding: 0 1rem;
         }
 
         nav li {
@@ -130,6 +131,7 @@
             position: relative;
             font-size: 0.95rem;
             letter-spacing: 0.5px;
+            display: inline-block;
         }
 
         nav a:hover {
@@ -308,12 +310,6 @@
         }
 
         .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -354,6 +350,11 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+
+            .professional-photo img {
+                width: 200px !important;
+                height: 240px !important;
+            }
         }
 
         html {
@@ -369,6 +370,11 @@
             <header>
                 <h1>About the Practice</h1>
                 <div class="page-tagline">A depth approach to lasting transformation</div>
+                <div style="margin-top: 1rem; font-size: 1.1rem; opacity: 0.9;">
+                    <a href="tel:7865271616" style="color: white; text-decoration: none;">(786) 527-1616</a>
+                    <span style="margin: 0 1rem;">•</span>
+                    <a href="mailto:davidfreshwateranalyst@gmail.com" style="color: white; text-decoration: none;">davidfreshwateranalyst@gmail.com</a>
+                </div>
             </header>
 
             <nav>
@@ -377,7 +383,7 @@
                     <li><a href="approach.html">How It Works</a></li>
                     <li><a href="about.html" class="active">About</a></li>
                     <li><a href="stories.html">Stories</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="faq.html">Questions</a></li>
                     <li><a href="blog.html">Resources</a></li>
                     <li><a href="contact.html">Begin</a></li>
                 </ul>
@@ -390,7 +396,7 @@
                     <div>
                         <p style="color: #7f8c8d; font-size: 1rem; margin-bottom: 1.5rem;">Licensed Mental Health Counselor</p>
                         
-                        <p>I bring nearly a decade of experience practicing Lacanian psychoanalysis. My approach draws from the understanding that the unconscious operates according to its own sophisticated logic—one that often makes more sense than our conscious attempts to manage our lives.</p>
+                        <p>I bring eight years of experience practicing Lacanian psychoanalysis. My approach draws from the understanding that the unconscious operates according to its own sophisticated logic—one that often makes more sense than our conscious attempts to manage our lives.</p>
 
                         <p>I work exclusively with adults who are ready for genuine change, not just symptom management. This isn't therapy focused on coping strategies, but an investigation that can fundamentally transform how you experience yourself and your world.</p>
 
@@ -401,7 +407,7 @@
 
                     <div style="display: flex; flex-direction: column; gap: 2rem;">
                         <div style="text-align: center;">
-                            <div class="professional-photo">Professional Photo</div>
+                            <img src="image/dmfheadshot.jpg" alt="David M. Freshwater, LMHC" style="width: 250px; height: 300px; object-fit: cover; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); border: 3px solid #34495e;">
                         </div>
                         
                         <div class="credentials-box">
@@ -417,9 +423,16 @@
                                 <p style="font-size: 0.95rem; margin-bottom: 1rem;">B.A., Psychology<br>Columbia University</p>
                             </div>
 
-                            <div>
+                            <div style="margin-bottom: 1.5rem;">
                                 <p style="font-weight: 500; color: #34495e; margin-bottom: 0.25rem;">Specialization</p>
                                 <p style="font-size: 0.95rem; margin-bottom: 0;">Lacanian Psychoanalysis<br>Long-term Analytic Work<br>Adult Individual Analysis</p>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 1.5rem;">
+                                <!-- Professional verification provided by Psychology Today -->
+                                <a href="https://www.psychologytoday.com/profile/975220" class="sx-verified-seal"></a>
+                                <script type="text/javascript" src="https://member.psychologytoday.com/verified-seal.js" data-badge="10" data-id="975220" data-code="aHR0cHM6Ly93d3cucHN5Y2hvbG9neXRvZGF5LmNvbS9hcGkvdmVyaWZpZWQtc2VhbC9zZWFscy8xMC9wcm9maWxlLzk3NTIyMD9jYWxsYmFjaz1zeGNhbGxiYWNr"></script>
+                                <!-- End Verification -->
                             </div>
                         </div>
                     </div>
@@ -439,7 +452,7 @@
 
                 <div class="consultation-box">
                     <h4 style="color: #6c5ce7; margin-bottom: 1rem;">The Initial Consultation</h4>
-                    <p>We begin with an initial consultation (roughly 1 hour) to explore whether analytic work makes sense for your particular situation. This isn't an evaluation—it's an opportunity to experience what it might be like to work together.</p>
+                    <p>We begin with an initial consultation to explore whether analytic work makes sense for your particular situation. This isn't an evaluation—it's an opportunity to experience what it might be like to work together.</p>
                     <p style="margin-bottom: 0;">During this time, you'll have a chance to speak about what brings you to seek analysis, and I'll listen in the particular way that characterizes this work. By the end, we'll both have a sense of whether to proceed.</p>
                 </div>
 
@@ -477,25 +490,6 @@
     </div>
 
     <script>
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
         // Add parallax effect to background
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
