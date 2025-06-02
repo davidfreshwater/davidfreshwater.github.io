@@ -251,12 +251,13 @@
         .case-content {
             max-height: 0;
             overflow: hidden;
-            transition: all 0.5s ease;
+            transition: max-height 0.5s ease;
             background: rgba(46, 204, 113, 0.02);
         }
 
         .case-card.open .case-content {
-            max-height: 3000px;
+            max-height: none;
+            overflow: visible;
         }
 
         .case-content-inner {
