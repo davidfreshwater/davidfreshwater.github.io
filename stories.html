@@ -113,8 +113,9 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 1rem;
         }
 
         nav li {
@@ -130,6 +131,7 @@
             position: relative;
             font-size: 0.95rem;
             letter-spacing: 0.5px;
+            display: inline-block;
         }
 
         nav a:hover {
@@ -361,17 +363,6 @@
             font-size: 1rem;
         }
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         footer {
             background: #34495e;
             color: #ecf0f1;
@@ -423,6 +414,11 @@
             <header>
                 <h1>Journeys Through Analysis</h1>
                 <div class="page-tagline">Real transformations through Lacanian psychoanalysis</div>
+                <div style="margin-top: 1rem; font-size: 1.1rem; opacity: 0.9;">
+                    <a href="tel:7865271616" style="color: white; text-decoration: none;">(786) 527-1616</a>
+                    <span style="margin: 0 1rem;">•</span>
+                    <a href="mailto:davidfreshwateranalyst@gmail.com" style="color: white; text-decoration: none;">davidfreshwateranalyst@gmail.com</a>
+                </div>
             </header>
 
             <nav>
@@ -431,13 +427,13 @@
                     <li><a href="approach.html">How It Works</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="stories.html" class="active">Stories</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="faq.html">Questions</a></li>
                     <li><a href="blog.html">Resources</a></li>
                     <li><a href="contact.html">Begin</a></li>
                 </ul>
             </nav>
 
-            <section class="section fade-in">
+            <section class="section">
                 <h2>Stories of Transformation</h2>
                 
                 <p class="disclaimer">The following narratives illustrate the process of psychoanalytic work. They are composite accounts based on various clinical experiences, with all identifying details altered to protect confidentiality.</p>
@@ -806,25 +802,6 @@
         function toggleCase(element) {
             element.classList.toggle('open');
         }
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
 
         // Add parallax effect to background
         window.addEventListener('scroll', () => {
