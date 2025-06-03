@@ -499,86 +499,33 @@
                     </div>
                 </div>
 
-              <div style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(142, 68, 173, 0.05)); padding: 3rem 2.5rem; border-radius: 20px; margin: 3rem 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+            <div style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(142, 68, 173, 0.05)); padding: 3rem 2.5rem; border-radius: 20px; margin: 3rem 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
     <div style="position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: linear-gradient(135deg, #3498db, #8e44ad); border-radius: 20px 0 0 20px;"></div>
     <h3 style="margin-bottom: 2rem; text-align: center; font-size: 1.3rem; color: #2c3e50; font-weight: normal; font-style: italic;">You may recognize yourself in these experiences:</h3>
-    <div style="column-count: 2; column-gap: 2.5rem; margin: 0 auto; max-width: 900px;">
-        <ul style="list-style: none; padding: 0; color: #34495e; break-inside: avoid;">
-            <li style="margin: 0.75rem 0; position: relative; padding-left: 1.5rem;">
-                <span style="position: absolute; left: 0; color: #3498db;">•</span>
-                Months planning the perfect career move while staying in the same job
-            </li>
-            <li style="margin: 0.75rem 0; position: relative; padding-left: 1.5rem;">
-                <span style="position: absolute; left: 0; color: #3498db;">•</span>
-                Reading every review for a simple purchase until the decision feels impossible
-            </li>
-            <li style="margin: 0.75rem 0; position: relative; padding-left: 1.5rem;">
-                <span style="position: absolute; left: 0; color: #3498db;">•</span>
-                Rewriting the same text message dozens of times, then deleting it unsent
-            </li>
-            <li style="margin: 0.75rem 0; position: relative; padding-left: 1.5rem;">
-                <span style="position: absolute; left: 0; color: #8e44ad;">•</span>
-                Depression descending without clear reason
-            </li>
-            <li style="margin: 0.75rem 0; position: relative; padding-left: 1.5rem;">
-                <span style="position: absolute; left: 0; color: #3498db;">•</span>
-                Creative projects 90% complete, abandoned for something new
-            </li>
-            <li style="margin: 0.75rem 0; position: relative; padding-left: 1.5rem;">
-                <span style="position: absolute; left: 0; color: #3498db;">•</span>
-                Working 70-hour weeks while analyzing your lack of work-life balance
-            </li>
-            <li style="margin: 0.75rem 0; position: relative; padding-left: 1.5rem;">
-                <span style="position: absolute; left: 0; color: #3498db;">•</span>
-                Hours lost scrolling through others' lives instead of living your own
-            </li>
-            <li style="margin: 0.75rem 0; position: relative; padding-left: 1.5rem;">
-                <span style="position: absolute; left: 0; color: #8e44ad;">•</span>
-                Creating conflict to test love, then rejecting the reassurance
-            </li>
-            <li style="margin: 0.75rem 0; position: relative; padding-left: 1.5rem;">
-                <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
-                Self-sabotage dressed as bad luck
-            </li>
-            <li style="margin: 0.75rem 0; position: relative; padding-left: 1.5rem;">
-                <span style="position: absolute; left: 0; color: #8e44ad;">•</span>
-                Physical symptoms that defy medical explanation
-            </li>
-            <li style="margin: 0.75rem 0; position: relative; padding-left: 1.5rem;">
-                <span style="position: absolute; left: 0; color: #8e44ad;">•</span>
-                The exhausting effort of appearing "fine" when you're falling apart
-            </li>
-            <li style="margin: 0.75rem 0; position: relative; padding-left: 1.5rem;">
-                <span style="position: absolute; left: 0; color: #8e44ad;">•</span>
-                Panic attacks that arrive just when life calms down
-            </li>
-            <li style="margin: 0.75rem 0; position: relative; padding-left: 1.5rem;">
-                <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
-                Food as battlefield—restricting, binging, calculating, punishing
-            </li>
-            <li style="margin: 0.75rem 0; position: relative; padding-left: 1.5rem;">
-                <span style="position: absolute; left: 0; color: #8e44ad;">•</span>
-                Sacrificing everything for others, then resenting what you've given up
-            </li>
-            <li style="margin: 0.75rem 0; position: relative; padding-left: 1.5rem;">
-                <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
-                Private compulsions—substances, pornography—that promise relief but increase isolation
-            </li>
-            <li style="margin: 0.75rem 0; position: relative; padding-left: 1.5rem;">
-                <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
-                Relationships following the same script with different actors
-            </li>
+    <div class="symptom-columns" style="margin: 0 auto; max-width: 900px;">
+        <ul style="list-style: none; padding: 0; color: #34495e;">
+            <!-- All your list items here -->
         </ul>
     </div>
     <p style="margin-top: 2.5rem; margin-bottom: 0; font-style: italic; text-align: center; color: #2c3e50; font-size: 1.05rem;">Perhaps you recognize yourself here, or your reasons remain uniquely your own. These patterns contain their own intelligence.</p>
 </div>
 
 <style>
-    @media (max-width: 768px) {
-        div[style*="column-count: 2"] {
-            column-count: 1 !important;
-        }
+.symptom-columns ul {
+    column-count: 2;
+    column-gap: 3rem;
+}
+
+.symptom-columns li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+@media (max-width: 768px) {
+    .symptom-columns ul {
+        column-count: 1;
     }
+}
 </style>
 
                 <p>Your unconscious communicates through symptoms, repetitions, dreams, and slips of the tongue. Rather than telling you what these communications mean, I create conditions where you can begin to hear what you're trying to tell yourself.</p>
