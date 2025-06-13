@@ -3,10 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Begin Psychoanalysis | David M. Freshwater, LMHC</title>
-    <meta name="description" content="Schedule your 90-minute consultation for Lacanian psychoanalysis. Online sessions throughout Massachusetts. Contact David M. Freshwater, LMHC.">
-    <meta name="keywords" content="contact psychoanalyst, schedule consultation, online psychoanalysis Massachusetts, David Freshwater contact">
+    <title>David M. Freshwater, LMHC - Lacanian Psychoanalyst | Boston & Massachusetts</title>
+    <meta name="description" content="Lacanian psychoanalyst offering online psychoanalysis throughout Massachusetts. David M. Freshwater, LMHC specializes in depth psychology, unconscious analysis, and lasting transformation. Private pay practice serving Boston, Cambridge, and all of MA.">
+    <meta name="keywords" content="Lacanian psychoanalyst Boston, Lacanian psychoanalysis Massachusetts, online psychoanalysis Massachusetts, private pay psychoanalyst, unconscious analysis Boston, French psychoanalysis, David Freshwater LMHC, depth psychology Boston">
+    <meta name="author" content="David M. Freshwater, LMHC">
+    <meta name="geo.region" content="US-MA">
+    <meta name="geo.placename" content="Boston, Massachusetts">
     
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="David M. Freshwater, LMHC - Lacanian Psychoanalyst Boston">
+    <meta property="og:description" content="Online Lacanian psychoanalysis for adults throughout Massachusetts. Depth psychology practice focused on unconscious exploration and lasting transformation. Private pay.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Structured data for local business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MentalHealthBusiness",
+      "name": "David M. Freshwater, LMHC - Lacanian Psychoanalyst",
+      "description": "Licensed Mental Health Counselor specializing in Lacanian psychoanalysis and unconscious analysis",
+      "url": "https://davidfreshwater.com/",
+      "telephone": "+17865271616",
+      "email": "davidfreshwateranalyst@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "MA",
+        "addressCountry": "US"
+      },
+      "areaServed": ["Boston", "Cambridge", "Newton", "Brookline", "Wellesley", "Lexington", "Concord", "Massachusetts"],
+      "priceRange": "$$",
+      "paymentAccepted": "Private Pay",
+      "openingHours": "By appointment",
+      "sameAs": []
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -87,7 +118,7 @@
             letter-spacing: -1px;
         }
 
-        .page-tagline {
+        .tagline {
             font-size: clamp(1rem, 2vw, 1.2rem);
             font-style: italic;
             opacity: 0.9;
@@ -173,20 +204,13 @@
             border-radius: 2px;
         }
 
-        h3 {
-            color: #34495e;
-            margin: 2rem 0 1rem 0;
-            font-size: 1.4rem;
-            font-weight: normal;
-        }
-
         p {
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
             text-align: justify;
         }
 
-        .hero-quote {
+        .hero-text {
             font-size: clamp(1.3rem, 3vw, 1.6rem);
             text-align: center;
             color: #2c3e50;
@@ -196,138 +220,70 @@
             position: relative;
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin: 3rem 0;
+        .hero-text::before {
+            content: '"';
+            font-size: 4rem;
+            color: #e74c3c;
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            opacity: 0.3;
         }
 
-        .contact-card {
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.06), rgba(155, 89, 182, 0.06));
-            padding: 2.5rem;
-            border-radius: 15px;
-            border-left: 4px solid #3498db;
-            text-align: center;
+        .hero-text::after {
+            content: '"';
+            font-size: 4rem;
+            color: #e74c3c;
+            position: absolute;
+            bottom: -40px;
+            right: -20px;
+            opacity: 0.3;
         }
 
-        .contact-card h3 {
-            color: #3498db;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .contact-method {
-            margin: 1.5rem 0;
-        }
-
-        .contact-method strong {
-            color: #2c3e50;
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .contact-method a {
-            color: #3498db;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-
-        .contact-method a:hover {
-            color: #2980b9;
-            text-decoration: underline;
-        }
-
-        .fee-info {
-            background: rgba(230, 126, 34, 0.08);
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 4px solid #e67e22;
-            margin: 3rem 0;
-        }
-
-        .fee-info h3 {
-            color: #d35400;
-            text-align: center;
-        }
-
-        .fee-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .fee-item {
-            text-align: center;
-        }
-
-        .fee-item strong {
-            color: #d35400;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .process-steps {
-            background: rgba(46, 204, 113, 0.06);
-            padding: 2.5rem;
-            border-radius: 15px;
-            border-left: 4px solid #2ecc71;
-            margin: 3rem 0;
-        }
-
-        .process-steps h3 {
-            color: #27ae60;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .step {
-            display: flex;
-            align-items: flex-start;
-            margin: 1.5rem 0;
-        }
-
-        .step-number {
-            background: #27ae60;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-weight: bold;
-            margin-right: 1.5rem;
-        }
-
-        .step-content h4 {
-            color: #27ae60;
-            margin-bottom: 0.5rem;
-        }
-
-        .step-content p {
-            margin-bottom: 0;
-            text-align: left;
-        }
-
-        .availability-note {
+        .curiosity-box {
             background: rgba(142, 68, 173, 0.08);
             padding: 2rem;
             border-radius: 15px;
-            border-left: 4px solid #8e44ad;
+            margin: 2rem 0;
+            border: 1px solid rgba(142, 68, 173, 0.2);
             text-align: center;
-            margin: 3rem 0;
         }
 
-        .availability-note p {
-            color: #6c5ce7;
+        .curiosity-box p {
             font-size: 1.1rem;
+            color: #8e44ad;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .curiosity-box ul {
+            list-style: none;
+            padding: 0;
+            font-style: italic;
+            color: #6c5ce7;
+        }
+
+        .curiosity-box li {
+            margin: 0.5rem 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(142, 68, 173, 0.1));
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            border-left: 5px solid #e74c3c;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box p {
+            position: relative;
+            z-index: 1;
             margin-bottom: 0;
+            font-size: 1.2rem;
             text-align: center;
+            font-style: italic;
         }
 
         .cta-button {
@@ -366,15 +322,6 @@
             box-shadow: 0 12px 35px rgba(0,0,0,0.3);
         }
 
-        .final-quote {
-            text-align: center;
-            font-style: italic;
-            color: #7f8c8d;
-            margin: 4rem 0 2rem 0;
-            font-size: 1.2rem;
-            position: relative;
-        }
-
         .divider {
             width: 100px;
             height: 1px;
@@ -396,14 +343,70 @@
         }
 
         .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .info-card {
+            background: rgba(52, 152, 219, 0.06);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #3498db;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .info-card h3 {
+            color: #2980b9;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .info-card p {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .info-card a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .info-card a:hover {
+            color: #2980b9;
+        }
+
+        .symptom-list {
+            columns: 2;
+            column-gap: 3rem;
+            -webkit-columns: 2;
+            -webkit-column-gap: 3rem;
+            -moz-columns: 2;
+            -moz-column-gap: 3rem;
+            column-fill: balance;
+        }
+
+        .symptom-list li {
+            break-inside: avoid;
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            margin: 0.75rem 0;
+            position: relative;
+            padding-left: 1.5rem;
         }
 
         @media (max-width: 768px) {
@@ -426,13 +429,14 @@
                 padding: 3rem 1.5rem;
             }
             
-            .contact-grid {
+            .info-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
-            
-            .fee-details {
-                grid-template-columns: 1fr;
+
+            .symptom-list {
+                columns: 1 !important;
+                -webkit-columns: 1 !important;
+                -moz-columns: 1 !important;
             }
         }
 
@@ -448,7 +452,7 @@
         <div class="content-wrap">
             <header>
                 <h1>David M. Freshwater, LMHC</h1>
-                <div class="page-tagline">Take the first step toward genuine transformation</div>
+                <div class="tagline">What your unconscious already knows might surprise you</div>
                 <div style="margin-top: 1rem; font-size: 1.1rem; opacity: 0.9;">
                     <a href="tel:7865271616" style="color: white; text-decoration: none;">(786) 527-1616</a>
                     <span style="margin: 0 1rem;">•</span>
@@ -458,136 +462,121 @@
 
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
                     <li><a href="approach.html">How It Works</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="stories.html">Stories</a></li>
                     <li><a href="faq.html">Questions</a></li>
                     <li><a href="blog.html">Resources</a></li>
-                    <li><a href="contact.html" class="active">Begin</a></li>
+                    <li><a href="contact.html">Begin</a></li>
                 </ul>
             </nav>
 
             <section class="section fade-in">
-                <h2>Ready to Begin This Investigation?</h2>
-
-                <div class="hero-quote">
-                    "The unconscious is the discourse of the Other." — Jacques Lacan
+                <div class="hero-text">
+                    What if your most persistent problems are actually sophisticated responses to questions you haven't consciously formulated yet?
                 </div>
 
-                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem;">If you suspect your unconscious operates according to a logic more sophisticated than your conscious mind recognizes, let's explore whether analytic work makes sense for you.</p>
-
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <h3>Get in Touch</h3>
-                        <div class="contact-method">
-                            <strong>Email</strong>
-                            <a href="mailto:davidfreshwateranalyst@gmail.com">davidfreshwateranalyst@gmail.com</a>
-                        </div>
-                        <div class="contact-method">
-                            <strong>Phone</strong>
-                            <a href="tel:7865271616">(786) 527-1616</a>
-                        </div>
-                        <div class="contact-method">
-                            <strong>License</strong>
-                            <p>LMHC #10001743</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-card">
-                        <h3>Session Format</h3>
-                        <p style="margin-bottom: 1.5rem;">All sessions are conducted online via secure video or phone connection, allowing for flexibility while maintaining the intimacy necessary for analytic work.</p>
-                        <p style="text-align: center; margin-bottom: 0;"><strong>Serving adults throughout Massachusetts</strong></p>
-                    </div>
+                <div class="curiosity-box">
+                    <p>You might be here because you...</p>
+                    <ul>
+                         <li>• Keep finding yourself in familiar situations with different people</li>
+                         <li>• Wonder why you sabotage precisely what you claim to want</li>
+                         <li>• Find yourself anxious just when life is going well</li>
+                         <li>• Sense there's more to your symptoms than meets the eye</li>
+                         <li>• Are ready for transformation rather than just coping strategies</li>
+                    </ul>
                 </div>
 
-                <div class="process-steps">
-                    <h3>Next Steps</h3>
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>Reach Out</h4>
-                            <p>Contact me by email or phone to express your interest in beginning analysis. Share a bit about what brings you to seek this work.</p>
-                        </div>
+                <div style="text-align: center; margin: 2rem 0;">
+                    <a href="contact.html" class="cta-button">Request Initial Consultation</a>
+                </div>
+
+                <p>The same situations repeat with curious consistency. You choose people who create familiar complications. Something in you knows exactly why these patterns repeat, even if you don't.</p>
+
+                <div class="highlight-box">
+                    <p>I practice Lacanian psychoanalysis—an approach that creates conditions where transformation happens through your own speech, as new meanings emerge and old patterns dissolve.</p>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>The Approach</h3>
+                        <p>Unlike traditional therapy focused on coping strategies, Lacanian analysis investigates the unconscious logic behind your symptoms and repetitions.</p>
+                        <a href="approach.html">Learn More →</a>
                     </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>Schedule Consultation</h4>
-                            <p>We'll arrange a consultation (roughly 1 hour) at a time that works for both of us. This initial session allows for genuine exploration.</p>
-                        </div>
+
+                    <div class="info-card">
+                        <h3>About the Practice</h3>
+                        <p>Eight years of experience in depth psychology. Licensed in Massachusetts, offering online analysis for adults ready for genuine transformation.</p>
+                        <a href="about.html">About David →</a>
                     </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>Experience the Work</h4>
-                            <p>During the consultation, you'll have space to speak freely while I listen in the particular way that characterizes analytic work.</p>
-                        </div>
+
+                    <div class="info-card">
+                        <h3>Stories of Change</h3>
+                        <p>Discover how others have navigated their own analytic journeys and the transformations that became possible through this work.</p>
+                        <a href="stories.html">Read Stories →</a>
                     </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h4>Decide Together</h4>
-                            <p>By the end of our consultation, we'll both have a sense of whether to proceed with ongoing analysis.</p>
-                        </div>
+
+                    <div class="info-card">
+                        <h3>Common Questions</h3>
+                        <p>Find answers to frequently asked questions about Lacanian analysis, the process, fees, and what to expect from this unique approach.</p>
+                        <a href="faq.html">View FAQ →</a>
                     </div>
                 </div>
 
-                <div class="fee-info">
-                    <h3>Investment in Transformation</h3>
-                    <div class="fee-details">
-                        <div class="fee-item">
-                            <strong>Initial Consultation</strong>
-                            <p>Roughly 1 hour, $200</p>
-                        </div>
-                        <div class="fee-item">
-                            <strong>Ongoing Sessions</strong>
-                            <p>Variable length (Lacanian practice)<br>Fees discussed during consultation</p>
-                        </div>
-                        <div class="fee-item">
-                            <strong>Payment</strong>
-                            <p>Private pay only<br>HSA/FSA often accepted</p>
-                        </div>
-                    </div>
-                    <p style="text-align: center; margin-top: 2rem; margin-bottom: 0; font-style: italic;">Limited reduced-fee slots available for those with genuine financial constraints who are deeply committed to the work.</p>
-                </div>
+                <div style="background: rgba(52, 152, 219, 0.06); padding: 2rem; border-radius: 15px; margin: 2rem 0; border-left: 4px solid #3498db;">
+    <p style="margin-bottom: 1rem;">People reach out for analysis for some of the following reasons:</p>
+    <ul style="list-style: none; padding: 0; color: #34495e;">
+        <li style="margin: 0.5rem 0;">• You're navigating a challenging relationship and seeking clarity</li>
+        <li style="margin: 0.5rem 0;">• Persistent depression or anxiety that colors each day</li>
+        <li style="margin: 0.5rem 0;">• Intense emotions that ambush you at inappropriate moments</li>
+        <li style="margin: 0.5rem 0;">• Past traumas are haunting you and impacting your present life</li>
+        <li style="margin: 0.5rem 0;">• Physical symptoms that defy medical explanation</li>
+        <li style="margin: 0.5rem 0;">• You're questioning your relationship with substances, porn, or social media</li>
+        <li style="margin: 0.5rem 0;">• Food has become a battlefield where control and chaos meet</li>
+        <li style="margin: 0.5rem 0;">• Life feels purposeless, making it hard to find motivation</li>
+        <li style="margin: 0.5rem 0;">• Obsessive thoughts or behaviors are disrupting your life</li>
+        <li style="margin: 0.5rem 0;">• Living a life that looks good on paper but feels empty of meaning</li>
+        <li style="margin: 0.5rem 0;">• Success inevitably followed by mysterious self-sabotage</li>
+        <li style="margin: 0.5rem 0;">• Exhausting yourself meeting others' needs while losing your own</li>
+    </ul>
+    <p style="margin-top: 1rem; margin-bottom: 0; font-style: italic;">Perhaps you recognize yourself here, or your reasons remain uniquely your own. There is no "correct" reason to seek analysis—your path is singular, your motivations legitimate.</p>
+</div>
 
-                <div class="availability-note">
-                    <p>My practice is intentionally small to ensure each analysand receives the focused attention this work requires. Current availability is limited, but I encourage you to reach out if you feel called to this work.</p>
-                </div>
+                <p>Your unconscious communicates through symptoms, repetitions, dreams, and slips of the tongue. Rather than telling you what these communications mean, I create conditions where you can begin to hear what you're trying to tell yourself.</p>
 
-                <div style="text-align: center; margin: 3rem 0;">
-                    <a href="mailto:davidfreshwateranalyst@gmail.com" class="cta-button">Request Initial Consultation</a>
-                    <a href="tel:7865271616" class="cta-button">Call to Discuss</a>
+                <div style="background: rgba(231, 76, 60, 0.06); padding: 2rem; border-radius: 15px; margin: 3rem 0; border-left: 4px solid #e74c3c;">
+                    <h3 style="color: #c0392b; margin-bottom: 1rem;">This Approach Isn't For You If...</h3>
+                    <ul style="list-style: none; padding: 0; color: #d35400;">
+                        <li style="margin: 0.5rem 0;">• You need immediate crisis intervention</li>
+                        <li style="margin: 0.5rem 0;">• You're looking for advice or quick fixes</li>
+                        <li style="margin: 0.5rem 0;">• You're unable to commit to regular sessions</li>
+                        <li style="margin: 0.5rem 0;">• You prefer structured, directive approaches</li>
+                    </ul>
+                    <p style="margin-top: 1rem; margin-bottom: 0; font-style: italic;">If any of these apply, I'm happy to refer you to other practitioners who may be a better fit.</p>
                 </div>
 
                 <div class="divider"></div>
 
-                <p style="text-align: center; margin-top: 3rem; font-size: 1rem;">I look forward to discovering whether we can create together the conditions for genuine psychoanalytic work.</p>
+                <div style="text-align: center;">
+                    <h2>Begin Your Journey</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem;">The initial consultation is an opportunity to explore whether analytic work makes sense for your particular situation. Fees are discussed during our initial consultation, as the investment in analysis is an important part of the work itself.</p>
+                    <a href="contact.html" class="cta-button">Request Initial Consultation</a>
+                </div>
             </section>
+            
+            <footer style="background: #34495e; color: #ecf0f1; padding: 3rem 2rem; text-align: center;">
+                <div style="max-width: 1200px; margin: 0 auto;">
+                    <p style="font-size: 1.1rem; margin-bottom: 1rem;">David M. Freshwater, LMHC #10001743</p>
+                    <p style="margin-bottom: 1rem;">Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
+                    <p style="margin-bottom: 2rem;">Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">© 2024 David M. Freshwater, LMHC. All rights reserved. | <a href="privacy.html" style="color: #3498db;">Privacy Policy</a></p>
+                </div>
+            </footer>
         </div>
     </div>
 
     <script>
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
         // Add parallax effect to background
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
