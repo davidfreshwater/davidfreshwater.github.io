@@ -87,6 +87,7 @@
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
             color: white;
             padding: 3rem 1.5rem;
+            padding-right: 4.5rem; /* Extra padding to account for menu button */
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -161,38 +162,35 @@
             top: 1rem;
             right: 1rem;
             z-index: 1000;
-            background: rgba(52, 73, 94, 0.95);
+            background: rgba(52, 73, 94, 0.9);
             color: white;
             border: none;
-            padding: 0.75rem;
-            border-radius: 8px;
+            padding: 0;
+            border-radius: 12px;
             cursor: pointer;
             width: 50px;
             height: 50px;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
-        .mobile-menu-toggle span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 5px 0;
-            transition: 0.3s;
-            border-radius: 2px;
+        .mobile-menu-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: rgba(52, 73, 94, 1);
         }
 
-        .mobile-menu-toggle.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
+        .mobile-menu-toggle svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
         }
 
-        .mobile-menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
+        .mobile-menu-toggle.active svg {
+            transform: rotate(90deg);
         }
 
         nav {
@@ -545,6 +543,7 @@
         @media (min-width: 600px) {
             header {
                 padding: 4rem 2rem;
+                padding-right: 2rem; /* Reset padding on larger screens */
             }
 
             .contact-info {
@@ -746,9 +745,11 @@
             </header>
 
             <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
             </button>
 
             <div class="mobile-overlay" id="mobileOverlay"></div>
