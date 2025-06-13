@@ -20,6 +20,7 @@
             color: #2c3e50;
             background: #0f0f23;
             overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
         }
 
         .container {
@@ -54,7 +55,8 @@
         header {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
             color: white;
-            padding: 4rem 2rem;
+            padding: 3rem 1.5rem;
+            padding-right: 4.5rem; /* Extra padding to account for menu button */
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -79,7 +81,7 @@
         }
 
         h1 {
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(1.75rem, 5vw, 3rem);
             margin-bottom: 1rem;
             position: relative;
             z-index: 1;
@@ -88,13 +90,76 @@
         }
 
         .page-tagline {
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-size: clamp(0.95rem, 3vw, 1.2rem);
             font-style: italic;
             opacity: 0.9;
             position: relative;
             z-index: 1;
             max-width: 600px;
             margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            opacity: 0.9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+            display: inline-block;
+        }
+
+        .contact-info span {
+            display: none;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            background: rgba(52, 73, 94, 0.9);
+            color: white;
+            border: none;
+            padding: 0;
+            border-radius: 12px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .mobile-menu-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: rgba(52, 73, 94, 1);
+        }
+
+        .mobile-menu-toggle svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu-toggle.active svg {
+            transform: rotate(90deg);
         }
 
         nav {
@@ -106,6 +171,7 @@
             z-index: 100;
             border-bottom: 1px solid rgba(255,255,255,0.1);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
 
         nav ul {
@@ -134,7 +200,7 @@
             display: inline-block;
         }
 
-        nav a:hover {
+        nav a:hover, nav a:focus {
             background: rgba(255,255,255,0.15);
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -146,7 +212,7 @@
         }
 
         .section {
-            padding: 5rem 2rem;
+            padding: 3rem 1.5rem;
             max-width: 900px;
             margin: 0 auto;
             position: relative;
@@ -154,8 +220,8 @@
 
         h2 {
             color: #2c3e50;
-            margin: 0 0 3rem 0;
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin: 0 0 2rem 0;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
             position: relative;
             text-align: center;
             font-weight: normal;
@@ -175,22 +241,22 @@
 
         h3 {
             color: #34495e;
-            margin: 3rem 0 1rem 0;
-            font-size: 1.4rem;
+            margin: 2rem 0 1rem 0;
+            font-size: clamp(1.15rem, 3vw, 1.4rem);
             font-weight: normal;
         }
 
         p {
             margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            text-align: justify;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            text-align: left;
         }
 
         .highlight-box {
             background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(142, 68, 173, 0.1));
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 15px;
-            margin: 3rem 0;
+            margin: 2rem 0;
             border-left: 5px solid #e74c3c;
             position: relative;
             overflow: hidden;
@@ -200,14 +266,14 @@
             position: relative;
             z-index: 1;
             margin-bottom: 0;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
             text-align: center;
             font-style: italic;
         }
 
         .technique-highlight {
             background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 15px;
             margin: 2rem 0;
             border-left: 4px solid #3498db;
@@ -216,6 +282,7 @@
         .technique-highlight p {
             margin-bottom: 0;
             font-style: italic;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
         }
 
         .investment-note {
@@ -227,7 +294,7 @@
         }
 
         .investment-note p {
-            font-size: 1rem;
+            font-size: clamp(0.95rem, 2.5vw, 1rem);
             color: #d35400;
             margin-bottom: 0;
             text-align: center;
@@ -236,15 +303,15 @@
 
         .transformation-quote {
             background: linear-gradient(135deg, rgba(52, 152, 219, 0.06), rgba(155, 89, 182, 0.06));
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 15px;
-            margin: 3rem 0;
+            margin: 2rem 0;
             border-left: 4px solid #3498db;
             text-align: center;
         }
 
         .transformation-quote p {
-            font-size: 1.15rem;
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
             color: #2c3e50;
             margin-bottom: 0.5rem;
             font-style: italic;
@@ -252,27 +319,27 @@
         }
 
         .transformation-quote .attribution {
-            font-size: 0.9rem;
+            font-size: clamp(0.85rem, 2vw, 0.9rem);
             color: #7f8c8d;
             margin-bottom: 0;
         }
 
         .process-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
 
         .process-card {
             background: rgba(142, 68, 173, 0.06);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 15px;
             border-left: 4px solid #8e44ad;
             transition: all 0.3s ease;
         }
 
-        .process-card:hover {
+        .process-card:hover, .process-card:focus-within {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
@@ -280,28 +347,30 @@
         .process-card h4 {
             color: #6c5ce7;
             margin-bottom: 1rem;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
         }
 
         .process-card p {
             margin-bottom: 0;
             text-align: left;
+            font-size: clamp(0.95rem, 2.5vw, 1rem);
         }
 
         .cta-button {
             display: inline-block;
             background: linear-gradient(45deg, #e74c3c, #c0392b);
             color: white;
-            padding: 1.25rem 2.5rem;
+            padding: 1rem 2rem;
             text-decoration: none;
             border-radius: 50px;
-            margin: 2rem 1rem;
+            margin: 1rem 0.5rem;
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            font-size: 1.1rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
             letter-spacing: 0.5px;
             position: relative;
             overflow: hidden;
+            touch-action: manipulation;
         }
 
         .cta-button::before {
@@ -315,11 +384,11 @@
             transition: left 0.5s;
         }
 
-        .cta-button:hover::before {
+        .cta-button:hover::before, .cta-button:focus::before {
             left: 100%;
         }
 
-        .cta-button:hover {
+        .cta-button:hover, .cta-button:focus {
             transform: translateY(-3px);
             box-shadow: 0 12px 35px rgba(0,0,0,0.3);
         }
@@ -328,7 +397,7 @@
             width: 100px;
             height: 1px;
             background: linear-gradient(45deg, #e74c3c, #c0392b);
-            margin: 4rem auto;
+            margin: 3rem auto;
             position: relative;
         }
 
@@ -344,10 +413,42 @@
             font-size: 1rem;
         }
 
+        .books-banner {
+            margin: 3rem -1.5rem;
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .books-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 1.5rem;
+            color: #34495e;
+        }
+
+        ul li {
+            margin: 0.75rem 0;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+        }
+
         footer {
             background: #34495e;
             color: #ecf0f1;
-            padding: 3rem 2rem;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            margin-bottom: 0.75rem;
             text-align: center;
         }
 
@@ -356,38 +457,207 @@
             text-decoration: none;
         }
 
-        @media (max-width: 768px) {
-            nav ul {
-                flex-wrap: wrap;
+        footer a:hover, footer a:focus {
+            text-decoration: underline;
+        }
+
+        /* Tablet styles */
+        @media (min-width: 600px) {
+            header {
+                padding: 4rem 2rem;
+                padding-right: 2rem; /* Reset padding on larger screens */
+            }
+
+            .contact-info {
+                flex-direction: row;
+                gap: 1rem;
                 justify-content: center;
-                gap: 0.5rem;
+                width: 100%;
             }
 
-            nav li {
-                margin: 0.25rem;
-            }
-
-            nav a {
-                padding: 0.6rem 1rem;
-                font-size: 0.85rem;
+            .contact-info span {
+                display: inline;
             }
 
             .section {
-                padding: 3rem 1.5rem;
+                padding: 4rem 2rem;
             }
-            
+
             .process-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            ul {
+                padding-left: 2rem;
+            }
+
+            .cta-button {
+                padding: 1.25rem 2.5rem;
+                margin: 1rem;
+            }
+
+            h2 {
+                margin-bottom: 3rem;
+            }
+
+            h3 {
+                margin: 3rem 0 1rem 0;
+            }
+
+            .highlight-box,
+            .technique-highlight,
+            .transformation-quote {
+                padding: 2rem;
+            }
+
+            .process-card {
+                padding: 2rem;
+            }
+
+            .divider {
+                margin: 4rem auto;
             }
 
             .books-banner {
-                margin: 3rem -1.5rem !important;
-                height: 250px;
+                margin: 4rem -2rem;
+                height: 350px;
+            }
+        }
+
+        /* Mobile menu styles */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 85%;
+                height: 100vh;
+                background: rgba(52, 73, 94, 0.98);
+                transition: left 0.3s ease;
+                z-index: 999;
+                overflow-y: auto;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 5rem 1rem 2rem;
+            }
+
+            nav li {
+                margin: 0.5rem 0;
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                padding: 1rem 1.5rem;
+                font-size: 1.1rem;
+                text-align: left;
+                border-radius: 8px;
+            }
+
+            .mobile-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 998;
+            }
+
+            .mobile-overlay.active {
+                display: block;
+            }
+        }
+
+        /* Desktop styles */
+        @media (min-width: 769px) {
+            .mobile-menu-toggle,
+            .mobile-overlay {
+                display: none !important;
+            }
+
+            nav {
+                position: sticky !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            .section {
+                padding: 5rem 2rem;
+            }
+
+            p {
+                text-align: justify;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            }
+        }
+
+        /* Accessibility improvements */
+        a:focus,
+        button:focus {
+            outline: 2px solid #3498db;
+            outline-offset: 2px;
+        }
+
+        /* Reduce animations for users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .cta-button::before {
+                display: none;
+            }
+        }
+
+        /* Touch-friendly tap targets */
+        a, button {
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        /* Better text contrast for readability */
+        @media (prefers-contrast: high) {
+            body {
+                color: #000;
+            }
+
+            .content-wrap {
+                background: rgba(255, 255, 255, 1);
             }
         }
 
         html {
             scroll-behavior: smooth;
+        }
+
+        /* Prevent horizontal scroll on mobile */
+        html, body {
+            overflow-x: hidden;
+        }
+
+        /* Ensure images and embeds are responsive */
+        img, video, iframe {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -399,14 +669,24 @@
             <header>
                 <h1>The Process of Transformation</h1>
                 <div class="page-tagline">How Lacanian psychoanalysis creates lasting change</div>
-                <div style="margin-top: 1rem; font-size: 1.1rem; opacity: 0.9;">
-                    <a href="tel:7865271616" style="color: white; text-decoration: none;">(786) 527-1616</a>
-                    <span style="margin: 0 1rem;">•</span>
-                    <a href="mailto:davidfreshwateranalyst@gmail.com" style="color: white; text-decoration: none;">davidfreshwateranalyst@gmail.com</a>
+                <div class="contact-info">
+                    <a href="tel:7865271616">(786) 527-1616</a>
+                    <span>•</span>
+                    <a href="mailto:davidfreshwateranalyst@gmail.com">davidfreshwateranalyst@gmail.com</a>
                 </div>
             </header>
 
-            <nav>
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="mobile-overlay" id="mobileOverlay"></div>
+
+            <nav id="navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="approach.html" class="active">How It Works</a></li>
@@ -474,8 +754,8 @@
                     <p class="attribution">— Jacques-Alain Miller</p>
                 </div>
 
-                <div class="books-banner" style="margin: 4rem -2rem; position: relative; height: 350px; overflow: hidden; border-radius: 15px;">
-                    <img src="image/books.jpg" alt="Lacanian psychoanalysis texts" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                <div class="books-banner">
+                    <img src="image/books.jpg" alt="Lacanian psychoanalysis texts">
                     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);"></div>
                 </div>
 
@@ -484,12 +764,12 @@
                 <p>Initially, anxiety may increase as we approach what your psyche has kept hidden. This is actually a positive sign—it means we're getting close to material that matters. Many find that what seemed like setbacks were actually breakthroughs in disguise.</p>
                
                 <p>Over time, you may experience:</p>
-                <ul style="list-style: none; padding-left: 2rem; color: #34495e;">
-                    <li style="margin: 0.5rem 0;">• Dreams becoming more vivid and meaningful</li>
-                    <li style="margin: 0.5rem 0;">• Unexpected connections between disparate parts of your life</li>
-                    <li style="margin: 0.5rem 0;">• A shift in how you experience your symptoms</li>
-                    <li style="margin: 0.5rem 0;">• The profound relief of finally being heard in a way that allows something to change</li>
-                    <li style="margin: 0.5rem 0;">• The surprising lightness that comes when long-carried burdens finally find words</li>
+                <ul>
+                    <li>• Dreams becoming more vivid and meaningful</li>
+                    <li>• Unexpected connections between disparate parts of your life</li>
+                    <li>• A shift in how you experience your symptoms</li>
+                    <li>• The profound relief of finally being heard in a way that allows something to change</li>
+                    <li>• The surprising lightness that comes when long-carried burdens finally find words</li>
                 </ul>
                
                 <div class="technique-highlight">
@@ -510,12 +790,12 @@
 
                 <p>Lacanian analysis is particularly effective for those who:</p>
 
-                <ul style="list-style: none; padding-left: 2rem; color: #34495e;">
-                    <li style="margin: 0.5rem 0;">• Sense that their problems have deeper roots than current circumstances</li>
-                    <li style="margin: 0.5rem 0;">• Find themselves in recurring situations despite understanding them intellectually</li>
-                    <li style="margin: 0.5rem 0;">• Are curious about their inner life and willing to be surprised</li>
-                    <li style="margin: 0.5rem 0;">• Seek fundamental change rather than temporary relief</li>
-                    <li style="margin: 0.5rem 0;">• Can tolerate uncertainty and the time needed for deep work</li>
+                <ul>
+                    <li>• Sense that their problems have deeper roots than current circumstances</li>
+                    <li>• Find themselves in recurring situations despite understanding them intellectually</li>
+                    <li>• Are curious about their inner life and willing to be surprised</li>
+                    <li>• Seek fundamental change rather than temporary relief</li>
+                    <li>• Can tolerate uncertainty and the time needed for deep work</li>
                 </ul>
 
                 <div class="divider"></div>
@@ -530,16 +810,16 @@
 
                 <div style="text-align: center; margin-top: 3rem;">
                     <h2>Ready to Begin?</h2>
-                    <p style="font-size: 1.2rem; margin-bottom: 2rem;">The initial consultation is an opportunity to explore whether this approach aligns with what you're seeking. We'll both get a sense of whether analytic work makes sense for your particular situation.</p>
+                    <p style="font-size: clamp(1rem, 2.5vw, 1.2rem); margin-bottom: 2rem;">The initial consultation is an opportunity to explore whether this approach aligns with what you're seeking. We'll both get a sense of whether analytic work makes sense for your particular situation.</p>
                     <a href="contact.html" class="cta-button">Request Initial Consultation</a>
                 </div>
             </section>
             
             <footer>
                 <div style="max-width: 1200px; margin: 0 auto;">
-                    <p style="font-size: 1.1rem; margin-bottom: 1rem;">David M. Freshwater, LMHC #10001743</p>
-                    <p style="margin-bottom: 1rem;">Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
-                    <p style="margin-bottom: 2rem;">Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
+                    <p>David M. Freshwater, LMHC #10001743</p>
+                    <p>Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
+                    <p>Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
                     <p style="font-size: 0.9rem; opacity: 0.8;">© 2024 David M. Freshwater, LMHC. All rights reserved. | <a href="privacy.html">Privacy Policy</a></p>
                 </div>
             </footer>
@@ -547,14 +827,54 @@
     </div>
 
     <script>
-        // Add parallax effect to background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.noise-overlay');
-            if (parallax) {
-                const speed = scrolled * 0.2;
-                parallax.style.transform = `translateY(${speed}px)`;
-            }
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navigation = document.getElementById('navigation');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const navLinks = document.querySelectorAll('nav a');
+
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            document.body.style.overflow = navigation.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        mobileOverlay.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Disable parallax on mobile to improve performance
+        const isMobile = window.innerWidth <= 768;
+        
+        if (!isMobile) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const parallax = document.querySelector('.noise-overlay');
+                if (parallax) {
+                    const speed = scrolled * 0.2;
+                    parallax.style.transform = `translateY(${speed}px)`;
+                }
+            });
+        }
+
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (window.innerWidth > 768 && navigation.classList.contains('active')) {
+                    toggleMenu();
+                }
+            }, 250);
         });
     </script>
 </body>
