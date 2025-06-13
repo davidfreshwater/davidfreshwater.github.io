@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,576 +7,678 @@
     <meta name="description" content="Common questions about Lacanian psychoanalysis, the process, duration, fees, and what to expect. Learn if this approach is right for you.">
     <meta name="keywords" content="psychoanalysis FAQ, Lacanian analysis questions, therapy duration, private pay therapy, online psychoanalysis">
 
-```
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-        font-family: 'Georgia', serif;
-        line-height: 1.7;
-        color: #2c3e50;
-        background: #0f0f23;
-        overflow-x: hidden;
-    }
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #0f0f23;
+            overflow-x: hidden;
+        }
 
-    .container {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        min-height: 100vh;
-        position: relative;
-    }
+        .container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+        }
 
-    .noise-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.03;
-        background-image: 
-            radial-gradient(circle at 25% 25%, white 1px, transparent 1px),
-            radial-gradient(circle at 75% 75%, white 1px, transparent 1px);
-        background-size: 50px 50px;
-        pointer-events: none;
-        z-index: 1;
-    }
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: 
+                radial-gradient(circle at 25% 25%, white 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, white 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 1;
+        }
 
-    .content-wrap {
-        position: relative;
-        z-index: 2;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        min-height: 100vh;
-    }
+        .content-wrap {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            min-height: 100vh;
+        }
 
-    header {
-        background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
-        color: white;
-        padding: 4rem 2rem;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-    header::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-        background-size: 30px 30px;
-        animation: float 20s ease-in-out infinite;
-        opacity: 0.3;
-    }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: float 20s ease-in-out infinite;
+            opacity: 0.3;
+        }
 
-    @keyframes float {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-20px) rotate(180deg); }
-    }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
 
-    h1 {
-        font-size: clamp(2rem, 4vw, 3rem);
-        margin-bottom: 1rem;
-        position: relative;
-        z-index: 1;
-        font-weight: normal;
-        letter-spacing: -1px;
-    }
+        h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            font-weight: normal;
+            letter-spacing: -1px;
+        }
 
-    .page-tagline {
-        font-size: clamp(1rem, 2vw, 1.2rem);
-        font-style: italic;
-        opacity: 0.9;
-        position: relative;
-        z-index: 1;
-        max-width: 600px;
-        margin: 0 auto;
-    }
+        .page-tagline {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-style: italic;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-    nav {
-        background: rgba(52, 73, 94, 0.95);
-        backdrop-filter: blur(10px);
-        padding: 1rem 0;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
+        nav {
+            background: rgba(52, 73, 94, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-    nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    nav li {
-        margin: 0.25rem 0.5rem;
-    }
-
-    nav a {
-        color: white;
-        text-decoration: none;
-        padding: 0.75rem 1.25rem;
-        border-radius: 30px;
-        transition: all 0.3s ease;
-        position: relative;
-        font-size: 0.95rem;
-        letter-spacing: 0.5px;
-    }
-
-    nav a:hover {
-        background: rgba(255,255,255,0.15);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    nav a.active {
-        background: linear-gradient(45deg, #e74c3c, #c0392b);
-        box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
-    }
-
-    .section {
-        padding: 5rem 2rem;
-        max-width: 900px;
-        margin: 0 auto;
-        position: relative;
-    }
-
-    h2 {
-        color: #2c3e50;
-        margin: 0 0 3rem 0;
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
-        position: relative;
-        text-align: center;
-        font-weight: normal;
-    }
-
-    h2::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 3px;
-        background: linear-gradient(45deg, #e74c3c, #c0392b);
-        border-radius: 2px;
-    }
-
-    h3 {
-        color: #34495e;
-        margin: 3rem 0 1rem 0;
-        font-size: 1.4rem;
-        font-weight: normal;
-    }
-
-    p {
-        margin-bottom: 1.5rem;
-        font-size: 1.1rem;
-        text-align: justify;
-    }
-
-    .intro-text {
-        text-align: center;
-        font-size: 1.2rem;
-        color: #7f8c8d;
-        margin-bottom: 3rem;
-        font-style: italic;
-    }
-
-    .faq-container {
-        margin: 3rem 0;
-    }
-
-    .faq-category {
-        margin: 4rem 0;
-    }
-
-    .faq-category h3 {
-        text-align: center;
-        color: #8e44ad;
-        margin-bottom: 2rem;
-    }
-
-    .faq-item {
-        background: rgba(241, 196, 15, 0.05);
-        margin: 1rem 0;
-        border-radius: 15px;
-        border-left: 4px solid #f39c12;
-        overflow: hidden;
-        transition: all 0.3s ease;
-    }
-
-    .faq-question {
-        padding: 1.5rem 2rem;
-        font-weight: bold;
-        color: #d35400;
-        cursor: pointer;
-        position: relative;
-        font-size: 1.1rem;
-    }
-
-    .faq-question::after {
-        content: '+';
-        position: absolute;
-        right: 2rem;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 1.5rem;
-        transition: transform 0.3s ease;
-    }
-
-    .faq-item.open .faq-question::after {
-        transform: translateY(-50%) rotate(45deg);
-    }
-
-    .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        padding: 0 2rem;
-        transition: all 0.3s ease;
-    }
-
-    .faq-item.open .faq-answer {
-        max-height: none;
-        padding: 0 2rem 1.5rem 2rem;
-    }
-
-    .still-questions {
-        background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
-        padding: 2.5rem;
-        border-radius: 15px;
-        margin: 3rem 0;
-        text-align: center;
-        border-left: 5px solid #3498db;
-    }
-
-    .still-questions h3 {
-        color: #3498db;
-        margin-bottom: 1rem;
-    }
-
-    .still-questions p {
-        font-size: 1.2rem;
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .cta-button {
-        display: inline-block;
-        background: linear-gradient(45deg, #e74c3c, #c0392b);
-        color: white;
-        padding: 1.25rem 2.5rem;
-        text-decoration: none;
-        border-radius: 50px;
-        margin: 2rem 1rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        font-size: 1.1rem;
-        letter-spacing: 0.5px;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .cta-button::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-        transition: left 0.5s;
-    }
-
-    .cta-button:hover::before {
-        left: 100%;
-    }
-
-    .cta-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 35px rgba(0,0,0,0.3);
-    }
-
-    .divider {
-        width: 100px;
-        height: 1px;
-        background: linear-gradient(45deg, #e74c3c, #c0392b);
-        margin: 4rem auto;
-        position: relative;
-    }
-
-    .divider::before {
-        content: '◊';
-        position: absolute;
-        top: -8px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: white;
-        color: #e74c3c;
-        padding: 0 10px;
-        font-size: 1rem;
-    }
-
-    .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease;
-    }
-
-    .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    @media (max-width: 768px) {
         nav ul {
-            flex-wrap: wrap;
+            list-style: none;
+            display: flex;
             justify-content: center;
-            gap: 0.5rem;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
 
         nav li {
-            margin: 0.25rem;
+            margin: 0.25rem 0.5rem;
         }
 
         nav a {
-            padding: 0.6rem 1rem;
-            font-size: 0.85rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        nav a.active {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
         }
 
         .section {
-            padding: 3rem 1.5rem;
+            padding: 5rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
         }
-    }
 
-    html {
-        scroll-behavior: smooth;
-    }
-</style>
-```
+        h2 {
+            color: #2c3e50;
+            margin: 0 0 3rem 0;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            position: relative;
+            text-align: center;
+            font-weight: normal;
+        }
 
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            border-radius: 2px;
+        }
+
+        h3 {
+            color: #34495e;
+            margin: 3rem 0 1rem 0;
+            font-size: 1.4rem;
+            font-weight: normal;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        .faq-container {
+            margin: 3rem 0;
+        }
+
+        .faq-category {
+            margin: 4rem 0;
+        }
+
+        .faq-category h3 {
+            text-align: center;
+            color: #8e44ad;
+            margin-bottom: 2rem;
+            font-size: clamp(1.2rem, 3vw, 1.4rem);
+        }
+
+        .faq-item {
+            background: rgba(241, 196, 15, 0.05);
+            margin: 1rem 0;
+            border-radius: 15px;
+            border-left: 4px solid #f39c12;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 1.5rem 3rem 1.5rem 1.5rem;
+            font-weight: bold;
+            color: #d35400;
+            cursor: pointer;
+            position: relative;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            line-height: 1.5;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .faq-item.open .faq-question::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: none;
+            padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+
+        .faq-answer p {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        .faq-answer ul {
+            list-style: disc;
+            margin-left: 2rem;
+            color: #d35400;
+            padding: 0;
+        }
+
+        .faq-answer ul li {
+            margin: 0.5rem 0;
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+        }
+
+        .still-questions {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            text-align: center;
+            border-left: 5px solid #3498db;
+        }
+
+        .still-questions h3 {
+            color: #3498db;
+            margin-bottom: 1rem;
+            font-size: clamp(1.3rem, 3vw, 1.6rem);
+        }
+
+        .still-questions p {
+            font-size: clamp(1.1rem, 2.5vw, 1.2rem);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1.25rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 2rem 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+
+        .divider {
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            margin: 4rem auto;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '◊';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            color: #e74c3c;
+            padding: 0 10px;
+            font-size: 1rem;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            nav li {
+                margin: 0.25rem;
+            }
+
+            nav a {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .section {
+                padding: 3rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .intro-text {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+
+            .faq-category {
+                margin: 3rem 0;
+            }
+
+            .faq-question {
+                padding: 1.25rem 3.5rem 1.25rem 1.25rem;
+                font-size: 1rem;
+            }
+
+            .faq-question::after {
+                right: 1rem;
+            }
+
+            .faq-answer {
+                padding: 0 1.25rem;
+            }
+
+            .faq-item.open .faq-answer {
+                padding: 0 1.25rem 1.25rem 1.25rem;
+            }
+
+            .faq-answer p {
+                text-align: left;
+                font-size: 1rem;
+            }
+
+            .faq-answer ul {
+                margin-left: 1.5rem;
+            }
+
+            .still-questions {
+                padding: 2rem 1.5rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                margin: 1rem 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 3rem 1.5rem;
+            }
+
+            .section {
+                padding: 2.5rem 1rem;
+            }
+
+            .faq-question {
+                padding: 1rem 3rem 1rem 1rem;
+            }
+
+            .still-questions {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="noise-overlay"></div>
 
-```
-    <div class="content-wrap">
-        <header>
-            <h1>Frequently Asked Questions</h1>
-            <div class="page-tagline">Understanding Lacanian psychoanalysis</div>
-        </header>
+        <div class="content-wrap">
+            <header>
+                <h1>Frequently Asked Questions</h1>
+                <div class="page-tagline">Understanding Lacanian psychoanalysis</div>
+            </header>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="approach.html">How It Works</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="stories.html">Stories</a></li>
-                <li><a href="faq.html" class="active">Questions</a></li>
-                <li><a href="blog.html">Resources</a></li>
-                <li><a href="contact.html">Begin</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="approach.html">How It Works</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="faq.html" class="active">Questions</a></li>
+                    <li><a href="blog.html">Resources</a></li>
+                    <li><a href="contact.html">Begin</a></li>
+                </ul>
+            </nav>
 
-        <section class="section fade-in">
-            <h2>Questions People Wonder About</h2>
-            
-            <p class="intro-text">These are the questions I hear most often from people considering analysis. If your question isn't answered here, please don't hesitate to reach out.</p>
+            <section class="section fade-in">
+                <h2>Questions People Wonder About</h2>
+                
+                <p class="intro-text">These are the questions I hear most often from people considering analysis. If your question isn't answered here, please don't hesitate to reach out.</p>
 
-            <div class="faq-container">
-                <div class="faq-category">
-                    <h3>About the Process</h3>
-                    
-                    <div class="faq-item" onclick="toggleFaq(this)">
-                        <div class="faq-question">How does this differ from other therapeutic approaches?</div>
-                        <div class="faq-answer">
-                            <p>Most therapies treat symptoms as problems to eliminate. But psychoanalysis understands that symptoms can't be excised like tumors. When we try to simply remove them without addressing their unconscious roots, they resurface in new forms, mutating and returning like zombies we can't kill.</p>
-                            <p>Trying to get rid of a symptom directly is like trying to turn off a lightbulb by blowing on it. You have to find the switch. In analysis, symptoms often do resolve—sometimes dramatically—but not through direct attack. They dissolve when you discover what unconscious conflicts they were expressing.</p>
-                            <p>Lacanian analysis takes a radically different path. Your symptoms aren't enemies to defeat but encrypted messages from your unconscious, pointing toward deeper truths about your desire and enjoyment. Through free association—saying whatever comes to mind—you begin to hear what your unconscious has been trying to tell you all along.</p>
-                            <p>Unlike therapies with preset goals and techniques, we follow the unique logic of your unconscious. Sessions end at breakthrough moments rather than by the clock. I don't give advice or coping strategies; instead, I help you recognize the patterns in your own speech that reveal what you truly want beneath what you think you should want.</p>
-                            <p>This work takes patience and courage, but it offers something no quick fix can: genuine transformation at the level of your fundamental relationship to yourself and your desire.</p>
+                <div class="faq-container">
+                    <div class="faq-category">
+                        <h3>About the Process</h3>
+                        
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">How does this differ from other therapeutic approaches?</div>
+                            <div class="faq-answer">
+                                <p>Most therapies treat symptoms as problems to eliminate. But psychoanalysis understands that symptoms can't be excised like tumors. When we try to simply remove them without addressing their unconscious roots, they resurface in new forms, mutating and returning like zombies we can't kill.</p>
+                                <p>Trying to get rid of a symptom directly is like trying to turn off a lightbulb by blowing on it. You have to find the switch. In analysis, symptoms often do resolve—sometimes dramatically—but not through direct attack. They dissolve when you discover what unconscious conflicts they were expressing.</p>
+                                <p>Lacanian analysis takes a radically different path. Your symptoms aren't enemies to defeat but encrypted messages from your unconscious, pointing toward deeper truths about your desire and enjoyment. Through free association—saying whatever comes to mind—you begin to hear what your unconscious has been trying to tell you all along.</p>
+                                <p>Unlike therapies with preset goals and techniques, we follow the unique logic of your unconscious. Sessions end at breakthrough moments rather than by the clock. I don't give advice or coping strategies; instead, I help you recognize the patterns in your own speech that reveal what you truly want beneath what you think you should want.</p>
+                                <p>This work takes patience and courage, but it offers something no quick fix can: genuine transformation at the level of your fundamental relationship to yourself and your desire.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">What happens during sessions?</div>
+                            <div class="faq-answer">
+                                <p>You speak freely about whatever comes to mind—dreams, memories, daily concerns, or seemingly random thoughts. I listen for patterns, repetitions, and contradictions in your speech. There's no agenda or exercises. I might offer interpretations that open new avenues, but the real work happens through your own process of articulation and discovery. Sessions end when something essential has emerged, not by the clock.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">How is online analysis effective?</div>
+                            <div class="faq-answer">
+                                <p>Analysis operates through speech and language—the unconscious reveals itself through words, dreams, and associations regardless of medium. The essential elements remain fully intact online: free association, careful listening, and the analytic frame.</p>
+                                <p>Many analysands find online work allows deep engagement with added flexibility. Some even speak more freely from their own space. Physical presence isn't essential when the work happens through language itself.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="faq-item" onclick="toggleFaq(this)">
-                        <div class="faq-question">What happens during sessions?</div>
-                        <div class="faq-answer">
-                            <p>You speak freely about whatever comes to mind—dreams, memories, daily concerns, or seemingly random thoughts. I listen for patterns, repetitions, and contradictions in your speech. There's no agenda or exercises. I might offer interpretations that open new avenues, but the real work happens through your own process of articulation and discovery. Sessions end when something essential has emerged, not by the clock.</p>
+                    <div class="faq-category">
+                        <h3>Duration and Commitment</h3>
+                        
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">How long does analytic work typically continue?</div>
+                            <div class="faq-answer">
+                                <p>There's no standard duration—some analyses last months, others years. The process concludes when repetitive patterns that brought you here have shifted into new possibilities. You'll sense when sufficient transformation has occurred.</p>
+                                <p>This isn't about meeting external criteria but recognizing a fundamental change in how you experience yourself and your world. The work continues as long as it remains alive and productive for you.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">How often are sessions?</div>
+                            <div class="faq-answer">
+                                <p>Frequency varies based on what serves your process. Most meet weekly as a baseline, though some periods benefit from more intensive work while others call for spacing. We determine this together, following what the material demands rather than rigid rules.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">Can I take breaks or pause the work?</div>
+                            <div class="faq-answer">
+                                <p>Life sometimes requires pauses—travel, finances, family needs. How we handle interruptions matters more than avoiding them. Breaks often reveal important patterns and become part of the analysis itself. The unconscious continues working even when we're not meeting.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="faq-item" onclick="toggleFaq(this)">
-                        <div class="faq-question">How is online analysis effective?</div>
-                        <div class="faq-answer">
-                            <p>Analysis operates through speech and language—the unconscious reveals itself through words, dreams, and associations regardless of medium. The essential elements remain fully intact online: free association, careful listening, and the analytic frame.</p>
-                            <p>Many analysands find online work allows deep engagement with added flexibility. Some even speak more freely from their own space. Physical presence isn't essential when the work happens through language itself.</p>
+                    <div class="faq-category">
+                        <h3>Financial Considerations</h3>
+                        
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">Why private pay rather than insurance?</div>
+                            <div class="faq-answer">
+                                <p>Insurance requires diagnoses, treatment goals, and measurable outcomes—antithetical to open-ended exploration. Private pay ensures:</p>
+                                <ul>
+                                    <li>Complete confidentiality without diagnoses in permanent records</li>
+                                    <li>Freedom to work at your unconscious's pace</li>
+                                    <li>No session limits or mandated treatment plans</li>
+                                    <li>Support for variable-length sessions</li>
+                                    <li>Deeper commitment through personal investment</li>
+                                </ul>
+                                <p>While I can provide Superbills for out-of-network benefits, this requires a diagnosis—which some find contradicts the exploratory nature of analysis.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">What does this investment involve?</div>
+                            <div class="faq-answer">
+                                <p>Sessions end when something essential emerges, not by the clock—typically lasting 20 minutes to an hour. This variable-length approach respects the unconscious's own timing. Specific fees are discussed during consultation.</p>
+                                <p>I maintain limited reduced-fee slots for those with genuine financial constraints who are committed to the work. The investment itself often becomes meaningful material for analysis.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category">
+                        <h3>Is This Right for You?</h3>
+                        
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">How do I know if this approach is right for me?</div>
+                            <div class="faq-answer">
+                                <p>This work suits those who can tolerate not-knowing, who are curious about their unconscious, and who sense deeper transformation is possible. If you need immediate symptom relief or concrete solutions, other approaches may serve you better.</p>
+                                <p>Good candidates often feel they're stuck in a repeating cycle, "living someone else's life", or sense their symptoms carry hidden meaning. The consultation helps us explore whether this approach aligns with what you're seeking.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">What if I'm already in therapy?</div>
+                            <div class="faq-answer">
+                                <p>Some transition to analysis when they've reached therapy's limits. Others pause current work to explore this approach. During consultation, we'll discuss what makes sense for your specific situation and timing.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">Do you work with specific issues or diagnoses?</div>
+                            <div class="faq-answer">
+                                <p>I work with people, not diagnoses. Whatever brings you—relationship patterns, anxiety, depression, creative blocks, existential questions—what matters is your willingness to explore your unconscious. The form your suffering takes is less important than your curiosity about what it might mean.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category">
+                        <h3>Getting Started</h3>
+                        
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">What happens in the initial consultation?</div>
+                            <div class="faq-answer">
+                                <p>The consultation (approximately 1 hour, $200) lets you speak about what brings you and experience how we might work together. This isn't an intake or evaluation—it's a real encounter where you can speak freely while I listen analytically.</p>
+                                <p>By the end, we'll both sense whether this approach fits your needs. The consultation stands alone with no obligation to continue.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">How do I prepare for the consultation?</div>
+                            <div class="faq-answer">
+                                <p>No preparation needed. Come as you are, with whatever's on your mind. The consultation works best when you speak openly about what brings you. Often what emerges spontaneously proves more valuable than anything rehearsed.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">What if I decide not to proceed after the consultation?</div>
+                            <div class="faq-answer">
+                                <p>The consultation is truly exploratory. If either of us senses it's not the right fit, I'll gladly provide referrals to colleagues who might better serve your needs. There's no obligation to continue—the consultation is complete in itself.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="faq-category">
-                    <h3>Duration and Commitment</h3>
-                    
-                    <div class="faq-item" onclick="toggleFaq(this)">
-                        <div class="faq-question">How long does analytic work typically continue?</div>
-                        <div class="faq-answer">
-                            <p>There's no standard duration—some analyses last months, others years. The process concludes when repetitive patterns that brought you here have shifted into new possibilities. You'll sense when sufficient transformation has occurred.</p>
-                            <p>This isn't about meeting external criteria but recognizing a fundamental change in how you experience yourself and your world. The work continues as long as it remains alive and productive for you.</p>
-                        </div>
-                    </div>
+                <div class="divider"></div>
 
-                    <div class="faq-item" onclick="toggleFaq(this)">
-                        <div class="faq-question">How often are sessions?</div>
-                        <div class="faq-answer">
-                            <p>Frequency varies based on what serves your process. Most meet weekly as a baseline, though some periods benefit from more intensive work while others call for spacing. We determine this together, following what the material demands rather than rigid rules.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item" onclick="toggleFaq(this)">
-                        <div class="faq-question">Can I take breaks or pause the work?</div>
-                        <div class="faq-answer">
-                            <p>Life sometimes requires pauses—travel, finances, family needs. How we handle interruptions matters more than avoiding them. Breaks often reveal important patterns and become part of the analysis itself. The unconscious continues working even when we're not meeting.</p>
-                        </div>
-                    </div>
+                <div class="still-questions">
+                    <h3>Still Have Questions?</h3>
+                    <p>Every journey into analysis is unique. If you have questions not addressed here, I welcome you to reach out directly.</p>
+                    <a href="contact.html" class="cta-button">Contact Me</a>
                 </div>
-
-                <div class="faq-category">
-                    <h3>Financial Considerations</h3>
-                    
-                    <div class="faq-item" onclick="toggleFaq(this)">
-                        <div class="faq-question">Why private pay rather than insurance?</div>
-                        <div class="faq-answer">
-                            <p>Insurance requires diagnoses, treatment goals, and measurable outcomes—antithetical to open-ended exploration. Private pay ensures:</p>
-                            <ul style="list-style: disc; margin-left: 2rem; color: #d35400;">
-                                <li>Complete confidentiality without diagnoses in permanent records</li>
-                                <li>Freedom to work at your unconscious's pace</li>
-                                <li>No session limits or mandated treatment plans</li>
-                                <li>Support for variable-length sessions</li>
-                                <li>Deeper commitment through personal investment</li>
-                            </ul>
-                            <p style="margin-top: 1rem;">While I can provide Superbills for out-of-network benefits, this requires a diagnosis—which some find contradicts the exploratory nature of analysis.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item" onclick="toggleFaq(this)">
-                        <div class="faq-question">What does this investment involve?</div>
-                        <div class="faq-answer">
-                            <p>Sessions end when something essential emerges, not by the clock—typically lasting 20 minutes to an hour. This variable-length approach respects the unconscious's own timing. Specific fees are discussed during consultation.</p>
-                            <p>I maintain limited reduced-fee slots for those with genuine financial constraints who are committed to the work. The investment itself often becomes meaningful material for analysis.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-category">
-                    <h3>Is This Right for You?</h3>
-                    
-                    <div class="faq-item" onclick="toggleFaq(this)">
-                        <div class="faq-question">How do I know if this approach is right for me?</div>
-                        <div class="faq-answer">
-                            <p>This work suits those who can tolerate not-knowing, who are curious about their unconscious, and who sense deeper transformation is possible. If you need immediate symptom relief or concrete solutions, other approaches may serve you better.</p>
-                            <p>Good candidates often feel they're stuck in a repeating cycle, "living someone else's life", or sense their symptoms carry hidden meaning. The consultation helps us explore whether this approach aligns with what you're seeking.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item" onclick="toggleFaq(this)">
-                        <div class="faq-question">What if I'm already in therapy?</div>
-                        <div class="faq-answer">
-                            <p>Some transition to analysis when they've reached therapy's limits. Others pause current work to explore this approach. During consultation, we'll discuss what makes sense for your specific situation and timing.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item" onclick="toggleFaq(this)">
-                        <div class="faq-question">Do you work with specific issues or diagnoses?</div>
-                        <div class="faq-answer">
-                            <p>I work with people, not diagnoses. Whatever brings you—relationship patterns, anxiety, depression, creative blocks, existential questions—what matters is your willingness to explore your unconscious. The form your suffering takes is less important than your curiosity about what it might mean.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-category">
-                    <h3>Getting Started</h3>
-                    
-                    <div class="faq-item" onclick="toggleFaq(this)">
-                        <div class="faq-question">What happens in the initial consultation?</div>
-                        <div class="faq-answer">
-                            <p>The consultation (approximately 1 hour, $200) lets you speak about what brings you and experience how we might work together. This isn't an intake or evaluation—it's a real encounter where you can speak freely while I listen analytically.</p>
-                            <p>By the end, we'll both sense whether this approach fits your needs. The consultation stands alone with no obligation to continue.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item" onclick="toggleFaq(this)">
-                        <div class="faq-question">How do I prepare for the consultation?</div>
-                        <div class="faq-answer">
-                            <p>No preparation needed. Come as you are, with whatever's on your mind. The consultation works best when you speak openly about what brings you. Often what emerges spontaneously proves more valuable than anything rehearsed.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item" onclick="toggleFaq(this)">
-                        <div class="faq-question">What if I decide not to proceed after the consultation?</div>
-                        <div class="faq-answer">
-                            <p>The consultation is truly exploratory. If either of us senses it's not the right fit, I'll gladly provide referrals to colleagues who might better serve your needs. There's no obligation to continue—the consultation is complete in itself.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="still-questions">
-                <h3>Still Have Questions?</h3>
-                <p>Every journey into analysis is unique. If you have questions not addressed here, I welcome you to reach out directly.</p>
-                <a href="contact.html" class="cta-button">Contact Me</a>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
-</div>
 
-<script>
-    function toggleFaq(element) {
-        element.classList.toggle('open');
-    }
+    <script>
+        function toggleFaq(element) {
+            element.classList.toggle('open');
+        }
 
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add parallax effect to background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.noise-overlay');
+            if (parallax) {
+                const speed = scrolled * 0.2;
+                parallax.style.transform = `translateY(${speed}px)`;
             }
         });
-    }, observerOptions);
-
-    // Observe all fade-in elements
-    document.querySelectorAll('.fade-in').forEach(el => {
-        observer.observe(el);
-    });
-
-    // Add parallax effect to background
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const parallax = document.querySelector('.noise-overlay');
-        if (parallax) {
-            const speed = scrolled * 0.2;
-            parallax.style.transform = `translateY(${speed}px)`;
-        }
-    });
-</script>
-```
-
+    </script>
 </body>
 </html>
