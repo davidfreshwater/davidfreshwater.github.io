@@ -81,12 +81,13 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             min-height: 100vh;
+            padding-top: 60px; /* Space for fixed nav on desktop */
         }
 
         header {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
             color: white;
-            padding: 3rem 1.5rem;
+            padding: 5rem 1.5rem 3rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -130,30 +131,6 @@
             padding: 0 1rem;
         }
 
-        .contact-info {
-            margin-top: 1rem;
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-            opacity: 0.9;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            width: 100%;
-            text-align: center;
-        }
-
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem;
-            display: inline-block;
-        }
-
-        .contact-info span {
-            display: none;
-        }
-
         /* Mobile Navigation */
         .mobile-menu-toggle {
             display: none;
@@ -161,50 +138,56 @@
             top: 1rem;
             right: 1rem;
             z-index: 1000;
-            background: rgba(52, 73, 94, 0.95);
+            background: rgba(52, 73, 94, 0.9);
             color: white;
             border: none;
-            padding: 0.75rem;
-            border-radius: 8px;
+            padding: 0;
+            border-radius: 12px;
             cursor: pointer;
-            width: 50px;
-            height: 50px;
+            width: 54px;
+            height: 54px;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
-        .mobile-menu-toggle span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 5px 0;
-            transition: 0.3s;
-            border-radius: 2px;
+        .mobile-menu-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+            background: rgba(52, 73, 94, 0.95);
         }
 
-        .mobile-menu-toggle.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
+        .mobile-menu-toggle svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
         }
 
-        .mobile-menu-toggle.active span:nth-child(2) {
-            opacity: 0;
+        .mobile-menu-toggle.active svg {
+            transform: rotate(90deg);
         }
 
-        .mobile-menu-toggle.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-
+        /* Navigation - Fixed positioning */
         nav {
             background: rgba(52, 73, 94, 0.95);
             backdrop-filter: blur(10px);
             padding: 1rem 0;
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
             border-bottom: 1px solid rgba(255,255,255,0.1);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
+        }
+
+        /* Add class for scrolled state */
+        nav.scrolled {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            padding: 0.75rem 0;
         }
 
         nav ul {
@@ -286,7 +269,7 @@
             font-style: italic;
             line-height: 1.6;
             position: relative;
-            padding: 0 1rem;
+            padding: 0 2rem;
         }
 
         .hero-text::before {
@@ -372,6 +355,8 @@
             position: relative;
             overflow: hidden;
             touch-action: manipulation;
+            cursor: pointer;
+            border: none;
         }
 
         .cta-button::before {
@@ -541,21 +526,153 @@
             text-decoration: underline;
         }
 
+        /* Popup form styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .popup-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .popup-form {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            z-index: 2001;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .popup-overlay.active .popup-form {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .popup-form h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .form-buttons button {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .cancel-btn {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .cancel-btn:hover {
+            background: #7f8c8d;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #95a5a6;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-popup:hover {
+            color: #7f8c8d;
+        }
+
         /* Tablet styles */
         @media (min-width: 600px) {
             header {
-                padding: 4rem 2rem;
+                padding: 6rem 2rem 4rem;
             }
 
-            .contact-info {
-                flex-direction: row;
-                gap: 1rem;
-                justify-content: center;
-                width: 100%;
-            }
-
-            .contact-info span {
-                display: inline;
+            h1, .tagline {
+                padding: 0;
             }
 
             .section {
@@ -584,6 +701,7 @@
 
             .hero-text {
                 margin: 3rem 0;
+                padding: 0 1rem;
             }
 
             .curiosity-box,
@@ -604,6 +722,11 @@
                 display: flex;
             }
 
+            .content-wrap {
+                padding-top: 0;
+            }
+
+            /* Hide desktop nav on mobile */
             nav {
                 position: fixed;
                 top: 0;
@@ -659,13 +782,6 @@
             .mobile-menu-toggle,
             .mobile-overlay {
                 display: none !important;
-            }
-
-            nav {
-                position: sticky !important;
-                left: 0 !important;
-                width: 100% !important;
-                height: auto !important;
             }
 
             .section {
@@ -734,36 +850,33 @@
     <div class="container">
         <div class="noise-overlay"></div>
         
+        <!-- Navigation moved outside content-wrap -->
+        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+
+        <nav id="navigation">
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="approach.html">How It Works</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="stories.html">Stories</a></li>
+                <li><a href="faq.html">Questions</a></li>
+                <li><a href="#" onclick="showConsultationForm(); return false;">Begin</a></li>
+            </ul>
+        </nav>
+        
         <div class="content-wrap">
             <header>
                 <h1>David M. Freshwater, LMHC</h1>
                 <div class="tagline">What your unconscious already knows might surprise you</div>
-                <div class="contact-info">
-                    <a href="tel:7865271616">(786) 527-1616</a>
-                    <span>•</span>
-                    <a href="mailto:davidfreshwateranalyst@gmail.com">davidfreshwateranalyst@gmail.com</a>
-                </div>
             </header>
-
-            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <div class="mobile-overlay" id="mobileOverlay"></div>
-
-            <nav id="navigation">
-                <ul>
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="approach.html">How It Works</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="stories.html">Stories</a></li>
-                    <li><a href="faq.html">Questions</a></li>
-                    <li><a href="blog.html">Resources</a></li>
-                    <li><a href="contact.html">Begin</a></li>
-                </ul>
-            </nav>
 
             <section class="section fade-in">
                 <div class="hero-text">
@@ -782,7 +895,7 @@
                 </div>
 
                 <div style="text-align: center; margin: 2rem 0;">
-                    <a href="contact.html" class="cta-button">Request Initial Consultation</a>
+                    <button class="cta-button" onclick="showConsultationForm()">Request Consultation</button>
                 </div>
 
                 <p>The same situations repeat with curious consistency. You choose people who create familiar complications. Something in you knows exactly why these patterns repeat, even if you don't.</p>
@@ -854,7 +967,7 @@
                 <div style="text-align: center;">
                     <h2>Begin Your Journey</h2>
                     <p style="font-size: clamp(1rem, 2.5vw, 1.2rem); margin-bottom: 2rem;">The initial consultation is an opportunity to explore whether analytic work makes sense for your particular situation. Fees are discussed during our initial consultation, as the investment in analysis is an important part of the work itself.</p>
-                    <a href="contact.html" class="cta-button">Request Initial Consultation</a>
+                    <button class="cta-button" onclick="showConsultationForm()">Request Consultation</button>
                 </div>
             </section>
             
@@ -866,6 +979,36 @@
                     <p style="font-size: 0.9rem; opacity: 0.8;">© 2024 David M. Freshwater, LMHC. All rights reserved. | <a href="privacy.html">Privacy Policy</a></p>
                 </div>
             </footer>
+        </div>
+    </div>
+
+    <!-- Popup Form -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-form">
+            <button class="close-popup" onclick="hideConsultationForm()" aria-label="Close form">×</button>
+            <h3>Request Initial Consultation</h3>
+            <form id="consultationForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">What brings you to seek analysis? *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="submit-btn">Send Request</button>
+                    <button type="button" class="cancel-btn" onclick="hideConsultationForm()">Cancel</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -895,6 +1038,73 @@
             });
         });
 
+        // Add scroll effect to nav on desktop
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (window.innerWidth > 768) {
+                if (currentScroll > 100) {
+                    navigation.classList.add('scrolled');
+                } else {
+                    navigation.classList.remove('scrolled');
+                }
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Popup form functions
+        function showConsultationForm() {
+            const overlay = document.getElementById('popupOverlay');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideConsultationForm() {
+            const overlay = document.getElementById('popupOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('consultationForm').reset();
+        }
+
+        // Close popup when clicking outside
+        document.getElementById('popupOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideConsultationForm();
+            }
+        });
+
+        // Handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                message: formData.get('message')
+            };
+
+            // Create mailto link
+            const subject = encodeURIComponent('Consultation Request from ' + data.name);
+            const body = encodeURIComponent(
+                `Name: ${data.name}\n` +
+                `Email: ${data.email}\n` +
+                `Phone: ${data.phone || 'Not provided'}\n\n` +
+                `Message:\n${data.message}`
+            );
+            
+            window.location.href = `mailto:davidfreshwateranalyst@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Close the form after a short delay
+            setTimeout(() => {
+                hideConsultationForm();
+                alert('Your consultation request has been prepared. Please send the email that opens in your email client.');
+            }, 500);
+        }
+
         // Disable parallax on mobile to improve performance
         const isMobile = window.innerWidth <= 768;
         
@@ -907,18 +1117,6 @@
                     parallax.style.transform = `translateY(${speed}px)`;
                 }
             });
-        }
-
-        // Reduce animation frequency on mobile for better performance
-        if (!isMobile) {
-            setInterval(() => {
-                document.querySelectorAll('.cta-button').forEach(button => {
-                    button.style.boxShadow = '0 12px 35px rgba(231, 76, 60, 0.4)';
-                    setTimeout(() => {
-                        button.style.boxShadow = '0 8px 25px rgba(0,0,0,0.2)';
-                    }, 1000);
-                });
-            }, 5000);
         }
 
         // Handle window resize
