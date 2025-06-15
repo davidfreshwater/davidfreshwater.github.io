@@ -272,6 +272,36 @@
             text-align: left;
         }
 
+        ul {
+            margin: 1rem 0 1.5rem 1rem;
+            padding-left: 1rem;
+        }
+
+        ul li {
+            margin-bottom: 0.75rem;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+        }
+
+        .privacy-highlight {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.08), rgba(142, 68, 173, 0.08));
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 5px solid #3498db;
+            text-align: center;
+        }
+
+        .privacy-highlight p {
+            font-style: italic;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .privacy-highlight p:last-child {
+            margin-bottom: 0;
+        }
+
         .about-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -349,6 +379,8 @@
             position: relative;
             overflow: hidden;
             touch-action: manipulation;
+            border: none;
+            cursor: pointer;
         }
 
         .cta-button::before {
@@ -413,6 +445,145 @@
             text-decoration: underline;
         }
 
+        /* Popup form styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .popup-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .popup-form {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            z-index: 2001;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .popup-overlay.active .popup-form {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .popup-form h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .form-buttons button {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .cancel-btn {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .cancel-btn:hover {
+            background: #7f8c8d;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #95a5a6;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-popup:hover {
+            color: #7f8c8d;
+        }
+
         /* Tablet styles */
         @media (min-width: 600px) {
             header {
@@ -436,7 +607,8 @@
             .credentials-box,
             .consultation-box,
             .expect-box,
-            .testimonial-highlight {
+            .testimonial-highlight,
+            .privacy-highlight {
                 padding: 2rem;
             }
 
@@ -614,8 +786,8 @@
         
         <div class="content-wrap">
             <header>
-                <h1>About the Practice</h1>
-                <div class="page-tagline">A depth approach to lasting transformation</div>
+                <h1>Privacy Policy</h1>
+                <div class="page-tagline">Confidentiality is fundamental to protecting the psychoanalytic space</div>
             </header>
         </div>
 
@@ -629,11 +801,6 @@
                 <li><a href="#" onclick="showConsultationForm(); return false;">Begin</a></li>
             </ul>
         </nav>
-
-            <section class="section">
-                <div class="privacy-highlight">
-                    <p>"The unconscious speaks only when it knows it will be heard in absolute confidence."</p>
-                </div>
 
                 <h2>Our Commitment to Your Privacy</h2>
 
@@ -704,6 +871,12 @@
                 <div class="privacy-highlight" style="margin-top: 3rem;">
                     <p>Last updated: December 2024</p>
                     <p style="margin-bottom: 0;">David M. Freshwater, LMHC #10001743</p>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <h2>Ready to Begin?</h2>
+                    <p style="font-size: clamp(1rem, 2.5vw, 1.2rem); margin-bottom: 2rem;">The initial consultation is an opportunity to explore whether this approach aligns with what you're seeking.</p>
+                    <button class="cta-button" onclick="showConsultationForm()">Request Initial Consultation</button>
                 </div>
             </section>
             
@@ -866,147 +1039,5 @@
             }, 250);
         });
     </script>
-
-    <style>
-        /* Popup form styles */
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 2000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .popup-overlay.active {
-            display: block;
-            opacity: 1;
-        }
-
-        .popup-form {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.9);
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            z-index: 2001;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .popup-overlay.active .popup-form {
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 1;
-        }
-
-        .popup-form h3 {
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #34495e;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #3498db;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-buttons {
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .form-buttons button {
-            flex: 1;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            color: white;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
-        }
-
-        .cancel-btn {
-            background: #95a5a6;
-            color: white;
-        }
-
-        .cancel-btn:hover {
-            background: #7f8c8d;
-        }
-
-        .close-popup {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #95a5a6;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .close-popup:hover {
-            color: #7f8c8d;
-        }
-    </style>
 </body>
 </html>
-
