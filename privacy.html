@@ -7,7 +7,7 @@
     <meta name="description" content="Privacy policy and confidentiality practices for Lacanian psychoanalysis. Learn how we protect the analytic space with bank-level encryption and HIPAA compliance.">
     <meta name="robots" content="noindex, follow">
     
-   <style>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -104,6 +104,30 @@
             max-width: 600px;
             margin: 0 auto;
             padding: 0 1rem;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            opacity: 0.9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+            display: inline-block;
+        }
+
+        .contact-info span {
+            display: none;
         }
 
         /* Mobile Navigation - Updated */
@@ -236,126 +260,78 @@
             font-weight: normal;
         }
 
+        h4 {
+            color: #2980b9;
+            margin-bottom: 1rem;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+        }
+
         p {
             margin-bottom: 1.5rem;
             font-size: clamp(1rem, 2.5vw, 1.1rem);
             text-align: left;
         }
 
-        .intro-text {
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: start;
+            margin: 2rem 0;
+        }
+
+        .professional-photo {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border: 3px solid #34495e;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .credentials-box {
+            background: rgba(52, 73, 94, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #34495e;
+        }
+
+        .credentials-box p {
+            font-size: clamp(0.9rem, 2.5vw, 0.95rem);
+        }
+
+        .consultation-box {
+            background: rgba(142, 68, 173, 0.06);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #8e44ad;
+            margin: 2rem 0;
+        }
+
+        .expect-box {
+            background: rgba(230, 126, 34, 0.06);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #e67e22;
+            margin: 2rem 0;
+        }
+
+        .testimonial-highlight {
+            background: rgba(52, 152, 219, 0.06);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #3498db;
+            margin: 2rem 0;
             text-align: center;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            color: #7f8c8d;
-            margin-bottom: 3rem;
+        }
+
+        .testimonial-highlight p {
             font-style: italic;
-        }
-
-        .faq-container {
-            margin: 3rem 0;
-        }
-
-        .faq-category {
-            margin: 4rem 0;
-        }
-
-        .faq-category h3 {
-            text-align: center;
-            color: #8e44ad;
-            margin-bottom: 2rem;
-            font-size: clamp(1.2rem, 3vw, 1.4rem);
-        }
-
-        .faq-item {
-            background: rgba(241, 196, 15, 0.05);
-            margin: 1rem 0;
-            border-radius: 15px;
-            border-left: 4px solid #f39c12;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .faq-question {
-            padding: 1.5rem 3rem 1.5rem 1.5rem;
-            font-weight: bold;
-            color: #d35400;
-            cursor: pointer;
-            position: relative;
-            font-size: clamp(1rem, 2.5vw, 1.1rem);
-            line-height: 1.5;
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-        }
-
-        .faq-question::after {
-            content: '+';
-            position: absolute;
-            right: 1.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .faq-item.open .faq-question::after {
-            transform: translateY(-50%) rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            padding: 0 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item.open .faq-answer {
-            max-height: none;
-            padding: 0 1.5rem 1.5rem 1.5rem;
-        }
-
-        .faq-answer p {
-            font-size: clamp(1rem, 2.5vw, 1.1rem);
-            line-height: 1.7;
-            text-align: left;
-        }
-
-        .faq-answer ul {
-            list-style: disc;
-            margin-left: 2rem;
-            color: #d35400;
-            padding: 0;
-        }
-
-        .faq-answer ul li {
-            margin: 0.5rem 0;
-            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
-        }
-
-        .still-questions {
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
-            padding: 2.5rem;
-            border-radius: 15px;
-            margin: 3rem 0;
-            text-align: center;
-            border-left: 5px solid #3498db;
-        }
-
-        .still-questions h3 {
-            color: #3498db;
-            margin-bottom: 1rem;
-            font-size: clamp(1.3rem, 3vw, 1.6rem);
-        }
-
-        .still-questions p {
-            font-size: clamp(1.1rem, 2.5vw, 1.2rem);
-            text-align: center;
-            margin-bottom: 2rem;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            margin-bottom: 0;
         }
 
         .cta-button {
@@ -373,8 +349,6 @@
             position: relative;
             overflow: hidden;
             touch-action: manipulation;
-            cursor: pointer;
-            border: none;
         }
 
         .cta-button::before {
@@ -453,6 +427,19 @@
                 padding: 4rem 2rem;
             }
 
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+                margin: 3rem 0;
+            }
+
+            .credentials-box,
+            .consultation-box,
+            .expect-box,
+            .testimonial-highlight {
+                padding: 2rem;
+            }
+
             .cta-button {
                 padding: 1.25rem 2.5rem;
                 margin: 1rem;
@@ -466,12 +453,12 @@
                 margin: 3rem 0 1rem 0;
             }
 
-            .still-questions {
-                padding: 2rem;
-            }
-
             .divider {
                 margin: 4rem auto;
+            }
+
+            .testimonial-highlight {
+                margin: 3rem 0;
             }
         }
 
@@ -535,24 +522,9 @@
                 display: block;
             }
 
-            .faq-question {
-                padding: 1.25rem 3.5rem 1.25rem 1.25rem;
-            }
-
-            .faq-question::after {
-                right: 1rem;
-            }
-
-            .faq-answer {
-                padding: 0 1.25rem;
-            }
-
-            .faq-item.open .faq-answer {
-                padding: 0 1.25rem 1.25rem 1.25rem;
-            }
-
-            .still-questions {
-                padding: 2rem 1.5rem;
+            /* Special handling for the photo on mobile */
+            .professional-photo {
+                max-width: 200px;
             }
         }
 
@@ -569,11 +541,6 @@
 
             p {
                 text-align: justify;
-            }
-
-            .intro-text,
-            .still-questions p {
-                text-align: center;
             }
         }
 
@@ -644,11 +611,11 @@
         </button>
 
         <div class="mobile-overlay" id="mobileOverlay"></div>
-
+        
         <div class="content-wrap">
             <header>
-                <h1>Privacy Policy</h1>
-                <div class="page-tagline">The confidentiality of the analytic space is fundamental</div>
+                <h1>About the Practice</h1>
+                <div class="page-tagline">A depth approach to lasting transformation</div>
             </header>
         </div>
 
@@ -658,7 +625,7 @@
                 <li><a href="approach.html">How It Works</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="stories.html">Stories</a></li>
-                <li><a href="faq.html" class="active">Questions</a></li>
+                <li><a href="faq.html">Questions</a></li>
                 <li><a href="#" onclick="showConsultationForm(); return false;">Begin</a></li>
             </ul>
         </nav>
@@ -742,13 +709,304 @@
             
             <footer>
                 <div style="max-width: 1200px; margin: 0 auto;">
-                    <p style="font-size: 1.1rem; margin-bottom: 1rem;">David M. Freshwater, LMHC #10001743</p>
-                    <p style="margin-bottom: 1rem;">Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
-                    <p style="margin-bottom: 2rem;">Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
-                    <p style="font-size: 0.9rem; opacity: 0.8;">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
+                    <p>David M. Freshwater, LMHC #10001743</p>
+                    <p>Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
+                    <p>Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">© 2024 David M. Freshwater, LMHC. All rights reserved. | <a href="privacy.html">Privacy Policy</a></p>
                 </div>
             </footer>
         </div>
     </div>
+
+    <!-- Popup Form -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-form">
+            <button class="close-popup" onclick="hideConsultationForm()" aria-label="Close form">×</button>
+            <h3>Request Initial Consultation</h3>
+            <form id="consultationForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">What brings you to seek analysis? *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="submit-btn">Send Request</button>
+                    <button type="button" class="cancel-btn" onclick="hideConsultationForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navigation = document.getElementById('navigation');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const navLinks = document.querySelectorAll('nav a');
+
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            document.body.style.overflow = navigation.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        mobileOverlay.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Add scroll effect to nav on desktop
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (window.innerWidth > 768) {
+                if (currentScroll > 100) {
+                    navigation.classList.add('scrolled');
+                } else {
+                    navigation.classList.remove('scrolled');
+                }
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Popup form functions
+        function showConsultationForm() {
+            const overlay = document.getElementById('popupOverlay');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideConsultationForm() {
+            const overlay = document.getElementById('popupOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('consultationForm').reset();
+        }
+
+        // Close popup when clicking outside
+        document.getElementById('popupOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideConsultationForm();
+            }
+        });
+
+        // Handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                message: formData.get('message')
+            };
+
+            // Create mailto link
+            const subject = encodeURIComponent('Consultation Request from ' + data.name);
+            const body = encodeURIComponent(
+                `Name: ${data.name}\n` +
+                `Email: ${data.email}\n` +
+                `Phone: ${data.phone}\n\n` +
+                `Message:\n${data.message}`
+            );
+            
+            window.location.href = `mailto:davidfreshwateranalyst@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Close the form after a short delay
+            setTimeout(() => {
+                hideConsultationForm();
+                alert('Your consultation request has been prepared. Please send the email that opens in your email client.');
+            }, 500);
+        }
+
+        // Disable parallax on mobile to improve performance
+        const isMobile = window.innerWidth <= 768;
+        
+        if (!isMobile) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const parallax = document.querySelector('.noise-overlay');
+                if (parallax) {
+                    const speed = scrolled * 0.2;
+                    parallax.style.transform = `translateY(${speed}px)`;
+                }
+            });
+        }
+
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (window.innerWidth > 768 && navigation.classList.contains('active')) {
+                    toggleMenu();
+                }
+            }, 250);
+        });
+    </script>
+
+    <style>
+        /* Popup form styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .popup-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .popup-form {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            z-index: 2001;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .popup-overlay.active .popup-form {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .popup-form h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .form-buttons button {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .cancel-btn {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .cancel-btn:hover {
+            background: #7f8c8d;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #95a5a6;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-popup:hover {
+            color: #7f8c8d;
+        }
+    </style>
 </body>
 </html>
+
