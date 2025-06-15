@@ -1081,11 +1081,6 @@
             lastScroll = currentScroll;
         });
 
-        // Check initial scroll position on page load
-        if (window.pageYOffset > 100 && window.innerWidth > 768) {
-            navigation.classList.add('scrolled');
-        }
-
         // Popup form functions
         function showConsultationForm() {
             const overlay = document.getElementById('popupOverlay');
