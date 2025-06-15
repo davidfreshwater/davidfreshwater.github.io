@@ -272,6 +272,15 @@
             text-align: left;
         }
 
+        ul {
+            margin: 1rem 0 1.5rem 1rem;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+        }
+
         .about-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -301,6 +310,88 @@
 
         .credentials-box p {
             font-size: clamp(0.9rem, 2.5vw, 0.95rem);
+        }
+
+        .highlight-box {
+            background: rgba(52, 152, 219, 0.06);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #3498db;
+            margin: 2rem 0;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .process-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .process-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .transformation-quote {
+            background: rgba(142, 68, 173, 0.06);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 3rem 0;
+            border-left: 4px solid #8e44ad;
+        }
+
+        .transformation-quote p {
+            font-style: italic;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .transformation-quote .attribution {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            font-style: normal;
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+
+        .books-banner {
+            position: relative;
+            margin: 3rem -1.5rem;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .books-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .technique-highlight {
+            background: rgba(230, 126, 34, 0.06);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #e67e22;
+            margin: 2rem 0;
+            font-style: italic;
+        }
+
+        .investment-note {
+            background: rgba(231, 76, 60, 0.06);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #e74c3c;
+            margin: 2rem 0;
         }
 
         .consultation-box {
@@ -349,6 +440,8 @@
             position: relative;
             overflow: hidden;
             touch-action: manipulation;
+            border: none;
+            cursor: pointer;
         }
 
         .cta-button::before {
@@ -433,6 +526,10 @@
                 margin: 3rem 0;
             }
 
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
             .credentials-box,
             .consultation-box,
             .expect-box,
@@ -459,6 +556,11 @@
 
             .testimonial-highlight {
                 margin: 3rem 0;
+            }
+
+            .books-banner {
+                margin: 3rem 0;
+                height: 300px;
             }
         }
 
@@ -542,6 +644,16 @@
             p {
                 text-align: justify;
             }
+
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         /* Accessibility improvements */
@@ -595,6 +707,145 @@
             max-width: 100%;
             height: auto;
         }
+
+        /* Popup form styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .popup-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .popup-form {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            z-index: 2001;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .popup-overlay.active .popup-form {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .popup-form h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .form-buttons button {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .cancel-btn {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .cancel-btn:hover {
+            background: #7f8c8d;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #95a5a6;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-popup:hover {
+            color: #7f8c8d;
+        }
     </style>
 </head>
 <body>
@@ -622,7 +873,7 @@
         <nav id="navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="approach.html class="active">How It Works</a></li>
+                <li><a href="approach.html" class="active">How It Works</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="stories.html">Stories</a></li>
                 <li><a href="faq.html">Questions</a></li>
@@ -698,11 +949,11 @@
                
                 <p>Over time, you may experience:</p>
                 <ul>
-                    <li>• Dreams becoming more vivid and meaningful</li>
-                    <li>• Unexpected connections between disparate parts of your life</li>
-                    <li>• A shift in how you experience your symptoms</li>
-                    <li>• The profound relief of finally being heard in a way that allows something to change</li>
-                    <li>• The surprising lightness that comes when long-carried burdens finally find words</li>
+                    <li>Dreams becoming more vivid and meaningful</li>
+                    <li>Unexpected connections between disparate parts of your life</li>
+                    <li>A shift in how you experience your symptoms</li>
+                    <li>The profound relief of finally being heard in a way that allows something to change</li>
+                    <li>The surprising lightness that comes when long-carried burdens finally find words</li>
                 </ul>
                
                 <div class="technique-highlight">
@@ -724,11 +975,11 @@
                 <p>Lacanian analysis is particularly effective for those who:</p>
 
                 <ul>
-                    <li>• Sense that their problems have deeper roots than current circumstances</li>
-                    <li>• Find themselves in recurring situations despite understanding them intellectually</li>
-                    <li>• Are curious about their inner life and willing to be surprised</li>
-                    <li>• Seek fundamental change rather than temporary relief</li>
-                    <li>• Can tolerate uncertainty and the time needed for deep work</li>
+                    <li>Sense that their problems have deeper roots than current circumstances</li>
+                    <li>Find themselves in recurring situations despite understanding them intellectually</li>
+                    <li>Are curious about their inner life and willing to be surprised</li>
+                    <li>Seek fundamental change rather than temporary relief</li>
+                    <li>Can tolerate uncertainty and the time needed for deep work</li>
                 </ul>
 
                 <div class="divider"></div>
@@ -906,146 +1157,5 @@
             }, 250);
         });
     </script>
-
-    <style>
-        /* Popup form styles */
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 2000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .popup-overlay.active {
-            display: block;
-            opacity: 1;
-        }
-
-        .popup-form {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.9);
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            z-index: 2001;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .popup-overlay.active .popup-form {
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 1;
-        }
-
-        .popup-form h3 {
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #34495e;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #3498db;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-buttons {
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .form-buttons button {
-            flex: 1;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            color: white;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
-        }
-
-        .cancel-btn {
-            background: #95a5a6;
-            color: white;
-        }
-
-        .cancel-btn:hover {
-            background: #7f8c8d;
-        }
-
-        .close-popup {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #95a5a6;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .close-popup:hover {
-            color: #7f8c8d;
-        }
-    </style>
 </body>
 </html>
