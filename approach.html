@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how Lacanian psychoanalysis creates lasting transformation through unconscious analysis. Discover the difference between symptom relief and structural change with Boston psychoanalyst David Freshwater.">
     <meta name="keywords" content="how Lacanian psychoanalysis works, unconscious analysis Boston, free association therapy, variable session length, French psychoanalysis Massachusetts">
     
-    <style>
+   <style>
         * {
             margin: 0;
             padding: 0;
@@ -242,108 +242,120 @@
             text-align: left;
         }
 
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(142, 68, 173, 0.1));
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border-left: 5px solid #e74c3c;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .highlight-box p {
-            position: relative;
-            z-index: 1;
-            margin-bottom: 0;
+        .intro-text {
+            text-align: center;
             font-size: clamp(1rem, 2.5vw, 1.2rem);
-            text-align: center;
-            font-style: italic;
-        }
-
-        .technique-highlight {
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border-left: 4px solid #3498db;
-        }
-
-        .technique-highlight p {
-            margin-bottom: 0;
-            font-style: italic;
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-        }
-
-        .investment-note {
-            background: rgba(230, 126, 34, 0.08);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            border-left: 3px solid #e67e22;
-        }
-
-        .investment-note p {
-            font-size: clamp(0.95rem, 2.5vw, 1rem);
-            color: #d35400;
-            margin-bottom: 0;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        .transformation-quote {
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.06), rgba(155, 89, 182, 0.06));
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border-left: 4px solid #3498db;
-            text-align: center;
-        }
-
-        .transformation-quote p {
-            font-size: clamp(1rem, 2.5vw, 1.15rem);
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-            font-style: italic;
-            line-height: 1.8;
-        }
-
-        .transformation-quote .attribution {
-            font-size: clamp(0.85rem, 2vw, 0.9rem);
             color: #7f8c8d;
-            margin-bottom: 0;
+            margin-bottom: 3rem;
+            font-style: italic;
         }
 
-        .process-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin: 2rem 0;
+        .faq-container {
+            margin: 3rem 0;
         }
 
-        .process-card {
-            background: rgba(142, 68, 173, 0.06);
-            padding: 1.5rem;
+        .faq-category {
+            margin: 4rem 0;
+        }
+
+        .faq-category h3 {
+            text-align: center;
+            color: #8e44ad;
+            margin-bottom: 2rem;
+            font-size: clamp(1.2rem, 3vw, 1.4rem);
+        }
+
+        .faq-item {
+            background: rgba(241, 196, 15, 0.05);
+            margin: 1rem 0;
             border-radius: 15px;
-            border-left: 4px solid #8e44ad;
+            border-left: 4px solid #f39c12;
+            overflow: hidden;
             transition: all 0.3s ease;
         }
 
-        .process-card:hover, .process-card:focus-within {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .faq-question {
+            padding: 1.5rem 3rem 1.5rem 1.5rem;
+            font-weight: bold;
+            color: #d35400;
+            cursor: pointer;
+            position: relative;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            line-height: 1.5;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         }
 
-        .process-card h4 {
-            color: #6c5ce7;
-            margin-bottom: 1rem;
-            font-size: clamp(1rem, 3vw, 1.2rem);
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .process-card p {
-            margin-bottom: 0;
+        .faq-item.open .faq-question::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: none;
+            padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+
+        .faq-answer p {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            line-height: 1.7;
             text-align: left;
-            font-size: clamp(0.95rem, 2.5vw, 1rem);
+        }
+
+        .faq-answer ul {
+            list-style: disc;
+            margin-left: 2rem;
+            color: #d35400;
+            padding: 0;
+        }
+
+        .faq-answer ul li {
+            margin: 0.5rem 0;
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+        }
+
+        .still-questions {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            text-align: center;
+            border-left: 5px solid #3498db;
+        }
+
+        .still-questions h3 {
+            color: #3498db;
+            margin-bottom: 1rem;
+            font-size: clamp(1.3rem, 3vw, 1.6rem);
+        }
+
+        .still-questions p {
+            font-size: clamp(1.1rem, 2.5vw, 1.2rem);
+            text-align: center;
+            margin-bottom: 2rem;
         }
 
         .cta-button {
@@ -405,32 +417,6 @@
             font-size: 1rem;
         }
 
-        .books-banner {
-            margin: 3rem -1.5rem;
-            position: relative;
-            height: 250px;
-            overflow: hidden;
-            border-radius: 15px;
-        }
-
-        .books-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.85;
-        }
-
-        ul {
-            list-style: none;
-            padding-left: 1.5rem;
-            color: #34495e;
-        }
-
-        ul li {
-            margin: 0.75rem 0;
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-        }
-
         footer {
             background: #34495e;
             color: #ecf0f1;
@@ -467,15 +453,6 @@
                 padding: 4rem 2rem;
             }
 
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-
-            ul {
-                padding-left: 2rem;
-            }
-
             .cta-button {
                 padding: 1.25rem 2.5rem;
                 margin: 1rem;
@@ -489,23 +466,12 @@
                 margin: 3rem 0 1rem 0;
             }
 
-            .highlight-box,
-            .technique-highlight,
-            .transformation-quote {
-                padding: 2rem;
-            }
-
-            .process-card {
+            .still-questions {
                 padding: 2rem;
             }
 
             .divider {
                 margin: 4rem auto;
-            }
-
-            .books-banner {
-                margin: 4rem -2rem;
-                height: 350px;
             }
         }
 
@@ -568,6 +534,26 @@
             .mobile-overlay.active {
                 display: block;
             }
+
+            .faq-question {
+                padding: 1.25rem 3.5rem 1.25rem 1.25rem;
+            }
+
+            .faq-question::after {
+                right: 1rem;
+            }
+
+            .faq-answer {
+                padding: 0 1.25rem;
+            }
+
+            .faq-item.open .faq-answer {
+                padding: 0 1.25rem 1.25rem 1.25rem;
+            }
+
+            .still-questions {
+                padding: 2rem 1.5rem;
+            }
         }
 
         /* Desktop styles */
@@ -585,8 +571,9 @@
                 text-align: justify;
             }
 
-            .process-grid {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            .intro-text,
+            .still-questions p {
+                text-align: center;
             }
         }
 
@@ -657,21 +644,21 @@
         </button>
 
         <div class="mobile-overlay" id="mobileOverlay"></div>
-        
+
         <div class="content-wrap">
             <header>
                 <h1>The Process of Transformation</h1>
-                <div class="page-tagline">How Lacanian psychoanalysis creates lasting change</div>
+                <div class="page-tagline">How Lacanian Psychoanalysis Creates Lasting Change</div>
             </header>
         </div>
 
         <nav id="navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="approach.html" class="active">How It Works</a></li>
+                <li><a href="approach.html">How It Works</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="stories.html">Stories</a></li>
-                <li><a href="faq.html">Questions</a></li>
+                <li><a href="faq.html" class="active">Questions</a></li>
                 <li><a href="#" onclick="showConsultationForm(); return false;">Begin</a></li>
             </ul>
         </nav>
