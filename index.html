@@ -4,1065 +4,1313 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David M. Freshwater, LMHC - Lacanian Psychoanalyst | Boston & Massachusetts</title>
-    <meta name="description" content="Lacanian psychoanalyst offering online psychoanalysis throughout Massachusetts. David M. Freshwater, LMHC specializes in depth psychology, unconscious analysis, and lasting transformation. Private pay practice serving Boston, Cambridge, and all of MA.">
-    <meta name="keywords" content="Lacanian psychoanalyst Boston, Lacanian psychoanalysis Massachusetts, online psychoanalysis Massachusetts, private pay psychoanalyst, unconscious analysis Boston, French psychoanalysis, David Freshwater LMHC, depth psychology Boston">
-    <meta name="author" content="David M. Freshwater, LMHC">
-    <meta name="geo.region" content="US-MA">
-    <meta name="geo.placename" content="Boston, Massachusetts">
+    <meta name="description" content="Lacanian psychoanalyst offering online psychoanalysis throughout Massachusetts. David M. Freshwater, LMHC specializes in depth psychology, unconscious analysis, and lasting transformation.">
     
-    <!-- Open Graph tags for social sharing -->
-    <meta property="og:title" content="David M. Freshwater, LMHC - Lacanian Psychoanalyst Boston">
-    <meta property="og:description" content="Online Lacanian psychoanalysis for adults throughout Massachusetts. Depth psychology practice focused on unconscious exploration and lasting transformation. Private pay.">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_US">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
-    <!-- Structured data for local business -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MentalHealthBusiness",
-      "name": "David M. Freshwater, LMHC - Lacanian Psychoanalyst",
-      "description": "Licensed Mental Health Counselor specializing in Lacanian psychoanalysis and unconscious analysis",
-      "url": "https://davidfreshwater.com/",
-      "telephone": "+17865271616",
-      "email": "davidfreshwateranalyst@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "MA",
-        "addressCountry": "US"
-      },
-      "areaServed": ["Boston", "Cambridge", "Newton", "Brookline", "Wellesley", "Lexington", "Concord", "Massachusetts"],
-      "priceRange": "$$",
-      "paymentAccepted": "Private Pay",
-      "openingHours": "By appointment",
-      "sameAs": []
-    }
-    </script>
     <style>
-        * {
+        /* ===== CSS RESET ===== */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* ===== CUSTOM PROPERTIES ===== */
+        :root {
+            --color-ink: #1a1a1a;
+            --color-paper: #fdfcfa;
+            --color-gray-light: #e8e8e3;
+            --color-gray-medium: #999;
+            --color-red: #dc2626;
+            --color-red-dark: #b91c1c;
+            --shadow-soft: 0 2px 20px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Inter', -apple-system, sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ===== BASE STYLES ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Georgia', serif;
-            line-height: 1.7;
-            color: #2c3e50;
-            background: #0f0f23;
+            font-family: var(--font-sans);
+            line-height: 1.8;
+            color: var(--color-ink);
+            background-color: var(--color-paper);
             overflow-x: hidden;
-            -webkit-text-size-adjust: 100%;
         }
 
-        .container {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            position: relative;
-        }
-
-        .noise-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.03;
-            background-image: 
-                radial-gradient(circle at 25% 25%, white 1px, transparent 1px),
-                radial-gradient(circle at 75% 75%, white 1px, transparent 1px);
-            background-size: 50px 50px;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .content-wrap {
-            position: relative;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-        }
-
-        .content-wrap-bottom {
-            position: relative;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            min-height: calc(100vh - 200px);
-        }
-
-        header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
-            color: white;
-            padding: 5rem 1.5rem 3rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
-            animation: float 20s ease-in-out infinite;
-            opacity: 0.3;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
+        /* ===== TYPOGRAPHY ===== */
         h1 {
-            font-size: clamp(1.75rem, 5vw, 3rem);
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-            font-weight: normal;
-            letter-spacing: -1px;
-        }
-
-        .tagline {
-            font-size: clamp(0.95rem, 3vw, 1.2rem);
-            font-style: italic;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* Mobile Navigation */
-        .mobile-menu-toggle {
-            display: none;
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            z-index: 1000;
-            background: rgba(52, 73, 94, 0.9);
-            color: white;
-            border: none;
-            padding: 0;
-            border-radius: 12px;
-            cursor: pointer;
-            width: 54px;
-            height: 54px;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .mobile-menu-toggle:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
-            background: rgba(52, 73, 94, 0.95);
-        }
-
-        .mobile-menu-toggle svg {
-            width: 24px;
-            height: 24px;
-            transition: transform 0.3s ease;
-        }
-
-        .mobile-menu-toggle.active svg {
-            transform: rotate(90deg);
-        }
-
-        /* Navigation - Sticky positioning for desktop */
-        nav {
-            background: rgba(52, 73, 94, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            position: sticky;
-            position: -webkit-sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        /* Add class for scrolled state */
-        nav.scrolled {
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            padding: 0.75rem 0;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        nav li {
-            margin: 0.25rem 0.5rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.75rem 1.25rem;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            position: relative;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            display: inline-block;
-        }
-
-        nav a:hover, nav a:focus {
-            background: rgba(255,255,255,0.15);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        nav a.active {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
-        }
-
-        .section {
-            padding: 3rem 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            margin-bottom: 2rem;
+            opacity: 0.8;
         }
 
         h2 {
-            color: #2c3e50;
-            margin: 0 0 2rem 0;
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            position: relative;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 4rem;
             text-align: center;
-            font-weight: normal;
+            position: relative;
         }
 
         h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            border-radius: 2px;
+            width: 40px;
+            height: 1px;
+            background-color: var(--color-red);
+            opacity: 0.6;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
         }
 
         p {
-            margin-bottom: 1.5rem;
-            font-size: clamp(1rem, 2.5vw, 1.1rem);
-            text-align: left;
+            color: var(--color-gray-medium);
+            margin-bottom: 2rem;
+            line-height: 1.9;
+            max-width: 65ch;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .hero-text {
-            font-size: clamp(1.15rem, 3.5vw, 1.6rem);
-            text-align: center;
-            color: #2c3e50;
-            margin: 2rem 0;
-            font-style: italic;
-            line-height: 1.6;
-            position: relative;
+        /* ===== LAYOUT COMPONENTS ===== */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
             padding: 0 2rem;
         }
 
-        .hero-text::before {
-            content: '"';
-            font-size: 3rem;
-            color: #e74c3c;
-            position: absolute;
-            top: -15px;
-            left: -10px;
-            opacity: 0.3;
+        .section {
+            padding: 5rem 0;
+            position: relative;
         }
 
-        .hero-text::after {
-            content: '"';
-            font-size: 3rem;
-            color: #e74c3c;
-            position: absolute;
-            bottom: -30px;
-            right: -10px;
-            opacity: 0.3;
-        }
-
-        .curiosity-box {
-            background: rgba(142, 68, 173, 0.08);
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border: 1px solid rgba(142, 68, 173, 0.2);
-            text-align: center;
-        }
-
-        .curiosity-box p {
-            font-size: clamp(1rem, 2.5vw, 1.1rem);
-            color: #8e44ad;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .curiosity-box ul {
-            list-style: none;
-            padding: 0;
-            font-style: italic;
-            color: #6c5ce7;
-            text-align: left;
-        }
-
-        .curiosity-box li {
-            margin: 0.75rem 0;
-            font-size: clamp(0.95rem, 2.5vw, 1rem);
-        }
-
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(142, 68, 173, 0.1));
+        /* ===== HEADER ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
             padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border-left: 5px solid #e74c3c;
-            position: relative;
-            overflow: hidden;
         }
 
-        .highlight-box p {
-            position: relative;
-            z-index: 1;
-            margin-bottom: 0;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
+        .hero-content {
             text-align: center;
-            font-style: italic;
+            animation: fadeIn 2s ease-out;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            margin: 1rem 0.5rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-            touch-action: manipulation;
-            cursor: pointer;
-            border: none;
+        .hero-tagline {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--color-ink);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            margin-bottom: 4rem;
+            line-height: 1.1;
+            font-family: var(--font-serif);
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-button:hover::before, .cta-button:focus::before {
-            left: 100%;
-        }
-
-        .cta-button:hover, .cta-button:focus {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
-        }
-
-        .divider {
-            width: 100px;
-            height: 1px;
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            margin: 3rem auto;
-            position: relative;
-        }
-
-        .divider::before {
-            content: '◊';
-            position: absolute;
-            top: -8px;
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 2rem;
             left: 50%;
             transform: translateX(-50%);
-            background: white;
-            color: #e74c3c;
-            padding: 0 10px;
-            font-size: 1rem;
+            z-index: 1000;
+            background-color: var(--color-paper);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
         }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin: 2rem 0;
+        .nav.scrolled {
+            top: 1rem;
+            padding: 0.75rem 1.5rem;
+            box-shadow: var(--shadow-medium);
         }
 
-        .info-card {
-            background: rgba(52, 152, 219, 0.06);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border-left: 4px solid #3498db;
-            text-align: center;
-            transition: all 0.3s ease;
+        .nav.hidden {
+            transform: translateX(-50%) translateY(-120px);
         }
 
-        .info-card:hover, .info-card:focus-within {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            margin: 0;
         }
 
-        .info-card h3 {
-            color: #2980b9;
-            margin-bottom: 1rem;
-            font-size: clamp(1.1rem, 3vw, 1.3rem);
-        }
-
-        .info-card p {
-            margin-bottom: 1rem;
-            text-align: center;
-            font-size: clamp(0.95rem, 2.5vw, 1rem);
-        }
-
-        .info-card a {
-            color: #3498db;
+        .nav-link {
+            color: var(--color-ink);
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            font-size: clamp(0.95rem, 2.5vw, 1rem);
-            padding: 0.5rem;
-            display: inline-block;
-        }
-
-        .info-card a:hover, .info-card a:focus {
-            color: #2980b9;
-            text-decoration: underline;
-        }
-
-        .symptom-list {
-            columns: 1;
-            column-gap: 2rem;
-        }
-
-        .symptom-list li {
-            break-inside: avoid;
-            margin: 0.75rem 0;
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
             position: relative;
-            padding-left: 1.5rem;
-            font-size: clamp(0.95rem, 2.5vw, 1rem);
+            transition: var(--transition);
         }
 
-        .reason-box {
-            background: rgba(52, 152, 219, 0.06);
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border-left: 4px solid #3498db;
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-red);
+            transition: width 0.3s ease;
         }
 
-        .reason-box ul {
-            list-style: none;
-            padding: 0;
-            color: #34495e;
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
         }
 
-        .reason-box li {
-            margin: 0.75rem 0;
-            font-size: clamp(0.95rem, 2.5vw, 1rem);
+        .nav-link.active {
+            color: var(--color-red);
+            font-weight: 500;
         }
 
-        .warning-box {
-            background: rgba(231, 76, 60, 0.06);
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border-left: 4px solid #e74c3c;
+        /* Style the Begin CTA differently */
+        .nav-link.nav-cta {
+            background-color: var(--color-red);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 25px;
+            margin-left: 1rem;
         }
 
-        .warning-box h3 {
-            color: #c0392b;
-            margin-bottom: 1rem;
-            font-size: clamp(1.1rem, 3vw, 1.3rem);
+        .nav-link.nav-cta:hover {
+            background-color: var(--color-red-dark);
+            transform: translateY(-2px);
         }
 
-        .warning-box ul {
-            list-style: none;
-            padding: 0;
-            color: #d35400;
+        .nav-link.nav-cta::after {
+            display: none;
         }
 
-        .warning-box li {
-            margin: 0.75rem 0;
-            font-size: clamp(0.95rem, 2.5vw, 1rem);
-        }
-
-        footer {
-            background: #34495e;
-            color: #ecf0f1;
-            padding: 2rem 1.5rem;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-            margin-bottom: 0.75rem;
-            text-align: center;
-        }
-
-        footer a {
-            color: #3498db;
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
             text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            background: none;
         }
 
-        footer a:hover, footer a:focus {
-            text-decoration: underline;
+        .btn-primary {
+            background-color: var(--color-red);
+            color: white;
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
         }
 
-        /* Popup form styles */
-        .popup-overlay {
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        .btn-floating {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            z-index: 90;
+        }
+
+        .btn-floating.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        /* ===== MOBILE MENU ===== */
+        .mobile-menu-btn {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 2000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1001;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: 2px solid var(--color-red);
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: var(--transition);
         }
 
-        .popup-overlay.active {
+        .mobile-menu-btn:hover {
+            background-color: var(--color-red);
+        }
+
+        .mobile-menu-btn:hover span {
+            background-color: white;
+        }
+
+        .mobile-menu-btn span {
             display: block;
-            opacity: 1;
+            width: 24px;
+            height: 2px;
+            background-color: var(--color-ink);
+            margin: 3px 0;
+            transition: var(--transition);
         }
 
-        .popup-form {
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        .mobile-overlay {
+            display: none;
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.9);
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            z-index: 2001;
-            opacity: 0;
-            transition: all 0.3s ease;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
         }
 
-        .popup-overlay.active .popup-form {
-            transform: translate(-50%, -50%) scale(1);
+        .mobile-overlay.active {
+            display: block;
+        }
+
+        /* ===== BACKGROUND EFFECTS ===== */
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(26, 26, 26, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(26, 26, 26, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        .bg-texture {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.01) 35px, rgba(255,255,255,.01) 70px);
+            pointer-events: none;
+            z-index: 2;
+            mix-blend-mode: overlay;
+        }
+
+        /* ===== PALIMPSEST ===== */
+        .palimpsest {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 4s ease-in;
+        }
+
+        .palimpsest.visible {
             opacity: 1;
         }
 
-        .popup-form h3 {
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #34495e;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #3498db;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-buttons {
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .form-buttons button {
-            flex: 1;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            color: white;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
-        }
-
-        .cancel-btn {
-            background: #95a5a6;
-            color: white;
-        }
-
-        .cancel-btn:hover {
-            background: #7f8c8d;
-        }
-
-        .close-popup {
+        .palimpsest-text {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #95a5a6;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            width: 30px;
-            height: 30px;
+            opacity: 0.05;
+            font: italic 18px/1.6 var(--font-serif);
+            color: var(--color-ink);
+            letter-spacing: 0.1em;
+            animation: drift 80s ease-in-out infinite;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(30px); }
+        }
+
+        /* ===== QUOTE BLOCK ===== */
+        .quote {
+            font: italic clamp(1.4rem, 3.5vw, 2.2rem)/1.8 var(--font-serif);
+            text-align: center;
+            margin: 6rem 0;
+            padding: 0 2rem;
+            color: var(--color-ink);
+            letter-spacing: 0.02em;
+            position: relative;
+        }
+
+        .quote::before,
+        .quote::after {
+            font-size: 3rem;
+            color: var(--color-red);
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .quote::before {
+            content: '「';
+            top: -20px;
+            left: -20px;
+        }
+
+        .quote::after {
+            content: '」';
+            bottom: -40px;
+            right: -20px;
+        }
+
+        /* ===== CARDS ===== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .card {
+            background-color: var(--color-paper);
+            padding: 3rem 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--color-red);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .card-link {
+            color: var(--color-red);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            transition: var(--transition);
+        }
+
+        .card-link:hover {
+            letter-spacing: 0.2em;
+        }
+
+        /* ===== REASONS GRID ===== */
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .reason-item {
+            padding: 1.5rem;
+            background-color: var(--color-paper);
+            border-left: 3px solid transparent;
+            transition: var(--transition);
+            color: var(--color-gray-medium);
+        }
+
+        .reason-item:hover {
+            border-left-color: var(--color-red);
+            transform: translateX(5px);
+            color: var(--color-ink);
+            background-color: rgba(26, 26, 26, 0.02);
+        }
+
+        /* ===== SECTION DIVIDER ===== */
+        .section-divider {
+            width: 100px;
+            height: 60px;
+            margin: 5rem auto;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .close-popup:hover {
-            color: #7f8c8d;
+        .section-divider svg {
+            width: 60px;
+            height: 60px;
+            opacity: 0.15;
+            animation: slowRotate 120s linear infinite;
         }
 
-        /* Tablet styles */
-        @media (min-width: 600px) {
-            header {
-                padding: 6rem 2rem 4rem;
-            }
+        @keyframes slowRotate {
+            to { transform: rotate(360deg); }
+        }
 
-            h1, .tagline {
-                padding: 0;
-            }
+        /* ===== FORM STYLES ===== */
+        .form-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(26, 26, 26, 0.8);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
 
-            .section {
-                padding: 4rem 2rem;
-            }
+        .form-overlay.active {
+            display: flex;
+        }
 
-            .info-grid {
+        .form-container {
+            background-color: var(--color-paper);
+            padding: 3rem 2.5rem 2.5rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: var(--transition);
+        }
+
+        .form-overlay.active .form-container {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            color: var(--color-gray-medium);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.6rem;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--color-gray-light);
+            color: var(--color-ink);
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-bottom-color: var(--color-red);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .form-btn {
+            padding: 0.75rem 2rem;
+            background: transparent;
+            color: var(--color-ink);
+            border: 1px solid var(--color-ink);
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            font-weight: 300;
+        }
+
+        .form-btn-submit:hover {
+            background-color: var(--color-red);
+            color: white;
+            border-color: var(--color-red);
+        }
+
+        .form-btn-cancel:hover {
+            background-color: var(--color-ink);
+            color: white;
+        }
+
+        .form-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: var(--color-gray-medium);
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .form-close:hover {
+            color: var(--color-ink);
+            transform: rotate(90deg);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--color-ink);
+            color: var(--color-gray-light);
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            opacity: 0.8;
+            color: var(--color-gray-light);
+        }
+
+        /* ===== LACANIAN ELEMENTS ===== */
+        .borromean {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            opacity: 0.15;
+        }
+
+        .analyst-discourse {
+            position: absolute;
+            width: 220px;
+            height: 140px;
+            opacity: 0.12;
+            bottom: 15%;
+            right: 10%;
+        }
+
+        .analyst-discourse text {
+            font-family: var(--font-serif);
+            font-style: italic;
+            fill: var(--color-ink);
+            font-size: 24px;
+        }
+
+        .analyst-discourse line {
+            stroke: var(--color-ink);
+            stroke-width: 2;
+            opacity: 0.8;
+        }
+
+        /* ===== TYPEWRITER EFFECT ===== */
+        .typewriter-text {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 4s steps(100, end);
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .reasons-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-
-            .symptom-list {
-                columns: 2;
-                -webkit-columns: 2;
-                -moz-columns: 2;
-            }
-
-            .cta-button {
-                padding: 1.25rem 2.5rem;
-                margin: 1rem;
-            }
-
-            h2 {
-                margin-bottom: 3rem;
-            }
-
-            .hero-text {
-                margin: 3rem 0;
-                padding: 0 1rem;
-            }
-
-            .curiosity-box,
-            .highlight-box,
-            .reason-box,
-            .warning-box {
-                padding: 2rem;
-            }
-
-            .divider {
-                margin: 4rem auto;
             }
         }
 
-        /* Mobile menu styles */
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
+            .mobile-menu-btn {
                 display: flex;
             }
 
-            .content-wrap {
-                padding-top: 0;
-            }
-
-            /* Hide desktop nav on mobile */
-            nav {
+            .nav {
                 position: fixed;
                 top: 0;
                 left: -100%;
+                transform: none;
                 width: 85%;
                 height: 100vh;
-                background: rgba(52, 73, 94, 0.98);
-                transition: left 0.3s ease;
-                z-index: 999;
+                background-color: var(--color-paper);
+                padding: 5rem 2rem;
+                border-radius: 0;
+                transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 5px 0 30px rgba(0, 0, 0, 0.1);
                 overflow-y: auto;
             }
 
-            nav.active {
+            .nav.active {
                 left: 0;
             }
 
-            nav ul {
+            .nav.hidden {
+                transform: none !important;
+            }
+
+            .nav.scrolled {
+                top: 0 !important;
+                padding: 5rem 2rem !important;
+            }
+
+            .nav-list {
                 flex-direction: column;
-                padding: 5rem 1rem 2rem;
+                align-items: flex-start;
+                gap: 2rem;
             }
 
-            nav li {
-                margin: 0.5rem 0;
-                width: 100%;
-            }
-
-            nav a {
-                display: block;
-                padding: 1rem 1.5rem;
+            .nav-link {
                 font-size: 1.1rem;
-                text-align: left;
-                border-radius: 8px;
             }
 
-            .mobile-overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 998;
+            .card-grid {
+                grid-template-columns: 1fr;
             }
 
-            .mobile-overlay.active {
-                display: block;
+            .hero {
+                min-height: 85vh;
+                padding: 1rem;
             }
-        }
 
-        /* Desktop styles */
-        @media (min-width: 769px) {
-            .mobile-menu-toggle,
-            .mobile-overlay {
-                display: none !important;
+            h1 {
+                font-size: clamp(1.25rem, 4vw, 1.75rem);
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-tagline {
+                font-size: clamp(2rem, 7vw, 3rem);
+                margin-bottom: 3rem;
             }
 
             .section {
-                padding: 5rem 2rem;
+                padding: 3rem 0;
             }
 
-            p {
-                text-align: justify;
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .palimpsest-text {
+                opacity: 0.08;
+                font-size: 16px;
+            }
+
+            .borromean,
+            .analyst-discourse {
+                display: none;
+            }
+
+            .section-divider {
+                margin: 4rem auto;
+                height: 40px;
+            }
+
+            .section-divider svg {
+                width: 40px;
+                height: 40px;
+            }
+
+            .quote {
+                font-size: 1.3rem;
+                margin: 3rem 0;
+            }
+
+            .btn-floating {
+                bottom: 6rem;
+            }
+
+            .form-container {
+                padding: 2rem 1.5rem;
+                width: 95%;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+
+            .form-buttons {
+                gap: 1rem;
+                margin-top: 1.5rem;
+            }
+
+            .form-btn {
+                padding: 0.65rem 1.5rem;
+                font-size: 0.8rem;
+            }
+
+            .footer p {
+                font-size: 0.85rem;
             }
         }
 
-        /* Accessibility improvements */
-        a:focus,
-        button:focus {
-            outline: 2px solid #3498db;
+        @media (max-width: 600px) {
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .btn-floating {
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                border-radius: 0;
+                padding: 1rem;
+            }
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+        :focus {
+            outline: 2px solid var(--color-red);
             outline-offset: 2px;
         }
 
-        /* Reduce animations for users who prefer reduced motion */
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
-
-            .cta-button::before {
-                display: none;
-            }
-        }
-
-        /* Touch-friendly tap targets */
-        a, button {
-            min-height: 44px;
-            min-width: 44px;
-        }
-
-        /* Better text contrast for readability */
-        @media (prefers-contrast: high) {
-            body {
-                color: #000;
-            }
-
-            .content-wrap {
-                background: rgba(255, 255, 255, 1);
-            }
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Prevent horizontal scroll on mobile */
-        body {
-            overflow-x: hidden;
-        }
-
-        /* Ensure images and embeds are responsive */
-        img, video, iframe {
-            max-width: 100%;
-            height: auto;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="noise-overlay"></div>
-        
-        <!-- Navigation moved outside content-wrap -->
-        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Background Effects -->
+    <div class="bg-gradient"></div>
+    <div class="bg-texture"></div>
+
+    <!-- Navigation -->
+    <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    
+    <nav class="nav" id="navigation">
+        <ul class="nav-list">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="approach.html" class="nav-link">Approach</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="stories.html" class="nav-link">Stories</a></li>
+            <li><a href="faq.html" class="nav-link">FAQ</a></li>
+            <li><a href="#" class="nav-link nav-cta" onclick="showConsultationForm(); return false;">Begin</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="borromean" style="top: 10%; left: 8%; transform: rotate(-15deg);">
+            <svg viewBox="0 0 200 200">
+                <circle cx="70" cy="80" r="50" stroke="currentColor" stroke-width="3" fill="none"/>
+                <circle cx="130" cy="80" r="50" stroke="currentColor" stroke-width="3" fill="none"/>
+                <circle cx="100" cy="130" r="50" stroke="currentColor" stroke-width="3" fill="none"/>
             </svg>
-        </button>
-
-        <div class="mobile-overlay" id="mobileOverlay"></div>
-        
-        <div class="content-wrap">
-            <header>
-                <h1>David M. Freshwater, LMHC</h1>
-                <div class="tagline">What your unconscious already knows might surprise you</div>
-            </header>
         </div>
+        
+        <div class="analyst-discourse">
+            <svg viewBox="0 0 220 140">
+                <text x="30" y="45">a</text>
+                <text x="30" y="90">$</text>
+                <text x="150" y="45">S₂</text>
+                <text x="150" y="90">S₁</text>
+                <line x1="20" y1="62" x2="65" y2="62" />
+                <line x1="140" y1="62" x2="185" y2="62" />
+                <line x1="85" y1="67" x2="120" y2="67" />
+                <line x1="115" y1="62" x2="120" y2="67" />
+                <line x1="115" y1="72" x2="120" y2="67" />
+            </svg>
+        </div>
+        
+        <div class="hero-content">
+            <h1>David M. Freshwater, LMHC</h1>
+            <p class="hero-tagline">What your unconscious already knows<br>might surprise you</p>
+            <button class="btn btn-primary" onclick="showConsultationForm()">Let's Start Talking</button>
+        </div>
+    </header>
 
-        <nav id="navigation">
-            <ul>
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="approach.html">How It Works</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="stories.html">Stories</a></li>
-                <li><a href="faq.html">Questions</a></li>
-                <li><a href="#" onclick="showConsultationForm(); return false;">Begin</a></li>
-            </ul>
-        </nav>
-
-        <div class="content-wrap-bottom">
-
-            <section class="section fade-in">
-                <div class="hero-text">
-                    What if your most persistent problems are actually sophisticated responses to questions you haven't consciously formulated yet?
-                </div>
-
-                <div class="curiosity-box">
-                    <p>You might be here because you...</p>
-                    <ul>
-                         <li>• Keep finding yourself in familiar situations with different people</li>
-                         <li>• Wonder why you sabotage precisely what you claim to want</li>
-                         <li>• Find yourself anxious just when life is going well</li>
-                         <li>• Sense there's more to your symptoms than meets the eye</li>
-                         <li>• Are ready for transformation rather than just coping strategies</li>
-                    </ul>
-                </div>
-
-                <div style="text-align: center; margin: 2rem 0;">
-                    <button class="cta-button" onclick="showConsultationForm()">Request Consultation</button>
-                </div>
-
-                <p>The same situations repeat with curious consistency. You choose people who create familiar complications. Something in you knows exactly why these patterns repeat, even if you don't.</p>
-
-                <div class="highlight-box">
-                    <p>I practice Lacanian psychoanalysis—an approach where transformation happens through your own speech, as new meanings emerge and old patterns dissolve.</p>
-                </div>
-
-                <div class="info-grid">
-                    <div class="info-card">
-                        <h3>The Approach</h3>
-                        <p>Unlike traditional therapy focused on coping strategies, Lacanian analysis investigates the unconscious logic behind your symptoms and repetitions.</p>
-                        <a href="approach.html">Learn More →</a>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>About the Practice</h3>
-                        <p>Eight years of experience in depth psychology. Licensed in Massachusetts, offering online analysis for adults ready for genuine transformation.</p>
-                        <a href="about.html">About David →</a>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>Stories of Change</h3>
-                        <p>Discover how others have navigated their own analytic journeys and the transformations that became possible through this work.</p>
-                        <a href="stories.html">Read Stories →</a>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>Common Questions</h3>
-                        <p>Find answers to frequently asked questions about Lacanian analysis, the process, fees, and what to expect from this unique approach.</p>
-                        <a href="faq.html">View FAQ →</a>
-                    </div>
-                </div>
-
-                <div class="reason-box">
-                    <p style="margin-bottom: 1rem;">People reach out for analysis for some of the following reasons:</p>
-                    <ul>
-                        <li>• You're navigating a challenging relationship and seeking clarity</li>
-                        <li>• Persistent depression or anxiety that colors each day</li>
-                        <li>• Intense emotions that ambush you at inappropriate moments</li>
-                        <li>• Past traumas are haunting you and impacting your present life</li>
-                        <li>• Physical symptoms that defy medical explanation</li>
-                        <li>• You're questioning your relationship with substances, porn, or social media</li>
-                        <li>• Food has become a battlefield where control and chaos meet</li>
-                        <li>• Life feels purposeless, making it hard to find motivation</li>
-                        <li>• Obsessive thoughts or behaviors are disrupting your life</li>
-                        <li>• Living a life that looks good on paper but feels empty of meaning</li>
-                        <li>• Success inevitably followed by mysterious self-sabotage</li>
-                        <li>• Exhausting yourself meeting others' needs while losing your own</li>
-                    </ul>
-                    <p style="margin-top: 1rem; margin-bottom: 0; font-style: italic;">Perhaps you recognize yourself here, or your reasons remain uniquely your own. There is no "correct" reason to seek analysis—your path is singular, your motivations legitimate.</p>
-                </div>
-
-                <p>Your unconscious communicates through symptoms, repetitions, dreams, and slips of the tongue. I create conditions where you can begin to hear what you're trying to tell yourself.</p>
-
-                <div class="warning-box">
-                    <h3>This Approach Isn't For You If...</h3>
-                    <ul>
-                        <li>• You need immediate crisis intervention</li>
-                        <li>• You're looking for advice or quick fixes</li>
-                        <li>• You're unable to commit to regular sessions</li>
-                        <li>• You prefer structured, directive approaches</li>
-                    </ul>
-                    <p style="margin-top: 1rem; margin-bottom: 0; font-style: italic;">If any of these apply, I'm happy to refer you to other practitioners who may be a better fit.</p>
-                </div>
-
-                <div class="divider"></div>
-
-                <div style="text-align: center;">
-                    <h2>Begin Your Journey</h2>
-                    <p style="font-size: clamp(1rem, 2.5vw, 1.2rem); margin-bottom: 2rem;">The initial consultation is an opportunity to explore whether analytic work makes sense for your particular situation. Fees are discussed during our initial consultation, as the investment in analysis is an important part of the work itself.</p>
-                    <button class="cta-button" onclick="showConsultationForm()">Request Consultation</button>
-                </div>
-            </section>
-            
-            <footer>
-                <div style="max-width: 1200px; margin: 0 auto;">
-                    <p>David M. Freshwater, LMHC #10001743</p>
-                    <p>Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
-                    <p>Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
-                    <p style="font-size: 0.9rem; opacity: 0.8;">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
-                </div>
-            </footer>
+    <!-- Palimpsest -->
+    <div class="palimpsest">
+        <div class="palimpsest-text" style="top: 5%; left: 5%;">
+            The unconscious is structured like a language
+        </div>
+        <div class="palimpsest-text" style="top: 15%; right: 10%; text-align: right;">
+            I think where I am not, therefore I am where I do not think
+        </div>
+        <div class="palimpsest-text" style="top: 30%; left: 15%;">
+            Desire is the desire of the Other
+        </div>
+        <div class="palimpsest-text" style="top: 45%; right: 8%;">
+            Love is giving what you don't have
+        </div>
+        <div class="palimpsest-text" style="top: 60%; left: 10%;">
+            There is no sexual relationship
+        </div>
+        <div class="palimpsest-text" style="top: 75%; right: 5%; text-align: right;">
+            The subject is what one signifier represents for another signifier
+        </div>
+        <div class="palimpsest-text" style="bottom: 10%; left: 20%;">
+            The letter always arrives at its destination
         </div>
     </div>
 
-    <!-- Popup Form -->
-    <div class="popup-overlay" id="popupOverlay">
-        <div class="popup-form">
-            <button class="close-popup" onclick="hideConsultationForm()" aria-label="Close form">×</button>
-            <h3>Request Initial Consultation</h3>
+    <!-- Main Quote -->
+    <section class="section">
+        <div class="container">
+            <div class="quote fade-in" id="mainQuote">
+                <span class="typewriter-text" style="display: none;">"What if your most persistent problems are actually sophisticated responses to questions you haven't consciously formulated yet?"</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider">
+        <svg viewBox="0 0 60 60" style="transform: rotate(22deg);">
+            <circle cx="20" cy="24" r="15" stroke="currentColor" fill="none"/>
+            <circle cx="40" cy="24" r="15" stroke="currentColor" fill="none"/>
+            <circle cx="30" cy="39" r="15" stroke="currentColor" fill="none"/>
+        </svg>
+    </div>
+
+    <!-- Different Kind of Therapy -->
+    <section class="section">
+        <div class="container">
+            <h2>A Different Kind of Therapy</h2>
+            <p style="font-size: 1.3rem; text-align: center; margin-bottom: 3rem; font-weight: 300; font-family: var(--font-serif);">
+                I practice Lacanian psychoanalysis—an approach where transformation happens through your own 
+                words, as new meanings emerge and old patterns dissolve.
+            </p>
+            <p style="text-align: center; color: var(--color-gray-medium); max-width: 700px; margin: 0 auto; font-family: var(--font-serif); font-size: 1.1rem;">
+                Unlike traditional therapy focused on coping strategies, Lacanian analysis investigates the 
+                unconscious logic behind your symptoms and repetitions. Your unconscious communicates through symptoms, bungled actions, 
+                dreams, and slips of the tongue. I create conditions where you can begin to hear what you're trying to tell yourself.
+            </p>
+        </div>
+    </section>
+
+    <div class="section-divider">
+        <svg viewBox="0 0 60 60" style="transform: rotate(-8deg);">
+            <circle cx="20" cy="24" r="15" stroke="currentColor" fill="none"/>
+            <circle cx="40" cy="24" r="15" stroke="currentColor" fill="none"/>
+            <circle cx="30" cy="39" r="15" stroke="currentColor" fill="none"/>
+        </svg>
+    </div>
+
+    <!-- Explore Further -->
+    <section class="section">
+        <div class="container">
+            <h2>Explore Further</h2>
+            <div class="card-grid">
+                <div class="card fade-in">
+                    <h3>The Approach</h3>
+                    <p>Discover how Lacanian analysis differs from traditional therapy and why transformation 
+                    happens through your own speech and insights.</p>
+                    <a href="approach.html" class="card-link">Learn More →</a>
+                </div>
+
+                <div class="card fade-in">
+                    <h3>About the Practice</h3>
+                    <p>Eight years of experience in depth psychology. Licensed in Massachusetts, offering 
+                    online analysis for adults ready for genuine transformation.</p>
+                    <a href="about.html" class="card-link">About David →</a>
+                </div>
+
+                <div class="card fade-in">
+                    <h3>Stories of Change</h3>
+                    <p>Read how others have navigated their analytic journeys and the transformations 
+                    that became possible through this work.</p>
+                    <a href="stories.html" class="card-link">Read Stories →</a>
+                </div>
+
+                <div class="card fade-in">
+                    <h3>Common Questions</h3>
+                    <p>Find answers about Lacanian analysis, the process, fees, and what to expect 
+                    from this unique approach to understanding the unconscious.</p>
+                    <a href="faq.html" class="card-link">View FAQ →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider">
+        <svg viewBox="0 0 60 60" style="transform: rotate(12deg);">
+            <circle cx="20" cy="24" r="15" stroke="currentColor" fill="none"/>
+            <circle cx="40" cy="24" r="15" stroke="currentColor" fill="none"/>
+            <circle cx="30" cy="39" r="15" stroke="currentColor" fill="none"/>
+        </svg>
+    </div>
+
+    <!-- Why People Seek Analysis -->
+    <section class="section">
+        <div class="container">
+            <h2>Why People Seek Analysis</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem;">
+                Each person's reasons are unique, but common threads include:
+            </p>
+            <div class="reasons-grid">
+                <div class="reason-item fade-in">
+                    Finding yourself in familiar situations with different people
+                </div>
+                <div class="reason-item fade-in">
+                    Navigating challenging relationships and seeking clarity
+                </div>
+                <div class="reason-item fade-in">
+                    Persistent depression or anxiety that colors each day
+                </div>
+                <div class="reason-item fade-in">
+                    Past traumas haunting and impacting your present life
+                </div>
+                <div class="reason-item fade-in">
+                    Physical symptoms that defy medical explanation
+                </div>
+                <div class="reason-item fade-in">
+                    Questioning your relationship with substances, porn, or social media
+                </div>
+                <div class="reason-item fade-in">
+                    Living a life that looks good on paper but feels empty
+                </div>
+                <div class="reason-item fade-in">
+                    Constantly meeting others' needs while losing your own
+                </div>
+                <div class="reason-item fade-in">
+                    Success inevitably followed by mysterious self-sabotage
+                </div>
+            </div>
+            <p style="margin-top: 3rem; text-align: center; font-style: italic;">
+                Perhaps you recognize yourself here, or your reasons remain uniquely your own.<br>
+                There is no "correct" reason to seek analysis—your path is singular, your motivations legitimate.
+            </p>
+        </div>
+    </section>
+
+    <div class="section-divider">
+        <svg viewBox="0 0 60 60" style="transform: rotate(-18deg);">
+            <circle cx="20" cy="24" r="15" stroke="currentColor" fill="none"/>
+            <circle cx="40" cy="24" r="15" stroke="currentColor" fill="none"/>
+            <circle cx="30" cy="39" r="15" stroke="currentColor" fill="none"/>
+        </svg>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="container" style="text-align: center;">
+            <h2>Let's Start Talking</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 3rem;">
+                The initial consultation is an opportunity to explore whether analytic work makes sense for your particular situation. 
+                Fees are discussed during our initial consultation, as the investment in analysis is an important part of the work itself.
+            </p>
+            <button class="btn btn-primary" onclick="showConsultationForm()">Request Consultation</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>David M. Freshwater, LMHC #10001743</p>
+        <p>Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
+        <p><a href="tel:+17865271616" style="color: var(--color-gray-light); text-decoration: none;">(786) 527-1616</a> • <a href="mailto:davidfreshwateranalyst@gmail.com" style="color: var(--color-gray-light); text-decoration: none;">davidfreshwateranalyst@gmail.com</a></p>
+        <p>Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
+        <p style="margin-top: 2rem; opacity: 0.6;">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
+    </footer>
+
+    <!-- Floating Button -->
+    <button class="btn btn-primary btn-floating" id="floatingConsult" onclick="showConsultationForm()">
+        Book Consultation
+    </button>
+
+    <!-- Consultation Form -->
+    <div class="form-overlay" id="popupOverlay">
+        <div class="form-container">
+            <button class="form-close" onclick="hideConsultationForm()" aria-label="Close form">×</button>
+            <h3 class="form-title">Request Initial Consultation</h3>
             <form id="consultationForm" onsubmit="handleFormSubmit(event)">
                 <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required>
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required placeholder=" ">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required placeholder=" ">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone *</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <label class="form-label" for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" required placeholder=" ">
                 </div>
                 <div class="form-group">
-                    <label for="message">What brings you to seek analysis? *</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <label class="form-label" for="message">Message</label>
+                    <textarea id="message" name="message" class="form-textarea" required placeholder=" "></textarea>
                 </div>
                 <div class="form-buttons">
-                    <button type="submit" class="submit-btn">Send Request</button>
-                    <button type="button" class="cancel-btn" onclick="hideConsultationForm()">Cancel</button>
+                    <button type="submit" class="form-btn form-btn-submit">Send Request</button>
+                    <button type="button" class="form-btn form-btn-cancel" onclick="hideConsultationForm()">Cancel</button>
                 </div>
             </form>
         </div>
     </div>
 
     <script>
-        // Mobile menu toggle
+        // Initialize
+        window.addEventListener('load', () => {
+            // Show palimpsest with smoother lazy loading
+            setTimeout(() => {
+                document.querySelector('.palimpsest').classList.add('visible');
+            }, 1500);
+
+            // Initialize animations
+            initScrollAnimations();
+            initTypewriter();
+            
+            // Set active nav link
+            setActiveNavLink();
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Set active navigation link
+        function setActiveNavLink() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === currentPage || 
+                    (currentPage === 'index.html' && link.getAttribute('href') === '#home')) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Typewriter effect
+        function initTypewriter() {
+            const quote = document.querySelector('.typewriter-text');
+            if (!quote) return;
+            
+            const text = quote.textContent;
+            quote.textContent = '';
+            quote.style.display = 'inline-block';
+            quote.style.whiteSpace = 'normal';
+            
+            let i = 0;
+            const speed = 50;
+            
+            function type() {
+                if (i < text.length) {
+                    quote.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            // Start typing when element is in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        type();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(quote.parentElement);
+        }
+
+        // Scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        // Debounce function for performance
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Navigation and scroll behavior
+        let lastScroll = 0;
+        const nav = document.getElementById('navigation');
+        const floatingBtn = document.getElementById('floatingConsult');
+        const scrollProgress = document.getElementById('scrollProgress');
+        
+        const handleScroll = debounce(() => {
+            const currentScroll = window.pageYOffset;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (currentScroll / scrollHeight) * 100;
+            
+            // Update scroll progress bar
+            scrollProgress.style.width = scrollPercent + '%';
+            
+            if (window.innerWidth > 768) {
+                nav.classList.toggle('scrolled', currentScroll > 100);
+                nav.classList.toggle('hidden', currentScroll > lastScroll && currentScroll > 200);
+            }
+            
+            // Show/hide floating button
+            if (currentScroll > 500) {
+                floatingBtn.classList.add('visible');
+            } else {
+                floatingBtn.classList.remove('visible');
+            }
+            
+            lastScroll = currentScroll;
+        }, 10);
+        
+        window.addEventListener('scroll', handleScroll);
+
+        // Mobile menu
         const menuToggle = document.getElementById('menuToggle');
-        const navigation = document.getElementById('navigation');
         const mobileOverlay = document.getElementById('mobileOverlay');
-        const navLinks = document.querySelectorAll('nav a');
 
         function toggleMenu() {
             menuToggle.classList.toggle('active');
-            navigation.classList.toggle('active');
+            nav.classList.toggle('active');
             mobileOverlay.classList.toggle('active');
-            document.body.style.overflow = navigation.classList.contains('active') ? 'hidden' : '';
+            
+            if (nav.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+                document.body.style.position = 'fixed';
+                document.body.style.width = '100%';
+            } else {
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
+            }
         }
 
         menuToggle.addEventListener('click', toggleMenu);
         mobileOverlay.addEventListener('click', toggleMenu);
 
-        // Close menu when clicking on a link
-        navLinks.forEach(link => {
+        document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    toggleMenu();
-                }
+                if (window.innerWidth <= 768) toggleMenu();
             });
         });
 
-        // Add scroll effect to nav on desktop
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (window.innerWidth > 768) {
-                if (currentScroll > 100) {
-                    navigation.classList.add('scrolled');
-                } else {
-                    navigation.classList.remove('scrolled');
-                }
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Popup form functions
+        // Form functions with validation
         function showConsultationForm() {
             const overlay = document.getElementById('popupOverlay');
             overlay.classList.add('active');
@@ -1076,55 +1324,69 @@
             document.getElementById('consultationForm').reset();
         }
 
-        // Close popup when clicking outside
         document.getElementById('popupOverlay').addEventListener('click', function(e) {
-            if (e.target === this) {
-                hideConsultationForm();
-            }
+            if (e.target === this) hideConsultationForm();
         });
 
-        // Handle form submission
+        // Real-time form validation
+        document.querySelectorAll('.form-input, .form-textarea').forEach(input => {
+            input.addEventListener('blur', () => {
+                if (!input.validity.valid && input.value) {
+                    input.classList.add('error');
+                } else {
+                    input.classList.remove('error');
+                }
+            });
+        });
+
         function handleFormSubmit(event) {
             event.preventDefault();
             
+            const submitBtn = event.target.querySelector('.form-btn-submit');
+            const originalText = submitBtn.textContent;
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
             const formData = new FormData(event.target);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                message: formData.get('message')
-            };
+            const data = Object.fromEntries(formData);
 
-            // Create mailto link
-            const subject = encodeURIComponent('Consultation Request from ' + data.name);
+            const subject = encodeURIComponent(`Consultation Request from ${data.name}`);
             const body = encodeURIComponent(
-                `Name: ${data.name}\n` +
-                `Email: ${data.email}\n` +
-                `Phone: ${data.phone}\n\n` +
-                `Message:\n${data.message}`
+                `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\n\nMessage:\n${data.message}`
             );
             
-            window.location.href = `mailto:davidfreshwateranalyst@gmail.com?subject=${subject}&body=${body}`;
+            // Create success message
+            const successMsg = document.createElement('div');
+            successMsg.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: var(--color-paper);
+                padding: 2rem 3rem;
+                border: 1px solid var(--color-red);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                z-index: 3000;
+                text-align: center;
+                max-width: 400px;
+                animation: fadeIn 0.3s ease;
+            `;
+            successMsg.innerHTML = `
+                <h3 style="color: var(--color-red); margin-bottom: 1rem;">Request Prepared</h3>
+                <p style="margin-bottom: 1.5rem;">Your consultation request has been prepared. Please send the email that opens in your email client.</p>
+                <button onclick="this.parentElement.remove(); hideConsultationForm();" class="btn btn-primary">OK</button>
+            `;
             
-            // Close the form after a short delay
             setTimeout(() => {
-                hideConsultationForm();
-                alert('Your consultation request has been prepared. Please send the email that opens in your email client.');
+                window.location.href = `mailto:davidfreshwateranalyst@gmail.com?subject=${subject}&body=${body}`;
+                document.body.appendChild(successMsg);
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
             }, 500);
-        }
-
-        // Disable parallax on mobile to improve performance
-        const isMobile = window.innerWidth <= 768;
-        
-        if (!isMobile) {
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const parallax = document.querySelector('.noise-overlay');
-                if (parallax) {
-                    const speed = scrolled * 0.2;
-                    parallax.style.transform = `translateY(${speed}px)`;
-                }
-            });
         }
 
         // Handle window resize
@@ -1132,7 +1394,7 @@
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
-                if (window.innerWidth > 768 && navigation.classList.contains('active')) {
+                if (window.innerWidth > 768 && nav.classList.contains('active')) {
                     toggleMenu();
                 }
             }, 250);
