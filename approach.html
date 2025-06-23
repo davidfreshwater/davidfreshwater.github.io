@@ -3,1061 +3,1252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How Lacanian Psychoanalysis Works in Boston | David M. Freshwater, LMHC</title>
-    <meta name="description" content="Learn how Lacanian psychoanalysis creates lasting transformation through unconscious analysis. Discover the difference between symptom relief and structural change with Boston psychoanalyst David Freshwater.">
-    <meta name="keywords" content="how Lacanian psychoanalysis works, unconscious analysis Boston, free association therapy, variable session length, French psychoanalysis Massachusetts">
+    <title>How Lacanian Psychoanalysis Works | David M. Freshwater, LMHC</title>
+    <meta name="description" content="Learn how Lacanian psychoanalysis creates lasting transformation through unconscious analysis. Discover the difference between symptom relief and structural change.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
-        * {
+        /* ===== CSS RESET ===== */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* ===== CUSTOM PROPERTIES ===== */
+        :root {
+            --color-ink: #1a1a1a;
+            --color-paper: #fdfcfa;
+            --color-gray-light: #e8e8e3;
+            --color-gray-medium: #999;
+            --color-red: #dc2626;
+            --color-red-dark: #b91c1c;
+            --shadow-soft: 0 2px 20px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Inter', -apple-system, sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ===== BASE STYLES ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Georgia', serif;
-            line-height: 1.7;
-            color: #2c3e50;
-            background: #0f0f23;
+            font-family: var(--font-sans);
+            line-height: 1.8;
+            color: var(--color-ink);
+            background-color: var(--color-paper);
             overflow-x: hidden;
-            -webkit-text-size-adjust: 100%;
         }
 
-        .container {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            position: relative;
-        }
-
-        .noise-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.03;
-            background-image: 
-                radial-gradient(circle at 25% 25%, white 1px, transparent 1px),
-                radial-gradient(circle at 75% 75%, white 1px, transparent 1px);
-            background-size: 50px 50px;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .content-wrap {
-            position: relative;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-        }
-
-        .content-wrap-bottom {
-            position: relative;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            min-height: calc(100vh - 200px);
-        }
-
-        header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
-            color: white;
-            padding: 5rem 1.5rem 3rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
-            animation: float 20s ease-in-out infinite;
-            opacity: 0.3;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
+        /* ===== TYPOGRAPHY ===== */
         h1 {
-            font-size: clamp(1.75rem, 5vw, 3rem);
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-            font-weight: normal;
-            letter-spacing: -1px;
-        }
-
-        .page-tagline {
-            font-size: clamp(0.95rem, 3vw, 1.2rem);
-            font-style: italic;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* Mobile Navigation - Updated */
-        .mobile-menu-toggle {
-            display: none;
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            z-index: 1000;
-            background: rgba(52, 73, 94, 0.9);
-            color: white;
-            border: none;
-            padding: 0;
-            border-radius: 12px;
-            cursor: pointer;
-            width: 54px;
-            height: 54px;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .mobile-menu-toggle:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
-            background: rgba(52, 73, 94, 0.95);
-        }
-
-        .mobile-menu-toggle svg {
-            width: 24px;
-            height: 24px;
-            transition: transform 0.3s ease;
-        }
-
-        .mobile-menu-toggle.active svg {
-            transform: rotate(90deg);
-        }
-
-        /* Navigation - Sticky positioning for desktop */
-        nav {
-            background: rgba(52, 73, 94, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            position: sticky;
-            position: -webkit-sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        /* Add class for scrolled state */
-        nav.scrolled {
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            padding: 0.75rem 0;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        nav li {
-            margin: 0.25rem 0.5rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.75rem 1.25rem;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            position: relative;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            display: inline-block;
-        }
-
-        nav a:hover, nav a:focus {
-            background: rgba(255,255,255,0.15);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        nav a.active {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
-        }
-
-        .section {
-            padding: 3rem 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            margin-bottom: 3rem;
+            text-align: center;
         }
 
         h2 {
-            color: #2c3e50;
-            margin: 0 0 2rem 0;
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            position: relative;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 4rem;
             text-align: center;
-            font-weight: normal;
+            position: relative;
         }
 
         h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            border-radius: 2px;
+            width: 40px;
+            height: 1px;
+            background-color: var(--color-red);
+            opacity: 0.6;
         }
 
         h3 {
-            color: #34495e;
-            margin: 2rem 0 1rem 0;
-            font-size: clamp(1.15rem, 3vw, 1.4rem);
-            font-weight: normal;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin: 4rem 0 2rem;
+            letter-spacing: 0.05em;
+            font-family: var(--font-serif);
         }
 
         h4 {
-            color: #2980b9;
+            font-size: 1.2rem;
+            font-weight: 500;
             margin-bottom: 1rem;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: var(--color-ink);
+            font-family: var(--font-serif);
         }
 
         p {
-            margin-bottom: 1.5rem;
-            font-size: clamp(1rem, 2.5vw, 1.1rem);
-            text-align: left;
+            color: var(--color-gray-medium);
+            margin-bottom: 2rem;
+            line-height: 1.9;
+            max-width: 65ch;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        ul {
-            margin: 1rem 0 1.5rem 1rem;
+        .opening-vignette {
+            background-color: rgba(26, 26, 26, 0.02);
+            padding: 2.5rem;
+            margin: 0 -2rem 3rem;
+            border-left: 3px solid var(--color-red);
         }
 
-        ul li {
-            margin-bottom: 0.5rem;
-            font-size: clamp(1rem, 2.5vw, 1.1rem);
+        .opening-vignette p {
+            font-size: 1.1rem;
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--color-ink);
+            margin-bottom: 0;
+            line-height: 1.8;
+            max-width: 70ch;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            align-items: start;
-            margin: 2rem 0;
+        /* ===== LAYOUT ===== */
+        .page-header {
+            background-color: var(--color-paper);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            border-bottom: 1px solid var(--color-gray-light);
+            position: relative;
+            overflow: hidden;
         }
 
-        .professional-photo {
-            width: 100%;
-            max-width: 250px;
-            height: auto;
-            object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            border: 3px solid #34495e;
-            display: block;
+        .page-tagline {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: var(--color-gray-medium);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            font-family: var(--font-serif);
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1000px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        .credentials-box {
-            background: rgba(52, 73, 94, 0.05);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border-left: 4px solid #34495e;
+        .section {
+            padding: 6rem 0;
+            position: relative;
         }
 
-        .credentials-box p {
-            font-size: clamp(0.9rem, 2.5vw, 0.95rem);
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background-color: var(--color-paper);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
         }
 
-        .highlight-box {
-            background: rgba(52, 152, 219, 0.06);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border-left: 4px solid #3498db;
-            margin: 2rem 0;
+        .nav.scrolled {
+            top: 1rem;
+            padding: 0.75rem 1.5rem;
+            box-shadow: var(--shadow-medium);
         }
 
+        .nav.hidden {
+            transform: translateX(-50%) translateY(-120px);
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            margin: 0;
+        }
+
+        .nav-link {
+            color: var(--color-ink);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: var(--color-red);
+            font-weight: 500;
+        }
+
+        .nav-link.nav-cta {
+            background-color: var(--color-red);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 25px;
+            margin-left: 1rem;
+        }
+
+        .nav-link.nav-cta:hover {
+            background-color: var(--color-red-dark);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.nav-cta::after {
+            display: none;
+        }
+
+        /* ===== MOBILE MENU ===== */
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1001;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: 2px solid var(--color-red);
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            background-color: var(--color-red);
+        }
+
+        .mobile-menu-btn:hover span {
+            background-color: white;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--color-ink);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+        }
+
+        /* ===== LACANIAN ELEMENTS ===== */
+        .header-element {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 250px;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        .header-element svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .header-element text {
+            font-family: var(--font-serif);
+            font-style: italic;
+            fill: var(--color-ink);
+        }
+
+        .header-element line {
+            stroke: var(--color-ink);
+            stroke-width: 1.5;
+        }
+        .palimpsest {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 4s ease-in;
+        }
+
+        .palimpsest.visible {
+            opacity: 1;
+        }
+
+        .palimpsest-text {
+            position: absolute;
+            opacity: 0.05;
+            font: italic 18px/1.6 var(--font-serif);
+            color: var(--color-ink);
+            letter-spacing: 0.1em;
+            animation: drift 80s ease-in-out infinite;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(30px); }
+        }
+
+        /* ===== CARDS & GRIDS ===== */
         .process-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
 
         .process-card {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 1.5rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background-color: var(--color-paper);
+            padding: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border-left: 3px solid transparent;
+        }
+
+        .process-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--color-red);
+            transform: scaleX(0);
+            transform-origin: left;
             transition: transform 0.3s ease;
         }
 
         .process-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-left-color: var(--color-red);
         }
 
-        .transformation-quote {
-            background: rgba(142, 68, 173, 0.06);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
+        .process-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .card-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            color: var(--color-red);
+            opacity: 0.6;
+            transition: var(--transition);
+        }
+
+        .process-card:hover .card-icon {
+            opacity: 1;
+            transform: rotate(45deg);
+        }
+
+        /* ===== INFO BOXES ===== */
+        .info-box {
+            background-color: rgba(220, 38, 38, 0.02);
+            padding: 2.5rem;
             margin: 3rem 0;
-            border-left: 4px solid #8e44ad;
+            border-left: 3px solid var(--color-red);
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px);
         }
 
-        .transformation-quote p {
+        .highlight-box {
+            background-color: rgba(26, 26, 26, 0.02);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-left: 3px solid var(--color-ink);
+            font-family: var(--font-serif);
             font-style: italic;
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-            margin-bottom: 1rem;
-            text-align: center;
         }
 
-        .transformation-quote .attribution {
-            font-size: clamp(0.9rem, 2vw, 1rem);
+        /* ===== QUOTE BLOCK ===== */
+        .quote {
+            font: italic clamp(1.4rem, 3.5vw, 2.2rem)/1.8 var(--font-serif);
+            text-align: center;
+            margin: 6rem 0;
+            padding: 0 2rem;
+            color: var(--color-ink);
+            letter-spacing: 0.02em;
+            position: relative;
+        }
+
+        .quote::before,
+        .quote::after {
+            font-size: 3rem;
+            color: var(--color-red);
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .quote::before {
+            content: '「';
+            top: -20px;
+            left: -20px;
+        }
+
+        .quote::after {
+            content: '」';
+            bottom: -40px;
+            right: -20px;
+        }
+
+        .quote-attribution {
+            font-size: 1rem;
             font-style: normal;
-            opacity: 0.8;
-            margin-bottom: 0;
+            color: var(--color-gray-medium);
+            margin-top: 1rem;
         }
 
-        .books-banner {
-            position: relative;
-            margin: 3rem -1.5rem;
-            height: 200px;
-            overflow: hidden;
-            border-radius: 15px;
-        }
-
-        .books-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .technique-highlight {
-            background: rgba(230, 126, 34, 0.06);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border-left: 4px solid #e67e22;
+        /* ===== LISTS ===== */
+        ul {
             margin: 2rem 0;
-            font-style: italic;
+            padding-left: 1.5rem;
+            max-width: 65ch;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .investment-note {
-            background: rgba(231, 76, 60, 0.06);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border-left: 4px solid #e74c3c;
-            margin: 2rem 0;
+        ul li {
+            margin-bottom: 1rem;
+            color: var(--color-gray-medium);
+            line-height: 1.8;
         }
 
-        .consultation-box {
-            background: rgba(142, 68, 173, 0.06);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border-left: 4px solid #8e44ad;
-            margin: 2rem 0;
+        /* ===== TRANSFORMATION GRID ===== */
+        .transformation-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .expect-box {
-            background: rgba(230, 126, 34, 0.06);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border-left: 4px solid #e67e22;
-            margin: 2rem 0;
-        }
-
-        .testimonial-highlight {
-            background: rgba(52, 152, 219, 0.06);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border-left: 4px solid #3498db;
-            margin: 2rem 0;
+        .transformation-card {
+            background-color: var(--color-paper);
+            padding: 2.5rem 2rem;
             text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
 
-        .testimonial-highlight p {
-            font-style: italic;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
+        .transformation-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--color-red);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+
+        .transformation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .transformation-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .transformation-card h4 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--color-red);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .transformation-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
             margin-bottom: 0;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            margin: 1rem 0.5rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-            letter-spacing: 0.5px;
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background-color: var(--color-paper);
+            padding: 6rem 0;
+            text-align: center;
             position: relative;
             overflow: hidden;
-            touch-action: manipulation;
-            border: none;
-            cursor: pointer;
         }
 
-        .cta-button::before {
+        .cta-section::before {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-button:hover::before, .cta-button:focus::before {
-            left: 100%;
-        }
-
-        .cta-button:hover, .cta-button:focus {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
-        }
-
-        .divider {
-            width: 100px;
+            left: 0;
+            right: 0;
             height: 1px;
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            margin: 3rem auto;
-            position: relative;
+            background: linear-gradient(to right, transparent, var(--color-gray-light), transparent);
         }
 
-        .divider::before {
-            content: '◊';
-            position: absolute;
-            top: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
-            color: #e74c3c;
-            padding: 0 10px;
-            font-size: 1rem;
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            background: none;
         }
 
-        footer {
-            background: #34495e;
-            color: #ecf0f1;
-            padding: 2rem 1.5rem;
+        .btn-primary {
+            background-color: var(--color-red);
+            color: white;
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
+        }
+
+        /* ===== SECTION DIVIDER ===== */
+        .section-divider {
+            width: 100px;
+            height: 60px;
+            margin: 6rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-divider svg {
+            width: 60px;
+            height: 60px;
+            opacity: 0.15;
+            animation: slowRotate 120s linear infinite;
+        }
+
+        @keyframes slowRotate {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--color-ink);
+            color: var(--color-gray-light);
+            padding: 4rem 2rem 2rem;
             text-align: center;
+            margin-top: 0;
         }
 
-        footer p {
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-            margin-bottom: 0.75rem;
-            text-align: center;
+        .footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            opacity: 0.8;
+            color: var(--color-gray-light);
         }
 
-        footer a {
-            color: #3498db;
+        .footer a {
+            color: var(--color-gray-light);
             text-decoration: none;
         }
 
-        footer a:hover, footer a:focus {
+        .footer a:hover {
             text-decoration: underline;
         }
 
-        /* Tablet styles */
-        @media (min-width: 600px) {
-            header {
-                padding: 6rem 2rem 4rem;
-            }
-
-            h1, .page-tagline {
-                padding: 0;
-            }
-
-            .section {
-                padding: 4rem 2rem;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
-                margin: 3rem 0;
-            }
-
-            .process-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .credentials-box,
-            .consultation-box,
-            .expect-box,
-            .testimonial-highlight {
-                padding: 2rem;
-            }
-
-            .cta-button {
-                padding: 1.25rem 2.5rem;
-                margin: 1rem;
-            }
-
-            h2 {
-                margin-bottom: 3rem;
-            }
-
-            h3 {
-                margin: 3rem 0 1rem 0;
-            }
-
-            .divider {
-                margin: 4rem auto;
-            }
-
-            .testimonial-highlight {
-                margin: 3rem 0;
-            }
-
-            .books-banner {
-                margin: 3rem 0;
-                height: 300px;
-            }
+        /* ===== FORM STYLES ===== */
+        .form-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(26, 26, 26, 0.8);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Mobile menu styles */
+        .form-overlay.active {
+            display: flex;
+        }
+
+        .form-container {
+            background-color: var(--color-paper);
+            padding: 3rem 2.5rem 2.5rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: var(--transition);
+        }
+
+        .form-overlay.active .form-container {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            color: var(--color-gray-medium);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.6rem;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--color-gray-light);
+            color: var(--color-ink);
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-bottom-color: var(--color-red);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .form-btn {
+            padding: 0.75rem 2rem;
+            background: transparent;
+            color: var(--color-ink);
+            border: 1px solid var(--color-ink);
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            font-weight: 300;
+        }
+
+        .form-btn-submit:hover {
+            background-color: var(--color-red);
+            color: white;
+            border-color: var(--color-red);
+        }
+
+        .form-btn-cancel:hover {
+            background-color: var(--color-ink);
+            color: white;
+        }
+
+        .form-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: var(--color-gray-medium);
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .form-close:hover {
+            color: var(--color-ink);
+            transform: rotate(90deg);
+        }
+
+        /* ===== BACKGROUND EFFECTS ===== */
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(26, 26, 26, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(26, 26, 26, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        .bg-texture {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.01) 35px, rgba(255,255,255,.01) 70px);
+            pointer-events: none;
+            z-index: 2;
+            mix-blend-mode: overlay;
+        }
+
+        /* ===== UTILITIES ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
+            .mobile-menu-btn {
                 display: flex;
             }
 
-            .content-wrap {
-                padding-top: 0;
-            }
-
-            /* Hide desktop nav on mobile */
-            nav {
+            .nav {
                 position: fixed;
                 top: 0;
                 left: -100%;
+                transform: none;
                 width: 85%;
                 height: 100vh;
-                background: rgba(52, 73, 94, 0.98);
-                transition: left 0.3s ease;
-                z-index: 999;
+                background-color: var(--color-paper);
+                padding: 5rem 2rem;
+                border-radius: 0;
+                transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 5px 0 30px rgba(0, 0, 0, 0.1);
                 overflow-y: auto;
             }
 
-            nav.active {
+            .nav.active {
                 left: 0;
             }
 
-            nav ul {
+            .nav.hidden {
+                transform: none !important;
+            }
+
+            .nav.scrolled {
+                top: 0 !important;
+                padding: 5rem 2rem !important;
+            }
+
+            .nav-list {
                 flex-direction: column;
-                padding: 5rem 1rem 2rem;
+                align-items: flex-start;
+                gap: 2rem;
             }
 
-            nav li {
-                margin: 0.5rem 0;
-                width: 100%;
-            }
-
-            nav a {
-                display: block;
-                padding: 1rem 1.5rem;
+            .nav-link {
                 font-size: 1.1rem;
-                text-align: left;
-                border-radius: 8px;
             }
 
-            .mobile-overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 998;
-            }
-
-            .mobile-overlay.active {
-                display: block;
-            }
-
-            /* Special handling for the photo on mobile */
-            .professional-photo {
-                max-width: 200px;
-            }
-        }
-
-        /* Desktop styles */
-        @media (min-width: 769px) {
-            .mobile-menu-toggle,
-            .mobile-overlay {
-                display: none !important;
+            .page-header {
+                padding: 6rem 2rem 3rem;
             }
 
             .section {
-                padding: 5rem 2rem;
+                padding: 4rem 0;
             }
 
-            p {
-                text-align: justify;
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .palimpsest-text {
+                opacity: 0.08;
+                font-size: 16px;
+            }
+
+            .quote {
+                font-size: 1.3rem;
+                margin: 4rem 0;
             }
 
             .process-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
+            }
+
+            .transformation-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .header-element {
+                width: 300px;
+                height: 190px;
+            }
+
+            .opening-vignette {
+                margin: 0 0 3rem;
+                padding: 2rem;
             }
         }
 
-        @media (min-width: 1024px) {
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr);
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 0.1em;
             }
         }
 
-        /* Accessibility improvements */
-        a:focus,
-        button:focus {
-            outline: 2px solid #3498db;
+        /* ===== ACCESSIBILITY ===== */
+        :focus {
+            outline: 2px solid var(--color-red);
             outline-offset: 2px;
         }
 
-        /* Reduce animations for users who prefer reduced motion */
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
-
-            .cta-button::before {
-                display: none;
-            }
-        }
-
-        /* Touch-friendly tap targets */
-        a, button {
-            min-height: 44px;
-            min-width: 44px;
-        }
-
-        /* Better text contrast for readability */
-        @media (prefers-contrast: high) {
-            body {
-                color: #000;
-            }
-
-            .content-wrap {
-                background: rgba(255, 255, 255, 1);
-            }
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Prevent horizontal scroll on mobile */
-        body {
-            overflow-x: hidden;
-        }
-
-        /* Ensure images and embeds are responsive */
-        img, video, iframe {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Popup form styles */
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 2000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .popup-overlay.active {
-            display: block;
-            opacity: 1;
-        }
-
-        .popup-form {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.9);
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            z-index: 2001;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .popup-overlay.active .popup-form {
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 1;
-        }
-
-        .popup-form h3 {
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #34495e;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #3498db;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-buttons {
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .form-buttons button {
-            flex: 1;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            color: white;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
-        }
-
-        .cancel-btn {
-            background: #95a5a6;
-            color: white;
-        }
-
-        .cancel-btn:hover {
-            background: #7f8c8d;
-        }
-
-        .close-popup {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #95a5a6;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .close-popup:hover {
-            color: #7f8c8d;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="noise-overlay"></div>
-        
-        <!-- Navigation moved outside content-wrap -->
-        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        </button>
+    <!-- Background Effects -->
+    <div class="bg-gradient"></div>
+    <div class="bg-texture"></div>
 
-        <div class="mobile-overlay" id="mobileOverlay"></div>
-        
-        <div class="content-wrap">
-            <header>
-                <h1>The Process of Transformation</h1>
-                <div class="page-tagline">How Lacanian psychoanalysis creates lasting change</div>
-            </header>
+    <!-- Palimpsest -->
+    <div class="palimpsest">
+        <div class="palimpsest-text" style="top: 5%; left: 5%;">
+            The unconscious is structured like a language
         </div>
-
-        <nav id="navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="approach.html" class="active">How It Works</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="stories.html">Stories</a></li>
-                <li><a href="faq.html">Questions</a></li>
-                <li><a href="#" onclick="showConsultationForm(); return false;">Begin</a></li>
-            </ul>
-        </nav>
-
-        <div class="content-wrap-bottom">
-            <section class="section">
-                <h2>Understanding the Process</h2>
-
-                <p>You call your new partner by your ex's name at dinner with friends. You can't remember your sister's partner's name after two years. Stomach pain appears before every family gathering. You spill red wine on your mother-in-law's white carpet—for the second time. Every July, depression arrives like clockwork, though nothing happened in July that you can recall. You dream of speeding down a busy city street, but the brakes don't work.</p>
-
-                <p>These aren't random events—they're your psyche's way of insisting on being heard.</p>
-
-                <h3>Speaking Freely</h3>
-
-                <p>Psychoanalysis consists in speaking freely, without censoring the ideas that go through your head. I listen from a position that allows something unexpected to emerge. The power comes from discovering that the saying itself—when addressed to someone who listens from a certain position—can replace repetitive and predictable symptoms.</p>
-
-                <p>Unlike approaches that aim to strengthen the ego or provide coping strategies, Lacanian analysis works to reveal the unconscious structures that organize your life.</p>
-
-                <div class="highlight-box">
-                    <p>We return again and again to certain phrases, forgotten moments, seemingly trivial details—a recurring number, a childhood smell, a phrase you can't stop saying—until they lose their power and genuine change becomes possible.</p>
-                </div>
-
-                <h3>How Sessions Work</h3>
-
-                <div class="process-grid">
-                    <div class="process-card">
-                        <h4>Free Association</h4>
-                        <p>You speak whatever comes to mind without censoring. Dreams, memories, current events, seemingly random thoughts—all are welcome. What seems irrelevant often proves most revealing.</p>
-                    </div>
-
-                    <div class="process-card">
-                        <h4>Precise Listening</h4>
-                        <p>I listen for patterns, repetitions, slips of the tongue, and the gaps in your speech. What you don't say often matters as much as what you do. A single word might become the key to everything.</p>
-                    </div>
-
-                    <div class="process-card">
-                        <h4>Variable Session Length</h4>
-                        <p>Unlike traditional 50-minute hours, Lacanian sessions end when something essential has been articulated. This might be 20 minutes or 90—the unconscious doesn't follow clock time.</p>
-                    </div>
-
-                    <div class="process-card">
-                        <h4>Creating Space for Discovery</h4>
-                        <p>Rather than offering solutions or providing answers, I respond in ways that help you hear your own words differently—allowing meanings you didn't know were there to surface.</p>
-                    </div>
-                </div>
-
-                <h3>What to Expect in Sessions</h3>
-
-                <p>Analysis typically begins with a sense of urgency—something isn't working, familiar situations keep recurring, or symptoms have become unbearable.</p>
-
-                <p>You'll be invited to speak freely—to follow your associations wherever they lead. This might feel unusual at first, especially if you're used to more structured conversations.</p>
-
-                <p>I'll intervene at specific moments—sometimes with a question, sometimes by highlighting a word or phrase you've used, sometimes by punctuating the session when something essential has been articulated. These interventions are designed to open new avenues for exploration.</p>
-
-                <p>There's no "right" way to do analysis. Some people talk about dreams, others about daily life, others about memories or fantasies. What matters is that you speak as freely as possible and remain curious about what emerges.</p>
-
-                <div class="transformation-quote">
-                    <p>"Little by little, from within your own words, another meaning forms and surprises you, then falls apart, taking the pain with it."</p>
-                    <p class="attribution">— Jacques-Alain Miller</p>
-                </div>
-
-                <div class="books-banner">
-                    <img src="image/books.jpg" alt="Lacanian psychoanalysis texts">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);"></div>
-                </div>
-
-                <h3>The Process of Transformation</h3>
-
-                <p>Initially, anxiety may increase as we approach what your psyche has kept hidden. This is actually a positive sign—it means we're getting close to material that matters. Many find that what seemed like setbacks were actually breakthroughs in disguise.</p>
-               
-                <p>Over time, you may experience:</p>
-                <ul>
-                    <li>Dreams becoming more vivid and meaningful</li>
-                    <li>Unexpected connections between disparate parts of your life</li>
-                    <li>A shift in how you experience your symptoms</li>
-                    <li>The profound relief of finally being heard in a way that allows something to change</li>
-                    <li>The surprising lightness that comes when long-carried burdens finally find words</li>
-                </ul>
-               
-                <div class="technique-highlight">
-                    <p>The unconscious resists being known directly. It reveals itself through dreams, symptoms, jokes, and errors. Our work is to create conditions where these communications can be heard and transformed.</p>
-                </div>
-
-                <h3>The Analytic Relationship</h3>
-
-                <p>This isn't a relationship of equals sharing experiences. I occupy a specific position that allows your unconscious to emerge. You'll likely develop strong feelings about me—positive and negative. These transference feelings become crucial material for understanding your patterns with others.</p>
-
-                <p>Sessions are conducted online via secure video or phone connection. The online format has proven remarkably effective for analysis, as the unconscious speaks just as clearly through digital connection as in person.</p>
-
-                <div class="investment-note">
-                    <p>This depth of work asks for genuine commitment—temporal, financial, and emotional. Your investment reflects and enables the profound shifts possible through engaging with your own unconscious. Fees are discussed during our initial consultation, as the investment in analysis is an important part of the work itself.</p>
-                </div>
-
-                <h3>Is This Approach Right for You?</h3>
-
-                <p>Lacanian analysis is particularly effective for those who:</p>
-
-                <ul>
-                    <li>Sense that their problems have deeper roots than current circumstances</li>
-                    <li>Find themselves in recurring situations despite understanding them intellectually</li>
-                    <li>Are curious about their inner life and willing to be surprised</li>
-                    <li>Seek fundamental change rather than temporary relief</li>
-                    <li>Can tolerate uncertainty and the time needed for deep work</li>
-                </ul>
-
-                <div class="divider"></div>
-
-                <h3>The Nature of Change</h3>
-
-                <p>Some analyses last months, others years. The work continues until you've experienced sufficient change—until the repetitive cycles that brought you here have given way to new possibilities for living.</p>
-
-                <p>This approach serves those who are open to discovering something unexpected about themselves and who sense that authentic change is possible through patient engagement with the unconscious.</p>
-
-                <p>If this resonates with how you want to engage with your own psyche, we should explore working together.</p>
-
-                <div style="text-align: center; margin-top: 3rem;">
-                    <h2>Ready to Begin?</h2>
-                    <p style="font-size: clamp(1rem, 2.5vw, 1.2rem); margin-bottom: 2rem;">The initial consultation is an opportunity to explore whether this approach aligns with what you're seeking. We'll both get a sense of whether analytic work makes sense for your particular situation.</p>
-                    <button class="cta-button" onclick="showConsultationForm()">Request Initial Consultation</button>
-                </div>
-            </section>
-            
-            <footer>
-                <div style="max-width: 1200px; margin: 0 auto;">
-                    <p>David M. Freshwater, LMHC #10001743</p>
-                    <p>Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
-                    <p>Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
-                    <p style="font-size: 0.9rem; opacity: 0.8;">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
-                </div>
-            </footer>
+        <div class="palimpsest-text" style="top: 15%; right: 10%; text-align: right;">
+            I think where I am not, therefore I am where I do not think
+        </div>
+        <div class="palimpsest-text" style="top: 30%; left: 15%;">
+            Desire is the desire of the Other
+        </div>
+        <div class="palimpsest-text" style="top: 45%; right: 8%;">
+            Love is giving what you don't have
+        </div>
+        <div class="palimpsest-text" style="top: 60%; left: 10%;">
+            There is no sexual relationship
+        </div>
+        <div class="palimpsest-text" style="top: 75%; right: 5%; text-align: right;">
+            The subject is what one signifier represents for another signifier
+        </div>
+        <div class="palimpsest-text" style="bottom: 10%; left: 20%;">
+            The letter always arrives at its destination
         </div>
     </div>
- <!-- Popup Form -->
-    <div class="popup-overlay" id="popupOverlay">
-        <div class="popup-form">
-            <button class="close-popup" onclick="hideConsultationForm()" aria-label="Close form">×</button>
-            <h3>Request Initial Consultation</h3>
+
+    <!-- Navigation -->
+    <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    
+    <nav class="nav" id="navigation">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="approach.html" class="nav-link active">Approach</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="stories.html" class="nav-link">Stories</a></li>
+            <li><a href="faq.html" class="nav-link">FAQ</a></li>
+            <li><a href="#" class="nav-link nav-cta" onclick="showConsultationForm(); return false;">Begin</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="header-element">
+            <svg viewBox="0 0 400 250">
+                <!-- Four Discourses -->
+                <g transform="translate(50, 50)">
+                    <!-- Master's Discourse -->
+                    <text x="0" y="0" style="font-size: 20px;">S₁</text>
+                    <text x="0" y="40" style="font-size: 20px;">$</text>
+                    <text x="80" y="0" style="font-size: 20px;">S₂</text>
+                    <text x="80" y="40" style="font-size: 20px;">a</text>
+                    <line x1="-10" y1="20" x2="30" y2="20" />
+                    <line x1="70" y1="20" x2="110" y2="20" />
+                </g>
+                <g transform="translate(250, 50)">
+                    <!-- Analyst's Discourse -->
+                    <text x="0" y="0" style="font-size: 20px;">a</text>
+                    <text x="0" y="40" style="font-size: 20px;">$</text>
+                    <text x="80" y="0" style="font-size: 20px;">S₂</text>
+                    <text x="80" y="40" style="font-size: 20px;">S₁</text>
+                    <line x1="-10" y1="20" x2="30" y2="20" />
+                    <line x1="70" y1="20" x2="110" y2="20" />
+                </g>
+            </svg>
+        </div>
+        <h1>The Process of Transformation</h1>
+        <p class="page-tagline">How Lacanian psychoanalysis creates lasting change</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <h2>Understanding the Process</h2>
+
+            <div class="opening-vignette">
+                <p>You call your new partner by your ex's name at a dinner with friends. Stomach pain appears before every family gathering. You spill red wine on your mother-in-law's carpet for the second time this year. You forget to attend important meetings despite having them scheduled in your calendar. Every July, depression arrives like clockwork, though nothing happened in July that you can recall. You dream of speeding down a busy city street, but the brakes don't work.</p>
+            </div>
+
+            <p style="text-align: center; font-size: 1.2rem; color: var(--color-ink); margin: 3rem 0;">These aren't random events—they're your psyche's way of insisting on being heard.</p>
+
+            <div class="quote fade-in">
+                "The unconscious is the chapter of my history that is marked by a blank or occupied by a lie: it is the censored chapter."
+                <div class="quote-attribution">— Jacques Lacan</div>
+            </div>
+
+            <h3>Speaking Freely</h3>
+
+            <p>Psychoanalysis consists in speaking freely, without censoring the ideas that go through your head. I listen from a position that allows something unexpected to emerge. The power comes from discovering that the saying itself—when addressed to someone who listens from a certain position—can replace repetitive and predictable symptoms.</p>
+
+            <p>Unlike approaches that aim to strengthen the ego or provide coping strategies, Lacanian analysis works to reveal the unconscious structures that organize your life.</p>
+
+            <div class="highlight-box fade-in">
+                <p style="margin-bottom: 0;">We return again and again to certain phrases, forgotten moments, seemingly trivial details—a recurring number, a childhood smell, a phrase you can't stop saying—until they lose their power and genuine change becomes possible.</p>
+            </div>
+
+            <h3>How Sessions Work</h3>
+
+            <div class="process-grid">
+                <div class="process-card fade-in">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 60 60">
+                            <circle cx="20" cy="24" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="40" cy="24" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="30" cy="36" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h4>Free Association</h4>
+                    <p style="margin-bottom: 0;">You speak whatever comes to mind without censoring. Dreams, memories, current events, seemingly random thoughts—all are welcome. What seems irrelevant often proves most revealing.</p>
+                </div>
+
+                <div class="process-card fade-in">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 60 60">
+                            <circle cx="20" cy="24" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="40" cy="24" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="30" cy="36" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h4>Precise Listening</h4>
+                    <p style="margin-bottom: 0;">I listen for patterns, repetitions, slips of the tongue, and the gaps in your speech. What you don't say often matters as much as what you do. A single word might become the key to everything.</p>
+                </div>
+
+                <div class="process-card fade-in">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 60 60">
+                            <circle cx="20" cy="24" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="40" cy="24" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="30" cy="36" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h4>Variable Session Length</h4>
+                    <p style="margin-bottom: 0;">Unlike traditional 50-minute hours, Lacanian sessions end when something essential has been articulated. This might be 20 minutes or 90—the unconscious doesn't follow clock time.</p>
+                </div>
+
+                <div class="process-card fade-in">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 60 60">
+                            <circle cx="20" cy="24" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="40" cy="24" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="30" cy="36" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h4>Creating Space for Discovery</h4>
+                    <p style="margin-bottom: 0;">Rather than offering solutions or providing answers, I respond in ways that help you hear your own words differently—allowing meanings you didn't know were there to surface.</p>
+                </div>
+            </div>
+
+            <h3>What to Expect in Sessions</h3>
+
+            <div class="quote fade-in" style="margin-bottom: 3rem;">
+                "Little by little, from within your own words, another meaning forms and surprises you, then falls apart, taking the pain with it."
+                <div class="quote-attribution">— Jacques-Alain Miller</div>
+            </div>
+
+            <p>Analysis typically begins with a sense of urgency—something isn't working, familiar situations keep recurring, or symptoms have become unbearable.</p>
+
+            <p>You'll be invited to speak freely—to follow your associations wherever they lead. This might feel unusual at first, especially if you're used to more structured conversations.</p>
+
+            <p>I'll intervene at specific moments—sometimes with a question, sometimes by highlighting a word or phrase you've used, sometimes by punctuating the session when something essential has been articulated. These interventions are designed to open new avenues for exploration.</p>
+
+            <p>There's no "right" way to do analysis. Some people talk about dreams, others about daily life, others about memories or fantasies. What matters is that you speak as freely as possible and remain curious about what emerges.</p>
+
+            <h3>The Process of Transformation</h3>
+
+            <p>Initially, anxiety may increase as we approach what your psyche has kept hidden. This is actually a positive sign—it means we're getting close to material that matters. Many find that what seemed like setbacks were actually breakthroughs in disguise.</p>
+           
+            <p>Over time, you may experience:</p>
+            
+            <div class="transformation-grid">
+                <div class="transformation-card fade-in">
+                    <h4>Dreams Speak Louder</h4>
+                    <p>Dreams becoming more vivid and meaningful as your unconscious finds its voice</p>
+                </div>
+                <div class="transformation-card fade-in">
+                    <h4>Connections Emerge</h4>
+                    <p>Unexpected links between disparate parts of your life suddenly make sense</p>
+                </div>
+                <div class="transformation-card fade-in">
+                    <h4>Symptoms Shift</h4>
+                    <p>A fundamental change in how you experience what once tormented you</p>
+                </div>
+                <div class="transformation-card fade-in">
+                    <h4>Burdens Lighten</h4>
+                    <p>The surprising relief when long-carried weight finally finds words</p>
+                </div>
+            </div>
+           
+            <div class="info-box fade-in">
+                <p style="margin-bottom: 0;">The unconscious resists being known directly. It reveals itself through dreams, symptoms, jokes, and errors. Our work is to create conditions where these communications can be heard and transformed.</p>
+            </div>
+
+            <h3>The Analytic Relationship</h3>
+
+            <p>This isn't a relationship of equals sharing experiences. I occupy a specific position that allows your unconscious to emerge. You'll likely develop strong feelings about me—positive and negative. These transference feelings become crucial material for understanding your patterns with others.</p>
+
+            <p>Sessions are conducted online via secure video or phone connection. The online format has proven remarkably effective for analysis, as the unconscious speaks just as clearly through digital connection as in person.</p>
+
+            <div class="info-box fade-in">
+                <h4>Investment in Your Analysis</h4>
+                <p>This depth of work asks for genuine commitment—temporal, financial, and emotional. Your investment reflects and enables the profound shifts possible through engaging with your own unconscious.</p>
+                <p style="margin-bottom: 0;">Fees are discussed during our initial consultation, as the investment in analysis is an important part of the work itself.</p>
+            </div>
+
+            <div class="section-divider">
+                <svg viewBox="0 0 60 60">
+                    <circle cx="20" cy="24" r="15" stroke="currentColor" fill="none"/>
+                    <circle cx="40" cy="24" r="15" stroke="currentColor" fill="none"/>
+                    <circle cx="30" cy="39" r="15" stroke="currentColor" fill="none"/>
+                </svg>
+            </div>
+
+            <h3>The Nature of Change</h3>
+
+            <p>Some analyses last months, others years. The work continues until you've experienced sufficient change—until the repetitive cycles that brought you here have given way to new possibilities for living.</p>
+
+            <p>This approach serves those who are open to discovering something unexpected about themselves and who sense that authentic change is possible through patient engagement with the unconscious.</p>
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Begin?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 3rem;">
+                The initial consultation is an opportunity to explore whether this approach aligns with what you're seeking. We'll both get a sense of whether analytic work makes sense for your particular situation.
+            </p>
+            <button class="btn btn-primary" onclick="showConsultationForm()">Request Initial Consultation</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>David M. Freshwater, LMHC #10001743</p>
+        <p>Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
+        <p><a href="tel:+17865271616">(786) 527-1616</a> • <a href="mailto:davidfreshwateranalyst@gmail.com">davidfreshwateranalyst@gmail.com</a></p>
+        <p>Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
+        <p style="margin-top: 2rem; opacity: 0.6;">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
+    </footer>
+
+    <!-- Consultation Form -->
+    <div class="form-overlay" id="popupOverlay">
+        <div class="form-container">
+            <button class="form-close" onclick="hideConsultationForm()" aria-label="Close form">×</button>
+            <h3 class="form-title">Request Initial Consultation</h3>
             <form id="consultationForm" onsubmit="handleFormSubmit(event)">
                 <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required>
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required placeholder=" ">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required placeholder=" ">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone *</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <label class="form-label" for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" required placeholder=" ">
                 </div>
                 <div class="form-group">
-                    <label for="message">What brings you to seek analysis? *</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <label class="form-label" for="message">What brings you to seek analysis?</label>
+                    <textarea id="message" name="message" class="form-textarea" required placeholder=" "></textarea>
                 </div>
                 <div class="form-buttons">
-                    <button type="submit" class="submit-btn">Send Request</button>
-                    <button type="button" class="cancel-btn" onclick="hideConsultationForm()">Cancel</button>
+                    <button type="submit" class="form-btn form-btn-submit">Send Request</button>
+                    <button type="button" class="form-btn form-btn-cancel" onclick="hideConsultationForm()">Cancel</button>
                 </div>
             </form>
         </div>
     </div>
 
     <script>
-        // Mobile menu toggle
+        // Initialize
+        window.addEventListener('load', () => {
+            // Show palimpsest
+            setTimeout(() => {
+                document.querySelector('.palimpsest').classList.add('visible');
+            }, 1500);
+            
+            // Scroll animations
+            initScrollAnimations();
+        });
+
+        // Mobile menu
         const menuToggle = document.getElementById('menuToggle');
         const navigation = document.getElementById('navigation');
         const mobileOverlay = document.getElementById('mobileOverlay');
-        const navLinks = document.querySelectorAll('nav a');
 
         function toggleMenu() {
             menuToggle.classList.toggle('active');
             navigation.classList.toggle('active');
             mobileOverlay.classList.toggle('active');
-            document.body.style.overflow = navigation.classList.contains('active') ? 'hidden' : '';
+            
+            if (navigation.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+                document.body.style.position = 'fixed';
+                document.body.style.width = '100%';
+            } else {
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
+            }
         }
 
         menuToggle.addEventListener('click', toggleMenu);
         mobileOverlay.addEventListener('click', toggleMenu);
 
-        // Close menu when clicking on a link
-        navLinks.forEach(link => {
+        document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    toggleMenu();
-                }
+                if (window.innerWidth <= 768) toggleMenu();
             });
         });
 
-        // Add scroll effect to nav on desktop
+        // Navigation scroll behavior
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
+            const nav = document.getElementById('navigation');
             
             if (window.innerWidth > 768) {
-                if (currentScroll > 100) {
-                    navigation.classList.add('scrolled');
-                } else {
-                    navigation.classList.remove('scrolled');
-                }
+                nav.classList.toggle('scrolled', currentScroll > 100);
+                nav.classList.toggle('hidden', currentScroll > lastScroll && currentScroll > 200);
             }
             
             lastScroll = currentScroll;
         });
 
-        // Popup form functions
+        // Scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        // Form functions
         function showConsultationForm() {
             const overlay = document.getElementById('popupOverlay');
             overlay.classList.add('active');
@@ -1071,55 +1262,55 @@
             document.getElementById('consultationForm').reset();
         }
 
-        // Close popup when clicking outside
         document.getElementById('popupOverlay').addEventListener('click', function(e) {
-            if (e.target === this) {
-                hideConsultationForm();
-            }
+            if (e.target === this) hideConsultationForm();
         });
 
-        // Handle form submission
         function handleFormSubmit(event) {
             event.preventDefault();
             
+            const submitBtn = event.target.querySelector('.form-btn-submit');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
             const formData = new FormData(event.target);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                message: formData.get('message')
-            };
+            const data = Object.fromEntries(formData);
 
-            // Create mailto link
-            const subject = encodeURIComponent('Consultation Request from ' + data.name);
+            const subject = encodeURIComponent(`Consultation Request from ${data.name}`);
             const body = encodeURIComponent(
-                `Name: ${data.name}\n` +
-                `Email: ${data.email}\n` +
-                `Phone: ${data.phone}\n\n` +
-                `Message:\n${data.message}`
+                `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\n\nMessage:\n${data.message}`
             );
             
-            window.location.href = `mailto:davidfreshwateranalyst@gmail.com?subject=${subject}&body=${body}`;
-            
-            // Close the form after a short delay
             setTimeout(() => {
-                hideConsultationForm();
-                alert('Your consultation request has been prepared. Please send the email that opens in your email client.');
+                window.location.href = `mailto:davidfreshwateranalyst@gmail.com?subject=${subject}&body=${body}`;
+                
+                const successMsg = document.createElement('div');
+                successMsg.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: var(--color-paper);
+                    padding: 2rem 3rem;
+                    border: 1px solid var(--color-red);
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                    z-index: 3000;
+                    text-align: center;
+                    max-width: 400px;
+                    animation: fadeIn 0.3s ease;
+                `;
+                successMsg.innerHTML = `
+                    <h3 style="color: var(--color-red); margin-bottom: 1rem;">Request Prepared</h3>
+                    <p style="margin-bottom: 1.5rem;">Your consultation request has been prepared. Please send the email that opens in your email client.</p>
+                    <button onclick="this.parentElement.remove(); hideConsultationForm();" class="btn btn-primary">OK</button>
+                `;
+                
+                document.body.appendChild(successMsg);
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
             }, 500);
-        }
-
-        // Disable parallax on mobile to improve performance
-        const isMobile = window.innerWidth <= 768;
-        
-        if (!isMobile) {
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const parallax = document.querySelector('.noise-overlay');
-                if (parallax) {
-                    const speed = scrolled * 0.2;
-                    parallax.style.transform = `translateY(${speed}px)`;
-                }
-            });
         }
 
         // Handle window resize
