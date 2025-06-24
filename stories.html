@@ -3,1228 +3,1556 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psychoanalysis Stories & Case Studies - David M. Freshwater, LMHC</title>
+    <title>Psychoanalysis Stories & Case Studies | David M. Freshwater, LMHC</title>
     <meta name="description" content="Journeys through Lacanian psychoanalysis. Discover how others have transformed repetitive patterns and found authentic ways of living.">
-    <meta name="keywords" content="psychoanalysis case studies, therapy success stories, Lacanian analysis results, transformation stories">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
-        * {
+        /* ===== CSS RESET ===== */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* ===== CUSTOM PROPERTIES ===== */
+        :root {
+            --color-ink: #1a1a1a;
+            --color-paper: #fdfcfa;
+            --color-gray-light: #e8e8e3;
+            --color-gray-medium: #999;
+            --color-red: #dc2626;
+            --color-red-dark: #b91c1c;
+            --shadow-soft: 0 2px 20px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Inter', -apple-system, sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ===== BASE STYLES ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Georgia', serif;
-            line-height: 1.7;
-            color: #2c3e50;
-            background: #0f0f23;
+            font-family: var(--font-sans);
+            line-height: 1.8;
+            color: var(--color-ink);
+            background-color: var(--color-paper);
             overflow-x: hidden;
-            -webkit-text-size-adjust: 100%;
         }
 
-        .container {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            position: relative;
-        }
-
-        .noise-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.03;
-            background-image: 
-                radial-gradient(circle at 25% 25%, white 1px, transparent 1px),
-                radial-gradient(circle at 75% 75%, white 1px, transparent 1px);
-            background-size: 50px 50px;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .content-wrap {
-            position: relative;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-        }
-
-        .content-wrap-bottom {
-            position: relative;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            min-height: calc(100vh - 200px);
-        }
-
-        header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
-            color: white;
-            padding: 5rem 1.5rem 3rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
-            animation: float 20s ease-in-out infinite;
-            opacity: 0.3;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
+        /* ===== TYPOGRAPHY ===== */
         h1 {
-            font-size: clamp(1.75rem, 5vw, 3rem);
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-            font-weight: normal;
-            letter-spacing: -1px;
-        }
-
-        .page-tagline {
-            font-size: clamp(0.95rem, 3vw, 1.2rem);
-            font-style: italic;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* Mobile Navigation - Updated */
-        .mobile-menu-toggle {
-            display: none;
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            z-index: 1000;
-            background: rgba(52, 73, 94, 0.9);
-            color: white;
-            border: none;
-            padding: 0;
-            border-radius: 12px;
-            cursor: pointer;
-            width: 54px;
-            height: 54px;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .mobile-menu-toggle:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
-            background: rgba(52, 73, 94, 0.95);
-        }
-
-        .mobile-menu-toggle svg {
-            width: 24px;
-            height: 24px;
-            transition: transform 0.3s ease;
-        }
-
-        .mobile-menu-toggle.active svg {
-            transform: rotate(90deg);
-        }
-
-        /* Navigation - Sticky positioning for desktop */
-        nav {
-            background: rgba(52, 73, 94, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            position: sticky;
-            position: -webkit-sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        /* Add class for scrolled state */
-        nav.scrolled {
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            padding: 0.75rem 0;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        nav li {
-            margin: 0.25rem 0.5rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.75rem 1.25rem;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            position: relative;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            display: inline-block;
-        }
-
-        nav a:hover, nav a:focus {
-            background: rgba(255,255,255,0.15);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        nav a.active {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
-        }
-
-        .section {
-            padding: 3rem 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            margin-bottom: 3rem;
+            text-align: center;
         }
 
         h2 {
-            color: #2c3e50;
-            margin: 0 0 2rem 0;
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            position: relative;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 4rem;
             text-align: center;
-            font-weight: normal;
+            position: relative;
         }
 
         h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            border-radius: 2px;
+            width: 40px;
+            height: 1px;
+            background-color: var(--color-red);
+            opacity: 0.6;
         }
 
         p {
-            margin-bottom: 1.5rem;
-            font-size: clamp(1rem, 2.5vw, 1.1rem);
-            text-align: left;
+            color: var(--color-gray-medium);
+            margin-bottom: 2rem;
+            line-height: 1.9;
+            max-width: 65ch;
+            margin-left: auto;
+            margin-right: auto;
         }
 
+        /* ===== LAYOUT ===== */
+        .page-header {
+            background-color: var(--color-paper);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            border-bottom: 1px solid var(--color-gray-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-tagline {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: var(--color-gray-medium);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            font-family: var(--font-serif);
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background-color: var(--color-paper);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .nav.scrolled {
+            top: 1rem;
+            padding: 0.75rem 1.5rem;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .nav.hidden {
+            transform: translateX(-50%) translateY(-120px);
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            margin: 0;
+        }
+
+        .nav-link {
+            color: var(--color-ink);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: var(--color-red);
+            font-weight: 500;
+        }
+
+        .nav-link.nav-cta {
+            background-color: var(--color-red);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 25px;
+            margin-left: 1rem;
+        }
+
+        .nav-link.nav-cta:hover {
+            background-color: var(--color-red-dark);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.nav-cta::after {
+            display: none;
+        }
+
+        /* ===== MOBILE MENU ===== */
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1001;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: 2px solid var(--color-red);
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            background-color: var(--color-red);
+        }
+
+        .mobile-menu-btn:hover span {
+            background-color: white;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--color-ink);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+        }
+
+        /* ===== LACANIAN ELEMENTS ===== */
+        .header-element {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            opacity: 0.06;
+            pointer-events: none;
+        }
+
+        .header-element svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .header-element circle {
+            stroke: var(--color-ink);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .palimpsest {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 4s ease-in;
+        }
+
+        .palimpsest.visible {
+            opacity: 1;
+        }
+
+        .palimpsest-text {
+            position: absolute;
+            opacity: 0.02;
+            font: italic 18px/1.6 var(--font-serif);
+            color: var(--color-ink);
+            letter-spacing: 0.1em;
+            animation: drift 120s ease-in-out infinite;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(40px) translateY(-20px); }
+            50% { transform: translateX(-30px) translateY(30px); }
+            75% { transform: translateX(20px) translateY(-10px); }
+        }
+
+        /* ===== DISCLAIMER ===== */
         .disclaimer {
             text-align: center;
             font-style: italic;
-            color: #7f8c8d;
-            margin-bottom: 3rem;
-            padding: 1.5rem;
-            background: rgba(127, 140, 141, 0.05);
-            border-radius: 10px;
-        }
-
-        .case-container {
-            margin-bottom: 2rem;
-        }
-
-        .case-card {
-            background: rgba(46, 204, 113, 0.05);
-            border-radius: 15px;
-            border-left: 4px solid #2ecc71;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            overflow: hidden;
-        }
-
-        .case-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .case-card.open {
-            transform: none;
-        }
-
-        .case-card.open:hover {
-            transform: none;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .case-header {
+            color: var(--color-gray-medium);
+            margin-bottom: 4rem;
             padding: 2rem;
-            background: rgba(46, 204, 113, 0.08);
-            border-bottom: 1px solid rgba(46, 204, 113, 0.1);
+            background: rgba(26, 26, 26, 0.02);
+            border-radius: 8px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== STORY CARDS ===== */
+        .story-container {
+            margin-bottom: 3rem;
+        }
+
+        .story-card {
+            background-color: var(--color-paper);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        .story-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .story-card.open {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            background-color: rgba(253, 252, 250, 0.98);
+        }
+
+        .story-header {
+            padding: 2.5rem;
+            background-color: var(--color-paper);
+            border-left: 4px solid var(--color-red);
             position: relative;
+            transition: var(--transition);
         }
 
-        .case-title {
-            font-weight: bold;
-            color: #27ae60;
-            margin-bottom: 0.5rem;
-            font-size: clamp(1.1rem, 3vw, 1.2rem);
+        .story-card.open .story-header {
+            background-color: rgba(220, 38, 38, 0.02);
         }
 
-        .case-preview {
-            color: #2c3e50;
+        .story-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .story-time {
+            font-size: 0.85rem;
+            color: var(--color-gray-medium);
+        }
+
+        .story-title {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--color-ink);
+            margin-bottom: 1rem;
+            font-family: var(--font-serif);
+            letter-spacing: 0.05em;
+        }
+
+        .story-preview {
+            color: var(--color-gray-medium);
             font-style: italic;
+            line-height: 1.7;
             margin-bottom: 0;
-            font-size: clamp(0.95rem, 2.5vw, 1rem);
-            line-height: 1.5;
         }
 
-        .case-expand-icon {
+        .story-expand-icon {
             position: absolute;
-            right: 2rem;
+            right: 2.5rem;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 1.5rem;
-            color: #27ae60;
-            transition: transform 0.3s ease;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
         }
 
-        .case-card.open .case-expand-icon {
-            transform: translateY(-50%) rotate(45deg);
+        .story-expand-icon svg {
+            width: 100%;
+            height: 100%;
+            transition: var(--transition);
         }
 
-        .case-content {
+        .story-expand-icon circle {
+            stroke: var(--color-red);
+            stroke-width: 1.5;
+            fill: none;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .story-card:hover .story-expand-icon circle {
+            opacity: 1;
+        }
+
+        .story-card.open .story-expand-icon svg {
+            transform: rotate(90deg);
+        }
+
+        .story-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            background: rgba(46, 204, 113, 0.02);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: rgba(253, 252, 250, 0.5);
         }
 
-        .case-card.open .case-content {
-            max-height: 999999px;
-            transition: max-height 1s cubic-bezier(0.4, 0, 0.2, 1);
+        .story-card.open .story-content {
+            max-height: none;
+            opacity: 1;
         }
 
-        .case-content-inner {
-            padding: 2rem;
-        }
-
-        .case-content p {
-            margin-bottom: 1rem;
-            font-size: clamp(0.95rem, 2.5vw, 1rem);
-            text-align: left;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .testimonial {
-            background: rgba(52, 152, 219, 0.05);
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 4px solid #3498db;
+        .story-content-inner {
+            padding: 3rem;
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            line-height: 2.1;
             position: relative;
-            transition: all 0.3s ease;
         }
 
-        .testimonial:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        .story-content-inner p {
+            color: var(--color-ink);
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            max-width: none;
         }
 
-        .testimonial::before {
-            content: '"';
-            font-size: 3rem;
-            color: #3498db;
-            position: absolute;
-            top: 10px;
-            left: 15px;
-            opacity: 0.3;
+        .story-content-inner p strong {
+            font-weight: 600;
+            color: var(--color-ink);
+            display: block;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-sans);
+            letter-spacing: 0.05em;
+            font-size: 1.1rem;
         }
 
-        .testimonial p {
-            margin: 0;
-            font-style: italic;
-            text-align: left;
-            padding-left: 1rem;
+        /* ===== PROGRESS INDICATOR ===== */
+        .progress-bar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--color-gray-light);
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
+        .story-card.open .progress-bar {
+            opacity: 1;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--color-red);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 44px;
+            height: 44px;
+            background-color: var(--color-red);
             color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            margin: 1rem 0.5rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-            letter-spacing: 0.5px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background-color: var(--color-paper);
+            padding: 6rem 0;
+            text-align: center;
             position: relative;
             overflow: hidden;
-            touch-action: manipulation;
-            cursor: pointer;
-            border: none;
         }
 
-        .cta-button::before {
+        .cta-section::before {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-button:hover::before, .cta-button:focus::before {
-            left: 100%;
-        }
-
-        .cta-button:hover, .cta-button:focus {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
-        }
-
-        .divider {
-            width: 100px;
+            left: 0;
+            right: 0;
             height: 1px;
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            margin: 3rem auto;
-            position: relative;
+            background: linear-gradient(to right, transparent, var(--color-gray-light), transparent);
         }
 
-        .divider::before {
-            content: '◊';
-            position: absolute;
-            top: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
-            color: #e74c3c;
-            padding: 0 10px;
-            font-size: 1rem;
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            background: none;
         }
 
-        footer {
-            background: #34495e;
-            color: #ecf0f1;
-            padding: 2rem 1.5rem;
+        .btn-primary {
+            background-color: var(--color-red);
+            color: white;
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--color-ink);
+            color: var(--color-gray-light);
+            padding: 4rem 2rem 2rem;
             text-align: center;
+            margin-top: 0;
         }
 
-        footer p {
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-            margin-bottom: 0.75rem;
-            text-align: center;
+        .footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            opacity: 0.8;
+            color: var(--color-gray-light);
         }
 
-        footer a {
-            color: #3498db;
+        .footer a {
+            color: var(--color-gray-light);
             text-decoration: none;
         }
 
-        footer a:hover, footer a:focus {
+        .footer a:hover {
             text-decoration: underline;
         }
 
-        /* Tablet styles */
-        @media (min-width: 600px) {
-            header {
-                padding: 6rem 2rem 4rem;
-            }
-
-            h1, .page-tagline {
-                padding: 0;
-            }
-
-            .section {
-                padding: 4rem 2rem;
-            }
-
-            .cta-button {
-                padding: 1.25rem 2.5rem;
-                margin: 1rem;
-            }
-
-            h2 {
-                margin-bottom: 3rem;
-            }
-
-            .divider {
-                margin: 4rem auto;
-            }
+        /* ===== FORM STYLES ===== */
+        .form-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(26, 26, 26, 0.8);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Mobile menu styles */
+        .form-overlay.active {
+            display: flex;
+        }
+
+        .form-container {
+            background-color: var(--color-paper);
+            padding: 3rem 2.5rem 2.5rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: var(--transition);
+        }
+
+        .form-overlay.active .form-container {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            color: var(--color-gray-medium);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.6rem;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--color-gray-light);
+            color: var(--color-ink);
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-bottom-color: var(--color-red);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .form-btn {
+            padding: 0.75rem 2rem;
+            background: transparent;
+            color: var(--color-ink);
+            border: 1px solid var(--color-ink);
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            font-weight: 300;
+        }
+
+        .form-btn-submit:hover {
+            background-color: var(--color-red);
+            color: white;
+            border-color: var(--color-red);
+        }
+
+        .form-btn-cancel:hover {
+            background-color: var(--color-ink);
+            color: white;
+        }
+
+        .form-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: var(--color-gray-medium);
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .form-close:hover {
+            color: var(--color-ink);
+            transform: rotate(90deg);
+        }
+
+        /* ===== BACKGROUND EFFECTS ===== */
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(26, 26, 26, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(26, 26, 26, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        .bg-texture {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.01) 35px, rgba(255,255,255,.01) 70px);
+            pointer-events: none;
+            z-index: 2;
+            mix-blend-mode: overlay;
+        }
+
+        /* ===== UTILITIES ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
+            .mobile-menu-btn {
                 display: flex;
             }
 
-            .content-wrap {
-                padding-top: 0;
-            }
-
-            /* Hide desktop nav on mobile */
-            nav {
+            .nav {
                 position: fixed;
                 top: 0;
                 left: -100%;
+                transform: none;
                 width: 85%;
                 height: 100vh;
-                background: rgba(52, 73, 94, 0.98);
-                transition: left 0.3s ease;
-                z-index: 999;
+                background-color: var(--color-paper);
+                padding: 5rem 2rem;
+                border-radius: 0;
+                transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 5px 0 30px rgba(0, 0, 0, 0.1);
                 overflow-y: auto;
             }
 
-            nav.active {
+            .nav.active {
                 left: 0;
             }
 
-            nav ul {
+            .nav.hidden {
+                transform: none !important;
+            }
+
+            .nav.scrolled {
+                top: 0 !important;
+                padding: 5rem 2rem !important;
+            }
+
+            .nav-list {
                 flex-direction: column;
-                padding: 5rem 1rem 2rem;
+                align-items: flex-start;
+                gap: 2rem;
             }
 
-            nav li {
-                margin: 0.5rem 0;
-                width: 100%;
-            }
-
-            nav a {
-                display: block;
-                padding: 1rem 1.5rem;
+            .nav-link {
                 font-size: 1.1rem;
-                text-align: left;
-                border-radius: 8px;
             }
 
-            .mobile-overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 998;
-            }
-
-            .mobile-overlay.active {
-                display: block;
-            }
-            
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .case-container {
-                margin-bottom: 1.5rem;
-            }
-
-            .case-header {
-                padding: 1.5rem;
-            }
-
-            .case-expand-icon {
-                right: 1.5rem;
-                font-size: 1.2rem;
-            }
-
-            .case-content-inner {
-                padding: 1.5rem;
-            }
-
-            .case-card:hover {
-                transform: none;
-            }
-        }
-
-        /* Desktop styles */
-        @media (min-width: 769px) {
-            .mobile-menu-toggle,
-            .mobile-overlay {
-                display: none !important;
+            .page-header {
+                padding: 6rem 2rem 3rem;
             }
 
             .section {
-                padding: 5rem 2rem;
+                padding: 4rem 0;
             }
 
-            p {
-                text-align: justify;
+            .container {
+                padding: 0 1.5rem;
             }
 
-            .disclaimer,
-            .case-content p {
-                text-align: left;
+            .story-header {
+                padding: 2rem;
+            }
+
+            .story-content-inner {
+                padding: 2rem;
+                font-size: 1.05rem;
+            }
+
+            .story-expand-icon {
+                right: 1.5rem;
+            }
+
+            .story-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
             }
         }
 
-        /* Accessibility improvements */
-        a:focus,
-        button:focus {
-            outline: 2px solid #3498db;
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 0.1em;
+            }
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+        :focus {
+            outline: 2px solid var(--color-red);
             outline-offset: 2px;
         }
 
-        /* Reduce animations for users who prefer reduced motion */
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
-
-            .cta-button::before {
-                display: none;
-            }
-        }
-
-        /* Touch-friendly tap targets */
-        a, button {
-            min-height: 44px;
-            min-width: 44px;
-        }
-
-        /* Better text contrast for readability */
-        @media (prefers-contrast: high) {
-            body {
-                color: #000;
-            }
-
-            .content-wrap {
-                background: rgba(255, 255, 255, 1);
-            }
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Prevent horizontal scroll on mobile */
-        body {
-            overflow-x: hidden;
-        }
-
-        /* Ensure images and embeds are responsive */
-        img, video, iframe {
-            max-width: 100%;
-            height: auto;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="noise-overlay"></div>
-        
-        <!-- Navigation moved outside content-wrap -->
-        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        </button>
+    <!-- Background Effects -->
+    <div class="bg-gradient"></div>
+    <div class="bg-texture"></div>
 
-        <div class="mobile-overlay" id="mobileOverlay"></div>
-        
-        <div class="content-wrap">
-            <header>
-                <h1>Journeys Through Analysis</h1>
-                <div class="page-tagline">Transformations through Lacanian psychoanalysis</div>
-            </header>
-        </div>
+    <!-- Palimpsest with varied quotes -->
+    <div class="palimpsest" id="palimpsest"></div>
 
-        <nav id="navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="approach.html">How It Works</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="stories.html" class="active">Stories</a></li>
-                <li><a href="faq.html">Questions</a></li>
-                <li><a href="#" onclick="showConsultationForm(); return false;">Begin</a></li>
-            </ul>
-        </nav>
+    <!-- Navigation -->
+    <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-        <div class="content-wrap-bottom">
-            <section class="section">
-                <h2>Stories of Transformation</h2>
-                
-                <p class="disclaimer">The following narratives illustrate the process of psychoanalytic work. They are composite accounts based on various clinical experiences, with all identifying details altered to protect confidentiality.</p>
-
-                <div class="case-container">
-                    <div class="case-card" onclick="toggleCase(this)">
-                        <div class="case-header">
-                            <div class="case-title">Eliminated</div>
-                            <div class="case-preview">A woman discovers how she had erased herself from her own life, making herself invisible to avoid taking up space...</div>
-                            <div class="case-expand-icon">+</div>
-                        </div>
-                        <div class="case-content">
-                            <div class="case-content-inner">
-                                <p>Elena Martinez apologizes for everything. Even on video, sitting in her own apartment, she apologizes for her internet connection, for her cellphone ringing, for not immediately knowing the answer to a question I ask. By the end of our first session, she has apologized about ten times.</p>
-
-                                <p>"I think I might be broken," she says quietly. Sometimes it's hard to hear what she's saying, and I have to ask her to repeat herself. Through the pixelated screen, her apartment behind her tells its own story - everything arranged just so, nothing out of place. "Like, fundamentally broken. Michael says I'm too sensitive, too anxious, too... much. And I think he's right."</p>
-
-                                <p>Michael. Always Michael. His name peppers her sentences like seasoning she can't taste anymore. Michael thinks this. Michael says that. Michael would prefer if she...</p>
-
-                                <p>"Too much."</p>
-
-                                <p>"Yes, Michael always says I'm too much."</p>
-
-                                <p>"But on my screen you're barely here."</p>
-
-                                <p>She looks startled, her image freezing briefly before the connection catches up. She glances at her own image in the corner of her video call and sees what I see - a woman making herself as small as possible, hunched over, taking up maybe a quarter of the frame.</p>
-
-                                <p><strong>The Architecture of Nothing:</strong> Elena's apartment tells the story she can't, but only through her words. She mentions Michael's books, his coffee maker, his photos with colleagues. When I ask about her things, she pauses.</p>
-
-                                <p>"I don't really have photos anymore," she says. "Michael says they make the place look cluttered."</p>
-
-                                <p>"Your photos make the place look cluttered."</p>
-
-                                <p>"Well, yes. I mean, our place. It's our apartment."</p>
-
-                                <p>"You said 'the place.' Not 'our place.' Not 'my place.'"</p>
-
-                                <p>"I... I guess I did."</p>
-
-                                <p>"Where are your books?"</p>
-
-                                <p>"In boxes. Under the bed. They're mostly novels anyway, nothing important."</p>
-
-                                <p>"Nothing important."</p>
-
-                                <p>"Michael reads business books, psychology, things that matter. My books are just... stories."</p>
-
-                                <p>"Just stories."</p>
-
-                                <p>"I know how that sounds. But his books serve a purpose. Mine are just for escape."</p>
-
-                                <p>"Escape from what?"</p>
-
-                                <p>She's quiet for a long moment. "From feeling like I don't belong anywhere. Even in my own apartment. If a stranger walked in, I don't think they'd know I lived there. Everything is arranged the way Michael likes it. Even my tea lives in the corner of his kitchen."</p>
-
-                                <p>"His kitchen."</p>
-
-                                <p>"Our kitchen. Why do I keep doing that?"</p>
-
-                                <p>The question breaks something open. She cries for twenty minutes, and I listen to her tears through the connection, no image to dissolve or reform, just the sound of someone recognizing how thoroughly she has erased herself from her own life.</p>
-
-                                <p><strong>The Phone Sessions:</strong> I suggest we switch to audio-only sessions – twice weekly instead of once. "Why?" Elena asks during our video call.</p>
-
-                                <p>"What do you see when you look at yourself on screen?"</p>
-
-                                <p>She glances at her own image in the corner. "Someone taking up too little space. Someone apologizing for existing."</p>
-
-                                <p>"What might happen if you couldn't see yourself at all?"</p>
-
-                                <p>The following week, Elena calls instead of logging into video. Her voice sounds different immediately - less controlled, more present.</p>
-
-                                <p>"I've always been so timid," she says during our second phone session. "Even as a child, I was the timid one. My mother used to say, 'Elena's just naturally timid,' like it was my personality, and Michael says the same thing. 'Elena's too timid to really go after what she wants.' Maybe they're right."</p>
-
-                                <p>"Timid Elena."</p>
-
-                                <p>"Yes, that's what I'm saying. I've always been—"</p>
-
-                                <p>"Elena timid. Elena timid. You hear anything in that?"</p>
-
+    <div class="mobile-overlay" id="mobileOverlay"></div>
     
+    <nav class="nav" id="navigation">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="approach.html" class="nav-link">Approach</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="stories.html" class="nav-link active">Stories</a></li>
+            <li><a href="faq.html" class="nav-link">FAQ</a></li>
+            <li><a href="#" class="nav-link nav-cta" onclick="showConsultationForm(); return false;">Begin</a></li>
+        </ul>
+    </nav>
 
-                                <p>"Elena timid. Elenatimid. It sounds like..." Her breath catches. "Eliminated?"</p>
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="header-element">
+            <svg viewBox="0 0 300 300">
+                <!-- Borromean Rings -->
+                <circle cx="100" cy="125" r="50" />
+                <circle cx="150" cy="125" r="50" />
+                <circle cx="125" cy="165" r="50" />
+            </svg>
+        </div>
+        <h1>Journeys Through Analysis</h1>
+        <p class="page-tagline">Transformations through Lacanian psychoanalysis</p>
+    </header>
 
-                                <p>"Mmm. It's an anagram. "</p>
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <h2>Stories of Transformation</h2>
+            
+            <p class="disclaimer">The following narratives illustrate the process of psychoanalytic work. They are composite accounts drawn from various clinical experiences, with all identifying details carefully altered to protect confidentiality.</p>
 
-                                <p>The silence stretches for nearly a minute.</p>
+            <!-- Story 1: Stomach (Somatic) -->
+            <div class="story-container fade-in">
+                <div class="story-card" onclick="toggleStory(this)">
+                    <div class="story-header">
+                        <div class="story-meta">
+                            <span class="story-time">12 min read</span>
+                        </div>
+                        <h3 class="story-title">Stomach</h3>
+                        <p class="story-preview">Three years of medical tests. Everything normal. The pain remains.</p>
+                        <div class="story-expand-icon">
+                            <svg viewBox="0 0 30 30">
+                                <circle cx="10" cy="12" r="6" />
+                                <circle cx="20" cy="12" r="6" />
+                                <circle cx="15" cy="20" r="6" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="story-content-inner">
+                            <p>Rebecca called during her lunch break, speaking in the hushed tone of someone hiding in her home office while her family bustled outside the door. At 35, she could coordinate her marketing director schedule, family calendars, and social obligations with apparent ease. Yet she was doubled over with stomach pain that no doctor could explain.</p>
 
-                                <p>"I've been erasing myself from my own life. </p>
+                            <p>"It's getting worse," she said, her voice tight. "Especially during family gatherings. Which is ironic, since I'm the one who organizes them all."</p>
 
+                            <p>For three years, she'd seen gastroenterologists, tried elimination diets, underwent endless tests. Everything came back normal. The pain, however, remained stubbornly real – sharp cramping that arrived precisely when she sat down with her extended family.</p>
 
-                                <p><strong>The Slow Break:</strong> The relationship doesn't end in one dramatic conversation. It erodes over months - Michael working later at his consulting firm, Elena sleeping on the couch more often, conversations that start about small things and end with one of them leaving the room.</p>
+                            <p>"My husband thinks it's stress," she said with a bitter laugh. "Easy for him to say. He just shows up to events I've planned and managed."</p>
 
-                                <p>But the final conversation happens exactly the way it needs to.</p>
+                            <p>We agreed to meet twice a week, phone sessions that Rebecca squeezed between meetings and school pickups.</p>
 
-                                <p>"Do you love me?" Elena asks on a Sunday evening in October. Michael is preparing for another week of client presentations. Elena is preparing for another week of non-existence.</p>
+                            <p><strong>The Pattern</strong></p>
 
-                                <p>Michael pauses, one hand on his laptop. "What kind of question is that?"</p>
+                            <p>As we worked together, Rebecca's symptoms followed a precise social calendar. Worse during holidays she'd spent weeks organizing. Absent when she was alone in her home office. Most severe during her mother-in-law's Sunday visits, where she sat politely while enduring pointed comments about her parenting, her housekeeping, her career choices.</p>
 
-                                <p>"The kind that should have an immediate yes."</p>
+                            <p>"I just smile and nod," she said during one session. "What else can I do? She's Nathan's mother. Family is important to him."</p>
 
-                                <p>"Elena, you know I care about you."</p>
+                            <p>"And to you?"</p>
 
-                                <p>"That's not what I asked."</p>
+                            <p>A long pause. "I used to think so. Now I'm not sure what I think anymore."</p>
 
-                                <p>The silence stretches between them. In that silence, Elena hears everything she's been afraid to know. Six years of qualifying statements. Six years of "maybe someday" and "when things settle down." Six years of love with an asterisk.</p>
+                            <p>Rebecca had learned early to be the family peacekeeper. Her own mother had been volatile, unpredictable – volcanic rages followed by days of silence. "I never knew which mother I'd get," Rebecca explained. "The one who screamed about a dish in the sink, or the one who wouldn't speak for a week. I learned to read her moods, smooth things over before they exploded."</p>
 
-                                <p>"I think we want different things," Michael says carefully.</p>
+                            <p>"Smooth things over."</p>
 
-                                <p>"I think," Elena replies, surprising herself with the steadiness of her voice, "you've never wanted me at all. You've wanted the idea of me. The convenient, low-maintenance version."</p>
+                            <p>"Anticipate. Accommodate. Swallow whatever I was feeling to keep her stable." She paused. "I was eight years old, managing a grown woman's emotions."</p>
 
-                                <p>"That's not fair."</p>
+                            <p>"Anticipate. Accommodate. Eight years old."</p>
 
-                                <p>"Neither is spending six years waiting for someone to decide if I'm worth choosing."</p>
+                            <p>I ended the session there.</p>
 
-                                <p>She moves out three weeks later. Not in crisis, not dramatically, but with a determination that surprises everyone, including herself.</p>
+                            <p><strong>The Revelation</strong></p>
 
-                                <p><strong>Learning to Exist:</strong> The studio apartment she rents in Queens is tiny and expensive and perfect. For the first month, she arranges everything exactly like Michael would - minimal, apologetic, taking up as little space as possible. She calls me crying because she bought groceries and realized she didn't know what she actually liked to eat.</p>
+                            <p>Rebecca called for our next session sounding shaken.</p>
 
-                                <p>"I've been eating what Michael likes for so long I don't remember my own preferences," she says during one particularly difficult session.</p>
+                            <p>"I couldn't stop thinking about what you said. 'Anticipate. Accommodate. Eight years old.' I kept repeating it all week." Her voice was different - rawer than usual. "Then I heard it. What I've been saying without knowing it."</p>
 
-                                <p>In March, she buys a plant - a dramatic fiddle-leaf fig she names Fernando - and puts it directly in the center of her living room window.</p>
+                            <p>"Tell me."</p>
 
-                                <p>"Michael would have hated Fernando," she says during our April session, and I can hear her moving around, probably adjusting the plant's position. "But you know what? I love Fernando. I love how much space he takes up. I love how dramatic and needy he is."</p>
+                            <p>"Anticip-ATE. Accommod-ATE. Eight - ate." She laughed, but it sounded more like a sob. "I've been telling you all along. I ATE everything. I was eight years old and I ATE my mother's rage. I ATE her silence. I ATE her instability."</p>
 
-                                <p>"Like you?"</p>
+                            <p>She was crying now. "I became a little garbage disposal for emotions. Whatever she couldn't handle, I ate. And I got so good at it. So good that I'm still doing it - with Nathan's mother, with my boss, with everyone."</p>
 
-                                <p>"Like the me I was eliminating. The real me, not the performed version."</p>
+                            <p>"Still eating."</p>
 
-                                <p>By summer, our twice-weekly phone sessions have become more intense. One day when I tried to end the session early, Elena spoke up - something she'd never done before. 'Could we... keep talking for a bit longer?' she asked, her voice steady despite the question. It was the first time she'd asked for what she needed. She tells me about learning to cook for one, about buying yellow paint for her bathroom, about the way it feels to wake up in the morning without immediately calculating someone else's mood.</p>
-                                <p><strong>The Gallery:</strong> After two years of twice-weekly sessions, Elena has her first art show. It's small - just a corner of a Brooklyn gallery - but her name is on the placard in bold black letters: "Expanding: Recent Works by Elena Martinez."</p>
+                            <p>"Everything. Everyone's disappointment, frustration, anger. I eat it so they don't have to feel it. And my stomach - God, my stomach has been trying to tell me it's full. It can't digest any more of other people's emotions."</p>
 
-                                <p>The opening is everything she hoped for and nothing like she expected. People come - her mother (who flew in from Miami), her sister, friends from her art class, strangers who wander in from the street. They stand in front of her work and really look.</p>
+                            <p>A long pause.</p>
 
-                                <p>"A woman bought 'The Breathing Room,'" Elena tells me the next day. "She said it reminded her of what hope looks like."</p>
+                            <p>"Eight ate," she whispered. "That little girl is still in there, eating everything to keep the peace. She doesn't know the danger has passed. She doesn't know she can stop."</p>
 
-                                <p>"How did that feel?"</p>
+                            <p><strong>The Workplace Pattern</strong></p>
 
-                                <p>"Like existing. Like really, actually existing in the world instead of haunting it."</p>
+                            <p>The pattern extended beyond family. At work, Rebecca was known as the one who could handle difficult clients, smooth over conflicts, make everything run seamlessly.</p>
 
-                                <p><strong>Learning to Leave:</strong> Three and a half years into our work, Elena starts coming to sessions less frequently. Not because she's avoiding, but because she's busy living.</p>
+                            <p>"Last week, my boss dumped a crisis project on me at 4 PM," she said during a Thursday session. "Clark had screwed it up, but somehow it became my emergency. I was up until midnight fixing it, working from my kitchen table after the kids went to bed."</p>
 
-                                <p>"I think I'm ready to stop," she says during what becomes our final session.</p>
+                            <p>"Clark screwed it up."</p>
 
-                                <p>"What changed?"</p>
+                            <p>"But I'm the one with stomach pain. Clark logged off at five." She laughed bitterly. "He probably slept great. Meanwhile, I was up all night with cramps, my laptop still glowing on the nightstand."</p>
 
-                                <p>"I stopped needing someone else to confirm I was real. I stopped needing to disappear to make room for other people." She pauses. "This saved my life. But now I want to live it."</p>
+                            <p>"You took in his mess."</p>
 
-                                <p>After we hang up, I sit in the silence for a moment. Elena Martinez - the woman who once took up a quarter of her video screen and apologized for existing - has just ended our therapeutic relationship with quiet authority.</p>
+                            <p>"I always do. At work, at home. I'm the one who takes on everyone else's problems." She paused. "God, even my body is tired of it."</p>
 
-                                <p>The woman who forgot how to exist has not only remembered - she's learned to live loudly, take up space, and choose herself without apology.</p>
-                            </div>
+                            <p><strong>The Rebellion</strong></p>
+
+                            <p>Eight months into our work, Rebecca was describing another family dinner. The pain had been particularly severe – she'd barely touched her food.</p>
+
+                            <p>"She spent twenty minutes explaining how I was ruining Emma's development by working full-time. I just sat there, nodding, while my stomach twisted into knots."</p>
+
+                            <p>"Twisted into knots."</p>
+
+                            <p>"Like someone was wringing out my intestines. But I kept smiling. Nathan was scrolling through his phone. The kids were fighting. And I just... sat there."</p>
+
+                            <p>"What did you want to say?"</p>
+
+                            <p>"That it's none of her business. That Nathan and I made this decision together. That I love my work and I'm good at it." Her voice grew stronger. "That I'm tired of pretending her opinions matter more than mine."</p>
+
+                            <p>"But you said nothing."</p>
+
+                            <p>"I can't. It would upset Nathan. Cause drama. Ruin the relationship."</p>
+
+                            <p>"So you let it ruin you instead."</p>
+
+                            <p>The words hung between us. Rebecca was quiet for a long time.</p>
+
+                            <p>"Yes," she finally whispered. "I let it ruin me. Every Sunday. Every holiday. Every family dinner. I let it eat away at me."</p>
+
+                            <p><strong>The Breaking Point</strong></p>
+
+                            <p>During a particularly difficult session, Rebecca was recounting her mother-in-law's latest visit. Her voice carried exhaustion rather than its usual diplomatic tone.</p>
+
+                            <p>"She kept commenting on how much weight I'd gained, while loading more food onto my plate. 'Rebecca needs to watch her figure, but also, why isn't she eating my cooking?'" Rebecca's voice cracked. "I just sat there, smiling, taking it all in. Literally. Taking it all in."</p>
+
+                            <p>"Full."</p>
+
+                            <p>I ended the session there.</p>
+
+                            <p><strong>Finding Her Voice</strong></p>
+
+                            <p>As our work deepened, Rebecca began to distinguish between physical hunger and emotional starvation. She realized she'd been so busy feeding everyone else – literally and metaphorically – that she'd lost touch with her own appetite.</p>
+
+                            <p>The breakthrough came during a transferential moment in our work. I was running fifteen minutes late for our Tuesday session due to an emergency with another client. When I called Rebecca, she immediately reassured me: "Oh, no problem at all! These things happen. I'll just wait."</p>
+
+                            <p>During our session, she mentioned feeling "a bit off" but continued discussing her week as usual. Midway through, while describing another family conflict she'd mediated, her voice suddenly changed.</p>
+
+                            <p>"I'm sorry, I need to stop talking. My stomach is cramping."</p>
+
+                            <p>I could hear her breathing change, becoming shallow and strained.</p>
+
+                            <p>"The pain started when I was waiting for you to call," she said quietly. "But I told myself it was fine, that I understood."</p>
+
+                            <p>"You told yourself it was fine."</p>
+
+                            <p>"Yes, I—" She stopped abruptly. "Oh my God. I'm doing it right now, aren't I? I'm swallowing your lateness, just like I swallow everything else."</p>
+
+                            <p>"What would happen if you didn't?"</p>
+
+                            <p>A long pause. Her breathing was still labored. "I'd tell you that I was frustrated. That I rearranged my day for this appointment. That waiting with no explanation brought up..." Her voice cracked. "That it reminded me of being little, waiting for my mother to notice me."</p>
+
+                            <p>"And saying that would mean?"</p>
+
+                            <p>"That I'm demanding. Difficult. Too much." The words came out in a rush. "That you might not want to work with me anymore."</p>
+
+                            <p>"So instead you make your body hold the frustration."</p>
+
+                            <p>"I can't stomach this anymore." The words emerged like a sob. "I can't keep swallowing everyone else's needs and ignoring my own."</p>
+
+                            <p>As she spoke these words, I could hear her breathing begin to deepen. The cramping, she reported, was subsiding.</p>
+
+                            <p><strong>The Recognition</strong></p>
+
+                            <p>"My stomach just relaxed," she said with wonder. "The pain stopped when I said I couldn't stomach it anymore."</p>
+
+                            <p>"You've been feeding everyone while you starve."</p>
+
+                            <p>Complete silence. Then: "Oh my God. Yes. I prepare elaborate meals, organize perfect gatherings, make sure everyone's fed and happy. But I'm... I'm starving. Emotionally starving."</p>
+
+                            <p>"Making yourself palatable."</p>
+
+                            <p>"While I waste away inside." Her voice was barely a whisper. "No wonder my stomach rebels. It's the only part of me that refuses to pretend I'm full when I'm actually empty."</p>
+
+                            <p><strong>The Slow Change</strong></p>
+
+                            <p>Learning to speak her frustrations instead of somatizing them required patience and practice. The first real test came three weeks after our breakthrough session.</p>
+
+                            <p>"I told Nathan about the stomach pain," she reported during our Thursday call. "Really told him. Not the medical version, but what it means. He was... defensive at first."</p>
+
+                            <p>"Defensive."</p>
+
+                            <p>"He said I never told him I was unhappy. That I always seemed to have everything under control." She sighed. "Which is true. I performed 'fine' so well that he believed it."</p>
+
+                            <p>The conversation had continued over several days. Nathan struggled to understand how he'd missed her distress.</p>
+
+                            <p>"He kept saying, 'But you never said anything.' And I had to explain that was the point. I couldn't say anything. That's what the pain was about."</p>
+
+                            <p>"How did he respond?"</p>
+
+                            <p>"He went quiet for a long time. Then he said, 'I've been letting you carry everything, haven't I? Like my mother does to you.'" Rebecca's voice wavered. "It was the first time he'd ever made that connection."</p>
+
+                            <p><strong>Nathan's Journey</strong></p>
+
+                            <p>The change in Nathan wasn't immediate or smooth. Years of patterns don't shift overnight.</p>
+
+                            <p>"He's trying," Rebecca reported a month later. "But it's like he's seeing our life for the first time. Last week he noticed I was making Emma's lunch while on a Zoom call and answering Slack messages. He said, 'You're doing three things at once.' Like it was a revelation."</p>
+
+                            <p>"A revelation."</p>
+
+                            <p>"I've been doing three things at once for fifteen years. He just never saw it." She paused. "Or I made it look too easy. Made myself too efficient at swallowing the burden."</p>
+
+                            <p>Progress came in small moments. Nathan started intervening when his mother made comments. Not dramatically, but consistently.</p>
+
+                            <p>"She criticized the kids' table manners last Sunday," Rebecca said. "Nathan said, 'They're doing fine, Mom. Let them eat.' Small thing, but his mother looked shocked. I felt my stomach unclench a little."</p>
+
+                            <p><strong>The Mother-in-Law</strong></p>
+
+                            <p>The conversation with her mother-in-law took another two months to happen. Rebecca practiced in our sessions, finding words that weren't accusatory but were true.</p>
+
+                            <p>"I said, 'When you comment on my parenting choices, it hurts me. I need you to trust that Nathan and I are doing our best.'" Rebecca's voice shook as she recounted it. "She was offended. Said I was being too sensitive."</p>
+
+                            <p>"Too sensitive."</p>
+
+                            <p>"But Nathan – Nathan surprised me. He said, 'Mom, Rebecca's right. We need you to respect our decisions.' Then he added, 'And I need to stop expecting Rebecca to handle all the family dynamics alone.'" She started crying. "He saw me. Finally saw me."</p>
+
+                            <p>Her mother-in-law didn't transform, but the dynamic shifted. "She still makes comments," Rebecca said. "But now Nathan hears them. I don't have to swallow them alone."</p>
+
+                            <p><strong>The Work Evolution</strong></p>
+
+                            <p>The physical symptoms didn't disappear overnight. During stressful family events, her stomach would still clench. But now she recognized it as a signal.</p>
+
+                            <p>"Last Sunday, I felt the pain starting when she made a comment about my cooking. So I said, 'I put a lot of effort into this meal.' Just that. And the pain... lessened."</p>
+
+                            <p>At work, Rebecca began setting boundaries that had seemed impossible before.</p>
+
+                            <p>"Clark tried to dump another project on me yesterday," she reported. "Five o'clock Slack message, just like before. But this time I said, 'I can't take this on. You'll need to handle it or ask someone else.'"</p>
+
+                            <p>"How did that feel?"</p>
+
+                            <p>"Terrifying. Then... free. He seemed shocked, even through text. But he figured it out. And I actually closed my laptop at five. No stomach pain."</p>
+
+                            <p><strong>The Outcome</strong></p>
+
+                            <p>After two and a half years of sessions, Rebecca's transformation was evident not just in her body, but in her presence. She spoke with a different kind of authority – not the efficient manager who kept everything running smoothly, but someone who knew her own worth.</p>
+
+                            <p>"I was promoted to VP of Marketing," she told me. "My boss said I'd changed. That I was more assertive, clearer in my communication. He didn't know I'd spent years learning to stop swallowing my words."</p>
+
+                            <p>Her relationship with Nathan had deepened. "We actually talk now," she said. "Not just about schedules and kids, but about feelings. About what we need from each other. He does the Sunday meal planning now. Says it's only fair since I did it alone for so long."</p>
+
+                            <p>The stomach pain still visited occasionally – usually when she was falling back into old patterns. But now she understood its language.</p>
+
+                            <p>"My body was trying to protect me," she reflected in one of our final sessions. "It was saying what I couldn't: that I couldn't stomach my life as it was. Now I listen before it has to scream."</p>
+
+                            <p>Her relationship with her own mother had also shifted. "I told her about the stomach pain. About how I'd learned to make myself palatable for her moods. She cried. Said she never knew. Said she'd done the same thing with her mother."</p>
+
+                            <p>"The same thing."</p>
+
+                            <p>"Generations of women, swallowing their needs. Maybe it stops with me. Maybe Emma won't have to learn this."</p>
+
+                            <p>Rebecca's stomach still spoke to her, but now she understood its vocabulary. The pain had been a protest, not a pathology. Her body had known what her mind couldn't admit: that she was full. Full of other people's emotions, expectations, needs. Now, finally, there was room for her own.</p>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="case-container">
-                    <div class="case-card" onclick="toggleCase(this)">
-                        <div class="case-header">
-                            <div class="case-title">Wasted</div>
-                            <div class="case-preview">A finance professional discovers how alcohol became his way of escaping the impostor feeling and speaking truths he couldn't otherwise voice...</div>
-                            <div class="case-expand-icon">+</div>
+            <!-- Story 2: Wasted (Addiction) -->
+            <div class="story-container fade-in">
+                <div class="story-card" onclick="toggleStory(this)">
+                    <div class="story-header">
+                        <div class="story-meta">
+                            <span class="story-time">10 min read</span>
                         </div>
-                        <div class="case-content">
-                            <div class="case-content-inner">
-                                <p>When Daniel Chen first called, there was a long pause before he spoke. At 34, he worked in investment banking, but his first words revealed something else entirely.</p>
+                        <h3 class="story-title">Wasted</h3>
+                        <p class="story-preview">Investment banker. Harvard MBA. Drinking to tell the truth.</p>
+                        <div class="story-expand-icon">
+                            <svg viewBox="0 0 30 30">
+                                <circle cx="10" cy="12" r="6" />
+                                <circle cx="20" cy="12" r="6" />
+                                <circle cx="15" cy="20" r="6" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="story-content-inner">
+                            <p>When Daniel Chen first called, there was a long pause before he spoke. At 34, he worked in investment banking, but his first words revealed something else entirely.</p>
 
-                                <p>"I feel like an impostor in my own life."</p>
+                            <p>"I feel like an impostor in my own life."</p>
 
-                                <p>For weeks, our sessions circled around his work, his relationship with Katherine, his weekend plans. Always the same refrain: "What should I do?" He collected advice like currency, hoarding opinions from books, podcasts, colleagues. Now he wanted mine.</p>
+                            <p>For weeks, our sessions circled around his work, his relationship with Katherine, his weekend plans. Always the same refrain: "What should I do?" He collected advice like currency, hoarding opinions from books, podcasts, colleagues. Now he wanted mine.</p>
 
-                                <p>The drinking surfaced gradually. First, I noticed slight slurring in our Monday morning sessions. His speech patterns changed – sometimes too rapid, sometimes with unexpected pauses mid-sentence. Background sounds of clinking glass became more frequent during evening calls.</p>
+                            <p>The drinking surfaced gradually. First, I noticed slight slurring in our Monday morning sessions. His speech patterns changed – sometimes too rapid, sometimes with unexpected pauses mid-sentence. Background sounds of clinking glass became more frequent during evening calls.</p>
 
-                                <p>"Everyone in finance drinks," he said one afternoon, his laugh hollow through the phone connection. "It's how deals get done."</p>
+                            <p>"Everyone in finance drinks," he said one afternoon, his laugh hollow through the phone connection. "It's how deals get done."</p>
 
-                                <p><strong>The Early Work:</strong> Daniel wanted a manual for living. Each session began with updates on his anxiety management techniques, breathing exercises, the meditation app he'd downloaded but never opened. He spoke of his symptoms as invaders to be repelled rather than messages to be heard.</p>
+                            <p><strong>The Early Work</strong></p>
 
-                                <p>I noticed how his voice lifted at the end of statements, turning them into questions, seeking approval. When I reflected his questions back, long silences would follow, broken by sighs or throat clearing.</p>
+                            <p>Daniel wanted a manual for living. Each session began with updates on his anxiety management techniques, breathing exercises, the meditation app he'd downloaded but never opened. He spoke of his symptoms as invaders to be repelled rather than messages to be heard.</p>
 
-                                <p>"I don't know what I want," he admitted after three months of this dance. "I've always just done what I thought others expected."</p>
+                            <p>I noticed how his voice lifted at the end of statements, turning them into questions, seeking approval. When I reflected his questions back, long silences would follow, broken by sighs or throat clearing.</p>
 
-                                <p>His father had mapped out his life before Daniel could hold a pencil: Stuyvesant, Harvard, Harvard Business School, investment banking. "He came here with nothing," Daniel said. "Built everything from scratch. How can I complain about the life he worked so hard to give me?"</p>
+                            <p>"I don't know what I want," he admitted after three months of this dance. "I've always just done what I thought others expected."</p>
 
-                                <p>"How can you complain."</p>
+                            <p>His father had mapped out his life before Daniel could hold a pencil: Stuyvesant, Harvard, Harvard Business School, investment banking. "He came here with nothing," Daniel said. "Built everything from scratch. How can I complain about the life he worked so hard to give me?"</p>
 
-                                <p>"I can't. It would be ungrateful. Like I'm throwing it all away."</p>
+                            <p>"How can you complain."</p>
 
-                                <p>"Throwing it all away."</p>
+                            <p>"I can't. It would be ungrateful. Like I'm throwing it all away."</p>
 
-                                <p>"His sacrifices. The opportunities." He paused. "Sometimes I think about my life and feel this... emptiness. But I can't say that. So I just... drink instead."</p>
+                            <p>"Throwing it all away."</p>
 
-                                <p><strong>The Pattern Emerges:</strong> By our sixth month, the drinking had become impossible to ignore. Daniel would call from his office at 9 PM, slurring slightly, ice clinking against glass.</p>
+                            <p>"His sacrifices. The opportunities." He paused. "Sometimes I think about my life and feel this... emptiness. But I can't say that. So I just... drink instead."</p>
 
-                                <p>"Katherine thinks I work too much," he said one evening. "She doesn't know I've been sitting here since five, drinking scotch and staring at spreadsheets I finished hours ago."</p>
+                            <p><strong>The Pattern Emerges</strong></p>
 
-                                <p>"Finished hours ago."</p>
+                            <p>By our sixth month, the drinking had become impossible to ignore. Daniel would call from his office at 9 PM, slurring slightly, ice clinking against glass.</p>
 
-                                <p>"Yeah. I could go home. But then what? Sit across from her at dinner and pretend I'm happy? At least here I can be honestly miserable."</p>
+                            <p>"Katherine thinks I work too much," he said one evening. "She doesn't know I've been sitting here since five, drinking scotch and staring at spreadsheets I finished hours ago."</p>
 
-                                <p>"With the scotch."</p>
+                            <p>"Finished hours ago."</p>
 
-                                <p>"It's the only honest relationship I have." His laugh was bitter. "How pathetic is that?"</p>
+                            <p>"Yeah. I could go home. But then what? Sit across from her at dinner and pretend I'm happy? At least here I can be honestly miserable."</p>
 
-                                <p>Then came the day he described a company party, his words notably thick: "I had a few drinks. Well, more than a few." His voice dropped. "I guess I lost count. But everyone was drinking, so..."</p>
+                            <p>"With the scotch."</p>
 
-                                <p>"Lost count," I repeated.</p>
+                            <p>"It's the only honest relationship I have." His laugh was bitter. "How pathetic is that?"</p>
 
-                                <p>Silence. Then, barely audible: "Yes, I... I lose count a lot. Of drinks. Of what matters. Of myself."</p>
+                            <p>Then came the day he described a company party, his words notably thick: "I had a few drinks. Well, more than a few." His voice dropped. "I guess I lost count. But everyone was drinking, so..."</p>
 
-                                <p>I ended the session there.</p>
+                            <p>"Lost count," I repeated.</p>
 
-                                <p><strong>A Turning Point:</strong> Eight months in, Daniel's voice was different – rougher, words less carefully chosen. I could hear traffic in the background; he was calling from his Tesla in the parking garage.</p>
+                            <p>Silence. Then, barely audible: "Yes, I... I lose count a lot. Of drinks. Of what matters. Of myself."</p>
 
-                                <p>"I almost sabotaged everything." The words tumbled out between what sounded like sharp breaths. "Last night at the firm's anniversary gala. Too much champagne. I told Harrison exactly what I think of his leadership style."</p>
+                            <p>I ended the session there.</p>
 
-                                <p>Silence stretched between us, filled only by the echo of the parking garage.</p>
+                            <p><strong>A Turning Point</strong></p>
 
-                                <p>"Or maybe," his voice dropped to almost a whisper, "I was trying to."</p>
+                            <p>Eight months in, Daniel's voice was different – rougher, words less carefully chosen. I could hear traffic in the background; he was calling from his Tesla in the parking garage.</p>
 
-                                <p>"Trying to what?"</p>
+                            <p>"I almost sabotaged everything." The words tumbled out between what sounded like sharp breaths. "Last night at the firm's anniversary gala. Too much champagne. I told Harrison exactly what I think of his leadership style."</p>
 
-                                <p>"To escape. To get fired. To stop pretending I'm someone I'm not." A bitter laugh crackled through the connection. "God, I was so wasted. Champagne always goes to my head."</p>
+                            <p>Silence stretched between us, filled only by the echo of the parking garage.</p>
 
-                                <p>"Champagne's a type of wine."</p>
+                            <p>"Or maybe," his voice dropped to almost a whisper, "I was trying to."</p>
 
-                                <p>"Yeah, expensive wine. That's all I drink now. The good stuff." His laugh turned more bitter. "Hundred-dollar bottles just to tell Harrison he's an idiot. Liquid courage, right?"</p>
+                            <p>"Trying to what?"</p>
 
-                                <p>"Liquid courage to tell him."</p>
+                            <p>"To escape. To get fired. To stop pretending I'm someone I'm not." A bitter laugh crackled through the connection. "God, I was so wasted. Champagne always goes to my head."</p>
 
-                                <p>"To finally say what I really think. What I always think but can never say sober. All my real opinions, my actual feelings..." He trailed off. "I guess I need wine to... Christ. Wine to whine. That's what I'm doing, isn't it?"</p>
+                            <p>"Champagne's a type of wine."</p>
 
-                                <p>"Mmm."</p>
+                            <p>"Yeah, expensive wine. That's all I drink now. The good stuff." His laugh turned more bitter. "Hundred-dollar bottles just to tell Harrison he's an idiot. Liquid courage, right?"</p>
 
-                                <p>"I literally need wine to whine. To complain about this life, this job, everything I've built but never wanted." His voice grew quieter. "And it's all I do – whine about it. But never actually change it."</p>
+                            <p>"Liquid courage to tell him."</p>
 
-                                <p>I let the silence hold until our time was up.</p>
+                            <p>"To finally say what I really think. What I always think but can never say sober. All my real opinions, my actual feelings..." He trailed off. "I guess I need wine to... Christ. Wine to whine. That's what I'm doing, isn't it?"</p>
 
-                                <p><strong>The Relapse:</strong> Two weeks later, Daniel called from a hotel room. I could hear the minibar bottles clinking.</p>
+                            <p>"Mmm."</p>
 
-                                <p>"I tried to talk to Katherine sober," he said, words already beginning to blur at the edges. "Tried to tell her I wasn't happy. She just stared at me and said, 'Since when do you talk about feelings?' Then she went to bed."</p>
+                            <p>"I literally need wine to whine. To complain about this life, this job, everything I've built but never wanted." His voice grew quieter. "And it's all I do – whine about it. But never actually change it."</p>
 
-                                <p>"So you're drinking."</p>
+                            <p>I let the silence hold until our time was up.</p>
 
-                                <p>"What else am I supposed to do? I can't whine without wine, apparently." The self-loathing in his voice was palpable. "Even knowing what I'm doing, I'm still doing it."</p>
+                            <p><strong>The Relapse</strong></p>
 
-                                <p>"Still doing it."</p>
+                            <p>Two weeks later, Daniel called from a hotel room. I could hear the minibar bottles clinking.</p>
 
-                                <p>A long pause. "My father used to say 'Don't waste yourself, Daniel.' He meant don't waste my potential. But I heard it differently. I heard 'don't be yourself.'"</p>
+                            <p>"I tried to talk to Katherine sober," he said, words already beginning to blur at the edges. "Tried to tell her I wasn't happy. She just stared at me and said, 'Since when do you talk about feelings?' Then she went to bed."</p>
 
-                                <p>"Don't be yourself."</p>
+                            <p>"So you're drinking."</p>
 
-                                <p>"Right. Be this other thing. This successful thing. And the only way I could stand it was to get drunk enough to forget who I was supposed to be."</p>
+                            <p>"What else am I supposed to do? I can't whine without wine, apparently." The self-loathing in his voice was palpable. "Even knowing what I'm doing, I'm still doing it."</p>
 
-                                <p>The minibar bottles continued their soundtrack as Daniel's breathing grew heavy. "I'm so tired of needing to be drunk to tell the truth."</p>
+                            <p>"Still doing it."</p>
 
-                                <p><strong>Discovering His Own Desire:</strong> The work intensified after that night. Daniel began to recognize patterns rooted in his early experiences. His immigrant father's sacrifices had created an invisible contract: Daniel's success would justify his father's suffering.</p>
+                            <p>A long pause. "My father used to say 'Don't waste yourself, Daniel.' He meant don't waste my potential. But I heard it differently. I heard 'don't be yourself.'"</p>
 
-                                <p>"He gave up everything," Daniel said during one session. "His career in China, his family, his language. How can I tell him it was for nothing? That his son doesn't even want what he killed himself to provide?"</p>
+                            <p>"Don't be yourself."</p>
 
-                                <p>"What do you want?"</p>
+                            <p>"Right. Be this other thing. This successful thing. And the only way I could stand it was to get drunk enough to forget who I was supposed to be."</p>
 
-                                <p>The question hung between us for several sessions before Daniel could approach it. When he finally did, it came out in fragments, between admissions about weekend binges and Wednesday afternoon drinking.</p>
+                            <p>The minibar bottles continued their soundtrack as Daniel's breathing grew heavy. "I'm so tired of needing to be drunk to tell the truth."</p>
 
-                                <p>"I want to teach," he said finally, so quietly I almost missed it. "High school math. I know it sounds crazy."</p>
+                            <p><strong>Discovering His Own Desire</strong></p>
 
-                                <p>"Tell me about it."</p>
+                            <p>The work intensified after that night. Daniel began to recognize patterns rooted in his early experiences. His immigrant father's sacrifices had created an invisible contract: Daniel's success would justify his father's suffering.</p>
 
-                                <p>"I used to tutor kids in college. It was the only time I felt... real. Like I was actually doing something that mattered." His voice grew stronger. "But teachers don't make money. Teachers don't drive Teslas or have corner offices."</p>
+                            <p>"He gave up everything," Daniel said during one session. "His career in China, his family, his language. How can I tell him it was for nothing? That his son doesn't even want what he killed himself to provide?"</p>
 
-                                <p>"Teachers don't make money."</p>
+                            <p>"What do you want?"</p>
 
-                                <p>"My father would see it as failure. Throwing away my education."</p>
+                            <p>The question hung between us for several sessions before Daniel could approach it. When he finally did, it came out in fragments, between admissions about weekend binges and Wednesday afternoon drinking.</p>
 
-                                <p>"Your father would see it as failure. And you?"</p>
+                            <p>"I want to teach," he said finally, so quietly I almost missed it. "High school math. I know it sounds crazy."</p>
 
-                                <p>"I... I don't know what I see it as. I've never asked myself that." A long pause. "Jesus. I'm 34 years old and I've never asked myself what I think about my own life. It's always been what he would think, what Katherine would think, what the partners would think."</p>
+                            <p>"Tell me about it."</p>
 
-                                <p>Another silence.</p>
+                            <p>"I used to tutor kids in college. It was the only time I felt... real. Like I was actually doing something that mattered." His voice grew stronger. "But teachers don't make money. Teachers don't drive Teslas or have corner offices."</p>
 
-                                <p>"I think I'd see it as... coming home. Does that make sense? Like I've been in exile from myself."</p>
+                            <p>"Teachers don't make money."</p>
 
-                                <p><strong>The Slow Change:</strong> Over the next year, the transformation wasn't dramatic or linear. Daniel would have weeks of clarity followed by weekend benders where he'd corner Katherine with endless grievances she'd heard a hundred times before.</p>
+                            <p>"My father would see it as failure. Throwing away my education."</p>
 
-                                <p>But gradually, something shifted. He started tutoring again, just a few hours on weekends. The drinking began to change – less about obliteration, more about habit.</p>
+                            <p>"Your father would see it as failure. And you?"</p>
 
-                                <p>"I had two drinks last night," he reported one session. "Just two. And I didn't need them to talk to Katherine. I actually told her about the tutoring."</p>
+                            <p>"I... I don't know what I see it as. I've never asked myself that." A long pause. "Jesus. I'm 34 years old and I've never asked myself what I think about my own life. It's always been what he would think, what Katherine would think, what the partners would think."</p>
 
-                                <p>"How did that go?"</p>
+                            <p>Another silence.</p>
 
-                                <p>"She cried. Said it was the first time in years she'd seen me excited about something." He paused. "Then she said maybe we could afford it if she went back to work. She'd been wanting to anyway."</p>
+                            <p>"I think I'd see it as... coming home. Does that make sense? Like I've been in exile from myself."</p>
 
-                                <p>The conversation with his father took another six months to happen. When it did, Daniel was sober.</p>
+                            <p><strong>The Slow Change</strong></p>
 
-                                <p>"I expected him to rage," Daniel told me afterward. "Instead, he got quiet. Then he said, 'I came here so you could choose. Maybe I forgot that part.'"</p>
+                            <p>Over the next year, the transformation wasn't dramatic or linear. Daniel would have weeks of clarity followed by weekend benders where he'd corner Katherine with endless grievances she'd heard a hundred times before.</p>
 
-                                <p><strong>The Outcome:</strong> After three years, Daniel decided our work was complete. He still drank, but differently – socially, moderately, without the desperate need for obliteration. More importantly, he no longer needed alcohol to access his own truth.</p>
+                            <p>But gradually, something shifted. He started tutoring again, just a few hours on weekends. The drinking began to change – less about obliteration, more about habit.</p>
 
-                                <p>He'd left the firm with a reasonable exit package and was halfway through his teaching certification. Katherine had returned to her marketing career and they'd downsized to a smaller apartment – "But one we actually live in," he said.</p>
+                            <p>"I had two drinks last night," he reported one session. "Just two. And I didn't need them to talk to Katherine. I actually told her about the tutoring."</p>
 
-                                <p>"Teaching teenagers is nothing like tutoring college kids," he admitted in our final session. "Half the time I want to quit. The pay is... well, you know. Katherine worries about money. My father still mentions his friend's son who just made partner." He paused. "Some Fridays, I sit in my car after school and think about how easy it would be to stop at the wine store."</p>
+                            <p>"How did that go?"</p>
 
-                                <p>"But you don't?"</p>
+                            <p>"She cried. Said it was the first time in years she'd seen me excited about something." He paused. "Then she said maybe we could afford it if she went back to work. She'd been wanting to anyway."</p>
 
-                                <p>"But I don't. Because now when I'm frustrated, it's my frustration. When I'm struggling, it's with something I chose." His voice grew steadier. "My father sacrificed for my freedom. I just didn't know I was allowed to use it."</p>
+                            <p>The conversation with his father took another six months to happen. When it did, Daniel was sober.</p>
 
-                                <p>He spoke differently now - slower, certain, without the questioning lift at the end of his sentences. As he put it: "I used to drink because I felt like an impostor in my own life. Now I don't need to escape because I know that I belong here. Even when it's hard. Especially when it's hard."</p>
+                            <p>"I expected him to rage," Daniel told me afterward. "Instead, he got quiet. Then he said, 'I came here so you could choose. Maybe I forgot that part.'"</p>
 
-                                <p>When he hung up, I sat with the complexity of what constitutes a successful ending. Not the absence of struggle, but the presence of choice. Daniel Chen had traded a life that looked good on paper for one that felt more authentic to him.</p>
-                            </div>
+                            <p><strong>The Outcome</strong></p>
+
+                            <p>After three years, Daniel decided our work was complete. He still drank, but differently – socially, moderately, without the desperate need for obliteration. More importantly, he no longer needed alcohol to access his own truth.</p>
+
+                            <p>He'd left the firm with a reasonable exit package and was halfway through his teaching certification. Katherine had returned to her marketing career and they'd downsized to a smaller apartment – "But one we actually live in," he said.</p>
+
+                            <p>"Teaching teenagers is nothing like tutoring college kids," he admitted in our final session. "Half the time I want to quit. The pay is... well, you know. Katherine worries about money. My father still mentions his friend's son who just made partner." He paused. "Some Fridays, I sit in my car after school and think about how easy it would be to stop at the wine store."</p>
+
+                            <p>"But you don't?"</p>
+
+                            <p>"But I don't. Because now when I'm frustrated, it's my frustration. When I'm struggling, it's with something I chose." His voice grew steadier. "My father sacrificed for my freedom. I just didn't know I was allowed to use it."</p>
+
+                            <p>He spoke differently now - slower, certain, without the questioning lift at the end of his sentences. As he put it: "I used to drink because I felt like an impostor in my own life. Now I don't need to escape because I know that I belong here. Even when it's hard. Especially when it's hard."</p>
+
+                            <p>When he hung up, I sat with the complexity of what constitutes a successful ending. Not the absence of struggle, but the presence of choice. Daniel Chen had traded a life that looked good on paper for one that felt more authentic to him.</p>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="case-container">
-                    <div class="case-card" onclick="toggleCase(this)">
-                        <div class="case-header">
-                            <div class="case-title">Stomach</div>
-                            <div class="case-preview">A woman's mysterious stomach pain reveals itself as her body's refusal to digest the criticism and expectations she'd been swallowing for years...</div>
-                            <div class="case-expand-icon">+</div>
+            <!-- Story 3: Eliminated (Relationship) -->
+            <div class="story-container fade-in">
+                <div class="story-card" onclick="toggleStory(this)">
+                    <div class="story-header">
+                        <div class="story-meta">
+                            <span class="story-time">8 min read</span>
                         </div>
-                        <div class="case-content">
-                            <div class="case-content-inner">
-                                <p>Rebecca called during her lunch break, speaking in the hushed tone of someone hiding in her home office while her family bustled outside the door. At 35, she could coordinate her marketing director schedule, family calendars, and social obligations with apparent ease. Yet she was doubled over with stomach pain that no doctor could explain.</p>
+                        <h3 class="story-title">Eliminated</h3>
+                        <p class="story-preview">Six years. No photos on the walls. Everything arranged his way.</p>
+                        <div class="story-expand-icon">
+                            <svg viewBox="0 0 30 30">
+                                <circle cx="10" cy="12" r="6" />
+                                <circle cx="20" cy="12" r="6" />
+                                <circle cx="15" cy="20" r="6" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="story-content-inner">
+                            <p>Elena Martinez apologizes for everything. Even on video, sitting in her own apartment, she apologizes for her internet connection, for her cellphone ringing, for not immediately knowing the answer to a question I ask. By the end of our first session, she has apologized about ten times.</p>
 
-                                <p>"It's getting worse," she said, her voice tight. "Especially during family gatherings. Which is ironic, since I'm the one who organizes them all."</p>
+                            <p>"I think I might be broken," she says quietly. Sometimes it's hard to hear what she's saying, and I have to ask her to repeat herself. Through the pixelated screen, her apartment behind her tells its own story - everything arranged just so, nothing out of place. "Like, fundamentally broken. Michael says I'm too sensitive, too anxious, too... much. And I think he's right."</p>
 
-                                <p>For three years, she'd seen gastroenterologists, tried elimination diets, underwent endless tests. Everything came back normal. The pain, however, remained stubbornly real – sharp cramping that arrived precisely when she sat down with her extended family.</p>
+                            <p>Michael. Always Michael. His name peppers her sentences like seasoning she can't taste anymore. Michael thinks this. Michael says that. Michael would prefer if she...</p>
 
-                                <p>"My husband thinks it's stress," she said with a bitter laugh. "Easy for him to say. He just shows up to events I've planned and managed."</p>
+                            <p>"Too much."</p>
 
-                                <p>We agreed to meet twice a week, phone sessions that Rebecca squeezed between meetings and school pickups.</p>
+                            <p>"Yes, Michael always says I'm too much."</p>
 
-                                <p><strong>The Pattern:</strong> As we worked together, Rebecca's symptoms followed a precise social calendar. Worse during holidays she'd spent weeks organizing. Absent when she was alone in her home office. Most severe during her mother-in-law's Sunday visits, where she sat politely while enduring pointed comments about her parenting, her housekeeping, her career choices.</p>
+                            <p>"But on my screen you're barely here."</p>
 
-                                <p>"I just smile and nod," she said during one session. "What else can I do? She's Nathan's mother. Family is important to him."</p>
+                            <p>She looks startled, her image freezing briefly before the connection catches up. She glances at her own image in the corner of her video call and sees what I see - a woman making herself as small as possible, hunched over, taking up maybe a quarter of the frame.</p>
 
-                                <p>"And to you?"</p>
+                            <p><strong>The Architecture of Nothing</strong></p>
 
-                                <p>A long pause. "I used to think so. Now I'm not sure what I think anymore."</p>
+                            <p>Elena's apartment tells the story she can't, but only through her words. She mentions Michael's books, his coffee maker, his photos with colleagues. When I ask about her things, she pauses.</p>
 
-                                <p>Rebecca had learned early to be the family peacekeeper. Her own mother had been volatile, unpredictable – volcanic rages followed by days of silence. "I never knew which mother I'd get," Rebecca explained. "The one who screamed about a dish in the sink, or the one who wouldn't speak for a week. I learned to read her moods, smooth things over before they exploded."</p>
+                            <p>"I don't really have photos anymore," she says. "Michael says they make the place look cluttered."</p>
 
-                                <p>"Smooth things over."</p>
+                            <p>"Your photos make the place look cluttered."</p>
 
-                                <p>"Anticipate. Accommodate. Swallow whatever I was feeling to keep her stable." She paused. "I was eight years old, managing a grown woman's emotions."</p>
+                            <p>"Well, yes. I mean, our place. It's our apartment."</p>
 
-                                <p>"Anticipate. Accommodate. Eight years old."</p>
+                            <p>"You said 'the place.' Not 'our place.' Not 'my place.'"</p>
 
-                                <p>I ended the session there.</p>
+                            <p>"I... I guess I did."</p>
 
-                                <p><strong>The Revelation:</strong> Rebecca called for our next session sounding shaken.</p>
+                            <p>"Where are your books?"</p>
 
-                                <p>"I couldn't stop thinking about what you said. 'Anticipate. Accommodate. Eight years old.' I kept repeating it all week." Her voice was different - rawer than usual. "Then I heard it. What I've been saying without knowing it."</p>
+                            <p>"In boxes. Under the bed. They're mostly novels anyway, nothing important."</p>
 
-                                <p>"Tell me."</p>
+                            <p>"Nothing important."</p>
 
-                                <p>"Anticip-ATE. Accommod-ATE. Eight - ate." She laughed, but it sounded more like a sob. "I've been telling you all along. I ATE everything. I was eight years old and I ATE my mother's rage. I ATE her silence. I ATE her instability."</p>
+                            <p>"Michael reads business books, psychology, things that matter. My books are just... stories."</p>
 
-                                <p>She was crying now. "I became a little garbage disposal for emotions. Whatever she couldn't handle, I ate. And I got so good at it. So good that I'm still doing it - with Nathan's mother, with my boss, with everyone."</p>
+                            <p>"Just stories."</p>
 
-                                <p>"Still eating."</p>
+                            <p>"I know how that sounds. But his books serve a purpose. Mine are just for escape."</p>
 
-                                <p>"Everything. Everyone's disappointment, frustration, anger. I eat it so they don't have to feel it. And my stomach - God, my stomach has been trying to tell me it's full. It can't digest any more of other people's emotions."</p>
+                            <p>"Escape from what?"</p>
 
-                                <p>A long pause.</p>
+                            <p>She's quiet for a long moment. "From feeling like I don't belong anywhere. Even in my own apartment. If a stranger walked in, I don't think they'd know I lived there. Everything is arranged the way Michael likes it. Even my tea lives in the corner of his kitchen."</p>
 
-                                <p>"Eight ate," she whispered. "That little girl is still in there, eating everything to keep the peace. She doesn't know the danger has passed. She doesn't know she can stop."</p>
+                            <p>"His kitchen."</p>
 
-                                <p><strong>The Workplace Pattern:</strong> The pattern extended beyond family. At work, Rebecca was known as the one who could handle difficult clients, smooth over conflicts, make everything run seamlessly.</p>
+                            <p>"Our kitchen. Why do I keep doing that?"</p>
 
-                                <p>"Last week, my boss dumped a crisis project on me at 4 PM," she said during a Thursday session. "Clark had screwed it up, but somehow it became my emergency. I was up until midnight fixing it, working from my kitchen table after the kids went to bed."</p>
+                            <p>The question breaks something open. She cries for twenty minutes, and I listen to her tears through the connection, no image to dissolve or reform, just the sound of someone recognizing how thoroughly she has erased herself from her own life.</p>
 
-                                <p>"Clark screwed it up."</p>
+                            <p><strong>The Phone Sessions</strong></p>
 
-                                <p>"But I'm the one with stomach pain. Clark logged off at five." She laughed bitterly. "He probably slept great. Meanwhile, I was up all night with cramps, my laptop still glowing on the nightstand."</p>
+                            <p>I suggest we switch to audio-only sessions – twice weekly instead of once. "Why?" Elena asks during our video call.</p>
 
-                                <p>"You took in his mess."</p>
+                            <p>"What do you see when you look at yourself on screen?"</p>
 
-                                <p>"I always do. At work, at home. I'm the one who takes on everyone else's problems." She paused. "God, even my body is tired of it."</p>
+                            <p>She glances at her own image in the corner. "Someone taking up too little space. Someone apologizing for existing."</p>
 
-                                <p><strong>The Rebellion:</strong> Eight months into our work, Rebecca was describing another family dinner. The pain had been particularly severe – she'd barely touched her food.</p>
+                            <p>"What might happen if you couldn't see yourself at all?"</p>
 
-                                <p>"She spent twenty minutes explaining how I was ruining Emma's development by working full-time. I just sat there, nodding, while my stomach twisted into knots."</p>
+                            <p>The following week, we speak over the phone instead of on video. Her voice sounds different immediately - less controlled, more present.</p>
 
-                                <p>"Twisted into knots."</p>
+                            <p>"I've always been so timid," she says during our second phone session. "Even as a child, I was the timid one. My mother used to say, 'Elena's just naturally timid,' like it was my personality, and Michael says the same thing. 'Elena's too timid to really go after what she wants.' Maybe they're right."</p>
 
-                                <p>"Like someone was wringing out my intestines. But I kept smiling. Nathan was scrolling through his phone. The kids were fighting. And I just... sat there."</p>
+                            <p>"Timid Elena."</p>
 
-                                <p>"What did you want to say?"</p>
+                            <p>"Yes, that's what I'm saying. I've always been—"</p>
 
-                                <p>"That it's none of her business. That Nathan and I made this decision together. That I love my work and I'm good at it." Her voice grew stronger. "That I'm tired of pretending her opinions matter more than mine."</p>
+                            <p>"Elena timid. Elena timid. You hear anything in that?"</p>
 
-                                <p>"But you said nothing."</p>
+                            <p>"Elena timid. Elenatimid. It sounds like..." Her breath catches. "Eliminated?"</p>
 
-                                <p>"I can't. It would upset Nathan. Cause drama. Ruin the relationship."</p>
+                            <p>"Mmm. It's an anagram."</p>
 
-                                <p>"So you let it ruin you instead."</p>
+                            <p>The silence stretches for nearly a minute.</p>
 
-                                <p>The words hung between us. Rebecca was quiet for a long time.</p>
+                            <p>"I've been erasing myself from my own life."</p>
 
-                                <p>"Yes," she finally whispered. "I let it ruin me. Every Sunday. Every holiday. Every family dinner. I let it eat away at me."</p>
+                            <p><strong>The Slow Break</strong></p>
 
-                                <p><strong>The Breaking Point:</strong> During a particularly difficult session, Rebecca was recounting her mother-in-law's latest visit. Her voice carried exhaustion rather than its usual diplomatic tone.</p>
+                            <p>The relationship doesn't end in one dramatic conversation. It erodes over months - Michael working later at his consulting firm, Elena sleeping on the couch more often, conversations that start about small things and end with one of them leaving the room.</p>
 
-                                <p>"She kept commenting on how much weight I'd gained, while loading more food onto my plate. 'Rebecca needs to watch her figure, but also, why isn't she eating my cooking?'" Rebecca's voice cracked. "I just sat there, smiling, taking it all in. Literally. Taking it all in."</p>
+                            <p>But the final conversation happens exactly the way it needs to.</p>
 
-                                <p>"Full."</p>
+                            <p>"Do you love me?" Elena asks on a Sunday evening in October. Michael is preparing for another week of client presentations. Elena is preparing for another week of non-existence.</p>
 
-                                <p>I ended the session there.</p>
+                            <p>Michael pauses, one hand on his laptop. "What kind of question is that?"</p>
 
-                                <p><strong>Finding Her Voice:</strong> As our work deepened, Rebecca began to distinguish between physical hunger and emotional starvation. She realized she'd been so busy feeding everyone else – literally and metaphorically – that she'd lost touch with her own appetite.</p>
+                            <p>"The kind that should have an immediate yes."</p>
 
-                                <p>The breakthrough came during a transferential moment in our work. I was running fifteen minutes late for our Tuesday session due to an emergency with another client. When I called Rebecca, she immediately reassured me: "Oh, no problem at all! These things happen. I'll just wait."</p>
+                            <p>"Elena, you know I care about you."</p>
 
-                                <p>During our session, she mentioned feeling "a bit off" but continued discussing her week as usual. Midway through, while describing another family conflict she'd mediated, her voice suddenly changed.</p>
+                            <p>"That's not what I asked."</p>
 
-                                <p>"I'm sorry, I need to stop talking. My stomach is cramping."</p>
+                            <p>The silence stretches between them. In that silence, Elena hears everything she's been afraid to know. Six years of qualifying statements. Six years of "maybe someday" and "when things settle down." Six years of love with an asterisk.</p>
 
-                                <p>I could hear her breathing change, becoming shallow and strained.</p>
+                            <p>"I think we want different things," Michael says carefully.</p>
 
-                                <p>"The pain started when I was waiting for you to call," she said quietly. "But I told myself it was fine, that I understood."</p>
+                            <p>"I think," Elena replies, surprising herself with the steadiness of her voice, "you've never wanted me at all. You've wanted the idea of me. The convenient, low-maintenance version."</p>
 
-                                <p>"You told yourself it was fine."</p>
+                            <p>"That's not fair."</p>
 
-                                <p>"Yes, I—" She stopped abruptly. "Oh my God. I'm doing it right now, aren't I? I'm swallowing your lateness, just like I swallow everything else."</p>
+                            <p>"Neither is spending six years waiting for someone to decide if I'm worth choosing."</p>
 
-                                <p>"What would happen if you didn't?"</p>
+                            <p>She moves out three weeks later. Not in crisis, not dramatically, but with a determination that surprises everyone, including herself.</p>
 
-                                <p>A long pause. Her breathing was still labored. "I'd tell you that I was frustrated. That I rearranged my day for this appointment. That waiting with no explanation brought up..." Her voice cracked. "That it reminded me of being little, waiting for my mother to notice me."</p>
+                            <p><strong>Learning to Exist</strong></p>
 
-                                <p>"And saying that would mean?"</p>
+                            <p>The studio apartment she rents in Queens is tiny and expensive and perfect. For the first month, she arranges everything exactly like Michael would - minimal, apologetic, taking up as little space as possible. She calls me crying because she bought groceries and realized she didn't know what she actually liked to eat.</p>
 
-                                <p>"That I'm demanding. Difficult. Too much." The words came out in a rush. "That you might not want to work with me anymore."</p>
+                            <p>"I've been eating what Michael likes for so long I don't remember my own preferences," she says during one particularly difficult session.</p>
 
-                                <p>"So instead you make your body hold the frustration."</p>
+                            <p>In March, she buys a plant - a dramatic fiddle-leaf fig she names Fernando - and puts it directly in the center of her living room window.</p>
 
-                                <p>"I can't stomach this anymore." The words emerged like a sob. "I can't keep swallowing everyone else's needs and ignoring my own."</p>
+                            <p>"Michael would have hated Fernando," she says during our April session, and I can hear her moving around, probably adjusting the plant's position. "But you know what? I love Fernando. I love how much space he takes up. I love how dramatic and needy he is."</p>
 
-                                <p>As she spoke these words, I could hear her breathing begin to deepen. The cramping, she reported, was subsiding.</p>
+                            <p>"Like you?"</p>
 
-                                <p><strong>The Recognition:</strong> "My stomach just relaxed," she said with wonder. "The pain stopped when I said I couldn't stomach it anymore."</p>
+                            <p>"Like the me I was eliminating. The real me, not the performed version."</p>
 
-                                <p>"You've been feeding everyone while you starve."</p>
+                            <p>By summer, our twice-weekly phone sessions have become more intense. One day when I tried to end the session early, Elena spoke up - something she'd never done before. 'Could we... keep talking for a bit longer?' she asked, her voice steady despite the question. It was the first time she'd asked for what she needed. She tells me about learning to cook for one, about buying yellow paint for her bathroom, about the way it feels to wake up in the morning without immediately calculating someone else's mood.</p>
 
-                                <p>Complete silence. Then: "Oh my God. Yes. I prepare elaborate meals, organize perfect gatherings, make sure everyone's fed and happy. But I'm... I'm starving. Emotionally starving."</p>
+                            <p><strong>The Gallery</strong></p>
 
-                                <p>"Making yourself palatable."</p>
+                            <p>After two years of twice-weekly sessions, Elena has her first art show. It's small - just a corner of a Brooklyn gallery - but her name is on the placard in bold black letters: "Expanding: Recent Works by Elena Martinez."</p>
 
-                                <p>"While I waste away inside." Her voice was barely a whisper. "No wonder my stomach rebels. It's the only part of me that refuses to pretend I'm full when I'm actually empty."</p>
+                            <p>The opening is everything she hoped for and nothing like she expected. People come - her mother (who flew in from Miami), her sister, friends from her art class, strangers who wander in from the street. They stand in front of her work and really look.</p>
 
-                                <p><strong>The Slow Change:</strong> Learning to speak her frustrations instead of somatizing them required patience and practice. The first real test came three weeks after our breakthrough session.</p>
+                            <p>"A woman bought 'The Breathing Room,'" Elena tells me the next day. "She said it reminded her of what hope looks like."</p>
 
-                                <p>"I told Nathan about the stomach pain," she reported during our Thursday call. "Really told him. Not the medical version, but what it means. He was... defensive at first."</p>
+                            <p>"How did that feel?"</p>
 
-                                <p>"Defensive."</p>
+                            <p>"Like existing. Like really, actually existing in the world instead of haunting it."</p>
 
-                                <p>"He said I never told him I was unhappy. That I always seemed to have everything under control." She sighed. "Which is true. I performed 'fine' so well that he believed it."</p>
+                            <p><strong>Learning to Leave</strong></p>
 
-                                <p>The conversation had continued over several days. Nathan struggled to understand how he'd missed her distress.</p>
+                            <p>Three and a half years into our work, Elena starts coming to sessions less frequently. Not because she's avoiding, but because she's busy living.</p>
 
-                                <p>"He kept saying, 'But you never said anything.' And I had to explain that was the point. I couldn't say anything. That's what the pain was about."</p>
+                            <p>"I think I'm ready to stop," she says during what becomes our final session.</p>
 
-                                <p>"How did he respond?"</p>
+                            <p>"What changed?"</p>
 
-                                <p>"He went quiet for a long time. Then he said, 'I've been letting you carry everything, haven't I? Like my mother does to you.'" Rebecca's voice wavered. "It was the first time he'd ever made that connection."</p>
+                            <p>"I stopped needing someone else to confirm I was real. I stopped needing to disappear to make room for other people." She pauses. "This saved my life. But now I want to live it."</p>
 
-                                <p><strong>Nathan's Journey:</strong> The change in Nathan wasn't immediate or smooth. Years of patterns don't shift overnight.</p>
+                            <p>After we hang up, I sit in the silence for a moment. Elena Martinez - the woman who once took up a quarter of her video screen and apologized for existing - has just ended our therapeutic relationship with quiet authority.</p>
 
-                                <p>"He's trying," Rebecca reported a month later. "But it's like he's seeing our life for the first time. Last week he noticed I was making Emma's lunch while on a Zoom call and answering Slack messages. He said, 'You're doing three things at once.' Like it was a revelation."</p>
-
-                                <p>"A revelation."</p>
-
-                                <p>"I've been doing three things at once for fifteen years. He just never saw it." She paused. "Or I made it look too easy. Made myself too efficient at swallowing the burden."</p>
-
-                                <p>Progress came in small moments. Nathan started intervening when his mother made comments. Not dramatically, but consistently.</p>
-
-                                <p>"She criticized the kids' table manners last Sunday," Rebecca said. "Nathan said, 'They're doing fine, Mom. Let them eat.' Small thing, but his mother looked shocked. I felt my stomach unclench a little."</p>
-
-                                <p><strong>The Mother-in-Law:</strong> The conversation with her mother-in-law took another two months to happen. Rebecca practiced in our sessions, finding words that weren't accusatory but were true.</p>
-
-                                <p>"I said, 'When you comment on my parenting choices, it hurts me. I need you to trust that Nathan and I are doing our best.'" Rebecca's voice shook as she recounted it. "She was offended. Said I was being too sensitive."</p>
-
-                                <p>"Too sensitive."</p>
-
-                                <p>"But Nathan – Nathan surprised me. He said, 'Mom, Rebecca's right. We need you to respect our decisions.' Then he added, 'And I need to stop expecting Rebecca to handle all the family dynamics alone.'" She started crying. "He saw me. Finally saw me."</p>
-
-                                <p>Her mother-in-law didn't transform, but the dynamic shifted. "She still makes comments," Rebecca said. "But now Nathan hears them. I don't have to swallow them alone."</p>
-
-                                <p><strong>The Work Evolution:</strong> The physical symptoms didn't disappear overnight. During stressful family events, her stomach would still clench. But now she recognized it as a signal.</p>
-
-                                <p>"Last Sunday, I felt the pain starting when she made a comment about my cooking. So I said, 'I put a lot of effort into this meal.' Just that. And the pain... lessened."</p>
-
-                                <p>At work, Rebecca began setting boundaries that had seemed impossible before.</p>
-
-                                <p>"Clark tried to dump another project on me yesterday," she reported. "Five o'clock Slack message, just like before. But this time I said, 'I can't take this on. You'll need to handle it or ask someone else.'"</p>
-
-                                <p>"How did that feel?"</p>
-
-                                <p>"Terrifying. Then... free. He seemed shocked, even through text. But he figured it out. And I actually closed my laptop at five. No stomach pain."</p>
-
-                                <p><strong>The Outcome:</strong> After two and a half years of sessions, Rebecca's transformation was evident not just in her body, but in her presence. She spoke with a different kind of authority – not the efficient manager who kept everything running smoothly, but someone who knew her own worth.</p>
-
-                                <p>"I was promoted to VP of Marketing," she told me. "My boss said I'd changed. That I was more assertive, clearer in my communication. He didn't know I'd spent years learning to stop swallowing my words."</p>
-
-                                <p>Her relationship with Nathan had deepened. "We actually talk now," she said. "Not just about schedules and kids, but about feelings. About what we need from each other. He does the Sunday meal planning now. Says it's only fair since I did it alone for so long."</p>
-
-                                <p>The stomach pain still visited occasionally – usually when she was falling back into old patterns. But now she understood its language.</p>
-
-                                <p>"My body was trying to protect me," she reflected in one of our final sessions. "It was saying what I couldn't: that I couldn't stomach my life as it was. Now I listen before it has to scream."</p>
-
-                                <p>Her relationship with her own mother had also shifted. "I told her about the stomach pain. About how I'd learned to make myself palatable for her moods. She cried. Said she never knew. Said she'd done the same thing with her mother."</p>
-
-                                <p>"The same thing."</p>
-
-                                <p>"Generations of women, swallowing their needs. Maybe it stops with me. Maybe Emma won't have to learn this."</p>
-
-                                <p>Rebecca's stomach still spoke to her, but now she understood its vocabulary. The pain had been a protest, not a pathology. Her body had known what her mind couldn't admit: that she was full. Full of other people's emotions, expectations, needs. Now, finally, there was room for her own.</p>
-                            </div>
+                            <p>The woman who forgot how to exist has not only remembered - she's learned to live loudly, take up space, and choose herself without apology.</p>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="case-container">
-                    <div class="case-card" onclick="toggleCase(this)">
-                        <div class="case-header">
-                            <div class="case-title">Splitting</div>
-                            <div class="case-preview">A lawyer's chronic migraines reveal themselves as the physical manifestation of a life split between his golden professional facade and his burgundy authentic self...</div>
-                            <div class="case-expand-icon">+</div>
+            <!-- Story 4: Splitting (Identity) -->
+            <div class="story-container fade-in">
+                <div class="story-card" onclick="toggleStory(this)">
+                    <div class="story-header">
+                        <div class="story-meta">
+                            <span class="story-time">11 min read</span>
                         </div>
-                        <div class="case-content">
-                            <div class="case-content-inner">
-                                <p>James Goldberg's voice carried the measured authority of someone accustomed to boardroom presentations – each word carefully chosen, every pause calculated. Yet beneath the polished delivery, I detected something else: a weariness that no amount of professional training could mask.</p>
+                        <h3 class="story-title">Splitting</h3>
+                        <p class="story-preview">Twenty-three years at the firm. Separate bedrooms. Migraines that feel like his skull is cracking open.</p>
+                        <div class="story-expand-icon">
+                            <svg viewBox="0 0 30 30">
+                                <circle cx="10" cy="12" r="6" />
+                                <circle cx="20" cy="12" r="6" />
+                                <circle cx="15" cy="20" r="6" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="story-content-inner">
+                            <p>James Goldberg's voice carried the measured authority of someone accustomed to boardroom presentations – each word carefully chosen, every pause calculated. Yet beneath the polished delivery, I detected something else: a weariness that no amount of professional training could mask.</p>
 
-                                <p>"I need to figure out what's holding me back professionally," he announced in our first session, his tone suggesting a business consultation. "My career should be further along by now."</p>
+                            <p>"I need to figure out what's holding me back professionally," he announced in our first session, his tone suggesting a business consultation. "My career should be further along by now."</p>
 
-                                <p>But as weeks passed, a different concern began to surface. "Sometimes I wonder," he said during our third session, his voice quieter than usual, "if I'm living someone else's life entirely."</p>
+                            <p>But as weeks passed, a different concern began to surface. "Sometimes I wonder," he said during our third session, his voice quieter than usual, "if I'm living someone else's life entirely."</p>
 
-                                <p>The real issues emerged between discussions of billable hours and office politics. His marriage to Sarah had become what he called, with a hollow laugh, "professionally cordial." Fifteen years, two teenagers, separate bedrooms – all delivered in the same neutral tone he might use for a case summary.</p>
+                            <p>The real issues emerged between discussions of billable hours and office politics. His marriage to Sarah had become what he called, with a hollow laugh, "professionally cordial." Fifteen years, two teenagers, separate bedrooms – all delivered in the same neutral tone he might use for a case summary.</p>
 
-                                <p>The headaches had become a problem over the past few years, he mentioned during our second month. "Migraines that feel like my skull is cracking open," he said, his professional composure slipping slightly. "I've seen neurologists, had MRIs. Nothing shows up."</p>
+                            <p>The headaches had become a problem over the past few years, he mentioned during our second month. "Migraines that feel like my skull is cracking open," he said, his professional composure slipping slightly. "I've seen neurologists, had MRIs. Nothing shows up."</p>
 
-                                <p><strong>The Double Life:</strong> For months, James spoke around something he couldn't name. He'd mention working late, then pause. Describe insomnia, then change the subject. His voice would shift when discussing his home office – becoming simultaneously guilty and defiant.</p>
+                            <p><strong>The Double Life</strong></p>
 
-                                <p>Finally, during our fourth month, the words came out in a rush: "I watch pornography. Hours every night. Sometimes during lunch breaks at the office when no one's around." His voice dropped to barely audible. "Sarah thinks I'm working late. The partners think I'm dedicated."</p>
+                            <p>For months, James spoke around something he couldn't name. He'd mention working late, then pause. Describe insomnia, then change the subject. His voice would shift when discussing his home office – becoming simultaneously guilty and defiant.</p>
 
-                                <p>The headaches followed a pattern, he eventually admitted. Worse after family dinners where he played the devoted husband. Absent during business trips when he could indulge without pretense. Most severe on Monday mornings, sitting in his corner office trying to focus on merger documents while planning his next opportunity.</p>
+                            <p>Finally, during our fourth month, the words came out in a rush: "I watch pornography. Hours every night. Sometimes during lunch breaks at the office when no one's around." His voice dropped to barely audible. "Sarah thinks I'm working late. The partners think I'm dedicated."</p>
 
-                                <p>"It's like there's a war going on in my head," he said, his voice cracking. "Between who I'm supposed to be and who I actually am."</p>
+                            <p>The headaches followed a pattern, he eventually admitted. Worse after family dinners where he played the devoted husband. Absent during business trips when he could indulge without pretense. Most severe on Monday mornings, sitting in his corner office trying to focus on merger documents while planning his next opportunity.</p>
 
-                                <p><strong>The Breaking Point:</strong> Eight months into our work, James called in crisis. His voice was barely recognizable – raw, panicked.</p>
+                            <p>"It's like there's a war going on in my head," he said, his voice cracking. "Between who I'm supposed to be and who I actually am."</p>
 
-                                <p>"IT flagged my computer. They're launching a full investigation. The managing partner is meeting with me and HR tomorrow." I could hear him hyperventilating. "Twenty-three years at this firm, and I'm about to lose everything over... this."</p>
-                                <p>During our emergency session, the headache he'd been fighting all week reached a crescendo.</p>
+                            <p><strong>The Breaking Point</strong></p>
+
+                            <p>Eight months into our work, James called in crisis. His voice was barely recognizable – raw, panicked.</p>
+
+                            <p>"IT flagged my computer. They're launching a full investigation. The managing partner is meeting with me and HR tomorrow." I could hear him hyperventilating. "Twenty-three years at this firm, and I'm about to lose everything over... this."</p>
+
+                            <p>During our emergency session, the headache he'd been fighting all week reached a crescendo.</p>
 
                             <p>"I can't think straight," he gasped. "It feels like my head is literally splitting in half."</p>
 
@@ -1236,7 +1564,9 @@
 
                             <p>"I've been split-ting myself down the middle for years. The respected attorney and the... other one. The one who risks everything for a few minutes of..." His voice broke completely. "I can't even say what it was worth."</p>
 
-                            <p><strong>The Dream of Division:</strong> Two weeks later, James brought a dream that had jolted him awake: "There were two men in a hotel room. One was dressed entirely in gold – expensive suit, gold watch, wedding ring gleaming. The other wore deep burgundy and was... disheveled. Shirt untucked, tie loose, like he'd been struggling."</p>
+                            <p><strong>The Dream of Division</strong></p>
+
+                            <p>Two weeks later, James brought a dream that had jolted him awake: "There were two men in a hotel room. One was dressed entirely in gold – expensive suit, gold watch, wedding ring gleaming. The other wore deep burgundy and was... disheveled. Shirt untucked, tie loose, like he'd been struggling."</p>
 
                             <p>His voice shook as he continued: "The gold man was facing away, like he couldn't bear to look. The burgundy man was reaching out, trying to touch him, but every time he got close, the gold man would step further away."</p>
 
@@ -1254,27 +1584,29 @@
 
                             <p>Complete silence. Then, barely audible: "My name. The dream was about my name. I've been at war with myself."</p>
 
-                            <p><strong>Rebuilding from the Ground Up:</strong> The firm terminated him quietly – a resignation for "personal reasons," a modest severance to avoid scandal. Sarah found out when the firm called to verify his employment status for their mortgage refinance.</p>
+                            <p><strong>Rebuilding from the Ground Up</strong></p>
+
+                            <p>The firm terminated him quietly – a resignation for "personal reasons," a modest severance to avoid scandal. Sarah found out when the firm called to verify his employment status for their mortgage refinance.</p>
 
                             <p>The months that followed were among the most difficult of James's life, but also the most authentic. After the crisis, James committed to analysis three times a week. "I need to understand how I got here," he said during our first intensive session. "Once a week was maintenance. This is surgery."</p>
 
                             <p>The increased frequency allowed us to work with the unconscious material more directly. Dreams came more regularly, slips of the tongue revealed themselves in session, and the transference intensified.</p>
 
-                            <p>"I find myself preparing for our sessions differently," he reported after the first month. "Like I'm finally taking this seriously. Like my life depends on it."</p>
-
-                            <p>It did.</p>
-
                             <p>Sarah had initially moved in with her sister, taking the teenagers with her. The separation lasted four months while they both worked through individual therapy. During this period, James took contract work to pay the bills – document review, small legal research projects. The work was beneath his former status, but he found something unexpected: relief.</p>
 
                             <p>"No one's watching me. No one has expectations. I can just... be."</p>
 
-                            <p><strong>Finding Authentic Ground:</strong> After a year of contract work and volunteering at a legal aid clinic, James made a decision that surprised everyone, including himself. Rather than trying to rebuild his corporate career, he opened a solo practice specializing in family law and immigration cases.</p>
+                            <p><strong>Finding Authentic Ground</strong></p>
+
+                            <p>After a year of contract work and volunteering at a legal aid clinic, James made a decision that surprised everyone, including himself. Rather than trying to rebuild his corporate career, he opened a solo practice specializing in family law and immigration cases.</p>
 
                             <p>"The money is a fraction of what I made before," he said, "but I go to bed tired instead of exhausted. There's a difference." His practice grew slowly but steadily, built on referrals from the legal aid clinic and word-of-mouth from satisfied clients.</p>
 
                             <p>Sarah returned home after James had completed six months of intensive analysis. Their couples therapy was intensive and often painful. Learning to be present during intimacy – to stay in his body, to make eye contact, to be with Sarah rather than escape into fantasy – became a cornerstone of their healing.</p>
 
-                            <p><strong>A Life Unified:</strong> After three years of intensive work – three times weekly for the first eighteen months, then twice weekly, then eventually weekly – James and I agreed it was time to end our formal analysis.</p>
+                            <p><strong>A Life Unified</strong></p>
+
+                            <p>After three years of intensive work – three times weekly for the first eighteen months, then twice weekly, then eventually weekly – James and I agreed it was time to end our formal analysis.</p>
 
                             <p>"The war is over," James said in one of our final sessions. "Not because either side won, but because I stopped fighting myself. The gold and the burgundy – they're both me. One isn't better than the other."</p>
 
@@ -1284,369 +1616,347 @@
 
                             <p>"My daughter called last week just to talk," he said with wonder. "Not because she needed something, just to share what was happening in her life. She said she was proud of how I'd changed. That I'd taught her it's never too late to become who you really are."</p>
 
-                            <p>His practice continued to thrive – not in the way his corporate career had, with its corner offices and seven-figure deals, but with a different kind of success. "I had a client yesterday, a woman trying to keep custody of her kids. When we won, she cried and said I'd saved her family." His voice was thick with emotion. "That's worth more than any merger I ever closed."</p>
-
                             <p>"I used to think integration meant choosing the right version of myself," he reflected in our final session. "Now I understand it means accepting all the versions and letting them work together instead of against each other."</p>
 
-                            <p>James Goldberg had learned to inhabit his own life fully – no longer split between who he thought he should be and who he actually was, finally free to discover what it meant to be authentically himself. The journey had cost him his old life, but what he'd gained in return was immeasurable: the ability to be whole.</p>
+                            <p>James Goldberg had learned to inhabit his own life fully – no longer split between who he thought he should be and who he actually was, finally free to discover what it meant to be authentically himself.</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </main>
 
-            <div class="divider"></div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Begin Your Own Journey</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 3rem;">
+                Every transformation begins with the courage to speak what has remained unspoken.
+            </p>
+            <button class="btn btn-primary" onclick="showConsultationForm()">Request Initial Consultation</button>
+        </div>
+    </section>
 
-            <h2>What People Discover</h2>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>David M. Freshwater, LMHC #10001743</p>
+        <p>Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
+        <p><a href="tel:+17865271616">(786) 527-1616</a> • <a href="mailto:davidfreshwateranalyst@gmail.com">davidfreshwateranalyst@gmail.com</a></p>
+        <p>Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
+        <p style="margin-top: 2rem; opacity: 0.6;">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
+    </footer>
 
-            <div class="testimonial-grid">
-                <div class="testimonial">
-                    <p>After years of managing my career and everyone else's expectations, I finally discovered what I actually wanted. This work doesn't just change symptoms—it changes who you are at the deepest level.</p>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- Consultation Form -->
+    <div class="form-overlay" id="popupOverlay">
+        <div class="form-container">
+            <button class="form-close" onclick="hideConsultationForm()" aria-label="Close form">×</button>
+            <h3 class="form-title">Request Initial Consultation</h3>
+            <form id="consultationForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required placeholder=" ">
                 </div>
-
-                <div class="testimonial">
-                    <p>I've tried everything—meditation apps, executive coaching, even a brief stint with antidepressants. Nothing touched what analysis revealed. My panic attacks weren't random events; they were my psyche's sophisticated attempt to communicate something I'd been ignoring for decades.</p>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required placeholder=" ">
                 </div>
-
-                <div class="testimonial">
-                    <p>As someone who values intellectual rigor, I was skeptical of 'just talking.' But there's nothing 'just' about this process. My analyst's precise attention to language revealed patterns I never noticed. Words I'd used carelessly for years suddenly carried profound meaning.</p>
+                <div class="form-group">
+                    <label class="form-label" for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" required placeholder=" ">
                 </div>
-
-                <div class="testimonial">
-                    <p>What surprised me most was how my relationship with uncertainty changed. I used to need answers immediately. Now I can sit with questions and let them unfold naturally. It's transformed not just my relationship with myself, but with everyone around me.</p>
+                <div class="form-group">
+                    <label class="form-label" for="message">What brings you to seek analysis?</label>
+                    <textarea id="message" name="message" class="form-textarea" required placeholder=" "></textarea>
                 </div>
-
-                <div class="testimonial">
-                    <p>The dreams started making sense about six months in. What had been random nighttime chaos became a nightly consultation with parts of myself I'd never met. It's like having access to your own private intelligence network.</p>
+                <div class="form-buttons">
+                    <button type="submit" class="form-btn form-btn-submit">Send Request</button>
+                    <button type="button" class="form-btn form-btn-cancel" onclick="hideConsultationForm()">Cancel</button>
                 </div>
-
-                <div class="testimonial">
-                    <p>My therapist used to give me homework and coping strategies. My analyst gives me something far more valuable—the capacity to surprise myself. Three years later, I'm still discovering depths I didn't know existed.</p>
-                </div>
-            </div>
-
-            <div class="divider"></div>
-
-            <div style="text-align: center;">
-                <h2>Begin Your Own Journey</h2>
-                <p style="font-size: clamp(1rem, 2.5vw, 1.2rem); margin-bottom: 2rem;">Every transformation begins with the courage to speak what has remained unspoken.</p>
-                <button class="cta-button" onclick="showConsultationForm()">Request Initial Consultation</button>
-            </div>
-        </section>
-
-        <footer>
-            <div style="max-width: 1200px; margin: 0 auto;">
-                <p>David M. Freshwater, LMHC #10001743</p>
-                <p>Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
-                <p>Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
-                <p style="font-size: 0.9rem; opacity: 0.8;">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
-            </div>
-        </footer>
+            </form>
+        </div>
     </div>
-</div>
 
-<!-- Popup Form -->
-<div class="popup-overlay" id="popupOverlay">
-    <div class="popup-form">
-        <button class="close-popup" onclick="hideConsultationForm()" aria-label="Close form">×</button>
-        <h3>Request Initial Consultation</h3>
-        <form id="consultationForm" onsubmit="handleFormSubmit(event)">
-            <div class="form-group">
-                <label for="name">Name *</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone *</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="form-group">
-                <label for="message">What brings you to seek analysis? *</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <div class="form-buttons">
-                <button type="submit" class="submit-btn">Send Request</button>
-                <button type="button" class="cancel-btn" onclick="hideConsultationForm()">Cancel</button>
-            </div>
-        </form>
-    </div>
-</div>
+    <script>
+        // Lacanian quotes array
+        const lacanianQuotes = [
+            "The unconscious is structured like a language",
+            "I think where I am not, therefore I am where I do not think",
+            "Desire is the desire of the Other",
+            "Love is giving what you don't have to someone who doesn't want it",
+            "There is no sexual relationship",
+            "The subject is what one signifier represents for another signifier",
+            "The letter always arrives at its destination",
+            "What is refused in the symbolic order returns in the real",
+            "Anxiety is the sensation of the desire of the Other",
+            "The big Other doesn't exist",
+            "A dream is a rebus",
+            "The symptom is a metaphor",
+            "Truth has the structure of fiction",
+            "We are spoken by language before we speak",
+            "Repetition is the return of the repressed",
+            "The ego is not master in its own house",
+            "Where id was, there ego shall be",
+            "The mirror stage forms the function of the I"
+        ];
 
-<script>
-    function toggleCase(element) {
-        // Close all other open case cards
-        const allCards = document.querySelectorAll('.case-card');
-        const isCurrentlyOpen = element.classList.contains('open');
-        
-        allCards.forEach(card => {
-            card.classList.remove('open');
-        });
-        
-        // Toggle the clicked card
-        if (!isCurrentlyOpen) {
-            element.classList.add('open');
+        // Populate palimpsest with random quotes
+        function populatePalimpsest() {
+            const palimpsest = document.getElementById('palimpsest');
+            const positions = [
+                {top: '5%', left: '5%'},
+                {top: '15%', right: '10%'},
+                {top: '30%', left: '15%'},
+                {top: '45%', right: '8%'},
+                {top: '60%', left: '10%'},
+                {top: '75%', right: '5%'},
+                {bottom: '10%', left: '20%'},
+                {bottom: '20%', right: '15%'}
+            ];
+
+            positions.forEach((pos, index) => {
+                const quote = lacanianQuotes[Math.floor(Math.random() * lacanianQuotes.length)];
+                const div = document.createElement('div');
+                div.className = 'palimpsest-text';
+                div.textContent = quote;
+                
+                Object.keys(pos).forEach(key => {
+                    div.style[key] = pos[key];
+                });
+                
+                div.style.animationDelay = `${index * 5}s`;
+                palimpsest.appendChild(div);
+            });
         }
-    }
 
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const navigation = document.getElementById('navigation');
-    const mobileOverlay = document.getElementById('mobileOverlay');
-    const navLinks = document.querySelectorAll('nav a');
-
-    function toggleMenu() {
-        menuToggle.classList.toggle('active');
-        navigation.classList.toggle('active');
-        mobileOverlay.classList.toggle('active');
-        document.body.style.overflow = navigation.classList.contains('active') ? 'hidden' : '';
-    }
-
-    menuToggle.addEventListener('click', toggleMenu);
-    mobileOverlay.addEventListener('click', toggleMenu);
-
-    // Close menu when clicking on a link
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                toggleMenu();
+        // Initialize
+        window.addEventListener('load', () => {
+            populatePalimpsest();
+            
+            // Show palimpsest after delay
+            setTimeout(() => {
+                document.querySelector('.palimpsest').classList.add('visible');
+            }, 1500);
+            
+            // Scroll animations
+            initScrollAnimations();
+            
+            // Restore open story from session storage
+            const openStoryIndex = sessionStorage.getItem('openStoryIndex');
+            if (openStoryIndex !== null) {
+                const stories = document.querySelectorAll('.story-card');
+                if (stories[openStoryIndex]) {
+                    stories[openStoryIndex].classList.add('open');
+                }
             }
         });
-    });
 
-    // Add scroll effect to nav on desktop
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (window.innerWidth > 768) {
-            if (currentScroll > 100) {
-                navigation.classList.add('scrolled');
+        // Mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const navigation = document.getElementById('navigation');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            
+            if (navigation.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+                document.body.style.position = 'fixed';
+                document.body.style.width = '100%';
             } else {
-                navigation.classList.remove('scrolled');
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
             }
         }
-        
-        lastScroll = currentScroll;
-    });
 
-    // Popup form functions
-    function showConsultationForm() {
-        const overlay = document.getElementById('popupOverlay');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
+        menuToggle.addEventListener('click', toggleMenu);
+        mobileOverlay.addEventListener('click', toggleMenu);
 
-    function hideConsultationForm() {
-        const overlay = document.getElementById('popupOverlay');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-        document.getElementById('consultationForm').reset();
-    }
-
-    // Close popup when clicking outside
-    document.getElementById('popupOverlay').addEventListener('click', function(e) {
-        if (e.target === this) {
-            hideConsultationForm();
-        }
-    });
-
-    // Handle form submission
-    function handleFormSubmit(event) {
-        event.preventDefault();
-        
-        const formData = new FormData(event.target);
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            phone: formData.get('phone'),
-            message: formData.get('message')
-        };
-
-        // Create mailto link
-        const subject = encodeURIComponent('Consultation Request from ' + data.name);
-        const body = encodeURIComponent(
-            `Name: ${data.name}\n` +
-            `Email: ${data.email}\n` +
-            `Phone: ${data.phone}\n\n` +
-            `Message:\n${data.message}`
-        );
-        
-        window.location.href = `mailto:davidfreshwateranalyst@gmail.com?subject=${subject}&body=${body}`;
-        
-        // Close the form after a short delay
-        setTimeout(() => {
-            hideConsultationForm();
-            alert('Your consultation request has been prepared. Please send the email that opens in your email client.');
-        }, 500);
-    }
-
-    // Disable parallax on mobile to improve performance
-    const isMobile = window.innerWidth <= 768;
-    
-    if (!isMobile) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.noise-overlay');
-            if (parallax) {
-                const speed = scrolled * 0.2;
-                parallax.style.transform = `translateY(${speed}px)`;
-            }
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) toggleMenu();
+            });
         });
-    }
 
-    // Handle window resize
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            if (window.innerWidth > 768 && navigation.classList.contains('active')) {
-                toggleMenu();
+        // Navigation scroll behavior
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const nav = document.getElementById('navigation');
+            
+            if (window.innerWidth > 768) {
+                nav.classList.toggle('scrolled', currentScroll > 100);
+                nav.classList.toggle('hidden', currentScroll > lastScroll && currentScroll > 200);
             }
-        }, 250);
-    });
-</script>
+            
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+            backToTop.classList.toggle('visible', currentScroll > 800);
+            
+            lastScroll = currentScroll;
+        });
 
-<style>
-    /* Popup form styles */
-    .popup-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        z-index: 2000;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
+        // Scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
 
-    .popup-overlay.active {
-        display: block;
-        opacity: 1;
-    }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
 
-    .popup-form {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0.9);
-        background: white;
-        padding: 2rem;
-        border-radius: 15px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        max-width: 500px;
-        width: 90%;
-        max-height: 90vh;
-        overflow-y: auto;
-        z-index: 2001;
-        opacity: 0;
-        transition: all 0.3s ease;
-    }
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
 
-    .popup-overlay.active .popup-form {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
+        // Story card toggle with progress tracking
+        function toggleStory(element) {
+            const allCards = document.querySelectorAll('.story-card');
+            const isCurrentlyOpen = element.classList.contains('open');
+            
+            // Close all cards
+            allCards.forEach((card, index) => {
+                card.classList.remove('open');
+                // Reset progress bar
+                const progressFill = card.querySelector('.progress-fill');
+                if (progressFill) progressFill.style.width = '0%';
+            });
+            
+            if (!isCurrentlyOpen) {
+                element.classList.add('open');
+                
+                // Save open story index
+                const storyIndex = Array.from(allCards).indexOf(element);
+                sessionStorage.setItem('openStoryIndex', storyIndex);
+                
+                // Smooth scroll to card
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+                
+                // Track reading progress
+                trackReadingProgress(element);
+            } else {
+                sessionStorage.removeItem('openStoryIndex');
+            }
+        }
 
-    .popup-form h3 {
-        color: #2c3e50;
-        margin-bottom: 1.5rem;
-        font-size: 1.5rem;
-        text-align: center;
-    }
+        // Track reading progress
+        function trackReadingProgress(storyCard) {
+            const content = storyCard.querySelector('.story-content-inner');
+            const progressFill = storyCard.querySelector('.progress-fill');
+            
+            if (!content || !progressFill) return;
+            
+            const updateProgress = () => {
+                if (!storyCard.classList.contains('open')) return;
+                
+                const rect = content.getBoundingClientRect();
+                const scrolled = -rect.top;
+                const total = content.scrollHeight - window.innerHeight;
+                const progress = Math.min(Math.max((scrolled / total) * 100, 0), 100);
+                
+                progressFill.style.width = progress + '%';
+            };
+            
+            window.addEventListener('scroll', updateProgress);
+            window.addEventListener('resize', updateProgress);
+        }
 
-    .form-group {
-        margin-bottom: 1.5rem;
-    }
+        // Back to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
-    .form-group label {
-        display: block;
-        margin-bottom: 0.5rem;
-        color: #34495e;
-        font-weight: 500;
-    }
+        // Form functions
+        function showConsultationForm() {
+            const overlay = document.getElementById('popupOverlay');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
 
-    .form-group input,
-    .form-group textarea {
-        width: 100%;
-        padding: 0.75rem;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        font-size: 1rem;
-        font-family: inherit;
-        transition: border-color 0.3s ease;
-    }
+        function hideConsultationForm() {
+            const overlay = document.getElementById('popupOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('consultationForm').reset();
+        }
 
-    .form-group input:focus,
-    .form-group textarea:focus {
-        outline: none;
-        border-color: #3498db;
-    }
+        document.getElementById('popupOverlay').addEventListener('click', function(e) {
+            if (e.target === this) hideConsultationForm();
+        });
 
-    .form-group textarea {
-        resize: vertical;
-        min-height: 120px;
-    }
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const submitBtn = event.target.querySelector('.form-btn-submit');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
 
-    .form-buttons {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        margin-top: 2rem;
-    }
+            const subject = encodeURIComponent(`Consultation Request from ${data.name}`);
+            const body = encodeURIComponent(
+                `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\n\nMessage:\n${data.message}`
+            );
+            
+            setTimeout(() => {
+                window.location.href = `mailto:davidfreshwateranalyst@gmail.com?subject=${subject}&body=${body}`;
+                
+                const successMsg = document.createElement('div');
+                successMsg.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: var(--color-paper);
+                    padding: 2rem 3rem;
+                    border: 1px solid var(--color-red);
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                    z-index: 3000;
+                    text-align: center;
+                    max-width: 400px;
+                    animation: fadeIn 0.3s ease;
+                `;
+                successMsg.innerHTML = `
+                    <h3 style="color: var(--color-red); margin-bottom: 1rem;">Request Prepared</h3>
+                    <p style="margin-bottom: 1.5rem;">Your consultation request has been prepared. Please send the email that opens in your email client.</p>
+                    <button onclick="this.parentElement.remove(); hideConsultationForm();" class="btn btn-primary">OK</button>
+                `;
+                
+                document.body.appendChild(successMsg);
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 500);
+        }
 
-    .form-buttons button {
-        flex: 1;
-        padding: 0.75rem 1.5rem;
-        border: none;
-        border-radius: 25px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .submit-btn {
-        background: linear-gradient(45deg, #e74c3c, #c0392b);
-        color: white;
-    }
-
-    .submit-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
-    }
-
-    .cancel-btn {
-        background: #95a5a6;
-        color: white;
-    }
-
-    .cancel-btn:hover {
-        background: #7f8c8d;
-    }
-
-    .close-popup {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        color: #95a5a6;
-        cursor: pointer;
-        transition: color 0.3s ease;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .close-popup:hover {
-        color: #7f8c8d;
-    }
-</style>
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (window.innerWidth > 768 && navigation.classList.contains('active')) {
+                    toggleMenu();
+                }
+            }, 250);
+        });
+    </script>
 </body>
 </html>
