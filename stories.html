@@ -531,6 +531,36 @@
             box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
         }
 
+/* ===== FLOATING BUTTON ===== */
+.btn-floating {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    z-index: 90;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-floating.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+/* Mobile adjustment */
+@media (max-width: 400px) {
+    .btn-floating {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 0;
+        padding: 1rem;
+    }
+}
+        
         /* ===== FOOTER ===== */
         .footer {
             background-color: var(--color-ink);
@@ -1649,6 +1679,11 @@
         <p style="margin-top: 2rem; opacity: 0.6;">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
     </footer>
 
+<!-- Floating Button -->
+<button class="btn btn-primary btn-floating" id="floatingConsult" onclick="showConsultationForm()">
+    Book Consultation
+</button>
+    
     <!-- Consultation Form -->
     <div class="form-overlay" id="popupOverlay">
         <div class="form-container">
@@ -1783,20 +1818,29 @@
             });
         });
 
-        // Navigation scroll behavior
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            const nav = document.getElementById('navigation');
-            
-            if (window.innerWidth > 768) {
-                nav.classList.toggle('scrolled', currentScroll > 100);
-                nav.classList.toggle('hidden', currentScroll > lastScroll && currentScroll > 200);
-            }
-            
-            
-            lastScroll = currentScroll;
-        });
+// Navigation scroll behavior
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    const nav = document.getElementById('navigation');
+    const floatingBtn = document.getElementById('floatingConsult');
+    
+    if (window.innerWidth > 768) {
+        nav.classList.toggle('scrolled', currentScroll > 100);
+        nav.classList.toggle('hidden', currentScroll > lastScroll && currentScroll > 200);
+    }
+    
+    // Show/hide floating button
+    if (floatingBtn) {
+        if (currentScroll > 500) {
+            floatingBtn.classList.add('visible');
+        } else {
+            floatingBtn.classList.remove('visible');
+        }
+    }
+    
+    lastScroll = currentScroll;
+});
 
         // Scroll animations
         function initScrollAnimations() {
