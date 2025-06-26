@@ -484,38 +484,7 @@
             transition: width 0.1s ease;
         }
 
-        /* ===== BACK TO TOP ===== */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 44px;
-            height: 44px;
-            background-color: var(--color-red);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: var(--transition);
-            z-index: 100;
-            pointer-events: none;
-        }
 
-        .back-to-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
-        }
 
         /* ===== CTA SECTION ===== */
         .cta-section {
@@ -1680,13 +1649,6 @@
         <p style="margin-top: 2rem; opacity: 0.6;">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 15l-6-6-6 6"/>
-        </svg>
-    </button>
-
     <!-- Consultation Form -->
     <div class="form-overlay" id="popupOverlay">
         <div class="form-container">
@@ -1832,9 +1794,6 @@
                 nav.classList.toggle('hidden', currentScroll > lastScroll && currentScroll > 200);
             }
             
-            // Back to top button
-            const backToTop = document.getElementById('backToTop');
-            backToTop.classList.toggle('visible', currentScroll > 800);
             
             lastScroll = currentScroll;
         });
@@ -1911,10 +1870,6 @@
             window.addEventListener('resize', updateProgress);
         }
 
-        // Back to top
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
 
         // Form functions
         function showConsultationForm() {
