@@ -590,15 +590,16 @@
             font-weight: 300;
         }
 
-        .form-btn-submit:hover {
+        .form-btn-submit {
             background-color: var(--color-red);
             color: white;
             border-color: var(--color-red);
         }
 
-        .form-btn-cancel:hover {
-            background-color: var(--color-ink);
-            color: white;
+        .form-btn-submit:hover {
+            background-color: var(--color-red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
         }
 
         .form-close {
@@ -913,7 +914,7 @@
             <li><a href="approach.html" class="nav-link">Approach</a></li>
             <li><a href="about.html" class="nav-link">About</a></li>
             <li><a href="stories.html" class="nav-link">Stories</a></li>
-            <li><a href="faq.html" class="nav-link">Questions</a></li>
+            <li><a href="faq.html" class="nav-link">FAQ</a></li>
             <li><a href="#" class="nav-link nav-cta" onclick="showConsultationForm(); return false;">Begin</a></li>
         </ul>
     </nav>
@@ -1163,7 +1164,6 @@
                 <div id="formMessage" class="form-message"></div>
                 <div class="form-buttons">
                     <button type="submit" class="form-btn form-btn-submit">Send Request</button>
-                    <button type="button" class="form-btn form-btn-cancel" onclick="hideConsultationForm()">Cancel</button>
                 </div>
             </form>
         </div>
@@ -1403,7 +1403,8 @@
                 from_name: data.name,
                 from_email: data.email,
                 phone: data.phone,
-                message: data.message
+                message: data.message,
+                to_email: 'davidfreshwateranalyst@gmail.com'
             };
 
             // Send email using EmailJS
