@@ -10,6 +10,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
+    <!-- EmailJS SDK - Following official tutorial -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("SapDsG2u7LsAmvQMW");
+        })();
+    </script>
+    
     <style>
         /* ===== CSS RESET ===== */
         *, *::before, *::after {
@@ -720,15 +730,16 @@
             font-weight: 300;
         }
 
-        .form-btn-submit:hover {
+        .form-btn-submit {
             background-color: var(--color-red);
             color: white;
             border-color: var(--color-red);
         }
 
-        .form-btn-cancel:hover {
-            background-color: var(--color-ink);
-            color: white;
+        .form-btn-submit:hover {
+            background-color: var(--color-red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
         }
 
         .form-close {
@@ -751,6 +762,28 @@
         .form-close:hover {
             color: var(--color-ink);
             transform: rotate(90deg);
+        }
+
+        /* Form Messages */
+        .form-message {
+            padding: 0.75rem;
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .form-message.error {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.2);
         }
 
         /* ===== BACKGROUND EFFECTS ===== */
@@ -1166,9 +1199,9 @@
                     <label class="form-label" for="message">What brings you to seek analysis?</label>
                     <textarea id="message" name="message" class="form-textarea" required placeholder=" "></textarea>
                 </div>
+                <div id="formMessage" class="form-message"></div>
                 <div class="form-buttons">
                     <button type="submit" class="form-btn form-btn-submit">Send Request</button>
-                    <button type="button" class="form-btn form-btn-cancel" onclick="hideConsultationForm()">Cancel</button>
                 </div>
             </form>
         </div>
@@ -1260,6 +1293,11 @@
             overlay.classList.remove('active');
             document.body.style.overflow = '';
             document.getElementById('consultationForm').reset();
+            
+            // Hide any messages
+            const formMessage = document.getElementById('formMessage');
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
         }
 
         document.getElementById('popupOverlay').addEventListener('click', function(e) {
@@ -1271,46 +1309,58 @@
             
             const submitBtn = event.target.querySelector('.form-btn-submit');
             const originalText = submitBtn.textContent;
+            const formMessage = document.getElementById('formMessage');
             
+            // Show loading state
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
+            
+            // Hide any previous messages
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
             
             const formData = new FormData(event.target);
             const data = Object.fromEntries(formData);
 
-            const subject = encodeURIComponent(`Consultation Request from ${data.name}`);
-            const body = encodeURIComponent(
-                `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\n\nMessage:\n${data.message}`
-            );
-            
-            setTimeout(() => {
-                window.location.href = `mailto:davidfreshwateranalyst@gmail.com?subject=${subject}&body=${body}`;
-                
-                const successMsg = document.createElement('div');
-                successMsg.style.cssText = `
-                    position: fixed;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    background: var(--color-paper);
-                    padding: 2rem 3rem;
-                    border: 1px solid var(--color-red);
-                    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-                    z-index: 3000;
-                    text-align: center;
-                    max-width: 400px;
-                    animation: fadeIn 0.3s ease;
-                `;
-                successMsg.innerHTML = `
-                    <h3 style="color: var(--color-red); margin-bottom: 1rem;">Request Prepared</h3>
-                    <p style="margin-bottom: 1.5rem;">Your consultation request has been prepared. Please send the email that opens in your email client.</p>
-                    <button onclick="this.parentElement.remove(); hideConsultationForm();" class="btn btn-primary">OK</button>
-                `;
-                
-                document.body.appendChild(successMsg);
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 500);
+            // Prepare template parameters
+            const templateParams = {
+                from_name: data.name,
+                from_email: data.email,
+                phone: data.phone,
+                message: data.message,
+                to_email: 'davidfreshwateranalyst@gmail.com'
+            };
+
+            // Send email using EmailJS
+            emailjs.send('service_qera1v7', 'template_ndishzq', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Show success message
+                    formMessage.textContent = 'Thank you! Your consultation request has been sent successfully. David will contact you within 24-48 hours.';
+                    formMessage.className = 'form-message success';
+                    formMessage.style.display = 'block';
+                    
+                    // Reset form
+                    document.getElementById('consultationForm').reset();
+                    
+                    // Hide form after delay
+                    setTimeout(() => {
+                        hideConsultationForm();
+                    }, 3000);
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    
+                    // Show error message
+                    formMessage.textContent = 'Sorry, there was an error sending your request. Please try again or contact directly at davidfreshwateranalyst@gmail.com';
+                    formMessage.className = 'form-message error';
+                    formMessage.style.display = 'block';
+                })
+                .finally(() => {
+                    // Reset button
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
         }
 
         // Handle window resize
