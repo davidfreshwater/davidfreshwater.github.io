@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+/* ===== ACCESSIBILITY ===== */<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -104,7 +104,7 @@
         }
 
         .section {
-            padding: 5rem 0;
+            padding: 7rem 0;
             position: relative;
         }
 
@@ -323,12 +323,21 @@
         /* ===== OPENING VIGNETTE ===== */
         .opening-vignette {
             background-color: rgba(220, 38, 38, 0.02);
-            padding: 2.5rem;
-            margin: 3rem 0;
+            padding: 3rem;
+            margin: 4rem 0;
             border-left: 3px solid var(--color-red);
             background-image: 
                 repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px);
             position: relative;
+        }
+
+        .opening-vignette p {
+            color: var(--color-ink);
+            font-size: 1.15rem;
+            line-height: 2;
+            margin-bottom: 0;
+            font-style: italic;
+            font-family: var(--font-serif);
         }
 
         @keyframes float {
@@ -347,13 +356,16 @@
 
         /* ===== QUOTE BLOCK ===== */
         .quote {
-            font: italic clamp(1.4rem, 3.5vw, 2.2rem)/1.8 var(--font-serif);
+            font: italic clamp(1.6rem, 3.5vw, 2.4rem)/1.8 var(--font-serif);
             text-align: center;
-            margin: 6rem 0;
-            padding: 0 2rem;
+            margin: 7rem 0;
+            padding: 3rem;
             color: var(--color-ink);
             letter-spacing: 0.02em;
             position: relative;
+            background-color: rgba(220, 38, 38, 0.01);
+            border-top: 1px solid rgba(220, 38, 38, 0.1);
+            border-bottom: 1px solid rgba(220, 38, 38, 0.1);
         }
 
         .quote::before,
@@ -489,16 +501,17 @@
         .transformation-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+            gap: 2rem;
             margin: 3rem 0;
         }
 
         .transformation-card {
-            padding: 1.5rem;
+            padding: 2rem;
             background-color: var(--color-paper);
             border-left: 3px solid transparent;
             transition: var(--transition);
             color: var(--color-gray-medium);
+            position: relative;
         }
 
         .transformation-card:hover {
@@ -511,13 +524,14 @@
         .transformation-card h4 {
             color: var(--color-ink);
             margin-bottom: 0.75rem;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 500;
         }
 
         .transformation-card p {
             margin-bottom: 0;
             font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         /* ===== CTA SECTION ===== */
@@ -820,7 +834,8 @@
             }
 
             .opening-vignette {
-                padding: 2rem;
+                padding: 2.5rem 2rem;
+                margin: 3rem 0;
             }
 
             .highlight-box,
@@ -829,7 +844,7 @@
             }
 
             .section {
-                padding: 3rem 0;
+                padding: 4rem 0;
             }
 
             .container {
@@ -848,7 +863,17 @@
             }
         }
 
-        /* ===== ACCESSIBILITY ===== */
+        /* ===== TEXT EMPHASIS ===== */
+        .emphasis-text {
+            font-size: 1.2rem;
+            color: var(--color-ink);
+            font-weight: 400;
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(220, 38, 38, 0.1);
+            border-bottom: 1px solid rgba(220, 38, 38, 0.1);
+        }
         :focus {
             outline: 2px solid var(--color-red);
             outline-offset: 2px;
@@ -913,7 +938,7 @@
                 <p>You call your new partner by your ex's name at a dinner with friends. Stomach pain appears before every family gathering. You spill red wine on your mother-in-law's carpet for the second time this year. You forget to attend important meetings despite having them scheduled in your calendar. Every July, depression arrives like clockwork, though nothing happened in July that you can recall. You dream of speeding down a busy city street, but the brakes don't work.</p>
             </div>
 
-            <p style="text-align: center; font-size: 1.2rem; color: var(--color-ink); margin: 3rem 0;">These aren't random events—they're your psyche's way of insisting on being heard.</p>
+            <p class="emphasis-text">These aren't random events—they're your psyche's way of insisting on being heard.</p>
 
             <div class="quote fade-in">
                 "The unconscious is the chapter of my history that is marked by a blank or occupied by a lie: it is the censored chapter."
