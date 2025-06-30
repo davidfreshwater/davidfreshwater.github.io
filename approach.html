@@ -10,16 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
-    <!-- EmailJS SDK -->
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init("SapDsG2u7LsAmvQMW");
-        })();
-    </script>
-    
     <style>
         /* ===== CSS RESET ===== */
         *, *::before, *::after {
@@ -58,11 +48,12 @@
 
         /* ===== TYPOGRAPHY ===== */
         h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 300;
-            letter-spacing: 0.2em;
-            margin-bottom: 3rem;
-            text-align: center;
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            font-family: var(--font-serif);
         }
 
         h2 {
@@ -87,19 +78,10 @@
         }
 
         h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 400;
-            margin: 4rem 0 2rem;
+            margin-bottom: 1.5rem;
             letter-spacing: 0.05em;
-            font-family: var(--font-serif);
-        }
-
-        h4 {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            color: var(--color-ink);
-            font-family: var(--font-serif);
         }
 
         p {
@@ -111,44 +93,7 @@
             margin-right: auto;
         }
 
-        .opening-vignette {
-            background-color: rgba(26, 26, 26, 0.02);
-            padding: 2.5rem;
-            margin: 0 -2rem 3rem;
-            border-left: 3px solid var(--color-red);
-        }
-
-        .opening-vignette p {
-            font-size: 1.1rem;
-            font-family: var(--font-serif);
-            font-style: italic;
-            color: var(--color-ink);
-            margin-bottom: 0;
-            line-height: 1.8;
-            max-width: 70ch;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* ===== LAYOUT ===== */
-        .page-header {
-            background-color: var(--color-paper);
-            padding: 8rem 2rem 4rem;
-            text-align: center;
-            border-bottom: 1px solid var(--color-gray-light);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-tagline {
-            font-size: clamp(1rem, 2.5vw, 1.3rem);
-            color: var(--color-gray-medium);
-            font-weight: 300;
-            letter-spacing: 0.1em;
-            font-family: var(--font-serif);
-            font-style: italic;
-        }
-
+        /* ===== LAYOUT COMPONENTS ===== */
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -156,8 +101,32 @@
         }
 
         .section {
-            padding: 6rem 0;
+            padding: 5rem 0;
             position: relative;
+        }
+
+        /* ===== HEADER ===== */
+        .page-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .page-hero-content {
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            color: var(--color-gray-medium);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            margin-bottom: 3rem;
         }
 
         /* ===== NAVIGATION ===== */
@@ -190,9 +159,8 @@
             gap: 3rem;
             align-items: center;
             margin: 0;
-            line-height: 1;
         }
-        
+
         .nav-link {
             color: var(--color-ink);
             text-decoration: none;
@@ -201,7 +169,6 @@
             letter-spacing: 0.05em;
             position: relative;
             transition: var(--transition);
-            line-height: 1;
         }
 
         .nav-link::after {
@@ -240,6 +207,32 @@
 
         .nav-link.nav-cta::after {
             display: none;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            background: none;
+        }
+
+        .btn-primary {
+            background-color: var(--color-red);
+            color: white;
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
         }
 
         /* ===== MOBILE MENU ===== */
@@ -301,136 +294,26 @@
             display: block;
         }
 
-        /* ===== LACANIAN ELEMENTS ===== */
-        .header-element {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 400px;
-            height: 250px;
-            opacity: 0.08;
-            pointer-events: none;
-        }
-
-        .header-element svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .header-element text {
-            font-family: var(--font-serif);
-            font-style: italic;
-            fill: var(--color-ink);
-        }
-
-        .header-element line {
-            stroke: var(--color-ink);
-            stroke-width: 1.5;
-        }
-
-        .palimpsest {
+        /* ===== BACKGROUND EFFECTS ===== */
+        .bg-gradient {
             position: fixed;
             inset: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(26, 26, 26, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(26, 26, 26, 0.06) 0%, transparent 50%);
             pointer-events: none;
             z-index: 1;
-            overflow: hidden;
-            opacity: 0;
-            transition: opacity 4s ease-in;
+            opacity: 0.5;
         }
 
-        .palimpsest.visible {
-            opacity: 1;
-        }
-
-        .palimpsest-text {
-            position: absolute;
-            opacity: 0.05;
-            font: italic 18px/1.6 var(--font-serif);
-            color: var(--color-ink);
-            letter-spacing: 0.1em;
-            animation: drift 80s ease-in-out infinite;
-        }
-
-        @keyframes drift {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(30px); }
-        }
-
-        /* ===== CARDS & GRIDS ===== */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .process-card {
-            background-color: var(--color-paper);
-            padding: 2.5rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            border-left: 3px solid transparent;
-        }
-
-        .process-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background-color: var(--color-red);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .process-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            border-left-color: var(--color-red);
-        }
-
-        .process-card:hover::after {
-            transform: scaleX(1);
-        }
-
-        .card-icon {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            width: 40px;
-            height: 40px;
-            color: var(--color-red);
-            opacity: 0.6;
-            transition: var(--transition);
-        }
-
-        .process-card:hover .card-icon {
-            opacity: 1;
-            transform: rotate(45deg);
-        }
-
-        /* ===== INFO BOXES ===== */
-        .info-box {
-            background-color: rgba(220, 38, 38, 0.02);
-            padding: 2.5rem;
-            margin: 3rem 0;
-            border-left: 3px solid var(--color-red);
+        .bg-texture {
+            position: fixed;
+            inset: 0;
             background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px);
-        }
-
-        .highlight-box {
-            background-color: rgba(26, 26, 26, 0.02);
-            padding: 2.5rem;
-            margin: 3rem 0;
-            border-left: 3px solid var(--color-ink);
-            font-family: var(--font-serif);
-            font-style: italic;
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.01) 35px, rgba(255,255,255,.01) 70px);
+            pointer-events: none;
+            z-index: 2;
+            mix-blend-mode: overlay;
         }
 
         /* ===== QUOTE BLOCK ===== */
@@ -464,120 +347,108 @@
             right: -20px;
         }
 
-        .quote-attribution {
-            font-size: 1rem;
-            font-style: normal;
-            color: var(--color-gray-medium);
-            margin-top: 1rem;
-        }
-
-        /* ===== TRANSFORMATION GRID ===== */
-        .transformation-grid {
+        /* ===== PROCESS CARDS ===== */
+        .process-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin: 3rem 0 4rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            gap: 3rem;
+            margin: 4rem 0;
         }
 
-        .transformation-card {
+        .process-card {
             background-color: var(--color-paper);
-            padding: 2.5rem 2rem;
-            text-align: center;
+            padding: 2.5rem;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
         }
 
-        .transformation-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background-color: var(--color-red);
-            transform: scaleX(0);
-            transform-origin: center;
-            transition: transform 0.3s ease;
-        }
-
-        .transformation-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .transformation-card:hover::after {
-            transform: scaleX(1);
-        }
-
-        .transformation-card h4 {
-            font-family: var(--font-serif);
-            font-size: 1.3rem;
-            color: var(--color-red);
-            margin-bottom: 1rem;
-            font-weight: 400;
-        }
-
-        .transformation-card p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 0;
-        }
-
-        /* ===== CTA SECTION ===== */
-        .cta-section {
-            background-color: var(--color-paper);
-            padding: 6rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
+        .process-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--color-gray-light), transparent);
-        }
-
-        /* ===== BUTTONS ===== */
-        .btn {
-            display: inline-block;
-            padding: 1rem 3rem;
-            font-family: var(--font-sans);
-            font-size: 0.95rem;
-            font-weight: 300;
-            letter-spacing: 0.1em;
-            text-decoration: none;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            background: none;
-        }
-
-        .btn-primary {
+            width: 4px;
+            height: 100%;
             background-color: var(--color-red);
-            color: white;
-            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.3s ease;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
+        .process-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .process-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .process-card h3 {
+            color: var(--color-ink);
+            margin-bottom: 1rem;
+        }
+
+        .process-card p {
+            color: var(--color-gray-medium);
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        /* ===== EXAMPLES SECTION ===== */
+        .examples-box {
+            background-color: rgba(26, 26, 26, 0.02);
+            padding: 3rem;
+            margin: 3rem 0;
+            border-left: 3px solid var(--color-red);
+        }
+
+        .examples-box p {
+            color: var(--color-ink);
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .examples-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== TRANSFORMATION LIST ===== */
+        .transformation-list {
+            display: grid;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .transformation-item {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .transformation-item h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--color-ink);
+        }
+
+        .transformation-item p {
+            color: var(--color-gray-medium);
+            margin-bottom: 0;
+            font-size: 0.95rem;
         }
 
         /* ===== SECTION DIVIDER ===== */
         .section-divider {
             width: 100px;
             height: 60px;
-            margin: 6rem auto;
+            margin: 5rem auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -600,7 +471,7 @@
             color: var(--color-gray-light);
             padding: 4rem 2rem 2rem;
             text-align: center;
-            margin-top: 0;
+            margin-top: 5rem;
         }
 
         .footer p {
@@ -611,13 +482,35 @@
             color: var(--color-gray-light);
         }
 
-        .footer a {
-            color: var(--color-gray-light);
-            text-decoration: none;
+        /* ===== LACANIAN ELEMENTS ===== */
+        .borromean {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            opacity: 0.15;
         }
 
-        .footer a:hover {
-            text-decoration: underline;
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ===== FORM STYLES ===== */
@@ -773,40 +666,6 @@
             border: 1px solid rgba(239, 68, 68, 0.2);
         }
 
-        /* ===== BACKGROUND EFFECTS ===== */
-        .bg-gradient {
-            position: fixed;
-            inset: 0;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(26, 26, 26, 0.06) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(26, 26, 26, 0.06) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.5;
-        }
-
-        .bg-texture {
-            position: fixed;
-            inset: 0;
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.01) 35px, rgba(255,255,255,.01) 70px);
-            pointer-events: none;
-            z-index: 2;
-            mix-blend-mode: overlay;
-        }
-
-        /* ===== UTILITIES ===== */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .mobile-menu-btn {
@@ -851,52 +710,39 @@
                 font-size: 1.1rem;
             }
 
-            .page-header {
-                padding: 6rem 2rem 3rem;
+            .page-hero {
+                min-height: 40vh;
+            }
+
+            h1 {
+                font-size: clamp(2rem, 6vw, 3rem);
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .examples-box {
+                padding: 2rem;
             }
 
             .section {
-                padding: 4rem 0;
+                padding: 3rem 0;
             }
 
             .container {
                 padding: 0 1.5rem;
             }
 
-            .palimpsest-text {
-                opacity: 0.08;
-                font-size: 16px;
-            }
-
             .quote {
                 font-size: 1.3rem;
-                margin: 4rem 0;
+                margin: 3rem 0;
             }
 
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .transformation-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .header-element {
-                width: 300px;
-                height: 190px;
-            }
-
-            .opening-vignette {
-                margin: 0 0 3rem;
-                padding: 2rem;
-            }
-        }
-
-        @media (max-width: 400px) {
-            h1 {
-                font-size: 2rem;
-                letter-spacing: 0.1em;
+            .form-container {
+                padding: 2rem 1.5rem;
+                width: 95%;
             }
         }
 
@@ -920,31 +766,6 @@
     <div class="bg-gradient"></div>
     <div class="bg-texture"></div>
 
-    <!-- Palimpsest -->
-    <div class="palimpsest">
-        <div class="palimpsest-text" style="top: 5%; left: 5%;">
-            The unconscious is structured like a language
-        </div>
-        <div class="palimpsest-text" style="top: 15%; right: 10%; text-align: right;">
-            I think where I am not, therefore I am where I do not think
-        </div>
-        <div class="palimpsest-text" style="top: 30%; left: 15%;">
-            Desire is the desire of the Other
-        </div>
-        <div class="palimpsest-text" style="top: 45%; right: 8%;">
-            Love is giving what you don't have
-        </div>
-        <div class="palimpsest-text" style="top: 60%; left: 10%;">
-            There is no sexual relationship
-        </div>
-        <div class="palimpsest-text" style="top: 75%; right: 5%; text-align: right;">
-            The subject is what one signifier represents for another signifier
-        </div>
-        <div class="palimpsest-text" style="bottom: 10%; left: 20%;">
-            The letter always arrives at its destination
-        </div>
-    </div>
-
     <!-- Navigation -->
     <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle navigation menu">
         <span></span>
@@ -965,43 +786,23 @@
         </ul>
     </nav>
 
-    <header class="page-header">
-        <div class="header-element">
-            <svg viewBox="0 0 400 250">
-                <!-- Four Discourses with arrows -->
-                <g transform="translate(50, 80)">
-                    <!-- Master's Discourse -->
-                    <text x="0" y="0" style="font-size: 20px;">S₁</text>
-                    <text x="0" y="40" style="font-size: 20px;">$</text>
-                    <text x="80" y="0" style="font-size: 20px;">S₂</text>
-                    <text x="80" y="40" style="font-size: 20px;">a</text>
-                    <line x1="-10" y1="20" x2="30" y2="20" />
-                    <line x1="70" y1="20" x2="110" y2="20" />
-                    <!-- Arrow above -->
-                    <line x1="35" y1="-5" x2="65" y2="-5" />
-                    <line x1="60" y1="-10" x2="65" y2="-5" />
-                    <line x1="60" y1="0" x2="65" y2="-5" />
-                </g>
-                <g transform="translate(250, 80)">
-                    <!-- Analyst's Discourse -->
-                    <text x="0" y="0" style="font-size: 20px;">a</text>
-                    <text x="0" y="40" style="font-size: 20px;">$</text>
-                    <text x="80" y="0" style="font-size: 20px;">S₂</text>
-                    <text x="80" y="40" style="font-size: 20px;">S₁</text>
-                    <line x1="-10" y1="20" x2="30" y2="20" />
-                    <line x1="70" y1="20" x2="110" y2="20" />
-                    <!-- Arrow above -->
-                    <line x1="35" y1="-5" x2="65" y2="-5" />
-                    <line x1="60" y1="-10" x2="65" y2="-5" />
-                    <line x1="60" y1="0" x2="65" y2="-5" />
-                </g>
+    <!-- Page Hero -->
+    <header class="page-hero">
+        <div class="borromean" style="top: 5%; right: 10%; transform: rotate(25deg);">
+            <svg viewBox="0 0 200 200">
+                <circle cx="70" cy="80" r="50" stroke="currentColor" stroke-width="3" fill="none"/>
+                <circle cx="130" cy="80" r="50" stroke="currentColor" stroke-width="3" fill="none"/>
+                <circle cx="100" cy="130" r="50" stroke="currentColor" stroke-width="3" fill="none"/>
             </svg>
         </div>
-        <h1>The Process of Transformation</h1>
-        <p class="page-tagline">How Lacanian psychoanalysis creates lasting change</p>
+        
+        <div class="page-hero-content">
+            <h1>The Process of Transformation</h1>
+            <p class="subtitle">How Lacanian psychoanalysis creates lasting change</p>
+        </div>
     </header>
 
-<!-- Main Content -->
+    <!-- Main Content -->
 <main class="section">
     <div class="container">
         <h2>Understanding the Process</h2>
@@ -1162,12 +963,11 @@
     </div>
 </section>
 
-
     <!-- Footer -->
     <footer class="footer">
         <p>David M. Freshwater, LMHC #10001743</p>
         <p>Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
-        <p><a href="tel:+17865271616">(786) 527-1616</a> • <a href="mailto:davidfreshwateranalyst@gmail.com">davidfreshwateranalyst@gmail.com</a></p>
+        <p><a href="tel:+17865271616" style="color: var(--color-gray-light); text-decoration: none;">(786) 527-1616</a> • <a href="mailto:davidfreshwateranalyst@gmail.com" style="color: var(--color-gray-light); text-decoration: none;">davidfreshwateranalyst@gmail.com</a></p>
         <p>Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
         <p style="margin-top: 2rem; opacity: 0.6;">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
     </footer>
@@ -1202,29 +1002,95 @@
         </div>
     </div>
 
+    <!-- EmailJS SDK -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("SapDsG2u7LsAmvQMW");
+        })();
+    </script>
+
     <script>
         // Initialize
         window.addEventListener('load', () => {
-            // Show palimpsest
-            setTimeout(() => {
-                document.querySelector('.palimpsest').classList.add('visible');
-            }, 1500);
-            
-            // Scroll animations
             initScrollAnimations();
+            setActiveNavLink();
         });
+
+        // Set active navigation link
+        function setActiveNavLink() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === currentPage || 
+                    (currentPage === 'approach.html' && href === 'approach.html')) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        // Debounce function
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Navigation behavior
+        let lastScroll = 0;
+        const nav = document.getElementById('navigation');
+        
+        const handleScroll = debounce(() => {
+            const currentScroll = window.pageYOffset;
+            
+            if (window.innerWidth > 768) {
+                nav.classList.toggle('scrolled', currentScroll > 100);
+                nav.classList.toggle('hidden', currentScroll > lastScroll && currentScroll > 200);
+            }
+            
+            lastScroll = currentScroll;
+        }, 10);
+        
+        window.addEventListener('scroll', handleScroll);
 
         // Mobile menu
         const menuToggle = document.getElementById('menuToggle');
-        const navigation = document.getElementById('navigation');
         const mobileOverlay = document.getElementById('mobileOverlay');
 
         function toggleMenu() {
             menuToggle.classList.toggle('active');
-            navigation.classList.toggle('active');
+            nav.classList.toggle('active');
             mobileOverlay.classList.toggle('active');
             
-            if (navigation.classList.contains('active')) {
+            if (nav.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
                 document.body.style.position = 'fixed';
                 document.body.style.width = '100%';
@@ -1246,38 +1112,6 @@
             });
         });
 
-        // Navigation scroll behavior
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            const nav = document.getElementById('navigation');
-            
-            if (window.innerWidth > 768) {
-                nav.classList.toggle('scrolled', currentScroll > 100);
-                nav.classList.toggle('hidden', currentScroll > lastScroll && currentScroll > 200);
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Scroll animations
-        function initScrollAnimations() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        }
-
         // Form functions
         function showConsultationForm() {
             const overlay = document.getElementById('popupOverlay');
@@ -1291,7 +1125,6 @@
             document.body.style.overflow = '';
             document.getElementById('consultationForm').reset();
             
-            // Hide any messages
             const formMessage = document.getElementById('formMessage');
             formMessage.style.display = 'none';
             formMessage.className = 'form-message';
@@ -1308,18 +1141,15 @@
             const originalText = submitBtn.textContent;
             const formMessage = document.getElementById('formMessage');
             
-            // Show loading state
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
             
-            // Hide any previous messages
             formMessage.style.display = 'none';
             formMessage.className = 'form-message';
             
             const formData = new FormData(event.target);
             const data = Object.fromEntries(formData);
 
-            // Prepare template parameters
             const templateParams = {
                 from_name: data.name,
                 from_email: data.email,
@@ -1328,33 +1158,27 @@
                 to_email: 'davidfreshwateranalyst@gmail.com'
             };
 
-            // Send email using EmailJS
             emailjs.send('service_qera1v7', 'template_ndishzq', templateParams)
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
                     
-                    // Show success message
                     formMessage.textContent = 'Thank you! Your consultation request has been sent successfully. David will contact you within 24-48 hours.';
                     formMessage.className = 'form-message success';
                     formMessage.style.display = 'block';
                     
-                    // Reset form
                     document.getElementById('consultationForm').reset();
                     
-                    // Hide form after delay
                     setTimeout(() => {
                         hideConsultationForm();
                     }, 3000);
                 }, function(error) {
                     console.log('FAILED...', error);
                     
-                    // Show error message
                     formMessage.textContent = 'Sorry, there was an error sending your request. Please try again or contact directly at davidfreshwateranalyst@gmail.com';
                     formMessage.className = 'form-message error';
                     formMessage.style.display = 'block';
                 })
                 .finally(() => {
-                    // Reset button
                     submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
                 });
@@ -1365,7 +1189,7 @@
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
-                if (window.innerWidth > 768 && navigation.classList.contains('active')) {
+                if (window.innerWidth > 768 && nav.classList.contains('active')) {
                     toggleMenu();
                 }
             }, 250);
