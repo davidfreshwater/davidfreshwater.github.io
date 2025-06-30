@@ -26,11 +26,8 @@
             --color-gray-medium: #999;
             --color-red: #dc2626;
             --color-red-dark: #b91c1c;
-            --color-red-light: #fee2e2;
-            --color-red-lighter: #fef2f2;
             --shadow-soft: 0 2px 20px rgba(0, 0, 0, 0.05);
             --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.08);
-            --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.12);
             --font-serif: 'Crimson Text', serif;
             --font-sans: 'Inter', -apple-system, sans-serif;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -51,12 +48,11 @@
 
         /* ===== TYPOGRAPHY ===== */
         h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
             font-weight: 300;
-            letter-spacing: 0.05em;
-            margin-bottom: 2rem;
-            line-height: 1.1;
-            font-family: var(--font-serif);
+            letter-spacing: 0.2em;
+            margin-bottom: 3rem;
+            text-align: center;
         }
 
         h2 {
@@ -81,10 +77,18 @@
         }
 
         h3 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 400;
-            margin-bottom: 1.5rem;
+            margin: 4rem 0 2rem;
             letter-spacing: 0.05em;
+            font-family: var(--font-serif);
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: var(--color-ink);
         }
 
         p {
@@ -96,7 +100,25 @@
             margin-right: auto;
         }
 
-        /* ===== LAYOUT COMPONENTS ===== */
+        /* ===== LAYOUT ===== */
+        .page-header {
+            background-color: var(--color-paper);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            border-bottom: 1px solid var(--color-gray-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-tagline {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: var(--color-gray-medium);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            font-family: var(--font-serif);
+            font-style: italic;
+        }
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -104,33 +126,8 @@
         }
 
         .section {
-            padding: 7rem 0;
+            padding: 6rem 0;
             position: relative;
-        }
-
-        /* ===== HEADER ===== */
-        .page-hero {
-            min-height: 50vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 2rem;
-            margin-top: 4rem;
-            background: linear-gradient(135deg, rgba(220, 38, 38, 0.02) 0%, transparent 100%);
-        }
-
-        .page-hero-content {
-            text-align: center;
-            animation: fadeIn 2s ease-out;
-        }
-
-        .subtitle {
-            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-            color: var(--color-gray-medium);
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            margin-bottom: 3rem;
         }
 
         /* ===== NAVIGATION ===== */
@@ -213,48 +210,6 @@
             display: none;
         }
 
-        /* ===== BUTTONS ===== */
-        .btn {
-            display: inline-block;
-            padding: 1rem 3rem;
-            font-family: var(--font-sans);
-            font-size: 0.95rem;
-            font-weight: 300;
-            letter-spacing: 0.1em;
-            text-decoration: none;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            background: none;
-        }
-
-        .btn-primary {
-            background-color: var(--color-red);
-            color: white;
-            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
-        }
-
-        .btn-floating {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            opacity: 0;
-            transform: translateY(20px);
-            pointer-events: none;
-            z-index: 90;
-        }
-
-        .btn-floating.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: all;
-        }
-
         /* ===== MOBILE MENU ===== */
         .mobile-menu-btn {
             display: none;
@@ -314,6 +269,64 @@
             display: block;
         }
 
+        /* ===== LACANIAN ELEMENTS ===== */
+        .header-element {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 250px;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        .header-element svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .header-element text {
+            font-family: var(--font-serif);
+            font-style: italic;
+            fill: var(--color-ink);
+            font-size: 32px;
+        }
+
+        .header-element line {
+            stroke: var(--color-ink);
+            stroke-width: 2;
+        }
+
+        /* ===== PALIMPSEST ===== */
+        .palimpsest {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 4s ease-in;
+        }
+
+        .palimpsest.visible {
+            opacity: 1;
+        }
+
+        .palimpsest-text {
+            position: absolute;
+            opacity: 0.05;
+            font: italic 18px/1.6 var(--font-serif);
+            color: var(--color-ink);
+            letter-spacing: 0.1em;
+            animation: drift 80s ease-in-out infinite;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(30px); }
+        }
+
         /* ===== BACKGROUND EFFECTS ===== */
         .bg-gradient {
             position: fixed;
@@ -356,32 +369,15 @@
             font-family: var(--font-serif);
         }
 
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(30px, -30px) rotate(180deg); }
-        }
-
-        .opening-vignette p {
-            color: var(--color-ink);
-            font-size: 1.1rem;
-            line-height: 2;
-            margin-bottom: 0;
-            position: relative;
-            z-index: 1;
-        }
-
         /* ===== QUOTE BLOCK ===== */
         .quote {
-            font: italic clamp(1.6rem, 3.5vw, 2.4rem)/1.8 var(--font-serif);
+            font: italic clamp(1.4rem, 3.5vw, 2.2rem)/1.8 var(--font-serif);
             text-align: center;
-            margin: 7rem 0;
-            padding: 3rem;
+            margin: 6rem 0;
+            padding: 0 2rem;
             color: var(--color-ink);
             letter-spacing: 0.02em;
             position: relative;
-            background-color: rgba(220, 38, 38, 0.01);
-            border-top: 1px solid rgba(220, 38, 38, 0.1);
-            border-bottom: 1px solid rgba(220, 38, 38, 0.1);
         }
 
         .quote::before,
@@ -404,13 +400,18 @@
             right: -20px;
         }
 
-        .quote-attribution {
-            font-size: 1rem;
-            color: var(--color-gray-medium);
-            margin-top: 1.5rem;
-            font-style: normal;
-            font-family: var(--font-sans);
-            letter-spacing: 0.1em;
+        /* ===== TYPEWRITER EFFECT ===== */
+        .typewriter-text {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 4s steps(100, end);
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
         }
 
         /* ===== HIGHLIGHT BOX ===== */
@@ -504,7 +505,7 @@
         .info-box h4 {
             color: var(--color-ink);
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 500;
         }
 
@@ -569,11 +570,53 @@
             background: linear-gradient(to right, transparent, var(--color-gray-light), transparent);
         }
 
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            background: none;
+        }
+
+        .btn-primary {
+            background-color: var(--color-red);
+            color: white;
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
+        }
+
+        .btn-floating {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            z-index: 90;
+        }
+
+        .btn-floating.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
         /* ===== SECTION DIVIDER ===== */
         .section-divider {
             width: 100px;
             height: 60px;
-            margin: 5rem auto;
+            margin: 6rem auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -596,7 +639,7 @@
             color: var(--color-gray-light);
             padding: 4rem 2rem 2rem;
             text-align: center;
-            margin-top: 5rem;
+            margin-top: 0;
         }
 
         .footer p {
@@ -607,35 +650,13 @@
             color: var(--color-gray-light);
         }
 
-        /* ===== LACANIAN ELEMENTS ===== */
-        .borromean {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            opacity: 0.15;
+        .footer a {
+            color: var(--color-gray-light);
+            text-decoration: none;
         }
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .footer a:hover {
+            text-decoration: underline;
         }
 
         /* ===== FORM STYLES ===== */
@@ -791,6 +812,29 @@
             border: 1px solid rgba(239, 68, 68, 0.2);
         }
 
+        /* ===== UTILITIES ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .emphasis-text {
+            font-size: 1.2rem;
+            color: var(--color-ink);
+            font-weight: 400;
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(220, 38, 38, 0.1);
+            border-bottom: 1px solid rgba(220, 38, 38, 0.1);
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .mobile-menu-btn {
@@ -835,12 +879,31 @@
                 font-size: 1.1rem;
             }
 
-            .page-hero {
-                min-height: 40vh;
+            .page-header {
+                padding: 6rem 2rem 3rem;
             }
 
-            h1 {
-                font-size: clamp(2rem, 6vw, 3rem);
+            .section {
+                padding: 4rem 0;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .header-element {
+                width: 300px;
+                height: 190px;
+            }
+
+            .palimpsest-text {
+                opacity: 0.08;
+                font-size: 16px;
+            }
+
+            .quote {
+                font-size: 1.3rem;
+                margin: 4rem 0;
             }
 
             .process-grid,
@@ -858,32 +921,17 @@
             .info-box {
                 padding: 2rem;
             }
-
-            .section {
-                padding: 4rem 0;
-            }
-
-            .container {
-                padding: 0 1.5rem;
-            }
-
-            .quote {
-                font-size: 1.3rem;
-                margin: 3rem 0;
-                padding: 2rem;
-            }
-
-            .form-container {
-                padding: 2rem 1.5rem;
-                width: 95%;
-            }
-
             .btn-floating {
                 bottom: 6rem;
             }
         }
 
         @media (max-width: 400px) {
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 0.1em;
+            }
+
             .btn-floating {
                 bottom: 0;
                 left: 0;
@@ -894,17 +942,7 @@
             }
         }
 
-        /* ===== TEXT EMPHASIS ===== */
-        .emphasis-text {
-            font-size: 1.2rem;
-            color: var(--color-ink);
-            font-weight: 400;
-            text-align: center;
-            margin: 3rem 0;
-            padding: 2rem 0;
-            border-top: 1px solid rgba(220, 38, 38, 0.1);
-            border-bottom: 1px solid rgba(220, 38, 38, 0.1);
-        }
+        /* ===== ACCESSIBILITY ===== */
         :focus {
             outline: 2px solid var(--color-red);
             outline-offset: 2px;
@@ -923,6 +961,31 @@
     <!-- Background Effects -->
     <div class="bg-gradient"></div>
     <div class="bg-texture"></div>
+
+    <!-- Palimpsest -->
+    <div class="palimpsest">
+        <div class="palimpsest-text" style="top: 5%; left: 5%;">
+            The unconscious is structured like a language
+        </div>
+        <div class="palimpsest-text" style="top: 15%; right: 10%; text-align: right;">
+            I think where I am not, therefore I am where I do not think
+        </div>
+        <div class="palimpsest-text" style="top: 30%; left: 15%;">
+            Desire is the desire of the Other
+        </div>
+        <div class="palimpsest-text" style="top: 45%; right: 8%;">
+            Love is giving what you don't have
+        </div>
+        <div class="palimpsest-text" style="top: 60%; left: 10%;">
+            There is no sexual relationship
+        </div>
+        <div class="palimpsest-text" style="top: 75%; right: 5%; text-align: right;">
+            The subject is what one signifier represents for another signifier
+        </div>
+        <div class="palimpsest-text" style="bottom: 10%; left: 20%;">
+            The letter always arrives at its destination
+        </div>
+    </div>
 
     <!-- Navigation -->
     <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle navigation menu">
@@ -944,20 +1007,26 @@
         </ul>
     </nav>
 
-    <!-- Page Hero -->
-    <header class="page-hero">
-        <div class="borromean" style="top: 5%; right: 10%; transform: rotate(25deg);">
-            <svg viewBox="0 0 200 200">
-                <circle cx="70" cy="80" r="50" stroke="currentColor" stroke-width="3" fill="none"/>
-                <circle cx="130" cy="80" r="50" stroke="currentColor" stroke-width="3" fill="none"/>
-                <circle cx="100" cy="130" r="50" stroke="currentColor" stroke-width="3" fill="none"/>
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="header-element">
+            <svg viewBox="0 0 400 250">
+                <!-- Analyst's Discourse -->
+                <text x="60" y="80">a</text>
+                <text x="60" y="150">$</text>
+                <text x="300" y="80">S₂</text>
+                <text x="300" y="150">S₁</text>
+                <line x1="40" y1="110" x2="110" y2="110" />
+                <line x1="280" y1="110" x2="350" y2="110" />
+                
+                <!-- Modified middle arrow - moved up between 'a' and 'S₂', half length, pointing right -->
+                <line x1="140" y1="80" x2="195" y2="80" stroke="black" />
+                <line x1="190" y1="75" x2="195" y2="80" stroke="black" />
+                <line x1="190" y1="85" x2="195" y2="80" stroke="black" />
             </svg>
         </div>
-        
-        <div class="page-hero-content">
-            <h1>The Process of Transformation</h1>
-            <p class="subtitle">How Lacanian psychoanalysis creates lasting change</p>
-        </div>
+        <h1>The Process of Transformation</h1>
+        <p class="page-tagline">How Lacanian psychoanalysis creates lasting change</p>
     </header>
 
     <!-- Main Content -->
@@ -972,8 +1041,7 @@
             <p class="emphasis-text">These aren't random events—they're your psyche's way of insisting on being heard.</p>
 
             <div class="quote fade-in">
-                "The unconscious is the chapter of my history that is marked by a blank or occupied by a lie: it is the censored chapter."
-                <div class="quote-attribution">— Jacques Lacan</div>
+                <span class="typewriter-text">"The unconscious is the chapter of my history that is marked by a blank or occupied by a lie: it is the censored chapter."</span>
             </div>
 
             <h3>Speaking Freely</h3>
@@ -1041,8 +1109,7 @@
             <h3>What to Expect in Sessions</h3>
 
             <div class="quote fade-in" style="margin-bottom: 3rem;">
-                "Little by little, from within your own words, another meaning forms and surprises you, then falls apart, taking the pain with it."
-                <div class="quote-attribution">— Jacques-Alain Miller</div>
+                <span class="typewriter-text">"Little by little, from within your own words, another meaning forms and surprises you, then falls apart, taking the pain with it."</span>
             </div>
 
             <p>Analysis typically begins with a sense of urgency—something isn't working, familiar situations keep recurring, or symptoms have become unbearable.</p>
@@ -1125,7 +1192,7 @@
     <footer class="footer">
         <p>David M. Freshwater, LMHC #10001743</p>
         <p>Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
-        <p><a href="tel:+17865271616" style="color: var(--color-gray-light); text-decoration: none;">(786) 527-1616</a> • <a href="mailto:davidfreshwateranalyst@gmail.com" style="color: var(--color-gray-light); text-decoration: none;">davidfreshwateranalyst@gmail.com</a></p>
+        <p><a href="tel:+17865271616">(786) 527-1616</a> • <a href="mailto:davidfreshwateranalyst@gmail.com">davidfreshwateranalyst@gmail.com</a></p>
         <p>Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
         <p style="margin-top: 2rem; opacity: 0.6;">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
     </footer>
@@ -1178,21 +1245,50 @@
     <script>
         // Initialize
         window.addEventListener('load', () => {
+            // Show palimpsest
+            setTimeout(() => {
+                document.querySelector('.palimpsest').classList.add('visible');
+            }, 1500);
+
+            // Initialize typewriters for the quotes
+            initTypewriters();
+            
+            // Scroll animations
             initScrollAnimations();
-            setActiveNavLink();
         });
 
-        // Set active navigation link
-        function setActiveNavLink() {
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            document.querySelectorAll('.nav-link').forEach(link => {
-                const href = link.getAttribute('href');
-                if (href === currentPage || 
-                    (currentPage === 'approach.html' && href === 'approach.html')) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
+        // Typewriter effect for multiple elements
+        function initTypewriters() {
+            const quotes = document.querySelectorAll('.typewriter-text');
+            
+            quotes.forEach((quote) => {
+                const text = quote.textContent;
+                quote.textContent = '';
+                quote.style.display = 'inline-block';
+                quote.style.whiteSpace = 'normal';
+                
+                let i = 0;
+                const speed = 40;
+                
+                function type() {
+                    if (i < text.length) {
+                        quote.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    }
                 }
+                
+                // Start typing when element is in view
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            type();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                observer.observe(quote.parentElement);
             });
         }
 
@@ -1214,25 +1310,12 @@
             document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         }
 
-        // Debounce function
-        function debounce(func, wait) {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func(...args);
-                };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-            };
-        }
-
         // Navigation behavior
         let lastScroll = 0;
         const nav = document.getElementById('navigation');
         const floatingBtn = document.getElementById('floatingConsult');
         
-        const handleScroll = debounce(() => {
+        const handleScroll = () => {
             const currentScroll = window.pageYOffset;
             
             if (window.innerWidth > 768) {
@@ -1248,7 +1331,7 @@
             }
             
             lastScroll = currentScroll;
-        }, 10);
+        };
         
         window.addEventListener('scroll', handleScroll);
 
