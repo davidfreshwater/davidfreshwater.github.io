@@ -1,1010 +1,1005 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Process of Transformation - David M. Freshwater, LMHC</title>
     <meta name="description" content="How Lacanian psychoanalysis creates lasting change through speaking freely, precise listening, and engaging with the unconscious.">
-
-```
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-<!-- EmailJS SDK -->
-<script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-</script>
-<script type="text/javascript">
-    (function(){
-        emailjs.init("SapDsG2u7LsAmvQMW");
-    })();
-</script>
-
-<style>
-    /* ===== CSS RESET ===== */
-    *, *::before, *::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    /* ===== CUSTOM PROPERTIES ===== */
-    :root {
-        --color-ink: #1a1a1a;
-        --color-paper: #fdfcfa;
-        --color-gray-light: #e8e8e3;
-        --color-gray-medium: #999;
-        --color-red: #dc2626;
-        --color-red-dark: #b91c1c;
-        --shadow-soft: 0 2px 20px rgba(0, 0, 0, 0.05);
-        --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.08);
-        --font-serif: 'Crimson Text', serif;
-        --font-sans: 'Inter', -apple-system, sans-serif;
-        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* ===== BASE STYLES ===== */
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        font-family: var(--font-sans);
-        line-height: 1.8;
-        color: var(--color-ink);
-        background-color: var(--color-paper);
-        overflow-x: hidden;
-    }
-
-    /* ===== TYPOGRAPHY ===== */
-    h1 {
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
-        font-weight: 300;
-        letter-spacing: 0.2em;
-        margin-bottom: 3rem;
-        text-align: center;
-    }
-
-    h2 {
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
-        font-weight: 300;
-        letter-spacing: 0.1em;
-        margin-bottom: 4rem;
-        text-align: center;
-        position: relative;
-    }
-
-    h2::after {
-        content: '';
-        position: absolute;
-        bottom: -20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 40px;
-        height: 1px;
-        background-color: var(--color-red);
-        opacity: 0.6;
-    }
-
-    h3 {
-        font-size: 1.5rem;
-        font-weight: 400;
-        margin: 4rem 0 2rem;
-        letter-spacing: 0.05em;
-        font-family: var(--font-serif);
-    }
-
-    h4 {
-        font-size: 1.2rem;
-        font-weight: 500;
-        margin-bottom: 1rem;
-        color: var(--color-ink);
-        font-family: var(--font-serif);
-    }
-
-    p {
-        color: var(--color-gray-medium);
-        margin-bottom: 2rem;
-        line-height: 1.9;
-        max-width: 65ch;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .opening-vignette {
-        background-color: rgba(26, 26, 26, 0.02);
-        padding: 2.5rem;
-        margin: 0 -2rem 3rem;
-        border-left: 3px solid var(--color-red);
-    }
-
-    .opening-vignette p {
-        font-size: 1.1rem;
-        font-family: var(--font-serif);
-        font-style: italic;
-        color: var(--color-ink);
-        margin-bottom: 0;
-        line-height: 1.8;
-        max-width: 70ch;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* ===== LAYOUT ===== */
-    .page-header {
-        background-color: var(--color-paper);
-        padding: 8rem 2rem 4rem;
-        text-align: center;
-        border-bottom: 1px solid var(--color-gray-light);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .page-tagline {
-        font-size: clamp(1rem, 2.5vw, 1.3rem);
-        color: var(--color-gray-medium);
-        font-weight: 300;
-        letter-spacing: 0.1em;
-        font-family: var(--font-serif);
-        font-style: italic;
-    }
-
-    .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .section {
-        padding: 6rem 0;
-        position: relative;
-    }
-
-    /* ===== NAVIGATION ===== */
-    .nav {
-        position: fixed;
-        top: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1000;
-        background-color: var(--color-paper);
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        box-shadow: var(--shadow-soft);
-        transition: var(--transition);
-    }
-
-    .nav.scrolled {
-        top: 1rem;
-        padding: 0.75rem 1.5rem;
-        box-shadow: var(--shadow-medium);
-    }
-
-    .nav.hidden {
-        transform: translateX(-50%) translateY(-120px);
-    }
-
-    .nav-list {
-        list-style: none;
-        display: flex;
-        gap: 3rem;
-        align-items: center;
-        margin: 0;
-        line-height: 1;
-    }
     
-    .nav-link {
-        color: var(--color-ink);
-        text-decoration: none;
-        font-weight: 400;
-        font-size: 0.9rem;
-        letter-spacing: 0.05em;
-        position: relative;
-        transition: var(--transition);
-        line-height: 1;
-    }
-
-    .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background-color: var(--color-red);
-        transition: width 0.3s ease;
-    }
-
-    .nav-link:hover::after,
-    .nav-link.active::after {
-        width: 100%;
-    }
-
-    .nav-link.active {
-        color: var(--color-red);
-        font-weight: 500;
-    }
-
-    .nav-link.nav-cta {
-        background-color: var(--color-red);
-        color: white;
-        padding: 0.5rem 1.25rem;
-        border-radius: 25px;
-        margin-left: 1rem;
-    }
-
-    .nav-link.nav-cta:hover {
-        background-color: var(--color-red-dark);
-        transform: translateY(-2px);
-    }
-
-    .nav-link.nav-cta::after {
-        display: none;
-    }
-
-    /* ===== MOBILE MENU ===== */
-    .mobile-menu-btn {
-        display: none;
-        position: fixed;
-        top: 2rem;
-        right: 2rem;
-        z-index: 1001;
-        width: 44px;
-        height: 44px;
-        background: transparent;
-        border: 2px solid var(--color-red);
-        cursor: pointer;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        transition: var(--transition);
-    }
-
-    .mobile-menu-btn:hover {
-        background-color: var(--color-red);
-    }
-
-    .mobile-menu-btn:hover span {
-        background-color: white;
-    }
-
-    .mobile-menu-btn span {
-        display: block;
-        width: 24px;
-        height: 2px;
-        background-color: var(--color-ink);
-        margin: 3px 0;
-        transition: var(--transition);
-    }
-
-    .mobile-menu-btn.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 6px);
-    }
-
-    .mobile-menu-btn.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .mobile-menu-btn.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -6px);
-    }
-
-    .mobile-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 998;
-    }
-
-    .mobile-overlay.active {
-        display: block;
-    }
-
-    /* ===== LACANIAN ELEMENTS ===== */
-    .header-element {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 400px;
-        height: 250px;
-        opacity: 0.08;
-        pointer-events: none;
-    }
-
-    .header-element svg {
-        width: 100%;
-        height: 100%;
-    }
-
-    .header-element text {
-        font-family: var(--font-serif);
-        font-style: italic;
-        fill: var(--color-ink);
-    }
-
-    .header-element line {
-        stroke: var(--color-ink);
-        stroke-width: 1.5;
-    }
-
-    .palimpsest {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        z-index: 1;
-        overflow: hidden;
-        opacity: 0;
-        transition: opacity 4s ease-in;
-    }
-
-    .palimpsest.visible {
-        opacity: 1;
-    }
-
-    .palimpsest-text {
-        position: absolute;
-        opacity: 0.05;
-        font: italic 18px/1.6 var(--font-serif);
-        color: var(--color-ink);
-        letter-spacing: 0.1em;
-        animation: drift 80s ease-in-out infinite;
-    }
-
-    @keyframes drift {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(30px); }
-    }
-
-    /* ===== CARDS & GRIDS ===== */
-    .process-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin: 3rem 0;
-    }
-
-    .process-card {
-        background-color: var(--color-paper);
-        padding: 2.5rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-        border-left: 3px solid transparent;
-    }
-
-    .process-card::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background-color: var(--color-red);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.3s ease;
-    }
-
-    .process-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        border-left-color: var(--color-red);
-    }
-
-    .process-card:hover::after {
-        transform: scaleX(1);
-    }
-
-    .card-icon {
-        position: absolute;
-        top: 1rem;
-        right: 1.5rem;
-        width: 40px;
-        height: 40px;
-        color: var(--color-red);
-        opacity: 0.6;
-        transition: var(--transition);
-    }
-
-    .process-card:hover .card-icon {
-        opacity: 1;
-        transform: rotate(45deg);
-    }
-
-    /* ===== INFO BOXES ===== */
-    .info-box {
-        background-color: rgba(220, 38, 38, 0.02);
-        padding: 2.5rem;
-        margin: 3rem 0;
-        border-left: 3px solid var(--color-red);
-        background-image: 
-            repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px);
-    }
-
-    .highlight-box {
-        background-color: rgba(26, 26, 26, 0.02);
-        padding: 2.5rem;
-        margin: 3rem 0;
-        border-left: 3px solid var(--color-ink);
-        font-family: var(--font-serif);
-        font-style: italic;
-    }
-
-    /* ===== QUOTE BLOCK ===== */
-    .quote {
-        font: italic clamp(1.4rem, 3.5vw, 2.2rem)/1.8 var(--font-serif);
-        text-align: center;
-        margin: 6rem 0;
-        padding: 0 2rem;
-        color: var(--color-ink);
-        letter-spacing: 0.02em;
-        position: relative;
-    }
-
-    .quote::before,
-    .quote::after {
-        font-size: 3rem;
-        color: var(--color-red);
-        opacity: 0.3;
-        position: absolute;
-    }
-
-    .quote::before {
-        content: '「';
-        top: -20px;
-        left: -20px;
-    }
-
-    .quote::after {
-        content: '」';
-        bottom: -40px;
-        right: -20px;
-    }
-
-    .quote-attribution {
-        font-size: 1rem;
-        font-style: normal;
-        color: var(--color-gray-medium);
-        margin-top: 1rem;
-    }
-
-    /* ===== TRANSFORMATION GRID ===== */
-    .transformation-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-        margin: 3rem 0 4rem;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .transformation-card {
-        background-color: var(--color-paper);
-        padding: 2.5rem 2rem;
-        text-align: center;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .transformation-card::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background-color: var(--color-red);
-        transform: scaleX(0);
-        transform-origin: center;
-        transition: transform 0.3s ease;
-    }
-
-    .transformation-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    }
-
-    .transformation-card:hover::after {
-        transform: scaleX(1);
-    }
-
-    .transformation-card h4 {
-        font-family: var(--font-serif);
-        font-size: 1.3rem;
-        color: var(--color-red);
-        margin-bottom: 1rem;
-        font-weight: 400;
-    }
-
-    .transformation-card p {
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin-bottom: 0;
-    }
-
-    /* ===== CTA SECTION ===== */
-    .cta-section {
-        background-color: var(--color-paper);
-        padding: 6rem 0;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .cta-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(to right, transparent, var(--color-gray-light), transparent);
-    }
-
-    /* ===== BUTTONS ===== */
-    .btn {
-        display: inline-block;
-        padding: 1rem 3rem;
-        font-family: var(--font-sans);
-        font-size: 0.95rem;
-        font-weight: 300;
-        letter-spacing: 0.1em;
-        text-decoration: none;
-        cursor: pointer;
-        transition: var(--transition);
-        border: none;
-        background: none;
-    }
-
-    .btn-primary {
-        background-color: var(--color-red);
-        color: white;
-        box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
-    }
-
-    .btn-primary:hover {
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
-    }
-
-    /* ===== SECTION DIVIDER ===== */
-    .section-divider {
-        width: 100px;
-        height: 60px;
-        margin: 6rem auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .section-divider svg {
-        width: 60px;
-        height: 60px;
-        opacity: 0.15;
-        animation: slowRotate 120s linear infinite;
-    }
-
-    @keyframes slowRotate {
-        to { transform: rotate(360deg); }
-    }
-
-    /* ===== FOOTER ===== */
-    .footer {
-        background-color: var(--color-ink);
-        color: var(--color-gray-light);
-        padding: 4rem 2rem 2rem;
-        text-align: center;
-        margin-top: 0;
-    }
-
-    .footer p {
-        margin-bottom: 0.5rem;
-        font-size: 0.9rem;
-        letter-spacing: 0.05em;
-        opacity: 0.8;
-        color: var(--color-gray-light);
-    }
-
-    .footer a {
-        color: var(--color-gray-light);
-        text-decoration: none;
-    }
-
-    .footer a:hover {
-        text-decoration: underline;
-    }
-
-    /* ===== FORM STYLES ===== */
-    .form-overlay {
-        position: fixed;
-        inset: 0;
-        background-color: rgba(26, 26, 26, 0.8);
-        z-index: 2000;
-        display: none;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .form-overlay.active {
-        display: flex;
-    }
-
-    .form-container {
-        background-color: var(--color-paper);
-        padding: 3rem 2.5rem 2.5rem;
-        max-width: 500px;
-        width: 90%;
-        max-height: 90vh;
-        overflow-y: auto;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        position: relative;
-        opacity: 0;
-        transform: scale(0.9);
-        transition: var(--transition);
-    }
-
-    .form-overlay.active .form-container {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    .form-title {
-        font-size: 1.5rem;
-        font-weight: 300;
-        letter-spacing: 0.1em;
-        margin-bottom: 2rem;
-        text-align: center;
-    }
-
-    .form-group {
-        margin-bottom: 1.25rem;
-    }
-
-    .form-label {
-        display: block;
-        margin-bottom: 0.25rem;
-        font-size: 0.85rem;
-        letter-spacing: 0.05em;
-        color: var(--color-gray-medium);
-    }
-
-    .form-input,
-    .form-textarea {
-        width: 100%;
-        padding: 0.6rem;
-        background: transparent;
-        border: none;
-        border-bottom: 1px solid var(--color-gray-light);
-        color: var(--color-ink);
-        font-size: 0.95rem;
-        font-family: inherit;
-        transition: var(--transition);
-    }
-
-    .form-input:focus,
-    .form-textarea:focus {
-        outline: none;
-        border-bottom-color: var(--color-red);
-    }
-
-    .form-textarea {
-        resize: vertical;
-        min-height: 80px;
-    }
-
-    .form-buttons {
-        display: flex;
-        gap: 1.5rem;
-        margin-top: 2rem;
-        justify-content: center;
-    }
-
-    .form-btn {
-        padding: 0.75rem 2rem;
-        background: transparent;
-        color: var(--color-ink);
-        border: 1px solid var(--color-ink);
-        font-size: 0.85rem;
-        letter-spacing: 0.1em;
-        cursor: pointer;
-        transition: var(--transition);
-        font-family: inherit;
-        font-weight: 300;
-    }
-
-    .form-btn-submit {
-        background-color: var(--color-red);
-        color: white;
-        border-color: var(--color-red);
-    }
-
-    .form-btn-submit:hover {
-        background-color: var(--color-red-dark);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
-    }
-
-    .form-close {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        background: none;
-        border: none;
-        font-size: 1.25rem;
-        color: var(--color-gray-medium);
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: var(--transition);
-    }
-
-    .form-close:hover {
-        color: var(--color-ink);
-        transform: rotate(90deg);
-    }
-
-    .form-message {
-        padding: 0.75rem;
-        margin-top: 1rem;
-        text-align: center;
-        font-size: 0.9rem;
-        border-radius: 4px;
-        display: none;
-    }
-
-    .form-message.success {
-        background-color: rgba(34, 197, 94, 0.1);
-        color: #16a34a;
-        border: 1px solid rgba(34, 197, 94, 0.2);
-    }
-
-    .form-message.error {
-        background-color: rgba(239, 68, 68, 0.1);
-        color: #dc2626;
-        border: 1px solid rgba(239, 68, 68, 0.2);
-    }
-
-    /* ===== BACKGROUND EFFECTS ===== */
-    .bg-gradient {
-        position: fixed;
-        inset: 0;
-        background-image: 
-            radial-gradient(circle at 20% 50%, rgba(26, 26, 26, 0.06) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(26, 26, 26, 0.06) 0%, transparent 50%);
-        pointer-events: none;
-        z-index: 1;
-        opacity: 0.5;
-    }
-
-    .bg-texture {
-        position: fixed;
-        inset: 0;
-        background-image: 
-            repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.01) 35px, rgba(255,255,255,.01) 70px);
-        pointer-events: none;
-        z-index: 2;
-        mix-blend-mode: overlay;
-    }
-
-    /* ===== UTILITIES ===== */
-    .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease;
-    }
-
-    .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-        .mobile-menu-btn {
-            display: flex;
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("SapDsG2u7LsAmvQMW");
+        })();
+    </script>
+    
+    <style>
+        /* ===== CSS RESET ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .nav {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            transform: none;
-            width: 85%;
-            height: 100vh;
+        /* ===== CUSTOM PROPERTIES ===== */
+        :root {
+            --color-ink: #1a1a1a;
+            --color-paper: #fdfcfa;
+            --color-gray-light: #e8e8e3;
+            --color-gray-medium: #999;
+            --color-red: #dc2626;
+            --color-red-dark: #b91c1c;
+            --shadow-soft: 0 2px 20px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Inter', -apple-system, sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ===== BASE STYLES ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.8;
+            color: var(--color-ink);
             background-color: var(--color-paper);
-            padding: 5rem 2rem;
-            border-radius: 0;
-            transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 5px 0 30px rgba(0, 0, 0, 0.1);
-            overflow-y: auto;
+            overflow-x: hidden;
         }
 
-        .nav.active {
-            left: 0;
+        /* ===== TYPOGRAPHY ===== */
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            margin-bottom: 3rem;
+            text-align: center;
         }
 
-        .nav.hidden {
-            transform: none !important;
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 4rem;
+            text-align: center;
+            position: relative;
         }
 
-        .nav.scrolled {
-            top: 0 !important;
-            padding: 5rem 2rem !important;
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 1px;
+            background-color: var(--color-red);
+            opacity: 0.6;
         }
 
-        .nav-list {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 2rem;
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin: 4rem 0 2rem;
+            letter-spacing: 0.05em;
+            font-family: var(--font-serif);
         }
 
-        .nav-link {
-            font-size: 1.1rem;
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: var(--color-ink);
+            font-family: var(--font-serif);
         }
 
-        .page-header {
-            padding: 6rem 2rem 3rem;
-        }
-
-        .section {
-            padding: 4rem 0;
-        }
-
-        .container {
-            padding: 0 1.5rem;
-        }
-
-        .palimpsest-text {
-            opacity: 0.08;
-            font-size: 16px;
-        }
-
-        .quote {
-            font-size: 1.3rem;
-            margin: 4rem 0;
-        }
-
-        .process-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .transformation-grid {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
-        .header-element {
-            width: 300px;
-            height: 190px;
+        p {
+            color: var(--color-gray-medium);
+            margin-bottom: 2rem;
+            line-height: 1.9;
+            max-width: 65ch;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .opening-vignette {
-            margin: 0 0 3rem;
-            padding: 2rem;
+            background-color: rgba(26, 26, 26, 0.02);
+            padding: 2.5rem;
+            margin: 0 -2rem 3rem;
+            border-left: 3px solid var(--color-red);
         }
-    }
 
-    @media (max-width: 400px) {
-        h1 {
-            font-size: 2rem;
+        .opening-vignette p {
+            font-size: 1.1rem;
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--color-ink);
+            margin-bottom: 0;
+            line-height: 1.8;
+            max-width: 70ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== LAYOUT ===== */
+        .page-header {
+            background-color: var(--color-paper);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            border-bottom: 1px solid var(--color-gray-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-tagline {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: var(--color-gray-medium);
+            font-weight: 300;
             letter-spacing: 0.1em;
+            font-family: var(--font-serif);
+            font-style: italic;
         }
-    }
 
-    /* ===== ACCESSIBILITY ===== */
-    :focus {
-        outline: 2px solid var(--color-red);
-        outline-offset: 2px;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
-    }
-</style>
-```
 
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background-color: var(--color-paper);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .nav.scrolled {
+            top: 1rem;
+            padding: 0.75rem 1.5rem;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .nav.hidden {
+            transform: translateX(-50%) translateY(-120px);
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            margin: 0;
+            line-height: 1;
+        }
+        
+        .nav-link {
+            color: var(--color-ink);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            position: relative;
+            transition: var(--transition);
+            line-height: 1;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: var(--color-red);
+            font-weight: 500;
+        }
+
+        .nav-link.nav-cta {
+            background-color: var(--color-red);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 25px;
+            margin-left: 1rem;
+        }
+
+        .nav-link.nav-cta:hover {
+            background-color: var(--color-red-dark);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.nav-cta::after {
+            display: none;
+        }
+
+        /* ===== MOBILE MENU ===== */
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1001;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: 2px solid var(--color-red);
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            background-color: var(--color-red);
+        }
+
+        .mobile-menu-btn:hover span {
+            background-color: white;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--color-ink);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+        }
+
+        /* ===== LACANIAN ELEMENTS ===== */
+        .header-element {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 250px;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        .header-element svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .header-element text {
+            font-family: var(--font-serif);
+            font-style: italic;
+            fill: var(--color-ink);
+        }
+
+        .header-element line {
+            stroke: var(--color-ink);
+            stroke-width: 1.5;
+        }
+
+        .palimpsest {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 4s ease-in;
+        }
+
+        .palimpsest.visible {
+            opacity: 1;
+        }
+
+        .palimpsest-text {
+            position: absolute;
+            opacity: 0.05;
+            font: italic 18px/1.6 var(--font-serif);
+            color: var(--color-ink);
+            letter-spacing: 0.1em;
+            animation: drift 80s ease-in-out infinite;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(30px); }
+        }
+
+        /* ===== CARDS & GRIDS ===== */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .process-card {
+            background-color: var(--color-paper);
+            padding: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border-left: 3px solid transparent;
+        }
+
+        .process-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--color-red);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .process-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-left-color: var(--color-red);
+        }
+
+        .process-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .card-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            color: var(--color-red);
+            opacity: 0.6;
+            transition: var(--transition);
+        }
+
+        .process-card:hover .card-icon {
+            opacity: 1;
+            transform: rotate(45deg);
+        }
+
+        /* ===== INFO BOXES ===== */
+        .info-box {
+            background-color: rgba(220, 38, 38, 0.02);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-left: 3px solid var(--color-red);
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px);
+        }
+
+        .highlight-box {
+            background-color: rgba(26, 26, 26, 0.02);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-left: 3px solid var(--color-ink);
+            font-family: var(--font-serif);
+            font-style: italic;
+        }
+
+        /* ===== QUOTE BLOCK ===== */
+        .quote {
+            font: italic clamp(1.4rem, 3.5vw, 2.2rem)/1.8 var(--font-serif);
+            text-align: center;
+            margin: 6rem 0;
+            padding: 0 2rem;
+            color: var(--color-ink);
+            letter-spacing: 0.02em;
+            position: relative;
+        }
+
+        .quote::before,
+        .quote::after {
+            font-size: 3rem;
+            color: var(--color-red);
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .quote::before {
+            content: '「';
+            top: -20px;
+            left: -20px;
+        }
+
+        .quote::after {
+            content: '」';
+            bottom: -40px;
+            right: -20px;
+        }
+
+        .quote-attribution {
+            font-size: 1rem;
+            font-style: normal;
+            color: var(--color-gray-medium);
+            margin-top: 1rem;
+        }
+
+        /* ===== TRANSFORMATION GRID ===== */
+        .transformation-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .transformation-card {
+            background-color: var(--color-paper);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .transformation-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--color-red);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+
+        .transformation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .transformation-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .transformation-card h4 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--color-red);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .transformation-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background-color: var(--color-paper);
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--color-gray-light), transparent);
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            background: none;
+        }
+
+        .btn-primary {
+            background-color: var(--color-red);
+            color: white;
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
+        }
+
+        /* ===== SECTION DIVIDER ===== */
+        .section-divider {
+            width: 100px;
+            height: 60px;
+            margin: 6rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-divider svg {
+            width: 60px;
+            height: 60px;
+            opacity: 0.15;
+            animation: slowRotate 120s linear infinite;
+        }
+
+        @keyframes slowRotate {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--color-ink);
+            color: var(--color-gray-light);
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            opacity: 0.8;
+            color: var(--color-gray-light);
+        }
+
+        .footer a {
+            color: var(--color-gray-light);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== FORM STYLES ===== */
+        .form-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(26, 26, 26, 0.8);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-overlay.active {
+            display: flex;
+        }
+
+        .form-container {
+            background-color: var(--color-paper);
+            padding: 3rem 2.5rem 2.5rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: var(--transition);
+        }
+
+        .form-overlay.active .form-container {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            color: var(--color-gray-medium);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.6rem;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--color-gray-light);
+            color: var(--color-ink);
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-bottom-color: var(--color-red);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .form-btn {
+            padding: 0.75rem 2rem;
+            background: transparent;
+            color: var(--color-ink);
+            border: 1px solid var(--color-ink);
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            font-weight: 300;
+        }
+
+        .form-btn-submit {
+            background-color: var(--color-red);
+            color: white;
+            border-color: var(--color-red);
+        }
+
+        .form-btn-submit:hover {
+            background-color: var(--color-red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        .form-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: var(--color-gray-medium);
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .form-close:hover {
+            color: var(--color-ink);
+            transform: rotate(90deg);
+        }
+
+        .form-message {
+            padding: 0.75rem;
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .form-message.error {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        /* ===== BACKGROUND EFFECTS ===== */
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(26, 26, 26, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(26, 26, 26, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        .bg-texture {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.01) 35px, rgba(255,255,255,.01) 70px);
+            pointer-events: none;
+            z-index: 2;
+            mix-blend-mode: overlay;
+        }
+
+        /* ===== UTILITIES ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                transform: none;
+                width: 85%;
+                height: 100vh;
+                background-color: var(--color-paper);
+                padding: 5rem 2rem;
+                border-radius: 0;
+                transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 5px 0 30px rgba(0, 0, 0, 0.1);
+                overflow-y: auto;
+            }
+
+            .nav.active {
+                left: 0;
+            }
+
+            .nav.hidden {
+                transform: none !important;
+            }
+
+            .nav.scrolled {
+                top: 0 !important;
+                padding: 5rem 2rem !important;
+            }
+
+            .nav-list {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2rem;
+            }
+
+            .nav-link {
+                font-size: 1.1rem;
+            }
+
+            .page-header {
+                padding: 6rem 2rem 3rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .palimpsest-text {
+                opacity: 0.08;
+                font-size: 16px;
+            }
+
+            .quote {
+                font-size: 1.3rem;
+                margin: 4rem 0;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .transformation-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .header-element {
+                width: 300px;
+                height: 190px;
+            }
+
+            .opening-vignette {
+                margin: 0 0 3rem;
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 0.1em;
+            }
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+        :focus {
+            outline: 2px solid var(--color-red);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Background Effects -->
     <div class="bg-gradient"></div>
     <div class="bg-texture"></div>
 
-```
-<!-- Palimpsest -->
-<div class="palimpsest">
-    <div class="palimpsest-text" style="top: 5%; left: 5%;">
-        The unconscious is structured like a language
+    <!-- Palimpsest -->
+    <div class="palimpsest">
+        <div class="palimpsest-text" style="top: 5%; left: 5%;">
+            The unconscious is structured like a language
+        </div>
+        <div class="palimpsest-text" style="top: 15%; right: 10%; text-align: right;">
+            I think where I am not, therefore I am where I do not think
+        </div>
+        <div class="palimpsest-text" style="top: 30%; left: 15%;">
+            Desire is the desire of the Other
+        </div>
+        <div class="palimpsest-text" style="top: 45%; right: 8%;">
+            Love is giving what you don't have
+        </div>
+        <div class="palimpsest-text" style="top: 60%; left: 10%;">
+            There is no sexual relationship
+        </div>
+        <div class="palimpsest-text" style="top: 75%; right: 5%; text-align: right;">
+            The subject is what one signifier represents for another signifier
+        </div>
+        <div class="palimpsest-text" style="bottom: 10%; left: 20%;">
+            The letter always arrives at its destination
+        </div>
     </div>
-    <div class="palimpsest-text" style="top: 15%; right: 10%; text-align: right;">
-        I think where I am not, therefore I am where I do not think
-    </div>
-    <div class="palimpsest-text" style="top: 30%; left: 15%;">
-        Desire is the desire of the Other
-    </div>
-    <div class="palimpsest-text" style="top: 45%; right: 8%;">
-        Love is giving what you don't have
-    </div>
-    <div class="palimpsest-text" style="top: 60%; left: 10%;">
-        There is no sexual relationship
-    </div>
-    <div class="palimpsest-text" style="top: 75%; right: 5%; text-align: right;">
-        The subject is what one signifier represents for another signifier
-    </div>
-    <div class="palimpsest-text" style="bottom: 10%; left: 20%;">
-        The letter always arrives at its destination
-    </div>
-</div>
 
-<!-- Navigation -->
-<button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle navigation menu">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
+    <!-- Navigation -->
+    <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-<div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    
+    <nav class="nav" id="navigation">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="approach.html" class="nav-link active">Approach</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="stories.html" class="nav-link">Stories</a></li>
+            <li><a href="faq.html" class="nav-link">Questions</a></li>
+            <li><a href="#" class="nav-link nav-cta" onclick="showConsultationForm(); return false;">Begin</a></li>
+        </ul>
+    </nav>
 
-<nav class="nav" id="navigation">
-    <ul class="nav-list">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="approach.html" class="nav-link active">Approach</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="stories.html" class="nav-link">Stories</a></li>
-        <li><a href="faq.html" class="nav-link">Questions</a></li>
-        <li><a href="#" class="nav-link nav-cta" onclick="showConsultationForm(); return false;">Begin</a></li>
-    </ul>
-</nav>
-
-<header class="page-header">
-    <div class="header-element">
-        <svg viewBox="0 0 400 250">
-            <!-- Four Discourses with arrows -->
-            <g transform="translate(50, 80)">
-                <!-- Master's Discourse -->
-                <text x="0" y="0" style="font-size: 20px;">S₁</text>
-                <text x="0" y="40" style="font-size: 20px;">$</text>
-                <text x="80" y="0" style="font-size: 20px;">S₂</text>
-                <text x="80" y="40" style="font-size: 20px;">a</text>
-                <line x1="-10" y1="20" x2="30" y2="20" />
-                <line x1="70" y1="20" x2="110" y2="20" />
-                <!-- Arrow above -->
-                <line x1="35" y1="-5" x2="65" y2="-5" />
-                <line x1="60" y1="-10" x2="65" y2="-5" />
-                <line x1="60" y1="0" x2="65" y2="-5" />
-            </g>
-            <g transform="translate(250, 80)">
-                <!-- Analyst's Discourse -->
-                <text x="0" y="0" style="font-size: 20px;">a</text>
-                <text x="0" y="40" style="font-size: 20px;">$</text>
-                <text x="80" y="0" style="font-size: 20px;">S₂</text>
-                <text x="80" y="40" style="font-size: 20px;">S₁</text>
-                <line x1="-10" y1="20" x2="30" y2="20" />
-                <line x1="70" y1="20" x2="110" y2="20" />
-                <!-- Arrow above -->
-                <line x1="35" y1="-5" x2="65" y2="-5" />
-                <line x1="60" y1="-10" x2="65" y2="-5" />
-                <line x1="60" y1="0" x2="65" y2="-5" />
-            </g>
-        </svg>
-    </div>
-    <h1>The Process of Transformation</h1>
-    <p class="page-tagline">How Lacanian psychoanalysis creates lasting change</p>
-</header>
+    <header class="page-header">
+        <div class="header-element">
+            <svg viewBox="0 0 400 250">
+                <!-- Four Discourses with arrows -->
+                <g transform="translate(50, 80)">
+                    <!-- Master's Discourse -->
+                    <text x="0" y="0" style="font-size: 20px;">S₁</text>
+                    <text x="0" y="40" style="font-size: 20px;">$</text>
+                    <text x="80" y="0" style="font-size: 20px;">S₂</text>
+                    <text x="80" y="40" style="font-size: 20px;">a</text>
+                    <line x1="-10" y1="20" x2="30" y2="20" />
+                    <line x1="70" y1="20" x2="110" y2="20" />
+                    <!-- Arrow above -->
+                    <line x1="35" y1="-5" x2="65" y2="-5" />
+                    <line x1="60" y1="-10" x2="65" y2="-5" />
+                    <line x1="60" y1="0" x2="65" y2="-5" />
+                </g>
+                <g transform="translate(250, 80)">
+                    <!-- Analyst's Discourse -->
+                    <text x="0" y="0" style="font-size: 20px;">a</text>
+                    <text x="0" y="40" style="font-size: 20px;">$</text>
+                    <text x="80" y="0" style="font-size: 20px;">S₂</text>
+                    <text x="80" y="40" style="font-size: 20px;">S₁</text>
+                    <line x1="-10" y1="20" x2="30" y2="20" />
+                    <line x1="70" y1="20" x2="110" y2="20" />
+                    <!-- Arrow above -->
+                    <line x1="35" y1="-5" x2="65" y2="-5" />
+                    <line x1="60" y1="-10" x2="65" y2="-5" />
+                    <line x1="60" y1="0" x2="65" y2="-5" />
+                </g>
+            </svg>
+        </div>
+        <h1>The Process of Transformation</h1>
+        <p class="page-tagline">How Lacanian psychoanalysis creates lasting change</p>
+    </header>
 
 <!-- Main Content -->
 <main class="section">
@@ -1167,215 +1162,214 @@
     </div>
 </section>
 
-<!-- Footer -->
-<footer class="footer">
-    <p>David M. Freshwater, LMHC #10001743</p>
-    <p>Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
-    <p><a href="tel:+17865271616">(786) 527-1616</a> • <a href="mailto:davidfreshwateranalyst@gmail.com">davidfreshwateranalyst@gmail.com</a></p>
-    <p>Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
-    <p style="margin-top: 2rem; opacity: 0.6;">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
-</footer>
 
-<!-- Consultation Form -->
-<div class="form-overlay" id="popupOverlay">
-    <div class="form-container">
-        <button class="form-close" onclick="hideConsultationForm()" aria-label="Close form">×</button>
-        <h3 class="form-title">Request Initial Consultation</h3>
-        <form id="consultationForm" onsubmit="handleFormSubmit(event)">
-            <div class="form-group">
-                <label class="form-label" for="name">Name</label>
-                <input type="text" id="name" name="name" class="form-input" required placeholder=" ">
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="email">Email</label>
-                <input type="email" id="email" name="email" class="form-input" required placeholder=" ">
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" class="form-input" required placeholder=" ">
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="message">Message</label>
-                <textarea id="message" name="message" class="form-textarea" required placeholder=" "></textarea>
-            </div>
-            <div id="formMessage" class="form-message"></div>
-            <div class="form-buttons">
-                <button type="submit" class="form-btn form-btn-submit">Send Request</button>
-            </div>
-        </form>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>David M. Freshwater, LMHC #10001743</p>
+        <p>Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
+        <p><a href="tel:+17865271616">(786) 527-1616</a> • <a href="mailto:davidfreshwateranalyst@gmail.com">davidfreshwateranalyst@gmail.com</a></p>
+        <p>Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
+        <p style="margin-top: 2rem; opacity: 0.6;">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
+    </footer>
+
+    <!-- Consultation Form -->
+    <div class="form-overlay" id="popupOverlay">
+        <div class="form-container">
+            <button class="form-close" onclick="hideConsultationForm()" aria-label="Close form">×</button>
+            <h3 class="form-title">Request Initial Consultation</h3>
+            <form id="consultationForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required placeholder=" ">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required placeholder=" ">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" required placeholder=" ">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="message">Message</label>
+                    <textarea id="message" name="message" class="form-textarea" required placeholder=" "></textarea>
+                </div>
+                <div id="formMessage" class="form-message"></div>
+                <div class="form-buttons">
+                    <button type="submit" class="form-btn form-btn-submit">Send Request</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<script>
-    // Initialize
-    window.addEventListener('load', () => {
-        // Show palimpsest
-        setTimeout(() => {
-            document.querySelector('.palimpsest').classList.add('visible');
-        }, 1500);
-        
-        // Scroll animations
-        initScrollAnimations();
-    });
-
-    // Mobile menu
-    const menuToggle = document.getElementById('menuToggle');
-    const navigation = document.getElementById('navigation');
-    const mobileOverlay = document.getElementById('mobileOverlay');
-
-    function toggleMenu() {
-        menuToggle.classList.toggle('active');
-        navigation.classList.toggle('active');
-        mobileOverlay.classList.toggle('active');
-        
-        if (navigation.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-            document.body.style.position = 'fixed';
-            document.body.style.width = '100%';
-        } else {
-            document.body.style.overflow = '';
-            document.body.style.position = '';
-            document.body.style.width = '';
-        }
-    }
-
-    menuToggle.addEventListener('click', toggleMenu);
-    mobileOverlay.addEventListener('click', toggleMenu);
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768 && !link.classList.contains('nav-cta')) {
-                toggleMenu();
-            }
+    <script>
+        // Initialize
+        window.addEventListener('load', () => {
+            // Show palimpsest
+            setTimeout(() => {
+                document.querySelector('.palimpsest').classList.add('visible');
+            }, 1500);
+            
+            // Scroll animations
+            initScrollAnimations();
         });
-    });
 
-    // Navigation scroll behavior
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        const nav = document.getElementById('navigation');
-        
-        if (window.innerWidth > 768) {
-            nav.classList.toggle('scrolled', currentScroll > 100);
-            nav.classList.toggle('hidden', currentScroll > lastScroll && currentScroll > 200);
+        // Mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const navigation = document.getElementById('navigation');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            
+            if (navigation.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+                document.body.style.position = 'fixed';
+                document.body.style.width = '100%';
+            } else {
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
+            }
         }
-        
-        lastScroll = currentScroll;
-    });
 
-    // Scroll animations
-    function initScrollAnimations() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        menuToggle.addEventListener('click', toggleMenu);
+        mobileOverlay.addEventListener('click', toggleMenu);
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768 && !link.classList.contains('nav-cta')) {
+                    toggleMenu();
                 }
             });
-        }, observerOptions);
+        });
 
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-    }
-
-    // Form functions
-    function showConsultationForm() {
-        const overlay = document.getElementById('popupOverlay');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function hideConsultationForm() {
-        const overlay = document.getElementById('popupOverlay');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-        document.getElementById('consultationForm').reset();
-        
-        // Hide any messages
-        const formMessage = document.getElementById('formMessage');
-        formMessage.style.display = 'none';
-        formMessage.className = 'form-message';
-    }
-
-    document.getElementById('popupOverlay').addEventListener('click', function(e) {
-        if (e.target === this) hideConsultationForm();
-    });
-
-    function handleFormSubmit(event) {
-        event.preventDefault();
-        
-        const submitBtn = event.target.querySelector('.form-btn-submit');
-        const originalText = submitBtn.textContent;
-        const formMessage = document.getElementById('formMessage');
-        
-        // Show loading state
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        
-        // Hide any previous messages
-        formMessage.style.display = 'none';
-        formMessage.className = 'form-message';
-        
-        const formData = new FormData(event.target);
-        const data = Object.fromEntries(formData);
-
-        // Prepare template parameters
-        const templateParams = {
-            from_name: data.name,
-            from_email: data.email,
-            phone: data.phone,
-            message: data.message,
-            to_email: 'davidfreshwateranalyst@gmail.com'
-        };
-
-        // Send email using EmailJS
-        emailjs.send('service_qera1v7', 'template_ndishzq', templateParams)
-            .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-                
-                // Show success message
-                formMessage.textContent = 'Thank you! Your consultation request has been sent successfully. David will contact you within 24-48 hours.';
-                formMessage.className = 'form-message success';
-                formMessage.style.display = 'block';
-                
-                // Reset form
-                document.getElementById('consultationForm').reset();
-                
-                // Hide form after delay
-                setTimeout(() => {
-                    hideConsultationForm();
-                }, 3000);
-            }, function(error) {
-                console.log('FAILED...', error);
-                
-                // Show error message
-                formMessage.textContent = 'Sorry, there was an error sending your request. Please try again or contact directly at davidfreshwateranalyst@gmail.com';
-                formMessage.className = 'form-message error';
-                formMessage.style.display = 'block';
-            })
-            .finally(() => {
-                // Reset button
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            });
-    }
-
-    // Handle window resize
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            if (window.innerWidth > 768 && navigation.classList.contains('active')) {
-                toggleMenu();
+        // Navigation scroll behavior
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const nav = document.getElementById('navigation');
+            
+            if (window.innerWidth > 768) {
+                nav.classList.toggle('scrolled', currentScroll > 100);
+                nav.classList.toggle('hidden', currentScroll > lastScroll && currentScroll > 200);
             }
-        }, 250);
-    });
-</script>
-```
+            
+            lastScroll = currentScroll;
+        });
 
+        // Scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        // Form functions
+        function showConsultationForm() {
+            const overlay = document.getElementById('popupOverlay');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideConsultationForm() {
+            const overlay = document.getElementById('popupOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('consultationForm').reset();
+            
+            // Hide any messages
+            const formMessage = document.getElementById('formMessage');
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
+        }
+
+        document.getElementById('popupOverlay').addEventListener('click', function(e) {
+            if (e.target === this) hideConsultationForm();
+        });
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const submitBtn = event.target.querySelector('.form-btn-submit');
+            const originalText = submitBtn.textContent;
+            const formMessage = document.getElementById('formMessage');
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Hide any previous messages
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+
+            // Prepare template parameters
+            const templateParams = {
+                from_name: data.name,
+                from_email: data.email,
+                phone: data.phone,
+                message: data.message,
+                to_email: 'davidfreshwateranalyst@gmail.com'
+            };
+
+            // Send email using EmailJS
+            emailjs.send('service_qera1v7', 'template_ndishzq', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Show success message
+                    formMessage.textContent = 'Thank you! Your consultation request has been sent successfully. David will contact you within 24-48 hours.';
+                    formMessage.className = 'form-message success';
+                    formMessage.style.display = 'block';
+                    
+                    // Reset form
+                    document.getElementById('consultationForm').reset();
+                    
+                    // Hide form after delay
+                    setTimeout(() => {
+                        hideConsultationForm();
+                    }, 3000);
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    
+                    // Show error message
+                    formMessage.textContent = 'Sorry, there was an error sending your request. Please try again or contact directly at davidfreshwateranalyst@gmail.com';
+                    formMessage.className = 'form-message error';
+                    formMessage.style.display = 'block';
+                })
+                .finally(() => {
+                    // Reset button
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+        }
+
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (window.innerWidth > 768 && navigation.classList.contains('active')) {
+                    toggleMenu();
+                }
+            }, 250);
+        });
+    </script>
 </body>
 </html>
