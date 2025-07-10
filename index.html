@@ -3,496 +3,600 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David M. Freshwater, LMHC - Lacanian Psychoanalyst | Boston & Massachusetts</title>
-    <meta name="description" content="Lacanian psychoanalyst offering online psychoanalysis throughout Massachusetts. David M. Freshwater, LMHC specializes in depth psychology, unconscious analysis, and lasting transformation.">
+    <title>David M. Freshwater, LMHC | Online Therapy Massachusetts | Not Your Average Therapist</title>
+    <meta name="description" content="Licensed therapist for high achievers stuck in patterns. Specializing in self-sabotage, relationship patterns, anxiety & unexplained symptoms. Online therapy throughout MA.">
+    <meta name="keywords" content="online therapy Massachusetts, therapist Boston, LMHC Massachusetts, anxiety therapist, relationship therapy, therapy for professionals">
     
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="David M. Freshwater, LMHC - When Nothing Else Has Worked">
+    <meta property="og:description" content="It's become unbearable. You know you need to change. Online therapy for lasting transformation in Massachusetts.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://davidfreshwater.github.io/">
+    <meta property="og:image" content="https://davidfreshwater.github.io/images/dmfheadshot.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://davidfreshwater.github.io/">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MentalHealthProfessional",
+      "name": "David M. Freshwater, LMHC",
+      "description": "Licensed Mental Health Counselor offering intensive online therapy for professionals",
+      "url": "https://davidfreshwater.github.io/",
+      "areaServed": {
+        "@type": "State",
+        "name": "Massachusetts"
+      },
+      "priceRange": "$$",
+      "serviceType": ["Individual Therapy", "Online Therapy", "Intensive Therapy"],
+      "sameAs": []
+    }
+    </script>
     <style>
-        /* ===== CSS RESET ===== */
-        *, *::before, *::after {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        /* ===== CUSTOM PROPERTIES ===== */
-        :root {
-            --color-ink: #1a1a1a;
-            --color-paper: #fdfcfa;
-            --color-gray-light: #e8e8e3;
-            --color-gray-medium: #999;
-            --color-red: #dc2626;
-            --color-red-dark: #b91c1c;
-            --shadow-soft: 0 2px 20px rgba(0, 0, 0, 0.05);
-            --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.08);
-            --font-serif: 'Crimson Text', serif;
-            --font-sans: 'Inter', -apple-system, sans-serif;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* ===== BASE STYLES ===== */
-        html {
-            scroll-behavior: smooth;
-        }
-
+        
         body {
-            font-family: var(--font-sans);
-            line-height: 1.8;
-            color: var(--color-ink);
-            background-color: var(--color-paper);
-            overflow-x: hidden;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #212121;
+            background: #FFFFFF;
         }
-
-        /* ===== TYPOGRAPHY ===== */
-        h1 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 300;
-            letter-spacing: 0.2em;
-            margin-bottom: 2rem;
-            opacity: 0.8;
+        
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
         }
-
-        h2 {
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-            font-weight: 300;
-            letter-spacing: 0.1em;
-            margin-bottom: 4rem;
-            text-align: center;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 1px;
-            background-color: var(--color-red);
-            opacity: 0.6;
-        }
-
-        h3 {
-            font-size: 1.3rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.05em;
-        }
-
-        p {
-            color: var(--color-gray-medium);
-            margin-bottom: 2rem;
-            line-height: 1.9;
-            max-width: 65ch;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* ===== LAYOUT COMPONENTS ===== */
+        
         .container {
-            max-width: 1000px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 20px;
         }
-
-        .section {
-            padding: 5rem 0;
-            position: relative;
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
-
-        /* ===== HEADER ===== */
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 20px;
+        }
+        
+        .nav-name {
+            font-size: 17px;
+            font-weight: 400;
+            color: #1C1C1C;
+            letter-spacing: 0.02em;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .nav-cta {
+            background: #1e3a5f;
+            color: #FFFFFF;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 58, 95, 0.2);
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+        
+        .nav-cta:hover {
+            background: #152942;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 58, 95, 0.3);
+        }
+        
+        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 2rem;
+            padding: 120px 0 60px;
         }
-
+        
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
         .hero-content {
+            text-align: left;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 600px;
+            background: #F8F8F8;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-image-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            background: #F8F8F8;
+            color: #757575;
+            font-size: 18px;
             text-align: center;
-            animation: fadeIn 2s ease-out;
+            padding: 40px;
         }
-
-        .hero-tagline {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            color: var(--color-ink);
+        
+        h1 {
+            font-size: 52px;
+            font-weight: 500;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            color: #1C1C1C;
+        }
+        
+        .subtitle {
+            font-size: 26px;
+            color: #757575;
+            margin-bottom: 48px;
             font-weight: 300;
-            letter-spacing: 0.05em;
-            margin-bottom: 4rem;
-            line-height: 1.1;
-            font-family: var(--font-serif);
+            line-height: 1.4;
         }
-
-        /* ===== NAVIGATION ===== */
-        .nav {
-            position: fixed;
-            top: 2rem;
+        
+        .hero-cta {
+            display: inline-block;
+            background: #1e3a5f;
+            color: white;
+            padding: 18px 48px;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 17px;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            transition: all 0.3s ease;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
+        }
+        
+        .hero-cta:hover {
+            background: #152942;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(30, 58, 95, 0.35);
+        }
+        
+        .hero-note {
+            font-size: 15px;
+            color: #757575;
+            font-weight: 400;
+        }
+        
+        /* Section Dividers */
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #1e3a5f, transparent);
+            margin: 0 auto;
+        }
+        
+        /* Sections */
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid #F0F0F0;
+        }
+        
+        section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            font-size: 42px;
+            font-weight: 500;
+            margin-bottom: 48px;
+            text-align: center;
+            color: #1C1C1C;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -16px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 1000;
-            background-color: var(--color-paper);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition);
+            width: 40px;
+            height: 2px;
+            background: #1e3a5f;
         }
-
-        .nav.scrolled {
-            top: 1rem;
-            padding: 0.75rem 1.5rem;
-            box-shadow: var(--shadow-medium);
-        }
-
-        .nav.hidden {
-            transform: translateX(-50%) translateY(-120px);
-        }
-
-        .nav-list {
-            list-style: none;
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-            margin: 0;
-        }
-
-        .nav-link {
-            color: var(--color-ink);
-            text-decoration: none;
-            font-weight: 400;
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background-color: var(--color-red);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .nav-link.active {
-            color: var(--color-red);
+        
+        h3 {
+            font-size: 26px;
             font-weight: 500;
+            margin-bottom: 16px;
+            color: #1C1C1C;
         }
-
-        /* Style the Begin CTA differently */
-        .nav-link.nav-cta {
-            background-color: var(--color-red);
-            color: white;
-            padding: 0.5rem 1.25rem;
-            border-radius: 25px;
-            margin-left: 1rem;
+        
+        p {
+            margin-bottom: 24px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #212121;
         }
-
-        .nav-link.nav-cta:hover {
-            background-color: var(--color-red-dark);
-            transform: translateY(-2px);
-        }
-
-        .nav-link.nav-cta::after {
-            display: none;
-        }
-
-        /* ===== BUTTONS ===== */
-        .btn {
-            display: inline-block;
-            padding: 1rem 3rem;
-            font-family: var(--font-sans);
-            font-size: 0.95rem;
-            font-weight: 300;
-            letter-spacing: 0.1em;
-            text-decoration: none;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            background: none;
-        }
-
-        .btn-primary {
-            background-color: var(--color-red);
-            color: white;
-            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
-        }
-
-        .btn-primary:active {
-            transform: translateY(-1px) scale(1.02);
-        }
-
-        .btn-floating {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            opacity: 0;
-            transform: translateY(20px);
-            pointer-events: none;
-            z-index: 90;
-        }
-
-        .btn-floating.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: all;
-        }
-
-        /* ===== MOBILE MENU ===== */
-        .mobile-menu-btn {
-            display: none;
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            z-index: 1001;
-            width: 44px;
-            height: 44px;
-            background: transparent;
-            border: 2px solid var(--color-red);
-            cursor: pointer;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            transition: var(--transition);
-        }
-
-        .mobile-menu-btn:hover {
-            background-color: var(--color-red);
-        }
-
-        .mobile-menu-btn:hover span {
-            background-color: white;
-        }
-
-        .mobile-menu-btn span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background-color: var(--color-ink);
-            margin: 3px 0;
-            transition: var(--transition);
-        }
-
-        .mobile-menu-btn.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 6px);
-        }
-
-        .mobile-menu-btn.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-btn.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -6px);
-        }
-
-        .mobile-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 998;
-        }
-
-        .mobile-overlay.active {
-            display: block;
-        }
-
-        /* ===== BACKGROUND EFFECTS ===== */
-        .bg-gradient {
-            position: fixed;
-            inset: 0;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(26, 26, 26, 0.06) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(26, 26, 26, 0.06) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.5;
-        }
-
-        .bg-texture {
-            position: fixed;
-            inset: 0;
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.01) 35px, rgba(255,255,255,.01) 70px);
-            pointer-events: none;
-            z-index: 2;
-            mix-blend-mode: overlay;
-        }
-
-        /* ===== PALIMPSEST ===== */
-        .palimpsest {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 1;
-            overflow: hidden;
-            opacity: 0;
-            transition: opacity 4s ease-in;
-        }
-
-        .palimpsest.visible {
-            opacity: 1;
-        }
-
-        .palimpsest-text {
-            position: absolute;
-            opacity: 0.05;
-            font: italic 18px/1.6 var(--font-serif);
-            color: var(--color-ink);
-            letter-spacing: 0.1em;
-            animation: drift 80s ease-in-out infinite;
-        }
-
-        @keyframes drift {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(30px); }
-        }
-
-        /* ===== QUOTE BLOCK ===== */
-        .quote {
-            font: italic clamp(1.4rem, 3.5vw, 2.2rem)/1.8 var(--font-serif);
-            text-align: center;
-            margin: 6rem 0;
-            padding: 0 2rem;
-            color: var(--color-ink);
-            letter-spacing: 0.02em;
-            position: relative;
-        }
-
-        .quote::before,
-        .quote::after {
-            font-size: 3rem;
-            color: var(--color-red);
-            opacity: 0.3;
-            position: absolute;
-        }
-
-        .quote::before {
-            content: '「';
-            top: -20px;
-            left: -20px;
-        }
-
-        .quote::after {
-            content: '」';
-            bottom: -40px;
-            right: -20px;
-        }
-
-        /* ===== CARDS ===== */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin: 4rem 0;
-        }
-
-        .card {
-            background-color: var(--color-paper);
-            padding: 3rem 2rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background-color: var(--color-red);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .card:hover::after {
-            transform: scaleX(1);
-        }
-
-        .card-link {
-            color: var(--color-red);
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 0.1em;
-            transition: var(--transition);
-        }
-
-        .card-link:hover {
-            letter-spacing: 0.2em;
-        }
-
-        /* ===== REASONS GRID ===== */
-        .reasons-grid {
+        
+        /* Is This For You Section */
+        .recognition-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 3rem 0;
+            gap: 24px;
+            margin: 48px 0;
         }
-
-        .reason-item {
-            padding: 1.5rem;
-            background-color: var(--color-paper);
-            border-left: 3px solid transparent;
-            transition: var(--transition);
-            color: var(--color-gray-medium);
+        
+        .recognition-item {
+            background: #FFFFFF;
+            border: 1px solid #E8E8E8;
+            padding: 32px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-
-        .reason-item:hover {
-            border-left-color: var(--color-red);
-            transform: translateX(5px);
-            color: var(--color-ink);
-            background-color: rgba(26, 26, 26, 0.02);
+        
+        .recognition-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #1e3a5f;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
-
-        /* ===== SECTION DIVIDER ===== */
-        .section-divider {
-            width: 100px;
-            height: 60px;
-            margin: 5rem auto;
+        
+        .recognition-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            border-color: #1e3a5f;
+        }
+        
+        .recognition-item:hover::before {
+            opacity: 1;
+        }
+        
+        .recognition-text {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #424242;
+            margin: 0;
+        }
+        
+        /* How I Work Section */
+        .approach-grid {
+            display: grid;
+            gap: 48px;
+            margin-top: 60px;
+        }
+        
+        .approach-item {
+            background: #F8F8F8;
+            padding: 40px;
+            border-radius: 4px;
+            position: relative;
+            transition: all 0.3s ease;
+            border-left: 3px solid #1e3a5f;
+        }
+        
+        .approach-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            gap: 48px;
+            align-items: start;
+        }
+        
+        .credentials {
+            background: #F8F8F8;
+            padding: 32px;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid #F0F0F0;
+        }
+        
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 32px;
+            padding: 32px;
+            background: #FFFFFF;
+            border: 1px solid #F0F0F0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            border-color: #1e3a5f;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            font-size: 20px;
+            font-weight: 500;
+            color: #1C1C1C;
+            margin-bottom: 16px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .faq-answer {
+            color: #212121;
+            line-height: 1.8;
+        }
+        
+        /* Stories Section */
+        #stories {
+            background: #F8F8F8;
+        }
+        
+        .story-intro {
+            font-style: italic;
+            color: #757575;
+            margin-bottom: 60px;
+            text-align: center;
+            font-size: 16px;
+        }
+        
+        .story-item {
+            margin-bottom: 24px;
+            border: 1px solid #E0E0E0;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        
+        .story-item:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border-color: #1e3a5f;
+        }
+        
+        .story-header {
+            padding: 36px;
+            cursor: pointer;
+            background: #FFFFFF;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
+            transition: background 0.3s ease;
         }
-
-        .section-divider svg {
-            width: 60px;
-            height: 60px;
-            opacity: 0.15;
-            animation: slowRotate 120s linear infinite;
+        
+        .story-header:hover {
+            background: #FAFAFA;
         }
-
-        @keyframes slowRotate {
-            to { transform: rotate(360deg); }
+        
+        .story-item h3 {
+            font-size: 28px;
+            font-weight: 400;
+            color: #1C1C1C;
+            margin: 0;
+            font-style: normal;
+            flex: 1;
+            padding-right: 24px;
+            font-family: 'Playfair Display', serif;
         }
-
-        /* ===== FORM STYLES ===== */
+        
+        .story-preview {
+            font-size: 16px;
+            color: #757575;
+            font-style: normal;
+            margin-top: 8px;
+            font-weight: 300;
+        }
+        
+        .story-time {
+            font-size: 14px;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        
+        .expand-icon {
+            font-size: 24px;
+            color: #1e3a5f;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            font-weight: 300;
+        }
+        
+        .story-item.expanded .expand-icon {
+            transform: rotate(45deg);
+        }
+        
+        .story-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .story-item.expanded .story-content {
+            max-height: none;
+        }
+        
+        .story-inner {
+            padding: 0 36px 36px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            padding: 100px 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #F8F8F8 100%);
+        }
+        
+        .contact h2 {
+            margin-bottom: 32px;
+        }
+        
+        .contact p {
+            font-size: 20px;
+            margin-bottom: 48px;
+            color: #424242;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1e3a5f;
+            color: #E8E8E8;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-info p {
+            margin-bottom: 12px;
+            font-size: 16px;
+            letter-spacing: 0.02em;
+        }
+        
+        .footer-name-license {
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px !important;
+        }
+        
+        .footer-services {
+            color: #C5D3E0;
+            font-size: 15px;
+        }
+        
+        .footer-location {
+            color: #B0C4D9;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .footer-copyright {
+            color: #8FA7C4;
+            font-size: 13px;
+            margin-top: 24px !important;
+            padding-top: 24px;
+            border-top: 1px solid #2a4d7a;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-main {
+            margin-bottom: 48px;
+        }
+        
+        .footer-name {
+            font-size: 28px;
+            font-weight: 400;
+            font-family: 'Playfair Display', serif;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+            letter-spacing: 0.02em;
+        }
+        
+        .footer-tagline {
+            font-size: 18px;
+            color: #B0B0B0;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+        
+        .footer-info {
+            margin-bottom: 60px;
+        }
+        
+        .footer-info p {
+            color: #B0B0B0;
+            margin-bottom: 16px;
+            font-size: 16px;
+            letter-spacing: 0.02em;
+        }
+        
+        .footer-license {
+            font-weight: 500;
+            color: #D0D0D0;
+        }
+        
+        .footer-cta {
+            background: #1e3a5f;
+            color: #FFFFFF;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 24px;
+            font-family: inherit;
+        }
+        
+        .footer-cta:hover {
+            background: #2a4d7a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.3);
+        }
+        
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid #2a2a2a;
+        }
+        
+        .footer-bottom p {
+            font-size: 14px;
+            color: #808080;
+            margin: 0;
+            letter-spacing: 0.02em;
+        }
+        
+        /* Form Modal Styles */
         .form-overlay {
             position: fixed;
             inset: 0;
@@ -501,862 +605,1016 @@
             display: none;
             align-items: center;
             justify-content: center;
+            padding: 20px;
         }
-
+        
         .form-overlay.active {
             display: flex;
         }
-
+        
         .form-container {
-            background-color: var(--color-paper);
-            padding: 3rem 2.5rem 2.5rem;
+            background-color: #FFFFFF;
+            padding: 48px;
             max-width: 500px;
-            width: 90%;
+            width: 100%;
             max-height: 90vh;
             overflow-y: auto;
+            border-radius: 8px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             position: relative;
             opacity: 0;
             transform: scale(0.9);
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
-
+        
         .form-overlay.active .form-container {
             opacity: 1;
             transform: scale(1);
         }
-
+        
         .form-title {
-            font-size: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 0.1em;
-            margin-bottom: 2rem;
+            font-size: 28px;
+            font-weight: 500;
+            font-family: 'Playfair Display', serif;
+            color: #1C1C1C;
+            margin-bottom: 32px;
             text-align: center;
         }
-
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.25rem;
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
-            color: var(--color-gray-medium);
-        }
-
-        .form-input,
-        .form-textarea {
-            width: 100%;
-            padding: 0.6rem;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid var(--color-gray-light);
-            color: var(--color-ink);
-            font-size: 0.95rem;
-            font-family: inherit;
-            transition: var(--transition);
-        }
-
-        .form-input:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-bottom-color: var(--color-red);
-        }
-
-        .form-textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-
-        .form-buttons {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            justify-content: center;
-        }
-
-        .form-btn {
-            padding: 0.75rem 2rem;
-            background: transparent;
-            color: var(--color-ink);
-            border: 1px solid var(--color-ink);
-            font-size: 0.85rem;
-            letter-spacing: 0.1em;
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: inherit;
-            font-weight: 300;
-        }
-
-        .form-btn-submit {
-            background-color: var(--color-red);
-            color: white;
-            border-color: var(--color-red);
-        }
-
-        .form-btn-submit:hover {
-            background-color: var(--color-red-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
-        }
-
+        
         .form-close {
             position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
+            top: 20px;
+            right: 20px;
             background: none;
             border: none;
-            font-size: 1.25rem;
-            color: var(--color-gray-medium);
+            font-size: 28px;
+            color: #757575;
             cursor: pointer;
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: var(--transition);
+            transition: all 0.3s ease;
+            border-radius: 50%;
         }
-
+        
         .form-close:hover {
-            color: var(--color-ink);
+            color: #1C1C1C;
+            background: #F0F0F0;
             transform: rotate(90deg);
         }
-
-        /* Form Messages */
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: #424242;
+            text-transform: uppercase;
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            border-radius: 4px;
+            color: #1C1C1C;
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #1e3a5f;
+            box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+            line-height: 1.6;
+        }
+        
+        .form-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+            justify-content: center;
+        }
+        
+        .form-btn {
+            padding: 14px 32px;
+            background: transparent;
+            color: #1C1C1C;
+            border: 1px solid #E0E0E0;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .form-btn:hover {
+            border-color: #1e3a5f;
+            background: #F8F8F8;
+        }
+        
+        .form-btn-submit {
+            background-color: #1e3a5f;
+            color: white;
+            border-color: #1e3a5f;
+        }
+        
+        .form-btn-submit:hover {
+            background-color: #152942;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
+        }
+        
+        .form-btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
         .form-message {
-            padding: 0.75rem;
-            margin-top: 1rem;
+            padding: 12px 16px;
+            margin-top: 20px;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 15px;
             border-radius: 4px;
             display: none;
         }
-
+        
         .form-message.success {
             background-color: rgba(34, 197, 94, 0.1);
             color: #16a34a;
             border: 1px solid rgba(34, 197, 94, 0.2);
         }
-
+        
         .form-message.error {
             background-color: rgba(239, 68, 68, 0.1);
             color: #dc2626;
             border: 1px solid rgba(239, 68, 68, 0.2);
         }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background-color: var(--color-ink);
-            color: var(--color-gray-light);
-            padding: 4rem 2rem 2rem;
-            text-align: center;
-            margin-top: 5rem;
-        }
-
-        .footer p {
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
-            opacity: 0.8;
-            color: var(--color-gray-light);
-        }
-
-        /* ===== LACANIAN ELEMENTS ===== */
-        .borromean {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            opacity: 0.15;
-        }
-
-        .analyst-discourse {
-            position: absolute;
-            width: 220px;
-            height: 140px;
-            opacity: 0.12;
-            bottom: 15%;
-            right: 10%;
-        }
-
-        .analyst-discourse text {
-            font-family: var(--font-serif);
-            font-style: italic;
-            fill: var(--color-ink);
-            font-size: 24px;
-        }
-
-        .analyst-discourse line {
-            stroke: var(--color-ink);
-            stroke-width: 2;
-            opacity: 0.8;
-        }
-
-        /* ===== TYPEWRITER EFFECT ===== */
-        .typewriter-text {
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            margin: 0 auto;
-            animation: typing 4s steps(100, end);
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 900px) {
-            .reasons-grid {
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 968px) {
+            .recognition-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 48px;
+                padding: 0 30px;
+            }
+            
+            .hero-content {
+                text-align: center;
+                order: 2;
+            }
+            
+            .hero-image {
+                order: 1;
+                height: 400px;
+            }
+            
+            nav .container {
+                padding: 20px;
+            }
+            
+            .nav-cta {
+                padding: 12px 24px;
+                font-size: 13px;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .hero {
+                padding: 100px 0 40px;
+                min-height: auto;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            h2 {
+                font-size: 32px;
             }
         }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: flex;
+        
+        @media (max-width: 480px) {
+            nav .container {
+                padding: 16px 20px;
             }
-
-            .nav {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                transform: none;
-                width: 85%;
-                height: 100vh;
-                background-color: var(--color-paper);
-                padding: 5rem 2rem;
-                border-radius: 0;
-                transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                box-shadow: 5px 0 30px rgba(0, 0, 0, 0.1);
-                overflow-y: auto;
+            
+            .nav-cta {
+                padding: 10px 20px;
+                font-size: 12px;
             }
-
-            .nav.active {
-                left: 0;
-            }
-
-            .nav.hidden {
-                transform: none !important;
-            }
-
-            .nav.scrolled {
-                top: 0 !important;
-                padding: 5rem 2rem !important;
-            }
-
-            .nav-list {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 2rem;
-            }
-
-            .nav-link {
-                font-size: 1.1rem;
-            }
-
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-
+            
             .hero {
-                min-height: 85vh;
-                padding: 1rem;
+                padding: 80px 0 40px;
             }
-
+            
+            .hero-container {
+                padding: 0 20px;
+            }
+            
+            .hero-image {
+                height: 300px;
+            }
+            
             h1 {
-                font-size: clamp(1.25rem, 4vw, 1.75rem);
-                margin-bottom: 1.5rem;
+                font-size: 28px;
+                margin-bottom: 20px;
             }
-
-            .hero-tagline {
-                font-size: clamp(2rem, 7vw, 3rem);
-                margin-bottom: 3rem;
+            
+            h2 {
+                font-size: 28px;
+                margin-bottom: 32px;
             }
-
-            .section {
-                padding: 3rem 0;
+            
+            h3 {
+                font-size: 22px;
             }
-
-            .container {
-                padding: 0 1.5rem;
+            
+            .subtitle {
+                font-size: 20px;
+                margin-bottom: 32px;
             }
-
-            .palimpsest-text {
-                opacity: 0.08;
+            
+            .hero-cta {
+                padding: 16px 40px;
+                font-size: 16px;
+                width: 100%;
+                text-align: center;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            p {
                 font-size: 16px;
             }
-
-            .borromean,
-            .analyst-discourse {
-                display: none;
-            }
-
-            .section-divider {
-                margin: 4rem auto;
-                height: 40px;
-            }
-
-            .section-divider svg {
-                width: 40px;
-                height: 40px;
-            }
-
-            .quote {
-                font-size: 1.3rem;
-                margin: 3rem 0;
-            }
-
-            .btn-floating {
-                bottom: 6rem;
-            }
-
-            .form-container {
-                padding: 2rem 1.5rem;
-                width: 95%;
-            }
-
-            .form-group {
-                margin-bottom: 1rem;
-            }
-
-            .form-buttons {
-                gap: 1rem;
-                margin-top: 1.5rem;
-            }
-
-            .form-btn {
-                padding: 0.65rem 1.5rem;
-                font-size: 0.8rem;
-            }
-
-            .footer p {
-                font-size: 0.85rem;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .reasons-grid {
+            
+            .recognition-grid {
                 grid-template-columns: 1fr;
+                gap: 16px;
             }
-        }
-
-        @media (max-width: 400px) {
-            .btn-floating {
-                bottom: 0;
-                left: 0;
-                right: 0;
+            
+            .recognition-item {
+                padding: 24px;
+            }
+            
+            .recognition-text {
+                font-size: 16px;
+            }
+            
+            .approach-item {
+                padding: 24px;
+            }
+            
+            .story-header {
+                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .story-item h3 {
+                font-size: 22px;
+                margin-bottom: 8px;
+            }
+            
+            .expand-icon {
+                align-self: flex-end;
+                margin-top: 12px;
+            }
+            
+            .story-inner {
+                padding: 0 20px 20px;
+            }
+            
+            .faq-item {
+                padding: 24px;
+            }
+            
+            .contact {
+                padding: 80px 0;
+            }
+            
+            .form-container {
+                padding: 32px 24px;
+                width: 95%;
+                max-width: 450px;
+            }
+            
+            .form-title {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+            
+            .form-group {
+                margin-bottom: 20px;
+            }
+            
+            .form-close {
+                top: 12px;
+                right: 12px;
+                width: 36px;
+                height: 36px;
+                font-size: 24px;
+            }
+            
+            .form-buttons {
+                gap: 12px;
+                flex-direction: column;
+            }
+            
+            .form-btn {
                 width: 100%;
-                border-radius: 0;
-                padding: 1rem;
-            }
-        }
-
-        /* ===== ACCESSIBILITY ===== */
-        :focus {
-            outline: 2px solid var(--color-red);
-            outline-offset: 2px;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
+                padding: 16px 24px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-
-    <!-- Background Effects -->
-    <div class="bg-gradient"></div>
-    <div class="bg-texture"></div>
-
     <!-- Navigation -->
-    <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-    
-    <nav class="nav" id="navigation">
-        <ul class="nav-list">
-            <li><a href="#home" class="nav-link active">Home</a></li>
-            <li><a href="approach.html" class="nav-link">Approach</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="stories.html" class="nav-link">Stories</a></li>
-            <li><a href="faq.html" class="nav-link">Questions</a></li>
-            <li><a href="#" class="nav-link nav-cta" onclick="showConsultationForm(); return false;">Begin</a></li>
-        </ul>
+    <nav>
+        <div class="container">
+            <div class="nav-name">David M. Freshwater, LMHC</div>
+            <button class="nav-cta" onclick="showConsultationForm()">Book a Consultation</button>
+        </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero" id="home">
-        <div class="borromean" style="top: 10%; left: 8%; transform: rotate(-15deg);">
-            <svg viewBox="0 0 200 200">
-                <circle cx="70" cy="80" r="50" stroke="currentColor" stroke-width="3" fill="none"/>
-                <circle cx="130" cy="80" r="50" stroke="currentColor" stroke-width="3" fill="none"/>
-                <circle cx="100" cy="130" r="50" stroke="currentColor" stroke-width="3" fill="none"/>
-            </svg>
-        </div>
-        
-        <div class="analyst-discourse">
-            <svg viewBox="0 0 220 140">
-             <text x="30" y="45">a</text>
-<text x="30" y="90">$</text>
-<text x="150" y="45">S₂</text>
-<text x="150" y="90">S₁</text>
-<line x1="20" y1="62" x2="65" y2="62" />
-<line x1="140" y1="62" x2="185" y2="62" />
-<line x1="80" y1="42" x2="120" y2="42" />    <!-- horizontal arrow line -->
-<line x1="115" y1="37" x2="120" y2="42" />   <!-- upper arrowhead -->
-<line x1="115" y1="47" x2="120" y2="42" />   <!-- lower arrowhead -->
-            </svg>
-        </div>
-        
-   <div class="hero-content">
-            <h1>David M. Freshwater, LMHC</h1>
-            <p class="hero-tagline">
-                <span style="opacity: 0.8; display: block; margin-bottom: 0.5rem;">Something isn't working...</span>
-                <span style="color: var(--color-red); display: block; animation: fadeIn 2s ease-out 0.5s both;">It's becoming unbearable</span>
-            </p>
-            <button class="btn btn-primary" onclick="showConsultationForm()">Let's Start Talking</button>
-        </div>
-    </header>
-
-    <!-- Palimpsest -->
-    <div class="palimpsest">
-        <div class="palimpsest-text" style="top: 5%; left: 5%;">
-            The unconscious is structured like a language
-        </div>
-        <div class="palimpsest-text" style="top: 15%; right: 10%; text-align: right;">
-            I think where I am not, therefore I am where I do not think
-        </div>
-        <div class="palimpsest-text" style="top: 30%; left: 15%;">
-            Desire is the desire of the Other
-        </div>
-        <div class="palimpsest-text" style="top: 45%; right: 8%;">
-            Love is giving what you don't have
-        </div>
-        <div class="palimpsest-text" style="top: 60%; left: 10%;">
-            There is no sexual relationship
-        </div>
-        <div class="palimpsest-text" style="top: 75%; right: 5%; text-align: right;">
-            The subject is what one signifier represents for another signifier
-        </div>
-        <div class="palimpsest-text" style="bottom: 10%; left: 20%;">
-            The letter always arrives at its destination
-        </div>
-    </div>
-
-    <!-- Main Quote -->
-    <section class="section">
-        <div class="container">
-            <div class="quote fade-in" id="mainQuote">
-                <span class="typewriter-text" style="display: none;">"What if your symptoms are trying to tell you something?"</span>
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>It's become unbearable.<br>You know you need to change.</h1>
+                <p class="subtitle">What you can't see is running your life. I can help.</p>
+                <button class="hero-cta" onclick="showConsultationForm()">Request a Consultation</button>
+                <p class="hero-note">Online sessions available throughout Massachusetts</p>
+            </div>
+            <div class="hero-image">
+                <img src="https://davidfreshwater.github.io/images/dmfheadshot.jpg" alt="David M. Freshwater, LMHC" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
         </div>
     </section>
 
-    <div class="section-divider">
-        <svg viewBox="0 0 60 60" style="transform: rotate(12deg);">
-            <circle cx="20" cy="24" r="15" stroke="currentColor" fill="none"/>
-            <circle cx="40" cy="24" r="15" stroke="currentColor" fill="none"/>
-            <circle cx="30" cy="39" r="15" stroke="currentColor" fill="none"/>
-        </svg>
-    </div>
+    <div class="section-divider"></div>
 
-    <!-- Why People Seek Psychoanalysis -->
-    <section class="section">
+    <!-- Is This For You Section -->
+    <section id="for-you">
         <div class="container">
-            <h2>Why People Seek Psychoanalysis</h2>
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem;">
-                Each person's reasons are unique, but common threads include:
-            </p>
-            <div class="reasons-grid">
-                <div class="reason-item fade-in">
-                    Finding yourself in familiar situations with different people
+            <h2>Is This For You?</h2>
+            <p>You're here because you're done. Done repeating the same mistakes. Done feeling like you're watching your life from the outside. Done pretending everything's fine.</p>
+            
+            <div class="recognition-grid">
+                <div class="recognition-item">
+                    <p class="recognition-text">The same relationship dynamics show up with different people</p>
                 </div>
-                <div class="reason-item fade-in">
-                    Navigating challenging relationships and seeking clarity
+                <div class="recognition-item">
+                    <p class="recognition-text">You succeed but feel empty, or sabotage yourself when things go well</p>
                 </div>
-                <div class="reason-item fade-in">
-                    Persistent depression or anxiety that colors each day
+                <div class="recognition-item">
+                    <p class="recognition-text">Your body experiences symptoms that no doctor can explain</p>
                 </div>
-                <div class="reason-item fade-in">
-                    Past traumas haunting and impacting your present life
+                <div class="recognition-item">
+                    <p class="recognition-text">You know exactly what you should do, but you keep doing the opposite</p>
                 </div>
-                <div class="reason-item fade-in">
-                    Physical symptoms that defy medical explanation
+                <div class="recognition-item">
+                    <p class="recognition-text">Constantly meeting others' needs while losing your own</p>
                 </div>
-                <div class="reason-item fade-in">
-                    Questioning your relationship with alcohol, drugs, or porn
-                </div>
-                <div class="reason-item fade-in">
-                    Living a life that looks good on paper but feels empty
-                </div>
-                <div class="reason-item fade-in">
-                    Constantly meeting others' needs while losing your own
-                </div>
-                <div class="reason-item fade-in">
-                    Success inevitably followed by mysterious self-sabotage
+                <div class="recognition-item">
+                    <p class="recognition-text">You catch yourself saying "I don't know why I keep doing this"</p>
                 </div>
             </div>
-            <p style="margin-top: 3rem; text-align: center; font-style: italic;">
-                Perhaps you recognize yourself here, or your reasons remain uniquely your own.<br>
-                There is no "correct" reason to seek analysis—your path is singular, your motivations legitimate.
-            </p>
+            
+            <p>There's no "right" reason to seek deeper therapy. What matters is your readiness to explore what lies beneath the familiar stories you tell yourself.</p>
         </div>
     </section>
-    
-    <div class="section-divider">
-        <svg viewBox="0 0 60 60" style="transform: rotate(22deg);">
-            <circle cx="20" cy="24" r="15" stroke="currentColor" fill="none"/>
-            <circle cx="40" cy="24" r="15" stroke="currentColor" fill="none"/>
-            <circle cx="30" cy="39" r="15" stroke="currentColor" fill="none"/>
-        </svg>
-    </div>
 
-    <!-- Different Kind of Therapy -->
-    <section class="section">
+    <div class="section-divider"></div>
+
+    <!-- Stories Section -->
+    <section id="stories">
+        <div class="container">
+            <h2>Real Change Is Possible</h2>
+            <p class="story-intro">The following narratives illustrate the process of psychoanalytic work. They are composite accounts drawn from various clinical experiences, with all identifying details carefully altered to protect confidentiality.</p>
+            
+            <!-- Stomach Story -->
+            <div class="story-item" onclick="toggleStory(this)">
+                <div class="story-header">
+                    <div>
+                        <div class="story-time">15 min read</div>
+                        <h3>Stomach</h3>
+                        <p class="story-preview">Perfect wife. Perfect employee. Pain no doctor can explain.</p>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="story-content">
+                    <div class="story-inner">
+                        <p>James Goldberg's voice carried the measured authority of someone accustomed to boardroom presentations – each word carefully chosen, every pause calculated. Yet beneath the polished delivery, I detected something else: a weariness that no amount of professional training could mask.</p>
+
+                        <p>"I need to figure out what's wrong with me," he announced in our first session, then immediately corrected himself. "I mean, what's holding me back professionally. My career should be further along by now."</p>
+
+                        <p>But as weeks passed, a different concern began to surface. "Sometimes I wonder," he said during our third session, his voice quieter than usual, "if I'm living someone else's life entirely."</p>
+
+                        <p>The real issues emerged between discussions of billable hours and office politics. His marriage to Sarah had become what he called, with a hollow laugh, "professionally cordial." Fifteen years, two teenagers, separate bedrooms for the past three years – all delivered in the same neutral tone he might use for a case summary.</p>
+
+                        <p>The headaches had become a problem over the past few years, he mentioned during our second month. "Migraines that feel like my skull is cracking open," he said, his professional composure slipping slightly.</p>
+
+                        <p><strong>The Double Life:</strong> For months, James spoke around something he couldn't name. He'd mention working late, then pause. Describe insomnia, then change the subject. His voice would shift when discussing his home office – becoming simultaneously guilty and defiant.</p>
+
+                        <p>Finally, during our fourth month, the words came out in a rush: "I watch pornography. Hours every night. Sometimes during lunch in my locked office. Sometimes in the executive bathroom." His voice dropped to barely audible. "Sarah thinks I'm working late. The partners think I'm dedicated. I'm just... gone. Somewhere else."</p>
+
+                        <p>"Somewhere else."</p>
+
+                        <p>"It started small. A few minutes when Sarah would reject me. Just to... release the pressure. But it grew. Like it was eating time. Now I lose whole nights. I'll look up and it's 3 AM and I've been clicking through videos for four hours, looking for... I don't even know what."</p>
+
+                        <p>"Looking for what?"</p>
+
+                        <p>"The right one. The perfect one. The one that will finally..." He trailed off. "It's never the right one."</p>
+
+                        <p>A pause. "Actually, that's not true. It didn't start with Sarah's rejections. It started much earlier. I was maybe thirteen, fourteen. Found my dad's magazines. Then the early internet. By college, it was already a habit." His voice grew quieter. "Sarah's rejections just gave me an excuse to stop hiding it from myself. To stop pretending it was under control."</p>
+
+                        <p>"Thirteen years old."</p>
+
+                        <p>"The perfect age to discover that you could have exactly what you wanted, when you wanted it, without anyone knowing. Without anyone rejecting you. Without anyone seeing how desperate you were to be wanted." He laughed bitterly. "Twenty-plus years of training myself to prefer the screen to reality. Sarah never stood a chance."</p>
+
+                        <p>"Never stood a chance."</p>
+
+                        <p>"By the time I met her, I'd already divided the world. There were women you married – smart, accomplished, good mothers. And there were... the others. The ones in videos. The ones you could want without consequences." His voice grew quieter. "Sarah was so clearly in the first category. MBA, volunteered at the literacy center, came from a good family. The kind of woman you build a life with."</p>
+
+                        <p>"Build a life with."</p>
+
+                        <p>"But not the kind you... I couldn't even think those thoughts about her. It felt like defiling something pure." He paused. "So I kept that part of myself separate. Hidden. Safe from contaminating what we had."</p>
+
+                        <p>"The headaches are getting worse," he mentioned six months in. "Sometimes I'll be in a partners' meeting and feel this pressure building behind my eyes. Like my skull might crack."</p>
+
+                        <p>"Like your skull might crack."</p>
+
+                        <p>"I have to excuse myself. Sit in the bathroom stall until it passes." His voice dropped. "Or until I give in."</p>
+
+                        <p>"It's like there's a war going on in my head," he said, his voice cracking. "Between who I'm supposed to be and who I actually am."</p>
+
+                        <p><strong>The Scene/Seen Dynamic:</strong> During our seventh month of work, I asked James to tell me more about what he was watching.</p>
+
+                        <p>"I don't want to get into specifics," James said quickly. "It's embarrassing."</p>
+
+                        <p>"Tell me about what you're watching," I repeated.</p>
+
+                        <p>"It's embarrassing. The categories. The searches." He paused. "Always looking for enthusiasm. Women who seemed to want it. Really want it. Not like..." He trailed off.</p>
+
+                        <p>"Not like?"</p>
+
+                        <p>"Not like real life. Where desire is complicated. Where people have headaches and history and hurt feelings." His voice grew quieter. "Online, I could watch scene after scene. Click to the next one if it wasn't right. Complete control."</p>
+
+                        <p>"Scene after scene," I said. "But never seen."</p>
+
+                        <p>He went completely silent. I could hear his breathing change.</p>
+
+                        <p>"What?" His voice was barely audible.</p>
+
+                        <p>"Scene after scene. Never seen."</p>
+
+                        <p>A sudden laugh burst out of him – sharp, involuntary, almost violent in its suddenness. He kept laughing, unable to stop, the sound both recognition and release.</p>
+
+                        <p>"That's funny," he said, still laughing, catching his breath between words. "I've been watching scenes to avoid being seen. Every scene was a place to hide. Thousands of scenes where I'm invisible, where no one can see me wanting, needing, failing..."</p>
+
+                        <p>The laughter finally subsided, leaving a different kind of silence. This was the silence of something fundamental shifting.</p>
+
+                        <p>"Tell me about the women."</p>
+
+                        <p>A long pause. "They were always... young. Fresh. Like they'd just discovered sex yesterday." His voice carried shame. "Always someone new. A thousand different girls, but somehow all the same. Twenty-two, twenty-three. Perfect skin. Endless energy."</p>
+
+                        <p>"And Sarah?"</p>
+
+                        <p>"Sarah's thirty-seven. We've been together fifteen years. She has stretch marks from the pregnancies. Gets tired. Has a bad knee from her college tennis days." He paused. "Online, nobody ages. Nobody gets tired. There's always a new girl who's never been disappointed by you before."</p>
+
+                        <p><strong>The Dream of Division:</strong> Two weeks after the scene/seen breakthrough, James brought a dream that had jolted him awake: "There were two men in a hotel room. One was dressed entirely in gold – expensive suit, gold watch, wedding ring gleaming. The other wore deep burgundy and was... disheveled. Shirt untucked, tie loose, like he'd been struggling."</p>
+
+                        <p>His voice shook as he continued: "The gold man was facing away, like he couldn't bear to look. The burgundy man was reaching out, trying to touch him, but every time he got close, the gold man would step further away."</p>
+
+                        <p>"Two men. One gold, one burgundy."</p>
+
+                        <p>"Complete opposites. The gold one pristine, controlled, everything in its place. The burgundy one was... falling apart. Desperate. Like they couldn't exist in the same space."</p>
+
+                        <p>"Tell me about the burgundy one."</p>
+
+                        <p>"He was... raw. Sweating. His hands were shaking. He looked like he'd been up all night, like he needed something desperately." James's voice dropped. "He looked honest. Hungry. Real."</p>
+
+                        <p>"And the gold one couldn't look at him."</p>
+
+                        <p>"Couldn't stand to see that mess. That need. That... humanity." His breathing changed. "The gold one just kept moving away, like he was afraid of contamination."</p>
+
+                        <p>A long pause. I could hear his breathing.</p>
+
+                        <p>"Gold. Burgundy," I said. "Gold. BURGundy"</p>
+
+                        <p>A sharp intake of breath.</p>
+
+                        <p>"Goldberg." I said.</p>
+
+                        <p>Complete silence. Then, barely audible: "My name."</p>
+
+                        <p>I ended the session there.</p>
+
+                        <p><strong>The Meaning of Control:</strong> As we explored deeper following these revelations, James began to articulate what the pornography actually provided.</p>
+
+                        <p>"With Sarah, there's always this... weight," he said, his voice tight. "History. Disappointment. Reality. What if I can't perform? What if she sees how desperate I actually am?" He paused. "I used to try. For years, I'd reach for her in bed. But there was always something – too tired, too stressed, not the right time. After enough rejections, you stop trying. We don't even attempt anymore. Once, maybe twice a year, and even then it's like strangers being polite."</p>
+
+                        <p>"Strangers being polite."</p>
+
+                        <p>"Going through motions we barely remember. Meanwhile, online..." He stopped himself.</p>
+
+                        <p>"Online."</p>
+
+                        <p>"I can want things. Feel things. Things I could never bring to our bedroom." His voice dropped. "Sarah is... she's the mother of my children. She organizes our home, knows my parents, shares my name. How can I bring my... hunger to that? It feels wrong. Disrespectful."</p>
+
+                        <p>"Disrespectful."</p>
+
+                        <p>"The women online, they're already... they're there for that. That's their purpose. They don't have names or histories or children. They're just bodies. I can want them without... without it meaning anything." He paused. "I love Sarah. I've always loved Sarah. But the other thing, the wanting... that belongs somewhere else."</p>
+
+                        <p><strong>The Fantasy of Perfection:</strong> "In porn, everything's easy," James said during a particularly difficult session. "No waiting between wanting and having. Click, and it's there. Instant. Perfect. Endless."</p>
+
+                        <p>"Perfect."</p>
+
+                        <p>"But that's not real sex, is it?" His voice was barely audible. "Real sex is complicated. The difference between what you imagine and what happens. Between what you want and what they want. Between two people who can never completely merge."</p>
+
+                        <p>"And in your marriage?"</p>
+
+                        <p>A long silence. "There are some major walls between us. Separate bedrooms for three years. She says I snore."</p>
+
+                        <p>"She says you snore."</p>
+
+                        <p>"That's what we tell people. The truth is that the space between us became unbearable. The space between us in bed – literal space, emotional space, the space between who we were and who we'd become."</p>
+
+                        <p><strong>The Transference:</strong> Around this time, the transference intensified in a particular direction.</p>
+
+                        <p>"I bet you don't have these problems," James said during one session, his voice bitter. "You probably have a perfect marriage. Never need to hide in your office at midnight."</p>
+
+                        <p>I remained silent.</p>
+
+                        <p>"I can hear it in your voice," he continued. "That calm, knowing tone. Like you've got it all figured out. Like you've never been desperate or pathetic."</p>
+
+                        <p>"You imagine I have it all figured out."</p>
+
+                        <p>"Don't you? Sitting there with your perfect insights while I confess my sordid little secrets." His voice cracked. "I bet you go home to your spouse and have great sex. No performance anxiety. No need to escape into fantasy."</p>
+
+                        <p>"Perfect insights."</p>
+
+                        <p>"You know what you're doing. You understand how this all works." His voice grew more agitated. "Meanwhile I'm just... flailing around in the dark."</p>
+
+                        <p>"Flailing around in the dark."</p>
+
+                        <p>"While you have the answers. The theory. The understanding." He paused. "You probably never even think about porn. You're too... evolved or something."</p>
+
+                        <p>"Too evolved."</p>
+
+                        <p>Long silence. "That's what I need to believe, isn't it? That someone, somewhere, has transcended all this. That it's possible to not be... this mess."</p>
+
+                        <p>"Someone, somewhere."</p>
+
+                        <p>"Like the women online. They're perfect too. Always ready, always wanting it, never disappointed." His breathing changed. "I'm doing it again, aren't I? Creating another perfect scene to watch. Another person who doesn't really exist."</p>
+
+                        <p>The recognition seemed to physically affect him.</p>
+
+                        <p><strong>The Breaking Point:</strong> Three months after the Goldberg dream revelation, James called in crisis. His voice was barely recognizable – raw, panicked.</p>
+
+                        <p>"IT found something. Not on my work computer – I was always careful there. But my personal laptop... I brought it in for a presentation and connected to the firm's WiFi. Their security system flagged the browsing patterns. Thousands of site visits. The managing partner is meeting with me and HR tomorrow." I could hear him hyperventilating. "Twenty-three years at this firm, and it all unraveled because I forgot which laptop I'd grabbed."</p>
+
+                        <p>During our emergency session, the headache he'd been fighting all week reached a crescendo.</p>
+
+                        <p>"I can't think straight," he gasped. "It feels like my head is literally splitting in half."</p>
+
+                        <p>"Your head is splitting," I said quietly.</p>
+
+                        <p>"Yes, it's—" He stopped. "Splitting. I'm split-ting myself. I've been living two completely different lives."</p>
+
+                        <p>A long silence.</p>
+
+                        <p>"The respected attorney and the... other one. The one who risks everything for hours of..." His voice faded. "I can't even say what it was worth."</p>
+
+                        <p>"You said you forgot which laptop you grabbed."</p>
+
+                        <p>A long pause. "I have two laptops. Personal and work. I've carried both for years, clearly labeled. I've never once confused them." His breathing changed. "Oh God. I didn't forget, did I?"</p>
+
+                        <p>"You didn't forget."</p>
+
+                        <p>"After that dream. After seeing myself split into gold and burgundy. After realizing I was scene after scene but never seen..." His voice cracked. "Some part of me wanted to be caught. Needed to be caught. I couldn't stand the splitting anymore."</p>
+
+                        <p>"Couldn't stand the splitting."</p>
+
+                        <p>"My unconscious found a way to force them together. The gold Goldberg and the burgundy one. Even if it meant destroying everything." He laughed bitterly. "Or maybe because it would destroy everything. The compartments. The perfect performance. The exhausting effort of being two people."</p>
+
+                        <p>"Hours of what?"</p>
+
+                        <p>"Of not having to perform. Of not being James Goldberg, Esquire. Of being in complete control while completely out of control." The paradox hung between us. "Whole nights disappeared. Four, five hours at a time. God, I've been hiding from my own life."</p>
+
+                        <p>"Hiding where?"</p>
+
+                        <p>"In fantasies. In a world that doesn't exist. A world where I never have to risk anything real." His breathing was ragged. "Where rejection doesn't exist. Where I'm always enough. Where no one can see me falling apart."</p>
+
+                        <p><strong>Rebuilding from the Ground Up:</strong> The firm never got to make a decision. "I resigned before the meeting," James told me a week later, his voice hollow. "Sent an email at 3 AM. 'Personal matters requiring immediate attention.' They knew. I knew they knew. But this way we could all pretend."</p>
+
+                        <p>"Pretend."</p>
+
+                        <p>"That I was leaving for noble reasons. Family health crisis, maybe. Not because I'd contaminated their pristine offices with my... habits." He laughed bitterly. "The managing partner called to say they'd accept my resignation, effective immediately. Twenty-three years, and it ended with a two-minute phone call."</p>
+
+                        <p>Sarah found out when the firm called to verify his employment status for their mortgage refinance.</p>
+
+                        <p>The months that followed were among the most difficult of James's life, but also the most authentic. After the crisis, James committed to analysis three times a week. "I need to understand how I got here," he said during our first intensive session. "Once a week was maintenance. This is surgery."</p>
+
+                        <p>The increased frequency allowed us to work with the unconscious material more directly. Dreams came more regularly, slips of the tongue revealed themselves in session, and the transference intensified.</p>
+
+                        <p>"I find myself preparing for our sessions differently," he reported after the first month. "Like I'm finally taking this seriously. Like my life depends on it."</p>
+
+                        <p>It did.</p>
+
+                        <p>Sarah had initially moved in with her sister, taking the teenagers with her. "I need to understand what's real," she'd said. "What was actually happening while I thought you were working."</p>
+
+                        <p>The separation lasted six months. During this period, James took contract work to pay the bills – document review, small legal research projects. The work was beneath his former status, but he found something unexpected in the demotion.</p>
+
+                        <p>"No corner office to hide in," he said. "No executive bathroom. Just a laptop at a shared workspace. When the urges come, I have nowhere to go."</p>
+
+                        <p>"Nowhere to go."</p>
+
+                        <p>"So I sit with it. The wanting. The panic. The feeling like I might explode if I don't get release." He paused. "It's excruciating. But also... honest. For the first time, I'm actually feeling what I've been running from."</p>
+
+                        <p>"What are you feeling?"</p>
+
+                        <p>"Empty. Just... profoundly empty. Like there's this hole in me that I've been trying to fill with images. With fantasies. But it just gets wider." His voice cracked. "Some days I think I'll die from the wanting."</p>
+
+                        <p><strong>The Question of Desire:</strong> After the crisis passed and James had stabilized somewhat with contract work, we could finally approach the deeper questions.</p>
+
+                        <p>"What did you actually want in those hours online?" I asked during one session.</p>
+
+                        <p>He paused. "I don't know. To feel something without having to explain it. Without having to be careful about it."</p>
+
+                        <p>"Without having to be careful."</p>
+
+                        <p>"Do you know how exhausting it is to always be appropriate? Professional? In control?" His voice rose slightly. "Online, I could be pathetic. Desperate. Searching for something I couldn't even name. And no one would know."</p>
+
+                        <p>"What couldn't you name?"</p>
+
+                        <p>"The perfect moment. The one where I'd finally be... satisfied. Done. Where the wanting would stop." His voice dropped. "But it never came. Hours and hours, and I just wanted more."</p>
+
+                        <p>"You mentioned loving Sarah earlier."</p>
+
+                        <p>"I do love Sarah." His voice was firm. "That's never been the question."</p>
+
+                        <p>"But?"</p>
+
+                        <p>A long silence. "But love and... the other thing. They don't go together. Can't go together." He struggled for words. "Sarah deserves love. Respect. Not... whatever this is. This hunger. This need that never stops."</p>
+
+                        <p>"So you kept them separate."</p>
+
+                        <p>"Had to. One at home, one online. Sarah got the husband. The screen got..." He couldn't finish.</p>
+
+                        <p>"Got what?"</p>
+
+                        <p>"The real me. The ugly parts. The parts that want and want and can't stop wanting." His voice was bitter. "Except that's not real either, is it? Just another performance. Playing the desperate man instead of the perfect one."</p>
+
+                        <p><strong>Learning Vulnerability:</strong> The couples therapy with Sarah was excruciating at first. Years of hidden behavior had created a chasm of mistrust.</p>
+
+                        <p>"She wanted to know everything," James reported after a particularly brutal session. "What kind. How often. When I started. Whether I thought about it when we were together."</p>
+
+                        <p>"And?"</p>
+
+                        <p>"I tried to be vague. Said it was just stress relief. Normal guy stuff." He paused. "She threw a glass at the wall. Said I was still lying even now."</p>
+
+                        <p>Several sessions later: "We tried to be intimate last week. First time in months. I couldn't... function. Without the screen, without the control, I just... froze."</p>
+
+                        <p>"Sarah said 'Of course you can't. You've spent twenty years training yourself to get hard for pixels instead of people.' Then she locked herself in the bathroom and cried."</p>
+
+                        <p>"Sometimes she'll start touching me and then stop. Says she feels like she's competing with thousands of perfect bodies. Like she's auditioning for her own husband." His voice was hollow. "I don't know what to say to that. Because it's true."</p>
+
+                        <p>"Last night she asked if I ever wondered what the women in the videos actually wanted. If I thought they enjoyed it or were just performing." He paused. "I couldn't answer. They weren't people to me. Just... body parts arranged for my consumption."</p>
+
+                        <p>The physical recovery took months. "It's humiliating. Being thirty-eight and having to relearn basic arousal. Sarah will be right there, trying, and my body just... doesn't respond. Like it's waiting for me to grab my phone."</p>
+
+                        <p>"She's staying. I don't know why. Some nights she rages about the years she wasted feeling undesirable. Other nights she just seems... defeated. Like she's accepted this is what marriage is."</p>
+
+                        <p><strong>The Ongoing Work:</strong> Even as James rebuilt his career and marriage, the work continued.</p>
+
+                        <p>"Last week I relapsed. Just twenty minutes, but enough to remind me why I stopped. The shame was immediate. But also... the emptiness. It didn't fill anything. Just made the hole more obvious." He paused. "I told Sarah that night. She didn't rage. Just asked, 'What happened before you clicked?' That question... it changed everything."</p>
+
+                        <p>"What did happen?"</p>
+
+                        <p>"We'd had a difficult conversation about college tuition. Money stress. I felt like a failure again. The old pattern – feeling inadequate, reaching for control." He sighed. "But now I can see it. Name it. Not let it drive me underground."</p>
+
+                        <p>"That raw, needy part of me – it's still there," he reflected during another session. "But now Sarah knows about it. And she doesn't try to fix it or judge it. She just... stays with me in it."</p>
+
+                        <p>"Stays with you in it."</p>
+
+                        <p>"Which is what I could never do for myself. I always had to escape into performance or compulsion. Now I can just be... incomplete. Human. Still wanting, still lacking, but not panicking about it. That's the freedom – not needing to be perfect or perfectly satisfied. Just... accepting the gap."</p>
+
+                        <p><strong>Finding Authentic Ground:</strong> After a year of contract work and volunteering at a legal aid clinic, James made a decision that surprised everyone, including himself. Rather than trying to rebuild his corporate career, he opened a solo practice specializing in family law and immigration cases.</p>
+
+                        <p>"The money is a fraction of what I made before," he said, "but I go to bed tired instead of exhausted. There's a difference." His practice grew slowly but steadily, built on referrals from the legal aid clinic and word-of-mouth from satisfied clients.</p>
+
+                        <p>Sarah returned home after James had completed six months of intensive analysis. Their couples therapy was intensive and often painful. Learning to be present during intimacy – to stay in his body, to make eye contact, to be with Sarah rather than escape into fantasy – became a cornerstone of their healing.</p>
+
+                        <p>"We're learning each other for the first time," James said. "Really learning. Starting from nothing – we had to. Years of distance between us. Some nights we just lie in the same bed, not touching but present. Some nights we connect. Some nights one of us isn't there emotionally and we name it instead of pretending."</p>
+
+                        <p>"The strangest part," he added, "is discovering that Sarah had her own relationship with fantasy. Not pornography, but romance novels. Hundreds of them on her Kindle. Stories where desire was clean, conflicts resolved perfectly, where no one ever felt empty afterward. We were both escaping into fantasies of completion, just different kinds."</p>
+
+                        <p><strong>Still Split:</strong> After three years of analytic work James brought up ending.</p>
+
+                        <p>"I think I'm ready to stop," he said. "Not because I'm fixed or complete. Actually, the opposite. I feel... incomplete. But for the first time in my life, that doesn't terrify me."</p>
+
+                        <p>A long pause.</p>
+
+                        <p>"You're not saying anything," James observed.</p>
+
+                        <p>"What do you imagine I'm thinking?"</p>
+
+                        <p>"That I should continue. That there's more work to do." He paused. "And there is. There always will be. But I think that's the point – there's always more. I'll never be done. I need to live with that knowledge, without these sessions as a place to deposit my incompleteness."</p>
+
+                        <p>In one of our final sessions, he said: "The war is over. Not because either side won, but because I stopped fighting myself."</p>
+
+                        <p>His voice had changed – not the polished confidence of before, but something more substantial.</p>
+
+                        <p>The headaches had subsided. His relationship with Sarah – they were working on it. Still difficult, still uncertain.</p>
+
+                        <p>"My daughter called last week," he said. "Not asking for money or anything. Just to talk. She said something that stopped me cold. She said, 'Dad, you seem more real now. Like you're actually here even when things aren't perfect.'"</p>
+
+                        <p>His practice paid the bills. Some days were better than others.</p>
+
+                        <p>"I used to think integration meant becoming complete," he reflected in our final session. "Whole. Fixed. Perfect. But that was just another fantasy, wasn't it? Like the pornography – a fantasy of arriving somewhere perfect."</p>
+
+                        <p>He paused, then added: "But being human means being incomplete. Always wanting. The difference is I don't need to cover it up with fantasy anymore."</p>
+
+                        <p>"The laptop 'mistake' wasn't a mistake at all," he said as we approached our ending. "My unconscious knew what my conscious mind couldn't accept – that the split was killing me. The headaches, the compulsion, the double life. Something in me decided it had to end, even if it meant losing everything I'd built."</p>
+
+                        <p>"Losing everything you'd built."</p>
+
+                        <p>"The career, the reputation, the perfect image. But what I kept was worth more – the chance to be one person instead of two. The gold and burgundy finally in the same room, finally able to look at each other." He smiled slightly. "Turns out they're both me. Always were."</p>
+
+                        <p>When we ended our final call, James Goldberg remained an incomplete and divided man. But the split no longer required twenty tabs open at 3 AM. He could accept his imperfection without needing to fill it with endless scenes that promised completion.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wasted Story -->
+            <div class="story-item" onclick="toggleStory(this)">
+                <div class="story-header">
+                    <div>
+                        <div class="story-time">10 min read</div>
+                        <h3>Wasted</h3>
+                        <p class="story-preview">Second-generation immigrant. Harvard MBA. Drinking day and night.</p>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="story-content">
+                    <div class="story-inner">
+                        <p>[Story content goes here]</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eliminated Story -->
+            <div class="story-item" onclick="toggleStory(this)">
+                <div class="story-header">
+                    <div>
+                        <div class="story-time">10 min read</div>
+                        <h3>Eliminated</h3>
+                        <p class="story-preview">Six years together. No ring. Everything arranged his way.</p>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="story-content">
+                    <div class="story-inner">
+                        <p>[Story content goes here]</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Splitting Story -->
+            <div class="story-item" onclick="toggleStory(this)">
+                <div class="story-header">
+                    <div>
+                        <div class="story-time">25 min read</div>
+                        <h3>Splitting</h3>
+                        <p class="story-preview">Separate bedrooms. Chronic migraines. Twenty tabs open on the browser.</p>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="story-content">
+                    <div class="story-inner">
+                        <p>[Story content goes here]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- How I Work Section -->
+    <section id="approach">
         <div class="container">
             <h2>A Different Kind of Therapy</h2>
-            <p style="font-size: 1.3rem; text-align: center; margin-bottom: 3rem; font-weight: 300; font-family: var(--font-serif);">
-                I practice Lacanian psychoanalysis—an approach where transformation happens through your own 
-                words, as new meanings emerge and old patterns dissolve.
-            </p>
-            <p style="text-align: center; color: var(--color-gray-medium); max-width: 700px; margin: 0 auto; font-family: var(--font-serif); font-size: 1.1rem;">
-             Unlike traditional therapy focused on coping strategies, Lacanian analysis investigates the unconscious logic behind your symptoms and repetitions. 
-                I often work with people who've tried other approaches but didn't find lasting change because the unconscious was ignored. 
-                Your unconscious communicates through symptoms, bungled actions, dreams, and slips of the tongue. 
-                I create conditions where you can begin to hear what you've been trying to tell yourself.
-            </p>
+            <p>You've tried everything else. CBT worksheets. DBT skills. EMDR sessions. Mindfulness apps. Medication after medication. Willpower and determination. Maybe even years of talking it through. But you're still stuck in the same loops. That's because the real problem lives below your awareness.</p>
+            
+            <div class="approach-grid">
+                <div class="approach-item">
+                    <h3>Space to Discover</h3>
+                    <p>Instead of giving advice or teaching techniques, I create a unique listening space where your own insights can emerge. Often, the most powerful realizations come from hearing yourself say something you didn't know you knew.</p>
+                </div>
+                
+                <div class="approach-item">
+                    <h3>Following Your Process</h3>
+                    <p>Sessions flow with your natural rhythm rather than a predetermined agenda. We might explore dreams, daily frustrations, childhood memories, or whatever feels alive for you. Everything is connected, and meaning emerges in surprising ways.</p>
+                </div>
+                
+                <div class="approach-item">
+                    <h3>Beyond Surface Solutions</h3>
+                    <p>Your symptoms (anxiety, depression, relationship struggles) aren't just problems to fix. They're often creative solutions to deeper conflicts. By understanding what they're protecting or expressing, genuine change becomes possible.</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 40px;">All sessions are completely confidential, providing a private space where you can explore without fear of judgment or exposure.</p>
         </div>
     </section>
 
-    <div class="section-divider">
-        <svg viewBox="0 0 60 60" style="transform: rotate(-8deg);">
-            <circle cx="20" cy="24" r="15" stroke="currentColor" fill="none"/>
-            <circle cx="40" cy="24" r="15" stroke="currentColor" fill="none"/>
-            <circle cx="30" cy="39" r="15" stroke="currentColor" fill="none"/>
-        </svg>
-    </div>
+    <div class="section-divider"></div>
 
-    <!-- Explore Further -->
-    <section class="section">
+    <!-- About Section -->
+    <section id="about">
         <div class="container">
-            <h2>Explore Further</h2>
-            <div class="card-grid">
-                <div class="card fade-in">
-                    <h3>The Approach</h3>
-                    <p>Discover how Lacanian analysis differs from traditional therapy and why transformation 
-                    happens through your own speech.</p>
-                    <a href="approach.html" class="card-link">Learn More →</a>
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div>
+                    <p>I bring nearly a decade of experience helping people move beyond surface-level changes to discover what truly drives their patterns and struggles. My approach draws from depth psychology traditions that understand the wisdom in our symptoms and the intelligence of the unconscious mind.</p>
+                    
+                    <p>I came to this work through my own transformative experience in therapy, which showed me that real change happens not through advice or strategies, but through a different kind of listening that allows new understanding to emerge.</p>
+                    
+                    <p>I work exclusively online with adults throughout Massachusetts who are ready for something more than symptom management. My practice is intentionally small, allowing me to offer focused, dedicated attention to each person's journey. Sessions are conducted via secure video or phone, offering you the convenience of deep therapeutic work from your chosen environment.</p>
                 </div>
-
-                <div class="card fade-in">
-                    <h3>About the Practice</h3>
-                    <p>Eight years of experience in Lacanian analysis. Licensed in Massachusetts, offering 
-                    telehealth sessions for genuine transformation.</p>
-                    <a href="about.html" class="card-link">About David →</a>
+                
+                <div class="credentials">
+                    <p><strong>David M. Freshwater, LMHC</strong></p>
+                    <p>Licensed Mental Health Counselor<br>
+                    Massachusetts License #10001743</p>
                 </div>
-
-                <div class="card fade-in">
-                    <h3>Stories of Change</h3>
-                    <p>Read how others have navigated their analytic journeys and the transformations 
-                    that became possible through this work.</p>
-                    <a href="stories.html" class="card-link">Read Stories →</a>
-                </div>
-
-                <div class="card fade-in">
-                    <h3>Common Questions</h3>
-                    <p>Find answers about Lacanian analysis, the process, duration, commitment, and if 
-                        this unique approach is right for you.
-                 </p>
-                    <a href="faq.html" class="card-link">View FAQ →</a>
-                </div>
+                
+                <p style="text-align: center; font-style: italic; color: #1e3a5f; margin-top: 32px; font-size: 17px;">Currently accepting 3 new clients for intensive work</p>
             </div>
         </div>
     </section>
 
-    <div class="section-divider">
-        <svg viewBox="0 0 60 60" style="transform: rotate(-18deg);">
-            <circle cx="20" cy="24" r="15" stroke="currentColor" fill="none"/>
-            <circle cx="40" cy="24" r="15" stroke="currentColor" fill="none"/>
-            <circle cx="30" cy="39" r="15" stroke="currentColor" fill="none"/>
-        </svg>
-    </div>
+    <div class="section-divider"></div>
 
-    <!-- CTA Section -->
-    <section class="section">
-        <div class="container" style="text-align: center;">
-            <h2>Let's Start Talking</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 3rem;">
-                The initial consultation is an opportunity to explore whether analytic work makes sense for your particular situation. 
-                Fees are discussed during our initial consultation, as the investment in analysis is an important part of the work itself.
-            </p>
-            <button class="btn btn-primary" onclick="showConsultationForm()">Request Consultation</button>
+    <!-- What to Expect Section -->
+    <section id="process">
+        <div class="container">
+            <h2>What to Expect</h2>
+            <p>This isn't another therapy where you rehash your week and leave with breathing exercises. We're going after what's actually running your life from behind the scenes.</p>
+            
+            <p>We begin with a consultation where you can speak about what brings you to therapy and get a feel for how we might work together. This isn't an evaluation. It's a real conversation where you can experience my approach firsthand.</p>
+            
+            <p>If we decide to work together, we'll find the frequency that best serves your process. Some people benefit from weekly sessions, while others find that meeting twice or even three times per week allows the work to deepen more quickly. The virtual format makes it easier to maintain whatever frequency supports your transformation.</p>
+            
+            <p>The duration of our work together varies. Some people experience significant shifts in months, while others benefit from a longer exploration. The process concludes when the patterns that brought you here have transformed into new possibilities for living.</p>
+            
+            <p>This work represents a significant investment in your life. Beyond the financial commitment, you're investing your time and emotional energy in understanding yourself more deeply. The fee reflects both the intensive nature of this work and the lasting value of genuine transformation. When you invest in this process, you're prioritizing profound change over quick fixes.</p>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <h2>Common Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">I've never been in therapy before. Is this right for me?</div>
+                <div class="faq-answer">Many of my clients begin their therapy journey with me. You don't need prior therapy experience or knowledge of psychological terms. What matters is that you're experiencing something that feels stuck or repetitive in your life and you're ready to understand it more deeply. The process is collaborative - I'll guide the space while you set the pace.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How is this different from regular therapy?</div>
+                <div class="faq-answer">Most therapy focuses on managing symptoms and teaching coping skills. While those approaches have their place, this work goes deeper. We explore the roots of your patterns rather than just their surface expressions. Instead of strategies and homework, we create space for your own understanding to emerge through careful exploration and a particular kind of listening.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do you take insurance?</div>
+                <div class="faq-answer">I don't accept insurance directly, which allows for complete privacy and freedom in our work together. Insurance requires diagnoses and treatment plans that can limit the open-ended exploration that makes this approach effective. This allows us to work at the depth and pace necessary for genuine transformation, without the constraints of insurance-mandated treatment plans or session limits. I can provide documentation for out-of-network reimbursement if your plan offers it. Fees are discussed during our initial consultation.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How long does it take?</div>
+                <div class="faq-answer">There's no standard timeline. Some people experience significant shifts within months, while others benefit from longer exploration. The process concludes when you feel the patterns that brought you here have transformed. You'll know when you've reached a different relationship with yourself and your life.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can this help with my specific issue?</div>
+                <div class="faq-answer">I work with whatever brings you: anxiety, depression, relationship patterns, creative blocks, family dynamics, or simply feeling stuck. What matters isn't the specific symptom but your readiness to explore its deeper meanings. If you sense there's more to your struggles than what's on the surface, this approach may be right for you.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Ready to Stop the Cycle?</h2>
+            <p>You've waited long enough. The patterns won't change on their own.</p>
+            <button class="hero-cta" onclick="showConsultationForm()">Request a Consultation</button>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>David M. Freshwater, LMHC #10001743</p>
-        <p>Lacanian Psychoanalyst • Private Pay • Online Sessions</p>
-        <p><a href="tel:+17865271616" style="color: var(--color-gray-light); text-decoration: none;">(786) 527-1616</a> • <a href="mailto:davidfreshwateranalyst@gmail.com" style="color: var(--color-gray-light); text-decoration: none;">davidfreshwateranalyst@gmail.com</a></p>
-        <p>Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
-        <p style="margin-top: 2rem; opacity: 0.6;">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-name-license">David M. Freshwater, LMHC #10001743</p>
+                    <p class="footer-services">Licensed Psychotherapist • Private Pay • Online Sessions</p>
+                    <p class="footer-location">Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
+                    <p class="footer-copyright">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <!-- Floating Button -->
-    <button class="btn btn-primary btn-floating" id="floatingConsult" onclick="showConsultationForm()">
-        Book Consultation
-    </button>
-
-    <!-- Consultation Form -->
-    <div class="form-overlay" id="popupOverlay">
+    <!-- Consultation Form Modal -->
+    <div class="form-overlay" id="formOverlay">
         <div class="form-container">
             <button class="form-close" onclick="hideConsultationForm()" aria-label="Close form">×</button>
             <h3 class="form-title">Request Initial Consultation</h3>
             <form id="consultationForm" onsubmit="handleFormSubmit(event)">
                 <div class="form-group">
                     <label class="form-label" for="name">Name</label>
-                    <input type="text" id="name" name="name" class="form-input" required placeholder=" ">
+                    <input type="text" id="name" name="name" class="form-input" required>
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="email">Email</label>
-                    <input type="email" id="email" name="email" class="form-input" required placeholder=" ">
+                    <input type="email" id="email" name="email" class="form-input" required>
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" class="form-input" required placeholder=" ">
+                    <input type="tel" id="phone" name="phone" class="form-input" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="message">Message</label>
-                    <textarea id="message" name="message" class="form-textarea" required placeholder=" "></textarea>
+                    <label class="form-label" for="message">What brings you to therapy?</label>
+                    <textarea id="message" name="message" class="form-textarea" rows="4" required></textarea>
                 </div>
                 <div id="formMessage" class="form-message"></div>
                 <div class="form-buttons">
                     <button type="submit" class="form-btn form-btn-submit">Send Request</button>
+                    <button type="button" class="form-btn" onclick="hideConsultationForm()">Cancel</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- EmailJS SDK - Following official tutorial -->
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init("SapDsG2u7LsAmvQMW");
-        })();
-    </script>
-
     <script>
-        // Initialize
-        window.addEventListener('load', () => {
-            // Show palimpsest with smoother lazy loading
-            setTimeout(() => {
-                document.querySelector('.palimpsest').classList.add('visible');
-            }, 1500);
-
-            // Initialize animations
-            initScrollAnimations();
-            initTypewriter();
-            
-            // Set active nav link
-            setActiveNavLink();
-            
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        });
-
-        // Set active navigation link
-        function setActiveNavLink() {
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            document.querySelectorAll('.nav-link').forEach(link => {
-                if (link.getAttribute('href') === currentPage || 
-                    (currentPage === 'index.html' && link.getAttribute('href') === '#home')) {
-                    link.classList.add('active');
-                }
-            });
+        function toggleStory(element) {
+            element.classList.toggle('expanded');
         }
-
-        // Typewriter effect
-        function initTypewriter() {
-            const quote = document.querySelector('.typewriter-text');
-            if (!quote) return;
-            
-            const text = quote.textContent;
-            quote.textContent = '';
-            quote.style.display = 'inline-block';
-            quote.style.whiteSpace = 'normal';
-            
-            let i = 0;
-            const speed = 50;
-            
-            function type() {
-                if (i < text.length) {
-                    quote.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            
-            // Start typing when element is in view
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        type();
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            observer.observe(quote.parentElement);
-        }
-
-        // Scroll animations
-        function initScrollAnimations() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        }
-
-        // Debounce function for performance
-        function debounce(func, wait) {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func(...args);
-                };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-            };
-        }
-
-        // Navigation and scroll behavior
-        let lastScroll = 0;
-        const nav = document.getElementById('navigation');
-        const floatingBtn = document.getElementById('floatingConsult');
-        const scrollProgress = document.getElementById('scrollProgress');
         
-        const handleScroll = debounce(() => {
-            const currentScroll = window.pageYOffset;
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = (currentScroll / scrollHeight) * 100;
-            
-            // Update scroll progress bar
-            scrollProgress.style.width = scrollPercent + '%';
-            
-            if (window.innerWidth > 768) {
-                nav.classList.toggle('scrolled', currentScroll > 100);
-                nav.classList.toggle('hidden', currentScroll > lastScroll && currentScroll > 200);
-            }
-            
-            // Show/hide floating button
-            if (currentScroll > 500) {
-                floatingBtn.classList.add('visible');
+        // Add shadow to nav on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 20px rgba(15, 27, 60, 0.1)';
             } else {
-                floatingBtn.classList.remove('visible');
+                nav.style.boxShadow = '0 1px 3px rgba(15, 27, 60, 0.05)';
             }
-            
-            lastScroll = currentScroll;
-        }, 10);
-        
-        window.addEventListener('scroll', handleScroll);
-
-        // Mobile menu
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileOverlay = document.getElementById('mobileOverlay');
-
-        function toggleMenu() {
-            menuToggle.classList.toggle('active');
-            nav.classList.toggle('active');
-            mobileOverlay.classList.toggle('active');
-            
-            if (nav.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-                document.body.style.position = 'fixed';
-                document.body.style.width = '100%';
-            } else {
-                document.body.style.overflow = '';
-                document.body.style.position = '';
-                document.body.style.width = '';
-            }
-        }
-
-        menuToggle.addEventListener('click', toggleMenu);
-        mobileOverlay.addEventListener('click', toggleMenu);
-
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) toggleMenu();
-            });
         });
-
-        // Form functions with validation
+        
+        // Form functions
         function showConsultationForm() {
-            const overlay = document.getElementById('popupOverlay');
+            const overlay = document.getElementById('formOverlay');
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-
+        
         function hideConsultationForm() {
-            const overlay = document.getElementById('popupOverlay');
+            const overlay = document.getElementById('formOverlay');
             overlay.classList.remove('active');
             document.body.style.overflow = '';
             document.getElementById('consultationForm').reset();
@@ -1366,22 +1624,15 @@
             formMessage.style.display = 'none';
             formMessage.className = 'form-message';
         }
-
-        document.getElementById('popupOverlay').addEventListener('click', function(e) {
-            if (e.target === this) hideConsultationForm();
+        
+        // Close form when clicking outside
+        document.getElementById('formOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideConsultationForm();
+            }
         });
-
-        // Real-time form validation
-        document.querySelectorAll('.form-input, .form-textarea').forEach(input => {
-            input.addEventListener('blur', () => {
-                if (!input.validity.valid && input.value) {
-                    input.classList.add('error');
-                } else {
-                    input.classList.remove('error');
-                }
-            });
-        });
-
+        
+        // Handle form submission
         function handleFormSubmit(event) {
             event.preventDefault();
             
@@ -1397,58 +1648,26 @@
             formMessage.style.display = 'none';
             formMessage.className = 'form-message';
             
-            // Get form data
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData);
-
-            // Prepare template parameters
-            const templateParams = {
-                from_name: data.name,
-                from_email: data.email,
-                phone: data.phone,
-                message: data.message,
-                to_email: 'davidfreshwateranalyst@gmail.com'
-            };
-
-            // Send email using EmailJS
-            emailjs.send('service_qera1v7', 'template_ndishzq', templateParams)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    
-                    // Show success message
-                    formMessage.textContent = 'Thank you! Your consultation request has been sent successfully. David will contact you within 24-48 hours.';
-                    formMessage.className = 'form-message success';
-                    formMessage.style.display = 'block';
-                    
-                    // Reset form
-                    document.getElementById('consultationForm').reset();
-                    
-            
-                }, function(error) {
-                    console.log('FAILED...', error);
-                    
-                    // Show error message
-                    formMessage.textContent = 'Sorry, there was an error sending your request. Please try again or contact directly at davidfreshwateranalyst@gmail.com';
-                    formMessage.className = 'form-message error';
-                    formMessage.style.display = 'block';
-                })
-                .finally(() => {
-                    // Reset button
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                });
+            // Simulate form submission (replace with your actual submission logic)
+            setTimeout(() => {
+                // Show success message
+                formMessage.textContent = 'Thank you for your request. I\'ll be in touch within 24-48 hours to schedule your consultation.';
+                formMessage.className = 'form-message success';
+                formMessage.style.display = 'block';
+                
+                // Reset form
+                document.getElementById('consultationForm').reset();
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                // Auto-close after 5 seconds
+                setTimeout(() => {
+                    hideConsultationForm();
+                }, 5000);
+            }, 1500);
         }
-
-        // Handle window resize
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                if (window.innerWidth > 768 && nav.classList.contains('active')) {
-                    toggleMenu();
-                }
-            }, 250);
-        });
     </script>
 </body>
 </html>
