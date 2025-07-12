@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How This Work Happens | David M. Freshwater, LMHC</title>
+    <meta name="description" content="Understand how depth therapy works with David M. Freshwater, LMHC. Learn about the process of working with unconscious patterns and what to expect in sessions.">
+    <meta name="keywords" content="therapy process, how therapy works, unconscious patterns, Massachusetts therapist">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="How This Work Happens | David M. Freshwater, LMHC">
+    <meta property="og:description" content="Understand how depth therapy works and what to expect when working with unconscious patterns for lasting change.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://davidfreshwater.github.io/process.html">
+    <meta property="og:image" content="https://davidfreshwater.github.io/image/dmfheadshot.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://davidfreshwater.github.io/process.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #212121;
+            background: #FFFFFF;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .nav-name {
+            font-size: 18px;
+            font-weight: 500;
+            color: #1C1C1C;
+            letter-spacing: 0.02em;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: #424242;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #1e3a5f;
+        }
+        
+        .nav-link.active {
+            color: #1e3a5f;
+            font-weight: 500;
+        }
+        
+        .nav-cta {
+            background: #1e3a5f;
+            color: #FFFFFF;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 58, 95, 0.2);
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+        
+        .nav-cta:hover {
+            background: #152942;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 58, 95, 0.3);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 2px;
+            background: #1C1C1C;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 80%;
+            height: 100vh;
+            background: white;
+            z-index: 999;
+            transition: left 0.3s ease;
+            padding: 80px 40px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .mobile-nav.active {
+            left: 0;
+        }
+        
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .mobile-nav .nav-link {
+            font-size: 18px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 998;
+        }
+        
+        .mobile-overlay.active {
+            display: block;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 140px 0 80px;
+            min-height: 100vh;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            color: #1C1C1C;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 36px;
+            font-weight: 500;
+            margin-bottom: 32px;
+            color: #1C1C1C;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #1e3a5f;
+        }
+        
+        h3 {
+            font-size: 28px;
+            font-weight: 500;
+            margin: 48px 0 24px 0;
+            color: #1C1C1C;
+        }
+        
+        p {
+            margin-bottom: 24px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #212121;
+        }
+        
+        /* Opening Vignette */
+        .opening-vignette {
+            background: #F8F8F8;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 32px 0;
+            border-left: 3px solid #1e3a5f;
+            font-style: italic;
+        }
+        
+        .opening-vignette p {
+            margin-bottom: 0;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #424242;
+        }
+        
+        /* Quote Block */
+        .quote {
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px 20px;
+            background: #F8F8F8;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .quote span, .quote-text {
+            font-size: 22px;
+            font-style: italic;
+            color: #1e3a5f;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.5;
+            display: block;
+        }
+        
+        .quote-attribution {
+            font-size: 16px;
+            color: #757575;
+            margin-top: 16px;
+            font-style: normal;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Process Grid */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin: 48px 0;
+        }
+        
+        .process-card {
+            background: #FFFFFF;
+            border: 1px solid #E8E8E8;
+            padding: 32px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #1e3a5f;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .process-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            border-color: #1e3a5f;
+        }
+        
+        .process-card:hover::before {
+            opacity: 1;
+        }
+        
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            color: #1e3a5f;
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+        
+        .process-card h4 {
+            font-size: 20px;
+            margin-bottom: 16px;
+            color: #1C1C1C;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .process-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #424242;
+        }
+        
+        /* Transformation Grid */
+        .transformation-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 32px 0;
+        }
+        
+        .transformation-card {
+            background: #F8F8F8;
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 3px solid #1e3a5f;
+        }
+        
+        .transformation-card h4 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #1C1C1C;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .transformation-card p {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #424242;
+            margin-bottom: 0;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: #1e3a5f;
+            color: white;
+            padding: 32px;
+            border-radius: 8px;
+            margin: 32px 0;
+        }
+        
+        .highlight-box p {
+            color: white;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: #F8F8F8;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 48px 0;
+            border-left: 3px solid #1e3a5f;
+        }
+        
+        .info-box h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #1C1C1C;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .info-box p {
+            margin-bottom: 20px;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+        
+        /* Section Divider */
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #1e3a5f, transparent);
+            margin: 60px auto;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F8F8F8 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        
+        .cta-section h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #1e3a5f;
+            color: white;
+            padding: 18px 48px;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 17px;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        
+        .btn:hover {
+            background: #152942;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(30, 58, 95, 0.35);
+        }
+        
+        /* Floating Button */
+        .btn-floating {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #1e3a5f;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
+            border: none;
+            font-family: inherit;
+            z-index: 100;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+        
+        .btn-floating.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+        
+        .btn-floating:hover {
+            background: #152942;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(30, 58, 95, 0.35);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1C1C1C;
+            color: #E8E8E8;
+            padding: 60px 0 40px;
+            text-align: center;
+            margin-top: 5rem;
+        }
+        
+        .footer-content p {
+            margin-bottom: 12px;
+            font-size: 16px;
+            letter-spacing: 0.02em;
+        }
+        
+        .footer-name-license {
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px !important;
+        }
+        
+        .footer-services {
+            color: #C5D3E0;
+            font-size: 15px;
+        }
+        
+        .footer-location {
+            color: #B0C4D9;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .footer-copyright {
+            color: #8FA7C4;
+            font-size: 13px;
+            margin-top: 24px !important;
+            padding-top: 24px;
+            border-top: 1px solid #333333;
+        }
+        
+        /* Form Modal Styles */
+        .form-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(26, 26, 26, 0.8);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .form-overlay.active {
+            display: flex;
+        }
+        
+        .form-container {
+            background-color: #FFFFFF;
+            padding: 48px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
+        
+        .form-overlay.active .form-container {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .form-title {
+            font-size: 28px;
+            font-weight: 500;
+            font-family: 'Playfair Display', serif;
+            color: #1C1C1C;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        
+        .form-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #757575;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+        }
+        
+        .form-close:hover {
+            color: #1C1C1C;
+            background: #F0F0F0;
+            transform: rotate(90deg);
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: #424242;
+            text-transform: uppercase;
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            border-radius: 4px;
+            color: #1C1C1C;
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #1e3a5f;
+            box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+            line-height: 1.6;
+        }
+        
+        .form-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+            justify-content: center;
+        }
+        
+        .form-btn {
+            padding: 14px 32px;
+            background: transparent;
+            color: #1C1C1C;
+            border: 1px solid #E0E0E0;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .form-btn:hover {
+            border-color: #1e3a5f;
+            background: #F8F8F8;
+        }
+        
+        .form-btn-submit {
+            background-color: #1e3a5f;
+            color: white;
+            border-color: #1e3a5f;
+        }
+        
+        .form-btn-submit:hover {
+            background-color: #152942;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
+        }
+        
+        .form-btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .form-message {
+            padding: 12px 16px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .form-message.success {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+        
+        .form-message.error {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        /* Fade in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .process-grid,
+            .transformation-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            nav .container {
+                padding: 16px 20px;
+            }
+            
+            main {
+                padding: 100px 0 60px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            h3 {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            main {
+                padding: 80px 0 40px;
+            }
+            
+            h1 {
+                font-size: 28px;
+                margin-bottom: 24px;
+            }
+            
+            h2 {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+            
+            h3 {
+                font-size: 20px;
+                margin: 32px 0 16px 0;
+            }
+            
+            p {
+                font-size: 16px;
+            }
+            
+            .opening-vignette,
+            .process-card,
+            .info-box {
+                padding: 24px;
+            }
+            
+            .quote {
+                padding: 24px 16px;
+            }
+            
+            .quote span, .quote-text {
+                font-size: 18px;
+            }
+            
+            .transformation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-section {
+                padding: 60px 0;
+            }
+            
+            .btn-floating {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 14px 24px;
+                font-size: 14px;
+            }
+            
+            .form-container {
+                padding: 32px 24px;
+                width: 95%;
+                max-width: 450px;
+            }
+            
+            .form-title {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+            
+            .form-group {
+                margin-bottom: 20px;
+            }
+            
+            .form-close {
+                top: 12px;
+                right: 12px;
+                width: 36px;
+                height: 36px;
+                font-size: 24px;
+            }
+            
+            .form-buttons {
+                gap: 12px;
+                flex-direction: column;
+            }
+            
+            .form-btn {
+                width: 100%;
+                padding: 16px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-name">David M. Freshwater, LMHC</div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="process.html" class="nav-link active">Process</a>
+                <a href="stories.html" class="nav-link">Stories</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <button class="nav-cta" onclick="showConsultationForm()">Begin</button>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
+    <nav class="mobile-nav">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="process.html" class="nav-link active">Process</a>
+            <a href="stories.html" class="nav-link">Stories</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
+            <button class="nav-cta" onclick="showConsultationForm(); toggleMobileMenu();">Begin</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h1>How This Work Happens</h1>
+
+            <div class="opening-vignette">
+                <p>You call your new partner by your ex's name at a dinner with friends. Stomach pain appears before every family gathering. You spill red wine on your mother-in-law's carpet for the second time this year. You forget to attend important meetings despite having them scheduled in your calendar. Every July, depression arrives like clockwork, though nothing happened in July that you can recall. You dream of speeding down a busy city street, but the brakes don't work.</p>
+            </div>
+
+            <p style="text-align: center; font-size: 1.3rem; color: #1C1C1C; margin: 3rem 0; font-weight: 500;">These aren't random events—they're your mind's way of insisting on being heard.</p>
+
+            <div class="quote fade-in">
+                <span class="quote-text">"What you don't know about yourself is precisely what runs your life."</span>
+            </div>
+
+            <h3>How Sessions Work</h3>
+
+            <p>You speak whatever comes to mind without censoring yourself. I listen for patterns, repetitions, contradictions, and the places where your words reveal more than you intended. What seems irrelevant often proves most revealing.</p>
+
+            <p>Unlike approaches that strengthen your defenses or provide coping strategies, this work reveals the hidden logic that organizes your experience. We discover why certain situations trigger you, why you repeat patterns that no longer serve you, and what your symptoms are trying to communicate.</p>
+
+            <div class="highlight-box fade-in">
+                <p style="margin-bottom: 0;">We return again and again to certain phrases, forgotten moments, seemingly trivial details—a recurring number, a childhood smell, a phrase you can't stop saying—until they lose their power over you and genuine change becomes possible.</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-card fade-in">
+                    <h4>You Speak Freely</h4>
+                    <p style="margin-bottom: 0;">Dreams, memories, current events, seemingly random thoughts—all are welcome. What you dismiss as meaningless often contains the key to everything.</p>
+                </div>
+
+                <div class="process-card fade-in">
+                    <h4>I Listen for What You Can't Hear</h4>
+                    <p style="margin-bottom: 0;">Patterns, contradictions, slips of the tongue, and the gaps in your speech. What you don't say often matters as much as what you do. A single word might unlock everything.</p>
+                </div>
+
+                <div class="process-card fade-in">
+                    <h4>Sessions Follow Natural Rhythms</h4>
+                    <p style="margin-bottom: 0;">Unlike traditional 50-minute hours, sessions end when something essential has been articulated. This might be 15 minutes or 55—your unconscious doesn't follow clock time.</p>
+                </div>
+
+                <div class="process-card fade-in">
+                    <h4>Meaning Emerges Naturally</h4>
+                    <p style="margin-bottom: 0;">Rather than offering solutions or answers, I respond in ways that help you hear your own words differently—allowing meanings you didn't know were there to surface.</p>
+                </div>
+            </div>
+
+            <h3>What Happens in Sessions</h3>
+
+            <p>You'll be invited to speak freely—to follow your thoughts wherever they lead. This might feel unusual at first, especially if you're used to more structured conversations. Most people discover they know more than they realized.</p>
+
+            <p>I'll intervene at specific moments—sometimes with a question, sometimes by highlighting a word or phrase you've used, sometimes by ending the session when something essential has been revealed. These interventions open new avenues for exploration rather than providing answers.</p>
+
+            <p>There's no "right" way to do this work. Some people talk about dreams, others about daily life, others about memories or fantasies. What matters is that you speak as freely as possible and remain curious about what emerges.</p>
+
+            <div class="quote fade-in" style="margin: 3rem 0;">
+                <span class="quote-text">"Little by little, from within your own words, another meaning forms and surprises you, then falls apart, taking the pain with it."</span>
+            </div>
+
+            <h3>The Process of Change</h3>
+
+            <p>Initially, anxiety may increase as we approach what your mind has kept hidden. This is actually a positive sign—it means we're getting close to material that matters. What seemed like setbacks often prove to be breakthroughs in disguise.</p>
+           
+            <p>Over time, you will experience:</p>
+            
+            <div class="transformation-grid">
+                <div class="transformation-card fade-in">
+                    <h4>Dreams Become Meaningful</h4>
+                    <p>Dreams become more vivid and revealing as your unconscious finds its voice</p>
+                </div>
+                <div class="transformation-card fade-in">
+                    <h4>Connections Emerge</h4>
+                    <p>Unexpected links between disparate parts of your life suddenly make sense</p>
+                </div>
+                <div class="transformation-card fade-in">
+                    <h4>Symptoms Transform</h4>
+                    <p>A fundamental shift in how you experience what once tormented you</p>
+                </div>
+                <div class="transformation-card fade-in">
+                    <h4>Relief Arrives</h4>
+                    <p>The surprising lightness when long-carried weight finally finds words</p>
+                </div>
+                <div class="transformation-card fade-in">
+                    <h4>Patterns Break</h4>
+                    <p>You stop repeating the same relationship dynamics without forcing yourself to change</p>
+                </div>
+                <div class="transformation-card fade-in">
+                    <h4>Confidence Emerges</h4>
+                    <p>A quiet certainty about who you are that no longer depends on others' approval</p>
+                </div>
+            </div>
+           
+            <div class="info-box fade-in">
+                <p style="margin-bottom: 0;">Your unconscious resists being known directly. It reveals itself through dreams, mistakes, symptoms, and slips of the tongue. Our work creates conditions where these communications can be heard and transformed.</p>
+            </div>
+
+            <h3>The Relationship</h3>
+
+            <p>This isn't a relationship between equals sharing experiences. I occupy a specific position that allows your unconscious to emerge. You will develop strong feelings about me—positive and negative. These feelings become crucial material for understanding your patterns with others.</p>
+
+            <p>All sessions are conducted online via secure video or phone connection. The online format has proven remarkably effective for this work, as your unconscious speaks just as clearly through digital connection.</p>
+
+            <div class="info-box fade-in">
+                <h4>Your Investment</h4>
+                <p>This depth of work requires genuine commitment—temporal, financial, and emotional. Your investment reflects and enables the profound shifts possible through engaging with your unconscious.</p>
+                <p style="margin-bottom: 0;">Fees are discussed during our preliminary interviews, as the investment in this work is an important part of the process itself.</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <h3>Duration and Commitment</h3>
+
+            <p>Some work lasts months, others years. The work continues until you've experienced sufficient change—until the repetitive cycles that brought you here have given way to new possibilities for living.</p>
+
+            <p>This approach serves those who are ready to discover something unexpected about themselves and who understand that authentic change requires patient engagement with what lies beneath conscious awareness. The people who benefit most are those who've reached a point where staying the same feels more dangerous than changing.</p>
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Begin?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 3rem;">
+                If you're ready to engage with what you don't yet know about yourself, let's explore working together.
+            </p>
+            <button class="btn" onclick="showConsultationForm()">Request Consultation</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-name-license">David M. Freshwater, LMHC #10001743</p>
+                <p class="footer-services">Licensed Psychotherapist • Private Pay • Online Sessions</p>
+                <p class="footer-location">Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
+                <p class="footer-copyright">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Button -->
+    <button class="btn-floating" id="floatingConsult" onclick="showConsultationForm()">
+        Request Consultation
+    </button>
+
+    <!-- Consultation Form Modal -->
+    <div class="form-overlay" id="formOverlay">
+        <div class="form-container">
+            <button class="form-close" onclick="hideConsultationForm()" aria-label="Close form">×</button>
+            <h3 class="form-title">Request Initial Consultation</h3>
+            <form id="consultationForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="message">What brings you to therapy?</label>
+                    <textarea id="message" name="message" class="form-textarea" rows="4" required></textarea>
+                </div>
+                <div id="formMessage" class="form-message"></div>
+                <div class="form-buttons">
+                    <button type="submit" class="form-btn form-btn-submit">Send Request</button>
+                    <button type="button" class="form-btn" onclick="hideConsultationForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Initialize scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const mobileNav = document.querySelector('.mobile-nav');
+            const overlay = document.querySelector('.mobile-overlay');
+            const btn = document.querySelector('.mobile-menu-btn');
+            
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            btn.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (mobileNav.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+        
+        // Add shadow to nav on scroll and show/hide floating button
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const floatingBtn = document.getElementById('floatingConsult');
+            
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 20px rgba(15, 27, 60, 0.1)';
+            } else {
+                nav.style.boxShadow = '0 1px 3px rgba(15, 27, 60, 0.05)';
+            }
+            
+            // Show floating button after scrolling past header
+            if (window.scrollY > 300) {
+                floatingBtn.classList.add('visible');
+            } else {
+                floatingBtn.classList.remove('visible');
+            }
+        });
+        
+        // Form functions
+        function showConsultationForm() {
+            const overlay = document.getElementById('formOverlay');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hideConsultationForm() {
+            const overlay = document.getElementById('formOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('consultationForm').reset();
+            
+            // Hide any messages
+            const formMessage = document.getElementById('formMessage');
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
+        }
+        
+        // Close form when clicking outside
+        document.getElementById('formOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideConsultationForm();
+            }
+        });
+        
+        // Handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const submitBtn = event.target.querySelector('.form-btn-submit');
+            const originalText = submitBtn.textContent;
+            const formMessage = document.getElementById('formMessage');
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Hide any previous messages
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
+            
+            // Simulate form submission (replace with your actual submission logic)
+            setTimeout(() => {
+                // Show success message
+                formMessage.textContent = 'Thank you for your request. I\'ll be in touch within 24-48 hours to schedule your consultation.';
+                formMessage.className = 'form-message success';
+                formMessage.style.display = 'block';
+                
+                // Reset form
+                document.getElementById('consultationForm').reset();
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                // Auto-close after 5 seconds
+                setTimeout(() => {
+                    hideConsultationForm();
+                }, 5000);
+            }, 1500);
+        }
+        
+        // Close mobile menu when clicking nav links
+        document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMobileMenu();
+            });
+        });
+
+        // Initialize when page loads
+        window.addEventListener('load', () => {
+            initScrollAnimations();
+        });
+    </script>
+</body>
+</html>
