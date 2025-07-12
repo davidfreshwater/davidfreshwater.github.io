@@ -1,1 +1,1037 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About David M. Freshwater, LMHC | Licensed Therapist Massachusetts</title>
+    <meta name="description" content="Meet David M. Freshwater, LMHC - Licensed therapist with nearly a decade of experience helping high achievers break free from patterns. Learn about his approach to therapy.">
+    <meta name="keywords" content="David Freshwater therapist, LMHC Massachusetts, about therapist, licensed mental health counselor">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="About David M. Freshwater, LMHC - Licensed Therapist Massachusetts">
+    <meta property="og:description" content="Meet David M. Freshwater, LMHC - Licensed therapist with nearly a decade of experience helping people break free from patterns that no longer serve them.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://davidfreshwater.github.io/about.html">
+    <meta property="og:image" content="https://davidfreshwater.github.io/image/dmfheadshot.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://davidfreshwater.github.io/about.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #212121;
+            background: #FFFFFF;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .nav-name {
+            font-size: 18px;
+            font-weight: 500;
+            color: #1C1C1C;
+            letter-spacing: 0.02em;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: #424242;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #1e3a5f;
+        }
+        
+        .nav-link.active {
+            color: #1e3a5f;
+            font-weight: 500;
+        }
+        
+        .nav-cta {
+            background: #1e3a5f;
+            color: #FFFFFF;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 58, 95, 0.2);
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+        
+        .nav-cta:hover {
+            background: #152942;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 58, 95, 0.3);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 2px;
+            background: #1C1C1C;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 80%;
+            height: 100vh;
+            background: white;
+            z-index: 999;
+            transition: left 0.3s ease;
+            padding: 80px 40px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .mobile-nav.active {
+            left: 0;
+        }
+        
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .mobile-nav .nav-link {
+            font-size: 18px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 998;
+        }
+        
+        .mobile-overlay.active {
+            display: block;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 140px 0 80px;
+            min-height: 100vh;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            color: #1C1C1C;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 36px;
+            font-weight: 500;
+            margin-bottom: 32px;
+            color: #1C1C1C;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #1e3a5f;
+        }
+        
+        h3 {
+            font-size: 28px;
+            font-weight: 500;
+            margin: 48px 0 24px 0;
+            color: #1C1C1C;
+        }
+        
+        p {
+            margin-bottom: 24px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #212121;
+        }
+        
+        /* About Grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            margin: 48px 0;
+            align-items: start;
+        }
+        
+        .professional-photo {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 32px;
+        }
+        
+        .credentials-box {
+            background: #F8F8F8;
+            padding: 32px;
+            border-radius: 8px;
+            border-left: 3px solid #1e3a5f;
+        }
+        
+        .credentials-box h4 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #1C1C1C;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .credentials-box p {
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .credentials-box strong {
+            color: #1e3a5f;
+            font-weight: 500;
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: #F8F8F8;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 48px 0;
+            border-left: 3px solid #1e3a5f;
+        }
+        
+        .info-box h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #1C1C1C;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .info-box p {
+            margin-bottom: 20px;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+        
+        /* Quote Block */
+        .quote {
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px 20px;
+            background: #F8F8F8;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .quote span {
+            font-size: 24px;
+            font-style: italic;
+            color: #1e3a5f;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.5;
+        }
+        
+        /* Section Divider */
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #1e3a5f, transparent);
+            margin: 60px auto;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F8F8F8 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        
+        .cta-section h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #1e3a5f;
+            color: white;
+            padding: 18px 48px;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 17px;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        
+        .btn:hover {
+            background: #152942;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(30, 58, 95, 0.35);
+        }
+        
+        /* Floating Button */
+        .btn-floating {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #1e3a5f;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
+            border: none;
+            font-family: inherit;
+            z-index: 100;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+        
+        .btn-floating.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+        
+        .btn-floating:hover {
+            background: #152942;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(30, 58, 95, 0.35);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1C1C1C;
+            color: #E8E8E8;
+            padding: 60px 0 40px;
+            text-align: center;
+            margin-top: 5rem;
+        }
+        
+        .footer-content p {
+            margin-bottom: 12px;
+            font-size: 16px;
+            letter-spacing: 0.02em;
+        }
+        
+        .footer-name-license {
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px !important;
+        }
+        
+        .footer-services {
+            color: #C5D3E0;
+            font-size: 15px;
+        }
+        
+        .footer-location {
+            color: #B0C4D9;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .footer-copyright {
+            color: #8FA7C4;
+            font-size: 13px;
+            margin-top: 24px !important;
+            padding-top: 24px;
+            border-top: 1px solid #333333;
+        }
+        
+        /* Form Modal Styles */
+        .form-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(26, 26, 26, 0.8);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .form-overlay.active {
+            display: flex;
+        }
+        
+        .form-container {
+            background-color: #FFFFFF;
+            padding: 48px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
+        
+        .form-overlay.active .form-container {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .form-title {
+            font-size: 28px;
+            font-weight: 500;
+            font-family: 'Playfair Display', serif;
+            color: #1C1C1C;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        
+        .form-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #757575;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+        }
+        
+        .form-close:hover {
+            color: #1C1C1C;
+            background: #F0F0F0;
+            transform: rotate(90deg);
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: #424242;
+            text-transform: uppercase;
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            border-radius: 4px;
+            color: #1C1C1C;
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #1e3a5f;
+            box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+            line-height: 1.6;
+        }
+        
+        .form-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+            justify-content: center;
+        }
+        
+        .form-btn {
+            padding: 14px 32px;
+            background: transparent;
+            color: #1C1C1C;
+            border: 1px solid #E0E0E0;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .form-btn:hover {
+            border-color: #1e3a5f;
+            background: #F8F8F8;
+        }
+        
+        .form-btn-submit {
+            background-color: #1e3a5f;
+            color: white;
+            border-color: #1e3a5f;
+        }
+        
+        .form-btn-submit:hover {
+            background-color: #152942;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
+        }
+        
+        .form-btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .form-message {
+            padding: 12px 16px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .form-message.success {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+        
+        .form-message.error {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        /* Fade in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            nav .container {
+                padding: 16px 20px;
+            }
+            
+            main {
+                padding: 100px 0 60px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            h3 {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            main {
+                padding: 80px 0 40px;
+            }
+            
+            h1 {
+                font-size: 28px;
+                margin-bottom: 24px;
+            }
+            
+            h2 {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+            
+            h3 {
+                font-size: 20px;
+                margin: 32px 0 16px 0;
+            }
+            
+            p {
+                font-size: 16px;
+            }
+            
+            .professional-photo {
+                height: 300px;
+            }
+            
+            .credentials-box,
+            .info-box {
+                padding: 24px;
+            }
+            
+            .cta-section {
+                padding: 60px 0;
+            }
+            
+            .btn-floating {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 14px 24px;
+                font-size: 14px;
+            }
+            
+            .form-container {
+                padding: 32px 24px;
+                width: 95%;
+                max-width: 450px;
+            }
+            
+            .form-title {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+            
+            .form-group {
+                margin-bottom: 20px;
+            }
+            
+            .form-close {
+                top: 12px;
+                right: 12px;
+                width: 36px;
+                height: 36px;
+                font-size: 24px;
+            }
+            
+            .form-buttons {
+                gap: 12px;
+                flex-direction: column;
+            }
+            
+            .form-btn {
+                width: 100%;
+                padding: 16px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-name">David M. Freshwater, LMHC</div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="process.html" class="nav-link">Process</a>
+                <a href="stories.html" class="nav-link">Stories</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <button class="nav-cta" onclick="showConsultationForm()">Begin</button>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
+    <nav class="mobile-nav">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link active">About</a>
+            <a href="process.html" class="nav-link">Process</a>
+            <a href="stories.html" class="nav-link">Stories</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
+            <button class="nav-cta" onclick="showConsultationForm(); toggleMobileMenu();">Begin</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h1>About Me</h1>
+
+            <div class="about-grid">
+                <div>
+                    <p>I see what others miss. After nearly a decade of practice, I've developed the ability to hear the patterns that run beneath the surface of your words—the repetitions, contradictions, and revelations that most people never notice.</p>
+
+                    <p>While other therapists offer techniques and coping strategies, I work with the deeper logic that drives your symptoms. I can show you why you repeat the same patterns, why certain situations trigger you in ways that surprise even yourself, and what your mind has been trying to communicate through the very problems that brought you here.</p>
+
+                    <p>This insight didn't come from textbooks alone. My own experience in analysis revealed how profound change happens—not through advice or techniques, but through understanding the hidden coordinates of your desire and the unconscious choices that shape your world.</p>
+
+                    <p>I work exclusively online throughout Massachusetts, maintaining a carefully limited practice focused on people who are ready to discover what they don't yet know about themselves. Most who work with me have tried other approaches without lasting success, because the real answers lie deeper than conscious awareness.</p>
+                </div>
+
+                <div>
+                    <img src="https://davidfreshwater.github.io/image/dmfheadshot.jpg" alt="David M. Freshwater, LMHC" class="professional-photo">
+                    
+                    <div class="credentials-box">
+                        <h4>Professional Background</h4>
+                        
+                        <p><strong>License:</strong><br>
+                        Massachusetts LMHC #10001743</p>
+                        
+                        <p style="margin-bottom: 0;"><strong>Education:</strong><br>
+                        M.A., Mental Health Counseling<br>Brooklyn College<br>
+                        B.A., Psychology<br>Columbia University</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote fade-in">
+                <span>"What you don't know about yourself is precisely what determines your fate."</span>
+            </div>
+
+            <h3>Why Others Haven't Helped</h3>
+
+            <p>Most therapy stays on the surface because most therapists don't know how to listen for what's really being said. They hear your complaints, your goals, your conscious intentions. I hear the contradictions, the slips, the places where your unconscious reveals itself despite your best efforts to remain in control.</p>
+
+            <p>The symptoms that brought you here aren't random. They follow a precise logic—one that becomes clear when you know how to look. Your repetitive patterns, your seemingly irrational fears, even your self-sabotage serve specific purposes that your conscious mind cannot access.</p>
+
+            <p>I can read these patterns because I understand how the unconscious operates. Where you see chaos and confusion, I see the underlying structure that organizes your experience. This is why transformation becomes possible in ways that surprise even longtime therapy veterans.</p>
+
+            <div class="info-box fade-in">
+                <h4>Preliminary Interviews</h4>
+                <p>Our first few meetings allow me to assess whether you're ready for this depth of work. I'll listen for the specific ways your unconscious communicates and determine if this approach can access what's been driving your patterns.</p>
+                <p style="margin-bottom: 0;">Not everyone is ready for this work, and not every situation calls for it. But when the conditions are right, the changes that become possible often exceed what you thought was achievable.</p>
+            </div>
+
+            <h3>What I Offer That Others Cannot</h3>
+
+            <p>I have specialized training in understanding unconscious communication—the language of symptoms, dreams, slips of the tongue, and the meaningful coincidences that most dismiss as random. This allows me to work with the actual source of your difficulties rather than just managing their effects.</p>
+
+            <p>My practice is intentionally small because this work requires complete attention to the unique ways each person's unconscious expresses itself. I don't use standardized techniques because your unconscious doesn't operate according to standard formulas.</p>
+
+            <div class="info-box fade-in">
+                <h4>What This Means for You</h4>
+                <p>If you're here, something has been trying to get your attention—through symptoms, through patterns, through a persistent sense that something needs to change. That "something" has intelligence and purpose, even if it currently feels like an obstacle.</p>
+                
+                <p style="margin-bottom: 0;">I can help you understand what it's trying to communicate and why it's been necessary until now. From that understanding, genuine transformation becomes not just possible, but inevitable.</p>
+            </div>
+
+            <div class="section-divider"></div>
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Begin?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 3rem;">
+                If you're ready to explore what lies beneath your familiar patterns, let's talk about working together.
+            </p>
+            <button class="btn" onclick="showConsultationForm()">Request Consultation</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-name-license">David M. Freshwater, LMHC #10001743</p>
+                <p class="footer-services">Licensed Psychotherapist • Private Pay • Online Sessions</p>
+                <p class="footer-location">Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
+                <p class="footer-copyright">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Button -->
+    <button class="btn-floating" id="floatingConsult" onclick="showConsultationForm()">
+        Request Consultation
+    </button>
+
+    <!-- Consultation Form Modal -->
+    <div class="form-overlay" id="formOverlay">
+        <div class="form-container">
+            <button class="form-close" onclick="hideConsultationForm()" aria-label="Close form">×</button>
+            <h3 class="form-title">Request Initial Consultation</h3>
+            <form id="consultationForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="message">What brings you to therapy?</label>
+                    <textarea id="message" name="message" class="form-textarea" rows="4" required></textarea>
+                </div>
+                <div id="formMessage" class="form-message"></div>
+                <div class="form-buttons">
+                    <button type="submit" class="form-btn form-btn-submit">Send Request</button>
+                    <button type="button" class="form-btn" onclick="hideConsultationForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Initialize scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const mobileNav = document.querySelector('.mobile-nav');
+            const overlay = document.querySelector('.mobile-overlay');
+            const btn = document.querySelector('.mobile-menu-btn');
+            
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            btn.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (mobileNav.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+        
+        // Add shadow to nav on scroll and show/hide floating button
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const floatingBtn = document.getElementById('floatingConsult');
+            
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 20px rgba(15, 27, 60, 0.1)';
+            } else {
+                nav.style.boxShadow = '0 1px 3px rgba(15, 27, 60, 0.05)';
+            }
+            
+            // Show floating button after scrolling past header
+            if (window.scrollY > 300) {
+                floatingBtn.classList.add('visible');
+            } else {
+                floatingBtn.classList.remove('visible');
+            }
+        });
+        
+        // Form functions
+        function showConsultationForm() {
+            const overlay = document.getElementById('formOverlay');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hideConsultationForm() {
+            const overlay = document.getElementById('formOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('consultationForm').reset();
+            
+            // Hide any messages
+            const formMessage = document.getElementById('formMessage');
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
+        }
+        
+        // Close form when clicking outside
+        document.getElementById('formOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideConsultationForm();
+            }
+        });
+        
+        // Handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const submitBtn = event.target.querySelector('.form-btn-submit');
+            const originalText = submitBtn.textContent;
+            const formMessage = document.getElementById('formMessage');
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Hide any previous messages
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
+            
+            // Simulate form submission (replace with your actual submission logic)
+            setTimeout(() => {
+                // Show success message
+                formMessage.textContent = 'Thank you for your request. I\'ll be in touch within 24-48 hours to schedule your consultation.';
+                formMessage.className = 'form-message success';
+                formMessage.style.display = 'block';
+                
+                // Reset form
+                document.getElementById('consultationForm').reset();
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                // Auto-close after 5 seconds
+                setTimeout(() => {
+                    hideConsultationForm();
+                }, 5000);
+            }, 1500);
+        }
+        
+        // Close mobile menu when clicking nav links
+        document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMobileMenu();
+            });
+        });
+
+        // Initialize when page loads
+        window.addEventListener('load', () => {
+            initScrollAnimations();
+        });
+    </script>
+</body>
+</html>
