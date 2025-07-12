@@ -1,1 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Frequently Asked Questions | David M. Freshwater, LMHC</title>
+    <meta name="description" content="Common questions about therapy with David M. Freshwater, LMHC. Learn about the process, what to expect, duration, and whether this approach is right for you.">
+    <meta name="keywords" content="therapy FAQ, therapy questions, David Freshwater, Massachusetts therapist, therapy process">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="FAQ - Frequently Asked Questions | David M. Freshwater, LMHC">
+    <meta property="og:description" content="Common questions about therapy with David M. Freshwater, LMHC. Learn about the process and whether this approach is right for you.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://davidfreshwater.github.io/faq.html">
+    <meta property="og:image" content="https://davidfreshwater.github.io/image/dmfheadshot.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://davidfreshwater.github.io/faq.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #212121;
+            background: #FFFFFF;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .nav-name {
+            font-size: 18px;
+            font-weight: 500;
+            color: #1C1C1C;
+            letter-spacing: 0.02em;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: #424242;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #1e3a5f;
+        }
+        
+        .nav-link.active {
+            color: #1e3a5f;
+            font-weight: 500;
+        }
+        
+        .nav-cta {
+            background: #1e3a5f;
+            color: #FFFFFF;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 58, 95, 0.2);
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+        
+        .nav-cta:hover {
+            background: #152942;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 58, 95, 0.3);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 2px;
+            background: #1C1C1C;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 80%;
+            height: 100vh;
+            background: white;
+            z-index: 999;
+            transition: left 0.3s ease;
+            padding: 80px 40px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .mobile-nav.active {
+            left: 0;
+        }
+        
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .mobile-nav .nav-link {
+            font-size: 18px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 998;
+        }
+        
+        .mobile-overlay.active {
+            display: block;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 140px 0 80px;
+            min-height: 100vh;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            color: #1C1C1C;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 36px;
+            font-weight: 500;
+            margin-bottom: 32px;
+            color: #1C1C1C;
+            position: relative;
+            text-align: center;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background: #1e3a5f;
+        }
+        
+        h3 {
+            font-size: 24px;
+            font-weight: 500;
+            margin: 48px 0 24px 0;
+            color: #1C1C1C;
+            border-left: 3px solid #1e3a5f;
+            padding-left: 16px;
+        }
+        
+        .intro-text {
+            font-size: 20px;
+            line-height: 1.7;
+            color: #424242;
+            text-align: center;
+            margin: 0 auto 48px;
+            max-width: 600px;
+        }
+        
+        /* FAQ Container */
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .faq-category {
+            margin-bottom: 48px;
+        }
+        
+        .faq-item {
+            border: 1px solid #E8E8E8;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            background: #FFFFFF;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        
+        .faq-item:hover {
+            border-color: #1e3a5f;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            padding: 24px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #1C1C1C;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #1e3a5f;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+        }
+        
+        .faq-answer-content {
+            padding: 0 24px 24px;
+        }
+        
+        .faq-answer p {
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #424242;
+        }
+        
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .faq-answer ul {
+            margin: 16px 0;
+            padding-left: 20px;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 8px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #424242;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F8F8F8 100%);
+            padding: 80px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .cta-section h2 {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        
+        .cta-section h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #1e3a5f;
+            color: white;
+            padding: 18px 48px;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 17px;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        
+        .btn:hover {
+            background: #152942;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(30, 58, 95, 0.35);
+        }
+        
+        /* Floating Button */
+        .btn-floating {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #1e3a5f;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
+            border: none;
+            font-family: inherit;
+            z-index: 100;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+        
+        .btn-floating.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+        
+        .btn-floating:hover {
+            background: #152942;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(30, 58, 95, 0.35);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1C1C1C;
+            color: #E8E8E8;
+            padding: 60px 0 40px;
+            text-align: center;
+            margin-top: 5rem;
+        }
+        
+        .footer-content p {
+            margin-bottom: 12px;
+            font-size: 16px;
+            letter-spacing: 0.02em;
+        }
+        
+        .footer-name-license {
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px !important;
+        }
+        
+        .footer-services {
+            color: #C5D3E0;
+            font-size: 15px;
+        }
+        
+        .footer-location {
+            color: #B0C4D9;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .footer-copyright {
+            color: #8FA7C4;
+            font-size: 13px;
+            margin-top: 24px !important;
+            padding-top: 24px;
+            border-top: 1px solid #333333;
+        }
+        
+        /* Form Modal Styles */
+        .form-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(26, 26, 26, 0.8);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .form-overlay.active {
+            display: flex;
+        }
+        
+        .form-container {
+            background-color: #FFFFFF;
+            padding: 48px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
+        
+        .form-overlay.active .form-container {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .form-title {
+            font-size: 28px;
+            font-weight: 500;
+            font-family: 'Playfair Display', serif;
+            color: #1C1C1C;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        
+        .form-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #757575;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+        }
+        
+        .form-close:hover {
+            color: #1C1C1C;
+            background: #F0F0F0;
+            transform: rotate(90deg);
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: #424242;
+            text-transform: uppercase;
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            border-radius: 4px;
+            color: #1C1C1C;
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #1e3a5f;
+            box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+            line-height: 1.6;
+        }
+        
+        .form-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+            justify-content: center;
+        }
+        
+        .form-btn {
+            padding: 14px 32px;
+            background: transparent;
+            color: #1C1C1C;
+            border: 1px solid #E0E0E0;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .form-btn:hover {
+            border-color: #1e3a5f;
+            background: #F8F8F8;
+        }
+        
+        .form-btn-submit {
+            background-color: #1e3a5f;
+            color: white;
+            border-color: #1e3a5f;
+        }
+        
+        .form-btn-submit:hover {
+            background-color: #152942;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
+        }
+        
+        .form-btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .form-message {
+            padding: 12px 16px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .form-message.success {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+        
+        .form-message.error {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        /* Fade in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            nav .container {
+                padding: 16px 20px;
+            }
+            
+            main {
+                padding: 100px 0 60px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            h3 {
+                font-size: 20px;
+            }
+            
+            .intro-text {
+                font-size: 18px;
+            }
+            
+            .faq-question {
+                padding: 20px;
+                font-size: 16px;
+            }
+            
+            .faq-question::after {
+                right: 20px;
+            }
+            
+            .faq-answer-content {
+                padding: 0 20px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            main {
+                padding: 80px 0 40px;
+            }
+            
+            h1 {
+                font-size: 28px;
+                margin-bottom: 24px;
+            }
+            
+            h2 {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+            
+            h3 {
+                font-size: 18px;
+                margin: 32px 0 16px 0;
+            }
+            
+            .intro-text {
+                font-size: 16px;
+                margin-bottom: 32px;
+            }
+            
+            .faq-question {
+                padding: 16px;
+                font-size: 15px;
+            }
+            
+            .faq-question::after {
+                right: 16px;
+                font-size: 20px;
+            }
+            
+            .faq-answer-content {
+                padding: 0 16px 16px;
+            }
+            
+            .faq-answer p,
+            .faq-answer li {
+                font-size: 14px;
+            }
+            
+            .cta-section {
+                padding: 60px 0;
+            }
+            
+            .btn-floating {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 14px 24px;
+                font-size: 14px;
+            }
+            
+            .form-container {
+                padding: 32px 24px;
+                width: 95%;
+                max-width: 450px;
+            }
+            
+            .form-title {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+            
+            .form-group {
+                margin-bottom: 20px;
+            }
+            
+            .form-close {
+                top: 12px;
+                right: 12px;
+                width: 36px;
+                height: 36px;
+                font-size: 24px;
+            }
+            
+            .form-buttons {
+                gap: 12px;
+                flex-direction: column;
+            }
+            
+            .form-btn {
+                width: 100%;
+                padding: 16px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-name">David M. Freshwater, LMHC</div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="process.html" class="nav-link">Process</a>
+                <a href="stories.html" class="nav-link">Stories</a>
+                <a href="faq.html" class="nav-link active">FAQ</a>
+                <button class="nav-cta" onclick="showConsultationForm()">Begin</button>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
+    <!-- Mobile Navigation -->
+    <div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
+    <nav class="mobile-nav">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="process.html" class="nav-link">Process</a>
+            <a href="stories.html" class="nav-link">Stories</a>
+            <a href="faq.html" class="nav-link active">FAQ</a>
+            <button class="nav-cta" onclick="showConsultationForm(); toggleMobileMenu();">Begin</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h2>Your Questions Answered</h2>
+            
+            <p class="intro-text">If you're wondering whether this approach can help where others haven't, you'll find your answers here.</p>
+
+            <div class="faq-container">
+                <div class="faq-category">
+                    <h3>About the Process</h3>
+                    
+                    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+                        <div class="faq-question">How does this differ from other approaches?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Most therapy treats symptoms as problems to eliminate. But your symptoms can't be removed like tumors. When we try to simply get rid of them without understanding their purpose, they resurface in new forms. It's like trying to turn off a lightbulb by blowing on it.</p>
+                                <p>I take a different path. Your symptoms aren't enemies to defeat but encrypted messages from your unconscious. Through speaking freely—saying whatever comes to mind—you begin to decode what your mind has been trying to tell you all along. Sessions end at breakthrough moments rather than by the clock, and I listen for the patterns in your speech that reveal what you truly want beneath what you think you should want.</p>
+                                <p>This work takes patience and courage, but offers genuine transformation. Symptoms often do resolve—sometimes dramatically—but not through direct attack. They dissolve when you work through the unconscious conflicts they were expressing. Unlike quick fixes, this changes your fundamental relationship to yourself and your desires.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+                        <div class="faq-question">What happens during sessions?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>You speak freely about whatever comes to mind—dreams, memories, daily concerns, or seemingly random thoughts. I listen for patterns, repetitions, and contradictions in your speech. There's no agenda or exercises. I might offer interpretations that open new avenues, but the real work happens through your own process of articulation and discovery. Sessions end when something essential has emerged, not by the clock.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+                        <div class="faq-question">How is online therapy effective?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>This work operates through speech and language—your unconscious reveals itself through slips of the tongue, dreams, and the relationship between us regardless of medium. The essential elements remain fully intact online: speaking freely, careful listening, and the therapeutic framework.</p>
+                                <p>Many people find online work allows deep engagement with added flexibility. Some even speak more freely from their own space. Physical presence isn't essential when the work happens through language itself.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+                        <div class="faq-question">Why private pay rather than insurance?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Insurance requires diagnoses, treatment goals, and measurable outcomes—which contradicts open-ended exploration. Private pay ensures:</p>
+                                <ul>
+                                    <li>Complete confidentiality without diagnoses in permanent records</li>
+                                    <li>Freedom to work at your unconscious's pace</li>
+                                    <li>No session limits or mandated treatment plans</li>
+                                    <li>Deeper commitment through personal investment</li>
+                                </ul>
+                                <p>While I can provide receipts for out-of-network benefits, this requires a diagnosis—which some find contradicts the exploratory nature of this work.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-category">
+                    <h3>Duration and Commitment</h3>
+                    
+                    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+                        <div class="faq-question">How long does this work typically continue?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>There's no standard duration—some work lasts months, others years. The process concludes when repetitive patterns that brought you here have shifted into new possibilities. You'll sense when sufficient transformation has occurred.</p>
+                                <p>This isn't about meeting external criteria but recognizing a fundamental change in how you experience yourself and your world. The work continues as long as it remains alive and productive for you.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+                        <div class="faq-question">How often are sessions?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Frequency varies based on what serves your process. Most meet weekly as a baseline, though some periods benefit from more intensive work while others call for spacing. We determine this together, following what the material demands rather than rigid rules.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-category">
+                    <h3>Is This Right for You?</h3>
+                    
+                    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+                        <div class="faq-question">How do I know if this approach is right for me?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>This work suits those who can tolerate not receiving immediate answers, who are curious about their unconscious, and who sense deeper transformation is possible. If you need immediate symptom relief or concrete solutions, other approaches may serve you better.</p>
+                                <p>Good candidates often feel they're stuck in a repeating cycle, "living someone else's life," or sense their symptoms carry hidden meaning. Most people who benefit from this work have a strong sense that they're ready for something different—that surface-level changes aren't enough anymore. The consultation helps us explore whether this approach aligns with what you're seeking.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+                        <div class="faq-question">What if I've tried therapy before and it didn't work?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Most of my clients have tried other approaches without lasting success. Traditional therapy often stays on the surface, focusing on coping strategies or symptom management. If you've felt like previous therapists didn't really understand what was driving your patterns, or if changes didn't stick, that's actually a good sign that you might benefit from this deeper approach.</p>
+                                <p>The fact that other methods haven't worked suggests your unconscious has been trying to tell you something that surface-level interventions can't address. This work is specifically designed for people who need to go deeper than conventional therapy allows.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+                        <div class="faq-question">Do you work with specific issues or diagnoses?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>I work with people, not diagnoses. Whatever brings you—relationship patterns, anxiety, depression, creative blocks, existential questions—what matters is your willingness to explore your unconscious. The form your suffering takes is less important than your curiosity about what it might mean.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+                        <div class="faq-question">What happens in the initial consultation?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>The consultation lets you speak about what brings you and experience how we might work together. This isn't an intake or evaluation—it's a real encounter where you can speak freely while I listen in the particular way that characterizes this work.</p>
+                                <p>By the end, we'll both sense whether this approach fits your needs. The consultation stands alone with no obligation to continue.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Begin?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 3rem;">
+                If these answers resonate with what you're seeking, let's explore whether this work is right for you.
+            </p>
+            <button class="btn" onclick="showConsultationForm()">Request Consultation</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-name-license">David M. Freshwater, LMHC #10001743</p>
+                <p class="footer-services">Licensed Psychotherapist • Private Pay • Online Sessions</p>
+                <p class="footer-location">Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
+                <p class="footer-copyright">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Button -->
+    <button class="btn-floating" id="floatingConsult" onclick="showConsultationForm()">
+        Request Consultation
+    </button>
+
+    <!-- Consultation Form Modal -->
+    <div class="form-overlay" id="formOverlay">
+        <div class="form-container">
+            <button class="form-close" onclick="hideConsultationForm()" aria-label="Close form">×</button>
+            <h3 class="form-title">Request Initial Consultation</h3>
+            <form id="consultationForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="message">What brings you to therapy?</label>
+                    <textarea id="message" name="message" class="form-textarea" rows="4" required></textarea>
+                </div>
+                <div id="formMessage" class="form-message"></div>
+                <div class="form-buttons">
+                    <button type="submit" class="form-btn form-btn-submit">Send Request</button>
+                    <button type="button" class="form-btn" onclick="hideConsultationForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Toggle functionality
+        function toggleFaq(element) {
+            const isActive = element.classList.contains('active');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== element) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Toggle the clicked item
+            element.classList.toggle('active', !isActive);
+        }
+
+        // Initialize scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const mobileNav = document.querySelector('.mobile-nav');
+            const overlay = document.querySelector('.mobile-overlay');
+            const btn = document.querySelector('.mobile-menu-btn');
+            
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            btn.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (mobileNav.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+        
+        // Add shadow to nav on scroll and show/hide floating button
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const floatingBtn = document.getElementById('floatingConsult');
+            
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 20px rgba(15, 27, 60, 0.1)';
+            } else {
+                nav.style.boxShadow = '0 1px 3px rgba(15, 27, 60, 0.05)';
+            }
+            
+            // Show floating button after scrolling past header
+            if (window.scrollY > 300) {
+                floatingBtn.classList.add('visible');
+            } else {
+                floatingBtn.classList.remove('visible');
+            }
+        });
+        
+        // Form functions
+        function showConsultationForm() {
+            const overlay = document.getElementById('formOverlay');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hideConsultationForm() {
+            const overlay = document.getElementById('formOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('consultationForm').reset();
+            
+            // Hide any messages
+            const formMessage = document.getElementById('formMessage');
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
+        }
+        
+        // Close form when clicking outside
+        document.getElementById('formOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideConsultationForm();
+            }
+        });
+        
+        // Handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const submitBtn = event.target.querySelector('.form-btn-submit');
+            const originalText = submitBtn.textContent;
+            const formMessage = document.getElementById('formMessage');
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Hide any previous messages
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
+            
+            // Simulate form submission (replace with your actual submission logic)
+            setTimeout(() => {
+                // Show success message
+                formMessage.textContent = 'Thank you for your request. I\'ll be in touch within 24-48 hours to schedule your consultation.';
+                formMessage.className = 'form-message success';
+                formMessage.style.display = 'block';
+                
+                // Reset form
+                document.getElementById('consultationForm').reset();
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                // Auto-close after 5 seconds
+                setTimeout(() => {
+                    hideConsultationForm();
+                }, 5000);
+            }, 1500);
+        }
+        
+        // Close mobile menu when clicking nav links
+        document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMobileMenu();
+            });
+        });
+
+        // Initialize when page loads
+        window.addEventListener('load', () => {
+            initScrollAnimations();
+        });
+    </script>
+</body>
+</html>
