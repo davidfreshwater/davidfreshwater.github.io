@@ -122,7 +122,7 @@
             box-shadow: 0 6px 20px rgba(30, 58, 95, 0.3);
         }
         
-        /* Mobile Menu */
+        /* Mobile Menu - Fixed to match other pages */
         .mobile-menu-btn {
             display: none;
             flex-direction: column;
@@ -130,6 +130,12 @@
             border: none;
             cursor: pointer;
             padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .mobile-menu-btn:hover {
+            background-color: rgba(30, 58, 95, 0.1);
         }
         
         .mobile-menu-btn span {
@@ -138,36 +144,75 @@
             background: #1C1C1C;
             margin: 3px 0;
             transition: 0.3s;
+            border-radius: 1px;
+        }
+        
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+        
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-6px, -6px);
         }
         
         .mobile-nav {
             display: none;
             position: fixed;
-            top: 0;
-            left: -100%;
-            width: 80%;
-            height: 100vh;
-            background: white;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
             z-index: 999;
-            transition: left 0.3s ease;
-            padding: 80px 40px;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 12px 12px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
         }
         
         .mobile-nav.active {
-            left: 0;
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
         }
         
         .mobile-nav-links {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            padding: 20px;
+            gap: 0;
         }
         
         .mobile-nav .nav-link {
-            font-size: 18px;
-            padding: 12px 0;
-            border-bottom: 1px solid #f0f0f0;
+            font-size: 16px;
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(232, 232, 232, 0.5);
+            color: #424242;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            margin-bottom: 4px;
+        }
+        
+        .mobile-nav .nav-link:hover {
+            background: rgba(30, 58, 95, 0.05);
+            color: #1e3a5f;
+        }
+        
+        .mobile-nav .nav-link:last-of-type {
+            border-bottom: none;
+        }
+        
+        .mobile-nav .nav-cta {
+            margin: 16px 20px 8px;
+            text-align: center;
+            padding: 14px 28px;
         }
         
         .mobile-overlay {
@@ -177,12 +222,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.3);
             z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         
         .mobile-overlay.active {
             display: block;
+            opacity: 1;
         }
         
         /* Main Content */
@@ -276,95 +324,176 @@
             font-family: 'Inter', sans-serif;
         }
         
-        /* Process Grid */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
+        /* Session Flow - Replaces Process Grid */
+        .session-flow {
             margin: 48px 0;
         }
         
-        .process-card {
-            background: #FFFFFF;
-            border: 1px solid #E8E8E8;
-            padding: 32px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+        .flow-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 40px;
+            padding: 24px 0;
         }
         
-        .process-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
+        .flow-step:last-child {
+            margin-bottom: 0;
+        }
+        
+        .step-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
             background: #1e3a5f;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .process-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-            border-color: #1e3a5f;
-        }
-        
-        .process-card:hover::before {
-            opacity: 1;
-        }
-        
-        .card-icon {
-            width: 40px;
-            height: 40px;
-            color: #1e3a5f;
-            margin-bottom: 20px;
-            opacity: 0.7;
-        }
-        
-        .process-card h4 {
-            font-size: 20px;
-            margin-bottom: 16px;
-            color: #1C1C1C;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 500;
             font-family: 'Playfair Display', serif;
         }
         
-        .process-card p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #424242;
-        }
-        
-        /* Transformation Grid */
-        .transformation-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin: 32px 0;
-        }
-        
-        .transformation-card {
-            background: #F8F8F8;
-            padding: 24px;
-            border-radius: 8px;
-            border-left: 3px solid #1e3a5f;
-        }
-        
-        .transformation-card h4 {
-            font-size: 18px;
+        .step-content h4 {
+            font-size: 20px;
             margin-bottom: 12px;
             color: #1C1C1C;
             font-family: 'Playfair Display', serif;
+            font-weight: 500;
         }
         
-        .transformation-card p {
-            font-size: 15px;
-            line-height: 1.5;
+        .step-content p {
+            font-size: 16px;
+            line-height: 1.6;
             color: #424242;
             margin-bottom: 0;
         }
+
+        /* Transformation Wheel */
+        .transformation-wheel {
+            margin: 48px 0;
+            background: #F8F8F8;
+            border-radius: 8px;
+            padding: 40px;
+            border-left: 3px solid #1e3a5f;
+        }
+        
+        .wheel-container {
+            position: relative;
+            min-height: 120px;
+            margin-bottom: 32px;
+        }
+        
+        .wheel-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+        }
+        
+        .wheel-item.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .wheel-item h4 {
+            font-size: 22px;
+            margin-bottom: 16px;
+            color: #1C1C1C;
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+        
+        .wheel-item p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #424242;
+            margin-bottom: 0;
+        }
+        
+        .wheel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+        
+        .wheel-nav {
+            background: white;
+            border: 2px solid #e0e0e0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #757575;
+            font-weight: 300;
+        }
+        
+        .wheel-nav:hover {
+            background: #1e3a5f;
+            color: white;
+            border-color: #1e3a5f;
+        }
+        
+        .wheel-dots {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .wheel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d0d0d0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .wheel-dot:hover {
+            background: #999;
+        }
+        
+        .wheel-dot.active {
+            background: #1e3a5f;
+            width: 30px;
+            border-radius: 5px;
+        }
+
+        /* Visual Break Element */
+        .visual-break {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 60px 0;
+            gap: 20px;
+        }
+        
+        .break-line {
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #1e3a5f, transparent);
+        }
+        
+        .break-icon {
+            font-size: 20px;
+            color: #1e3a5f;
+            opacity: 0.6;
+        }
+        
+        /* Remove unused styles */
         
         /* Highlight Box */
         .highlight-box {
@@ -493,7 +622,7 @@
             color: #E8E8E8;
             padding: 60px 0 40px;
             text-align: center;
-            margin-top: 5rem;
+            margin-top: 0; /* Fixed - removed excessive margin */
         }
         
         .footer-content p {
@@ -724,9 +853,14 @@
                 display: flex;
             }
             
-            .process-grid,
-            .transformation-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .session-flow .flow-step {
+                flex-direction: column;
+                text-align: center;
+                gap: 16px;
+            }
+            
+            .step-number {
+                align-self: center;
             }
             
             nav .container {
@@ -788,8 +922,23 @@
                 font-size: 18px;
             }
             
-            .transformation-grid {
-                grid-template-columns: 1fr;
+            .transformation-wheel {
+                padding: 24px;
+            }
+            
+            .wheel-item h4 {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+            
+            .wheel-item p {
+                font-size: 15px;
+            }
+            
+            .wheel-nav {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
             }
             
             .cta-section {
@@ -878,13 +1027,20 @@
             <h1>How This Work Happens</h1>
 
             <div class="opening-vignette">
-                <p>You call your new partner by your ex's name at a dinner with friends. Stomach pain appears before every family gathering. You spill red wine on your mother-in-law's carpet for the second time this year. You forget to attend important meetings despite having them scheduled in your calendar. Every July, depression arrives like clockwork, though nothing happened in July that you can recall. You dream of speeding down a busy city street, but the brakes don't work.</p>
+                <p>You call your new partner by your ex's name at a dinner with friends. Stomach pain appears before every family gathering. You forget important meetings despite having them in your calendar. Every July, depression arrives like clockwork, though nothing happened in July that you can recall.</p>
             </div>
 
             <p style="text-align: center; font-size: 1.3rem; color: #1C1C1C; margin: 3rem 0; font-weight: 500;">These aren't random events—they're your mind's way of insisting on being heard.</p>
 
             <div class="quote fade-in">
                 <span class="quote-text">"What you don't know about yourself is precisely what runs your life."</span>
+            </div>
+
+            <!-- Visual Break -->
+            <div class="visual-break fade-in">
+                <div class="break-line"></div>
+                <div class="break-icon">◦</div>
+                <div class="break-line"></div>
             </div>
 
             <h3>How Sessions Work</h3>
@@ -897,25 +1053,37 @@
                 <p style="margin-bottom: 0;">We return again and again to certain phrases, forgotten moments, seemingly trivial details—a recurring number, a childhood smell, a phrase you can't stop saying—until they lose their power over you and genuine change becomes possible.</p>
             </div>
 
-            <div class="process-grid">
-                <div class="process-card fade-in">
-                    <h4>You Speak Freely</h4>
-                    <p style="margin-bottom: 0;">Dreams, memories, current events, seemingly random thoughts—all are welcome. What you dismiss as meaningless often contains the key to everything.</p>
+            <div class="session-flow">
+                <div class="flow-step fade-in">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>You speak freely</h4>
+                        <p>Dreams, memories, current events, seemingly random thoughts—all are welcome. What you dismiss as meaningless often contains the key to everything.</p>
+                    </div>
                 </div>
 
-                <div class="process-card fade-in">
-                    <h4>I Listen for What You Can't Hear</h4>
-                    <p style="margin-bottom: 0;">Patterns, contradictions, slips of the tongue, and the gaps in your speech. What you don't say often matters as much as what you do. A single word might unlock everything.</p>
+                <div class="flow-step fade-in">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>I listen for what you can't hear</h4>
+                        <p>Patterns, contradictions, slips of the tongue, and the gaps in your speech. What you don't say often matters as much as what you do.</p>
+                    </div>
                 </div>
 
-                <div class="process-card fade-in">
-                    <h4>Sessions Follow Natural Rhythms</h4>
-                    <p style="margin-bottom: 0;">Unlike traditional 50-minute hours, sessions end when something essential has been articulated. This might be 15 minutes or 55—your unconscious doesn't follow clock time.</p>
+                <div class="flow-step fade-in">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Sessions follow natural rhythms</h4>
+                        <p>Unlike traditional 50-minute hours, sessions end when something essential has been articulated. This might be 15 minutes or 55—your unconscious doesn't follow clock time.</p>
+                    </div>
                 </div>
 
-                <div class="process-card fade-in">
-                    <h4>Meaning Emerges Naturally</h4>
-                    <p style="margin-bottom: 0;">Rather than offering solutions or answers, I respond in ways that help you hear your own words differently—allowing meanings you didn't know were there to surface.</p>
+                <div class="flow-step fade-in">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Meaning emerges naturally</h4>
+                        <p>Rather than offering solutions, I respond in ways that help you hear your own words differently—allowing meanings you didn't know were there to surface.</p>
+                    </div>
                 </div>
             </div>
 
@@ -931,40 +1099,61 @@
                 <span class="quote-text">"Little by little, from within your own words, another meaning forms and surprises you, then falls apart, taking the pain with it."</span>
             </div>
 
+            <!-- Visual Break -->
+            <div class="visual-break fade-in">
+                <div class="break-line"></div>
+                <div class="break-icon">◦</div>
+                <div class="break-line"></div>
+            </div>
+
             <h3>The Process of Change</h3>
 
             <p>Initially, anxiety may increase as we approach what your mind has kept hidden. This is actually a positive sign—it means we're getting close to material that matters. What seemed like setbacks often prove to be breakthroughs in disguise.</p>
            
             <p>Over time, you will experience:</p>
             
-            <div class="transformation-grid">
-                <div class="transformation-card fade-in">
-                    <h4>Dreams Become Meaningful</h4>
-                    <p>Dreams become more vivid and revealing as your unconscious finds its voice</p>
+            <div class="transformation-wheel fade-in">
+                <div class="wheel-container">
+                    <div class="wheel-item active" data-index="0">
+                        <h4>Dreams Become Meaningful</h4>
+                        <p>Dreams become more vivid and revealing as your unconscious finds its voice</p>
+                    </div>
+                    <div class="wheel-item" data-index="1">
+                        <h4>Connections Emerge</h4>
+                        <p>Unexpected links between disparate parts of your life suddenly make sense</p>
+                    </div>
+                    <div class="wheel-item" data-index="2">
+                        <h4>Symptoms Transform</h4>
+                        <p>A fundamental shift in how you experience what once tormented you</p>
+                    </div>
+                    <div class="wheel-item" data-index="3">
+                        <h4>Relief Arrives</h4>
+                        <p>The surprising lightness when long-carried weight finally finds words</p>
+                    </div>
+                    <div class="wheel-item" data-index="4">
+                        <h4>Patterns Break</h4>
+                        <p>You stop repeating the same cycles without forcing yourself to change</p>
+                    </div>
+                    <div class="wheel-item" data-index="5">
+                        <h4>Confidence Emerges</h4>
+                        <p>A quiet certainty about who you are that no longer depends on others' approval</p>
+                    </div>
                 </div>
-                <div class="transformation-card fade-in">
-                    <h4>Connections Emerge</h4>
-                    <p>Unexpected links between disparate parts of your life suddenly make sense</p>
-                </div>
-                <div class="transformation-card fade-in">
-                    <h4>Symptoms Transform</h4>
-                    <p>A fundamental shift in how you experience what once tormented you</p>
-                </div>
-                <div class="transformation-card fade-in">
-                    <h4>Relief Arrives</h4>
-                    <p>The surprising lightness when long-carried weight finally finds words</p>
-                </div>
-                <div class="transformation-card fade-in">
-                    <h4>Patterns Break</h4>
-                    <p>You stop repeating the same relationship dynamics without forcing yourself to change</p>
-                </div>
-                <div class="transformation-card fade-in">
-                    <h4>Confidence Emerges</h4>
-                    <p>A quiet certainty about who you are that no longer depends on others' approval</p>
+                <div class="wheel-controls">
+                    <button class="wheel-nav prev" onclick="previousWheelItem()">‹</button>
+                    <div class="wheel-dots">
+                        <span class="wheel-dot active" onclick="goToWheelItem(0)"></span>
+                        <span class="wheel-dot" onclick="goToWheelItem(1)"></span>
+                        <span class="wheel-dot" onclick="goToWheelItem(2)"></span>
+                        <span class="wheel-dot" onclick="goToWheelItem(3)"></span>
+                        <span class="wheel-dot" onclick="goToWheelItem(4)"></span>
+                        <span class="wheel-dot" onclick="goToWheelItem(5)"></span>
+                    </div>
+                    <button class="wheel-nav next" onclick="nextWheelItem()">›</button>
                 </div>
             </div>
            
-            <div class="info-box fade-in">
+            <div class="highlight-box fade-in">
                 <p style="margin-bottom: 0;">Your unconscious resists being known directly. It reveals itself through dreams, mistakes, symptoms, and slips of the tongue. Our work creates conditions where these communications can be heard and transformed.</p>
             </div>
 
@@ -1006,7 +1195,7 @@
         <div class="container">
             <div class="footer-content">
                 <p class="footer-name-license">David M. Freshwater, LMHC #10001743</p>
-                <p class="footer-services">Licensed Psychotherapist • Private Pay • Online Sessions</p>
+                <p class="footer-services">Licensed Psychotherapist • Private Pay • Telehealth Sessions</p>
                 <p class="footer-location">Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
                 <p class="footer-copyright">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
             </div>
@@ -1037,7 +1226,7 @@
                     <input type="tel" id="phone" name="phone" class="form-input" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="message">What brings you to therapy?</label>
+                    <label class="form-label" for="message">Message</label>
                     <textarea id="message" name="message" class="form-textarea" rows="4" required></textarea>
                 </div>
                 <div id="formMessage" class="form-message"></div>
@@ -1175,9 +1364,164 @@
             });
         });
 
+        // Initialize scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        // Wheel functionality
+        let currentWheelItem = 0;
+        const wheelItems = document.querySelectorAll('.wheel-item');
+        const wheelDots = document.querySelectorAll('.wheel-dot');
+        
+        function showWheelItem(index) {
+            wheelItems.forEach(item => item.classList.remove('active'));
+            wheelDots.forEach(dot => dot.classList.remove('active'));
+            
+            wheelItems[index].classList.add('active');
+            wheelDots[index].classList.add('active');
+            currentWheelItem = index;
+        }
+        
+        function nextWheelItem() {
+            const next = (currentWheelItem + 1) % wheelItems.length;
+            showWheelItem(next);
+        }
+        
+        function previousWheelItem() {
+            const prev = (currentWheelItem - 1 + wheelItems.length) % wheelItems.length;
+            showWheelItem(prev);
+        }
+        
+        function goToWheelItem(index) {
+            showWheelItem(index);
+        }
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const mobileNav = document.querySelector('.mobile-nav');
+            const overlay = document.querySelector('.mobile-overlay');
+            const btn = document.querySelector('.mobile-menu-btn');
+            
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            btn.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (mobileNav.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+        
+        // Add shadow to nav on scroll and show/hide floating button
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const floatingBtn = document.getElementById('floatingConsult');
+            
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 20px rgba(15, 27, 60, 0.1)';
+            } else {
+                nav.style.boxShadow = '0 1px 3px rgba(15, 27, 60, 0.05)';
+            }
+            
+            // Show floating button after scrolling past header
+            if (window.scrollY > 300) {
+                floatingBtn.classList.add('visible');
+            } else {
+                floatingBtn.classList.remove('visible');
+            }
+        });
+        
+        // Form functions
+        function showConsultationForm() {
+            const overlay = document.getElementById('formOverlay');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hideConsultationForm() {
+            const overlay = document.getElementById('formOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('consultationForm').reset();
+            
+            // Hide any messages
+            const formMessage = document.getElementById('formMessage');
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
+        }
+        
+        // Close form when clicking outside
+        document.getElementById('formOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideConsultationForm();
+            }
+        });
+        
+        // Handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const submitBtn = event.target.querySelector('.form-btn-submit');
+            const originalText = submitBtn.textContent;
+            const formMessage = document.getElementById('formMessage');
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Hide any previous messages
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
+            
+            // Simulate form submission (replace with your actual submission logic)
+            setTimeout(() => {
+                // Show success message
+                formMessage.textContent = 'Thank you for your request. I\'ll be in touch within 24-48 hours to schedule your consultation.';
+                formMessage.className = 'form-message success';
+                formMessage.style.display = 'block';
+                
+                // Reset form
+                document.getElementById('consultationForm').reset();
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                // Auto-close after 5 seconds
+                setTimeout(() => {
+                    hideConsultationForm();
+                }, 5000);
+            }, 1500);
+        }
+        
+        // Close mobile menu when clicking nav links
+        document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMobileMenu();
+            });
+        });
+
         // Initialize when page loads
         window.addEventListener('load', () => {
             initScrollAnimations();
+            // Auto-rotate wheel every 5 seconds (increased from 4)
+            setInterval(nextWheelItem, 5000);
         });
     </script>
 </body>
