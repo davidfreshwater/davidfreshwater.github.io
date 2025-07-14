@@ -860,7 +860,7 @@
         
         /* Testimonials Section */
         .testimonials-section {
-            padding: 100px 0;
+            padding: 100px 0 120px; /* Added more bottom padding for dots */
             background: #fafafa;
         }
         
@@ -873,7 +873,9 @@
         
         .testimonial-cards {
             position: relative;
-            min-height: 280px; /* Increased from 200px to accommodate longer testimonials */
+            min-height: 300px; /* Increased height but with better overflow handling */
+            max-height: 350px; /* Added max-height to prevent excessive growth */
+            overflow: hidden; /* Prevent cards from extending beyond container */
         }
         
         .testimonial-card {
@@ -881,8 +883,10 @@
             top: 0;
             left: 0;
             width: 100%;
+            max-height: 350px; /* Limit individual card height */
+            overflow-y: auto; /* Allow scrolling within card if needed */
             background: white;
-            padding: 3rem;
+            padding: 2.5rem; /* Slightly reduced padding */
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             opacity: 0;
@@ -896,11 +900,11 @@
         }
         
         .testimonial-text {
-            font-size: 1.125rem;
-            line-height: 1.8;
+            font-size: 1.0625rem; /* Slightly smaller font */
+            line-height: 1.7; /* Tighter line height */
             color: #424242;
-            font-style: italic; /* Ensure all testimonials are italicized */
-            margin-bottom: 2rem;
+            font-style: italic;
+            margin-bottom: 1.5rem; /* Reduced margin */
             font-family: 'Playfair Display', serif;
         }
         
@@ -951,7 +955,8 @@
             display: flex;
             justify-content: center;
             gap: 12px;
-            margin-top: 2rem;
+            margin-top: 3rem; /* Increased margin to ensure separation */
+            padding-top: 1rem; /* Added padding for extra space */
         }
         
         .dot {
@@ -988,7 +993,8 @@
             }
             
             .testimonial-cards {
-                min-height: 320px; /* Increased for mobile to accommodate longer text */
+                min-height: 280px; /* Controlled height for mobile */
+                max-height: 320px;
             }
             
             .testimonial-nav {
@@ -1006,11 +1012,13 @@
             }
             
             .testimonial-card {
-                padding: 2rem;
+                padding: 1.75rem; /* Reduced mobile padding */
+                max-height: 320px;
             }
             
             .testimonial-text {
-                font-size: 1rem;
+                font-size: 0.95rem; /* Smaller mobile font */
+                line-height: 1.6;
             }
             
             .recognition-grid {
@@ -1173,7 +1181,8 @@
             }
             
             .testimonial-cards {
-                min-height: 360px; /* Further increased for mobile small screens */
+                min-height: 300px; /* Controlled mobile height */
+                max-height: 340px;
             }
         }
     </style>
@@ -1341,7 +1350,7 @@
                         <p class="testimonial-author">M.L.</p>
                     </div>
                     <div class="testimonial-card">
-                        <p class="testimonial-text">My marriage was falling apart, and I was sure it was my husband's fault. The fights, the silences, the makeup sex. I was doing exactly what I'd watched my parents do. When we weren't fighting, I was analyzing his every gesture, convinced he was hiding something from me. I knew his moods better than my own. Therapy with David helped me see I was trying to fix my childhood through my marriage. My husband wasn't the problem. I was stuck in the past. Once I stopped fighting old battles, we could start having our own relationship. We just celebrated our anniversary, and it was the best one yet.</p>
+                        <p class="testimonial-text">My marriage was falling apart, and I was sure it was my husband's fault. The yelling, the silences, the push and pull. I was doing exactly what I'd watched my parents do. Therapy with David helped me see I was trying to fix my childhood through my marriage. My husband wasn't the problem, so much as I was recreating the past. Once I stopped fighting old battles, own relationship turned a corner.</p>
                         <p class="testimonial-author">R.B.</p>
                     </div>
                 </div>
@@ -1370,7 +1379,7 @@
         <div class="container">
             <div class="footer-content">
                 <p class="footer-name-license">David M. Freshwater, LMHC #10001743</p>
-                <p class="footer-services">Licensed Psychotherapist • Private Pay • Telehealth Sessions</p>
+                <p class="footer-services">Licensed Psychotherapist • Private Pay • Online Sessions</p>
                 <p class="footer-location">Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
                 <p class="footer-copyright">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
             </div>
@@ -1401,7 +1410,7 @@
                     <input type="tel" id="phone" name="phone" class="form-input" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="message">Message</label>
+                    <label class="form-label" for="message">What brings you to therapy?</label>
                     <textarea id="message" name="message" class="form-textarea" rows="4" required></textarea>
                 </div>
                 <div id="formMessage" class="form-message"></div>
@@ -1539,7 +1548,7 @@
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
                 
-                // Auto-close after 10 seconds
+                // Auto-close after 5 seconds
                 setTimeout(() => {
                     hideConsultationForm();
                 }, 5000);
