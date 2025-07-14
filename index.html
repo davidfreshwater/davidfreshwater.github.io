@@ -515,8 +515,6 @@
             text-align: center;
         }
         
-
-        
         .story-preview {
             background: white;
             border: 1px solid #E0E0E0;
@@ -870,12 +868,12 @@
             position: relative;
             max-width: 900px;
             margin: 0 auto;
-            padding: 0 80px; /* Add padding for arrows */
+            padding: 0 80px;
         }
         
         .testimonial-cards {
             position: relative;
-            min-height: 200px;
+            min-height: 280px; /* Increased from 200px to accommodate longer testimonials */
         }
         
         .testimonial-card {
@@ -901,7 +899,7 @@
             font-size: 1.125rem;
             line-height: 1.8;
             color: #424242;
-            font-style: italic;
+            font-style: italic; /* Ensure all testimonials are italicized */
             margin-bottom: 2rem;
             font-family: 'Playfair Display', serif;
         }
@@ -987,6 +985,10 @@
             
             .testimonials-container {
                 padding: 0 20px;
+            }
+            
+            .testimonial-cards {
+                min-height: 320px; /* Increased for mobile to accommodate longer text */
             }
             
             .testimonial-nav {
@@ -1169,6 +1171,10 @@
                 width: 100%;
                 padding: 16px 24px;
             }
+            
+            .testimonial-cards {
+                min-height: 360px; /* Further increased for mobile small screens */
+            }
         }
     </style>
 </head>
@@ -1334,7 +1340,8 @@
                         <p class="testimonial-text">I thought I needed strategies for work-life balance, but what I really needed was to figure out why I couldn't stop moving. After a couple years, I've finally grieved what I'd been running from since I was seven. Everything's shifted naturally after that.</p>
                         <p class="testimonial-author">M.L.</p>
                     </div>
-                    <div class="testimonial-card">My marriage was falling apart, and I was sure it was my husband's fault. The fights, the silences, the makeup sex. I was doing exactly what I'd watched my parents do. When we weren't fighting, I was analyzing his every gesture, convinced he was hiding something from me. I knew his moods better than my own. Therapy with David helped me see I was trying to fix my childhood through my marriage. My husband wasn't the problem. I was stuck in the past. Once I stopped fighting old battles, we could start having our own relationship. We just celebrated our anniversary, and it was the best one yet.</p>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">My marriage was falling apart, and I was sure it was my husband's fault. The fights, the silences, the makeup sex. I was doing exactly what I'd watched my parents do. When we weren't fighting, I was analyzing his every gesture, convinced he was hiding something from me. I knew his moods better than my own. Therapy with David helped me see I was trying to fix my childhood through my marriage. My husband wasn't the problem. I was stuck in the past. Once I stopped fighting old battles, we could start having our own relationship. We just celebrated our anniversary, and it was the best one yet.</p>
                         <p class="testimonial-author">R.B.</p>
                     </div>
                 </div>
@@ -1363,7 +1370,7 @@
         <div class="container">
             <div class="footer-content">
                 <p class="footer-name-license">David M. Freshwater, LMHC #10001743</p>
-                <p class="footer-services">Licensed Psychotherapist • Private Pay • Online Sessions</p>
+                <p class="footer-services">Licensed Psychotherapist • Private Pay • Telehealth Sessions</p>
                 <p class="footer-location">Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
                 <p class="footer-copyright">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
             </div>
@@ -1394,7 +1401,7 @@
                     <input type="tel" id="phone" name="phone" class="form-input" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="message">What brings you to therapy?</label>
+                    <label class="form-label" for="message">Message</label>
                     <textarea id="message" name="message" class="form-textarea" rows="4" required></textarea>
                 </div>
                 <div id="formMessage" class="form-message"></div>
@@ -1532,7 +1539,7 @@
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
                 
-                // Auto-close after 5 seconds
+                // Auto-close after 10 seconds
                 setTimeout(() => {
                     hideConsultationForm();
                 }, 5000);
