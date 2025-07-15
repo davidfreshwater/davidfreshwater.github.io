@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About David M. Freshwater, LMHC | Licensed Therapist Massachusetts</title>
-    <meta name="description" content="Meet David M. Freshwater, LMHC - Licensed therapist with nearly a decade of experience helping high achievers break free from patterns. Learn about his approach to therapy.">
-    <meta name="keywords" content="David Freshwater therapist, LMHC Massachusetts, about therapist, licensed mental health counselor">
+    <title>About David M. Freshwater, LMHC | Licensed Therapist Boston Massachusetts</title>
+    <meta name="description" content="Meet David M. Freshwater, LMHC - Licensed therapist in Massachusetts with nearly a decade of experience in depth therapy. Specializing in unconscious patterns and lasting change.">
+    <meta name="keywords" content="David Freshwater LMHC, licensed therapist Massachusetts, therapist Boston, depth therapist Massachusetts, LMHC Boston, online therapist Massachusetts, psychotherapist Boston">
     
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="About David M. Freshwater, LMHC - Licensed Therapist Massachusetts">
-    <meta property="og:description" content="Meet David M. Freshwater, LMHC - Licensed therapist with nearly a decade of experience helping people break free from patterns that no longer serve them.">
+    <meta property="og:title" content="About David M. Freshwater, LMHC | Licensed Therapist Massachusetts">
+    <meta property="og:description" content="Licensed therapist with nearly a decade of experience helping people break free from unconscious patterns. Specialized training in depth therapy and lasting transformation.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://davidfreshwater.github.io/about.html">
     <meta property="og:image" content="https://davidfreshwater.github.io/image/dmfheadshot.jpg">
@@ -22,7 +22,82 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "David M. Freshwater",
+      "jobTitle": "Licensed Mental Health Counselor",
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Professional License",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Massachusetts Board of Registration of Allied Mental Health and Human Services Professions"
+          },
+          "identifier": "10001743"
+        }
+      ],
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Brooklyn College",
+          "degree": "M.A., Mental Health Counseling"
+        },
+        {
+          "@type": "CollegeOrUniversity", 
+          "name": "Columbia University",
+          "degree": "B.A., Psychology"
+        }
+      ],
+      "knowsAbout": [
+        "Depth Therapy",
+        "Unconscious Patterns",
+        "Psychodynamic Therapy",
+        "Online Therapy",
+        "Mental Health Counseling"
+      ],
+      "serviceArea": {
+        "@type": "State",
+        "name": "Massachusetts"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "MA",
+        "addressCountry": "US"
+      },
+      "image": "https://davidfreshwater.github.io/image/dmfheadshot.jpg",
+      "url": "https://davidfreshwater.github.io/about.html",
+      "sameAs": [],
+      "description": "Licensed Mental Health Counselor with nearly a decade of experience in depth therapy, specializing in unconscious patterns and lasting psychological transformation.",
+      "workLocation": {
+        "@type": "Place",
+        "name": "Online Telehealth Practice"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://davidfreshwater.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://davidfreshwater.github.io/about.html"
+          }
+        ]
+      }
+    }
+    </script>
+    
     <style>
+        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -298,29 +373,200 @@
             margin-bottom: 32px;
         }
         
+        /* Enhanced Credentials Box */
         .credentials-box {
-            background: #F8F8F8;
+            background: linear-gradient(135deg, #F8F8F8 0%, #F0F0F0 100%);
             padding: 32px;
             border-radius: 8px;
             border-left: 3px solid #1e3a5f;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
         
         .credentials-box h4 {
             font-size: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             color: #1C1C1C;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+        }
+        
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 16px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .credential-icon {
+            font-size: 24px;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .credential-details {
+            flex: 1;
+        }
+        
+        .credential-details strong {
+            display: block;
+            color: #1e3a5f;
+            font-weight: 500;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+        
+        .verification,
+        .school {
+            font-size: 14px;
+            color: #757575;
+        }
+        
+        .verification {
+            background: #e8f5e8;
+            color: #2d5a2d;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .experience-callout {
+            text-align: center;
+            margin-top: 24px;
+            padding: 20px;
+            background: #1e3a5f;
+            border-radius: 6px;
+            color: white;
+        }
+        
+        .years {
+            display: block;
+            font-size: 20px;
+            font-weight: 500;
             font-family: 'Playfair Display', serif;
         }
         
-        .credentials-box p {
-            margin-bottom: 16px;
-            font-size: 16px;
-            line-height: 1.6;
+        .descriptor {
+            font-size: 14px;
+            opacity: 0.9;
         }
         
-        .credentials-box strong {
+        /* Psychology Today Verification */
+        .verification-seal {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .pt-fallback {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .pt-fallback:hover {
+            background: rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+            color: white;
+        }
+        
+        /* Visual Element - Bookshelf */
+        .visual-element {
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .bookshelf-image {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            margin-bottom: 16px;
+        }
+        
+        .image-caption {
+            font-size: 14px;
+            color: #757575;
+            font-style: italic;
+            margin-bottom: 0;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Enhanced Quote */
+        .enhanced-quote {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2a4a6b 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px 20px;
+            border-radius: 8px;
+        }
+        
+        .enhanced-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 120px;
+            opacity: 0.1;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .enhanced-quote span {
+            color: white;
+            position: relative;
+            z-index: 1;
+            font-size: 22px;
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.5;
+            display: block;
+        }
+        
+        /* Approach CTA */
+        .approach-cta {
+            text-align: center;
+            margin: 40px 0;
+            padding: 24px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .approach-cta p {
+            margin-bottom: 16px;
+            color: #495057;
+            font-style: italic;
+        }
+        
+        .subtle-cta {
             color: #1e3a5f;
+            text-decoration: none;
             font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .subtle-cta:hover {
+            color: #152942;
+            letter-spacing: 0.02em;
         }
         
         /* Info Box */
@@ -345,22 +591,26 @@
             line-height: 1.7;
         }
         
-        /* Quote Block */
-        .quote {
-            text-align: center;
-            margin: 60px 0;
-            padding: 40px 20px;
-            background: #F8F8F8;
+        /* Standout Section */
+        .standout-section {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2a4a6b 100%);
+            color: white;
+            padding: 40px;
             border-radius: 8px;
-            position: relative;
+            margin: 48px 0;
+            text-align: center;
         }
         
-        .quote span {
+        .standout-section h4 {
             font-size: 24px;
-            font-style: italic;
-            color: #1e3a5f;
+            margin-bottom: 20px;
+            color: white;
             font-family: 'Playfair Display', serif;
-            line-height: 1.5;
+        }
+        
+        .standout-section p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
         }
         
         /* Section Divider */
@@ -453,7 +703,7 @@
             color: #E8E8E8;
             padding: 60px 0 40px;
             text-align: center;
-            margin-top: 0; /* Fixed - removed excessive margin */
+            margin-top: 0;
         }
         
         .footer-content p {
@@ -674,7 +924,7 @@
             transform: translateY(0);
         }
         
-        /* Mobile Responsiveness */
+        /* Mobile Responsiveness - COMPLETELY REWRITTEN */
         @media (max-width: 968px) {
             .nav-links {
                 display: none;
@@ -684,17 +934,42 @@
                 display: flex;
             }
             
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
             nav .container {
                 padding: 16px 20px;
             }
             
             main {
                 padding: 100px 0 60px;
+            }
+            
+            /* Restructure about section for mobile with proper order */
+            .about-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            /* Photo first - extract from sidebar and show first */
+            .professional-photo {
+                order: 1;
+                margin-bottom: 40px;
+                height: 350px;
+            }
+            
+            /* Text second */
+            .about-text {
+                order: 2;
+                margin-bottom: 40px;
+            }
+            
+            /* Credentials last */
+            .credentials-box {
+                order: 3;
+            }
+            
+            /* Hide the about-sidebar container on mobile since we're extracting elements */
+            .about-sidebar {
+                display: contents; /* This makes the children behave as if the parent doesn't exist */
             }
             
             h1 {
@@ -707,6 +982,38 @@
             
             h3 {
                 font-size: 24px;
+            }
+            
+            .credential-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+            
+            .credential-icon {
+                font-size: 20px;
+            }
+            
+            .experience-callout {
+                margin-top: 20px;
+                padding: 16px;
+            }
+            
+            .years {
+                font-size: 18px;
+            }
+            
+            .standout-section {
+                padding: 32px 24px;
+            }
+            
+            .standout-section h4 {
+                font-size: 20px;
+            }
+            
+            .approach-cta {
+                padding: 20px;
+                margin: 32px 0;
             }
         }
         
@@ -786,6 +1093,15 @@
                 width: 100%;
                 padding: 16px 24px;
             }
+            
+            .bookshelf-image {
+                height: 250px;
+            }
+            
+            .image-caption {
+                font-size: 13px;
+                padding: 0 20px;
+            }
         }
     </style>
 </head>
@@ -829,61 +1145,105 @@
             <h1>About Me</h1>
 
             <div class="about-grid">
-                <div>
-                    <p>I hear what others miss. After nearly a decade of practice, I've developed the ability to listen for the patterns that run beneath the surface of your words—the repetitions, contradictions, and revelations that most people never notice.</p>
+                <div class="about-text">
+                    <p>I hear what others miss. After nearly a decade of practice, I've developed the ability to listen for the patterns that run beneath the surface of your words: the repetitions, contradictions, and revelations that most people never notice.</p>
 
                     <p>While other therapists offer techniques and coping strategies, I work with the deeper logic that drives your symptoms. I can show you why you repeat the same patterns, why certain situations trigger you in ways that surprise even yourself, and what your mind has been trying to communicate through the very problems that brought you here.</p>
 
-                    <p>This insight didn't come from textbooks alone. My own experience of undertaking this type of work revealed how profound change happens—not through advice or techniques, but through understanding the hidden coordinates of your desire and the unconscious choices that shape your world.</p>
+                    <p>This insight didn't come from textbooks alone. My own experience of undertaking this type of work revealed how profound change happens: not through advice or techniques, but through understanding the hidden coordinates of your desire and the choices that shape your world.</p>
 
                     <p>I work exclusively online throughout Massachusetts, maintaining a carefully limited practice focused on people who are ready to discover what they don't yet know about themselves. Most who work with me have tried other approaches without lasting success, because the real answers lie deeper than conscious awareness.</p>
                 </div>
 
-                <div>
+                <div class="about-sidebar">
                     <img src="https://davidfreshwater.github.io/image/dmfheadshot.jpg" alt="David M. Freshwater, LMHC" class="professional-photo">
                     
                     <div class="credentials-box">
                         <h4>Professional Background</h4>
                         
-                        <p><strong>License:</strong><br>
-                        Massachusetts LMHC #10001743</p>
+                        <div class="credential-item">
+                            <div class="credential-icon">🏛️</div>
+                            <div class="credential-details">
+                                <strong>Massachusetts LMHC #10001743</strong>
+                                <span class="verification">Licensed & Verified</span>
+                            </div>
+                        </div>
                         
-                        <p style="margin-bottom: 0;"><strong>Education:</strong><br>
-                        M.A., Mental Health Counseling<br>Brooklyn College<br>
-                        B.A., Psychology<br>Columbia University</p>
+                        <div class="credential-item">
+                            <div class="credential-icon">🎓</div>
+                            <div class="credential-details">
+                                <strong>M.A., Mental Health Counseling</strong>
+                                <span class="school">Brooklyn College</span>
+                            </div>
+                        </div>
+                        
+                        <div class="credential-item">
+                            <div class="credential-icon">🎓</div>
+                            <div class="credential-details">
+                                <strong>B.A., Psychology</strong>
+                                <span class="school">Columbia University</span>
+                            </div>
+                        </div>
+                        
+                        <div class="experience-callout">
+                            <span class="years">Nearly a Decade</span>
+                            <span class="descriptor">of Specialized Practice</span>
+                        </div>
+                        
+                        <!-- Professional verification provided by Psychology Today -->
+                        <div class="verification-seal">
+                            <a href="https://www.psychologytoday.com/profile/975220" class="sx-verified-seal"></a>
+                            <script type="text/javascript" src="https://member.psychologytoday.com/verified-seal.js" data-badge="11" data-id="975220" data-code="aHR0cHM6Ly93d3cucHN5Y2hvbG9neXRvZGF5LmNvbS9hcGkvdmVyaWZpZWQtc2VhbC9zZWFscy8xMS9wcm9maWxlLzk3NTIyMD9jYWxsYmFjaz1zeGNhbGxiYWNr"></script>
+                            <noscript>
+                                <a href="https://www.psychologytoday.com/profile/975220" class="pt-fallback">
+                                    Verified on Psychology Today
+                                </a>
+                            </noscript>
+                        </div>
+                        <!-- End Verification -->
                     </div>
                 </div>
             </div>
 
-            <div class="quote fade-in">
+            <div class="quote fade-in enhanced-quote">
                 <span>"What you don't know about yourself is precisely what determines your fate."</span>
             </div>
 
             <h3>Why Others Haven't Helped</h3>
 
-            <p>Most therapy stays on the surface because most therapists don't know how to listen for what's really being said. They hear your complaints, your goals, your conscious intentions. I hear the contradictions, the slips, the places where your unconscious reveals itself despite your best efforts to remain in control.</p>
+            <p>Most therapy stays on the surface because most therapists don't know how to listen for what's really being said. They hear your complaints, your goals, your conscious intentions. I hear the contradictions, the slips, the places where deeper parts of your mind reveal themselves despite your best efforts to remain in control.</p>
 
-            <p>The symptoms that brought you here aren't random. They follow a precise logic—one that becomes clear when you know how to look. Your repetitive patterns, your seemingly irrational fears, even your self-sabotage serve specific purposes that your conscious mind cannot access.</p>
+            <p>The symptoms that brought you here aren't random. They follow a precise logic that becomes clear when you know how to look. Your repetitive patterns, your seemingly irrational fears, even your self-sabotage serve specific purposes that your conscious mind cannot access.</p>
 
-            <p>I can read these patterns because I understand how the unconscious operates. Where you see chaos and confusion, I see the underlying structure that organizes your experience. This is why transformation becomes possible in ways that surprise even longtime therapy veterans.</p>
+            <p>I can read these patterns because I understand how the deeper parts of your mind operate. Where you see chaos and confusion, I see the underlying structure that organizes your experience. This is why transformation becomes possible in ways that surprise even longtime therapy veterans.</p>
 
             <div class="info-box fade-in">
                 <h4>Preliminary Interviews</h4>
-                <p>Our first few meetings allow me to assess whether you're ready for this depth of work. I'll listen for the specific ways your unconscious communicates and determine if this approach can access what's been driving your patterns.</p>
+                <p>Our first few meetings allow me to assess whether you're ready for this depth of work. I'll listen for the specific ways the deeper parts of your mind communicate and determine if this approach can access what's been driving your patterns.</p>
                 <p style="margin-bottom: 0;">Not everyone is ready for this work, and not every situation calls for it. But when the conditions are right, the changes that become possible often exceed what you thought was achievable.</p>
             </div>
 
             <h3>What I Offer That Others Cannot</h3>
 
-            <p>I have specialized training in understanding unconscious communication—the language of symptoms, dreams, slips of the tongue, and the meaningful coincidences that most dismiss as random. This allows me to work with the actual source of your difficulties rather than just managing their effects.</p>
+            <p>I have specialized training in understanding how deeper parts of your mind communicate through symptoms, dreams, slips of the tongue, and the meaningful coincidences that most dismiss as random. This allows me to work with the actual source of your difficulties rather than just managing their effects.</p>
 
-            <p>My practice is intentionally small because this work requires complete attention to the unique ways each person's unconscious expresses itself. I don't use standardized techniques because your unconscious doesn't operate according to standard formulas.</p>
+            <div class="visual-element fade-in">
+                <img src="https://davidfreshwater.github.io/image/books.jpg" alt="Psychology and therapy reference books" class="bookshelf-image">
+                <p class="image-caption">Continued study in depth psychology, psychoanalytic theory, and therapeutic practice</p>
+            </div>
 
-            <div class="info-box fade-in">
+            <p>My practice is intentionally small because this work requires complete attention to the unique ways each person's mind expresses itself. I don't use standardized techniques because your deeper patterns don't operate according to standard formulas.</p>
+
+            <div class="approach-cta fade-in">
+                <p>Curious about how this depth of work might apply to your situation?</p>
+                <a href="process.html" class="subtle-cta">Learn about my approach →</a>
+            </div>
+
+            <div class="standout-section fade-in">
                 <h4>What This Means for You</h4>
-                <p>If you're here, something has been trying to get your attention—through symptoms, through patterns, through a persistent sense that something needs to change. That "something" has intelligence and purpose, even if it currently feels like an obstacle.</p>
+                <p>If you're here, something has been trying to get your attention through symptoms, through patterns, through a persistent sense that something needs to change. That "something" has intelligence and purpose, even if it currently feels like an obstacle.</p>
                 
-                <p style="margin-bottom: 0;">I can help you understand what it's trying to communicate and why it's been necessary until now. From that understanding, genuine transformation becomes not just possible, but inevitable.</p>
+                <p>I can help you understand what it's trying to communicate and why it's been necessary until now. From that understanding, genuine transformation becomes not just possible, but inevitable.</p>
             </div>
 
             <div class="section-divider"></div>
