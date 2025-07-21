@@ -1,1 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories of Transformation | David M. Freshwater, LMHC | Online Therapy Massachusetts</title>
+    <meta name="description" content="Read stories of transformation through psychoanalytic therapy. Composite accounts of how people overcome self-sabotage, relationship patterns, and unexplained symptoms.">
+    <meta name="keywords" content="therapy stories, transformation stories, psychoanalytic therapy, client stories, therapy success, Massachusetts therapist">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Stories of Transformation - David M. Freshwater, LMHC">
+    <meta property="og:description" content="Discover how deep therapeutic work creates lasting change through composite stories from clinical practice.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://davidfreshwater.github.io/stories.html">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://davidfreshwater.github.io/stories.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #212121;
+            background: #FFFFFF;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .nav-name {
+            font-size: 18px;
+            font-weight: 500;
+            color: #1C1C1C;
+            letter-spacing: 0.02em;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: #424242;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #1e3a5f;
+        }
+        
+        .nav-cta {
+            background: #1e3a5f;
+            color: #FFFFFF;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 58, 95, 0.2);
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+        
+        .nav-cta:hover {
+            background: #152942;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 58, 95, 0.3);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .mobile-menu-btn:hover {
+            background-color: rgba(30, 58, 95, 0.1);
+        }
+        
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 2px;
+            background: #1C1C1C;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 1px;
+        }
+        
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+        
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-6px, -6px);
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 12px 12px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .mobile-nav.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+        
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            gap: 0;
+        }
+        
+        .mobile-nav .nav-link {
+            font-size: 16px;
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(232, 232, 232, 0.5);
+            color: #424242;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            margin-bottom: 4px;
+        }
+        
+        .mobile-nav .nav-link:hover {
+            background: rgba(30, 58, 95, 0.05);
+            color: #1e3a5f;
+        }
+        
+        .mobile-nav .nav-link:last-of-type {
+            border-bottom: none;
+        }
+        
+        .mobile-nav .nav-cta {
+            margin: 16px 20px 8px;
+            text-align: center;
+            padding: 14px 28px;
+        }
+        
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .mobile-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        /* Main Content */
+        .section {
+            padding-top: 120px;
+            padding-bottom: 80px;
+            min-height: 100vh;
+        }
+        
+        h2 {
+            font-size: 42px;
+            font-weight: 500;
+            margin-bottom: 48px;
+            text-align: center;
+            color: #1C1C1C;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background: #1e3a5f;
+        }
+        
+        .disclaimer {
+            background: #F8F8F8;
+            padding: 24px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #424242;
+            margin-bottom: 60px;
+            border-left: 3px solid #1e3a5f;
+            font-style: italic;
+        }
+        
+        /* Story Cards */
+        .story-container {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .story-container.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .story-card {
+            background: #FFFFFF;
+            border: 1px solid #E8E8E8;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .story-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .story-header {
+            padding: 40px;
+            position: relative;
+        }
+        
+        .story-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .story-time {
+            font-size: 14px;
+            color: #757575;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        
+        .story-title {
+            font-size: 32px;
+            margin-bottom: 16px;
+            color: #1C1C1C;
+        }
+        
+        .story-preview {
+            font-size: 18px;
+            color: #424242;
+            line-height: 1.6;
+        }
+        
+        .story-expand-icon {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .story-expand-icon svg {
+            width: 30px;
+            height: 30px;
+            stroke: #1e3a5f;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+        
+        .story-card:hover .story-expand-icon svg {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .story-card.expanded .story-expand-icon {
+            transform: rotate(45deg);
+        }
+        
+        /* Story Content */
+        .story-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .story-card.expanded .story-content {
+            max-height: none;
+        }
+        
+        .progress-bar {
+            position: sticky;
+            top: 80px;
+            height: 4px;
+            background: #F0F0F0;
+            z-index: 10;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: #1e3a5f;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .story-content-inner {
+            padding: 0 40px 40px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .story-content-inner p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #212121;
+            margin-bottom: 24px;
+        }
+        
+        .story-content-inner p:first-child {
+            font-size: 20px;
+            font-weight: 500;
+            color: #1C1C1C;
+            margin-bottom: 32px;
+        }
+        
+        /* Floating CTA Button */
+        .btn-floating {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #1e3a5f;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
+            border: none;
+            font-family: inherit;
+            z-index: 100;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+        
+        .btn-floating.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+        
+        .btn-floating:hover {
+            background: #152942;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(30, 58, 95, 0.35);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1C1C1C;
+            color: #E8E8E8;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        
+        .footer-content p {
+            margin-bottom: 12px;
+            font-size: 16px;
+            letter-spacing: 0.02em;
+        }
+        
+        .footer-name-license {
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px !important;
+        }
+        
+        .footer-services {
+            color: #C5D3E0;
+            font-size: 15px;
+        }
+        
+        .footer-location {
+            color: #B0C4D9;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .footer-copyright {
+            color: #8FA7C4;
+            font-size: 13px;
+            margin-top: 24px !important;
+            padding-top: 24px;
+            border-top: 1px solid #333333;
+        }
+        
+        /* Form Modal Styles */
+        .form-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(26, 26, 26, 0.8);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .form-overlay.active {
+            display: flex;
+        }
+        
+        .form-container {
+            background-color: #FFFFFF;
+            padding: 48px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
+        
+        .form-overlay.active .form-container {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .form-title {
+            font-size: 28px;
+            font-weight: 500;
+            font-family: 'Playfair Display', serif;
+            color: #1C1C1C;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        
+        .form-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #757575;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+        }
+        
+        .form-close:hover {
+            color: #1C1C1C;
+            background: #F0F0F0;
+            transform: rotate(90deg);
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: #424242;
+            text-transform: uppercase;
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            border-radius: 4px;
+            color: #1C1C1C;
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #1e3a5f;
+            box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+            line-height: 1.6;
+        }
+        
+        .form-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+            justify-content: center;
+        }
+        
+        .form-btn {
+            padding: 14px 32px;
+            background: transparent;
+            color: #1C1C1C;
+            border: 1px solid #E0E0E0;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .form-btn:hover {
+            border-color: #1e3a5f;
+            background: #F8F8F8;
+        }
+        
+        .form-btn-submit {
+            background-color: #1e3a5f;
+            color: white;
+            border-color: #1e3a5f;
+        }
+        
+        .form-btn-submit:hover {
+            background-color: #152942;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
+        }
+        
+        .form-btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .form-message {
+            padding: 12px 16px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .form-message.success {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+        
+        .form-message.error {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .section {
+                padding-top: 100px;
+                padding-bottom: 60px;
+            }
+            
+            h2 {
+                font-size: 36px;
+            }
+            
+            .story-header {
+                padding: 32px 24px;
+            }
+            
+            .story-title {
+                font-size: 28px;
+            }
+            
+            .story-expand-icon {
+                top: 32px;
+                right: 24px;
+            }
+            
+            .story-content-inner {
+                padding: 0 24px 32px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+            
+            .disclaimer {
+                padding: 20px 24px;
+                font-size: 15px;
+                margin-bottom: 40px;
+            }
+            
+            .story-container {
+                margin-bottom: 32px;
+            }
+            
+            .story-header {
+                padding: 24px 20px;
+            }
+            
+            .story-title {
+                font-size: 24px;
+            }
+            
+            .story-preview {
+                font-size: 16px;
+            }
+            
+            .story-expand-icon {
+                width: 32px;
+                height: 32px;
+                top: 24px;
+                right: 20px;
+            }
+            
+            .story-expand-icon svg {
+                width: 24px;
+                height: 24px;
+            }
+            
+            .story-content-inner {
+                padding: 0 20px 24px;
+            }
+            
+            .story-content-inner p {
+                font-size: 16px;
+                line-height: 1.7;
+            }
+            
+            @media (max-width: 480px) {
+                .btn-floating {
+                    bottom: 1rem;
+                    right: 1rem;
+                    padding: 14px 24px;
+                    font-size: 14px;
+                }
+            }
+            
+            .form-container {
+                padding: 32px 24px;
+                width: 95%;
+                max-width: 450px;
+            }
+            
+            .form-title {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+            
+            .form-group {
+                margin-bottom: 20px;
+            }
+            
+            .form-close {
+                top: 12px;
+                right: 12px;
+                width: 36px;
+                height: 36px;
+                font-size: 24px;
+            }
+            
+            .form-buttons {
+                gap: 12px;
+                flex-direction: column;
+            }
+            
+            .form-btn {
+                width: 100%;
+                padding: 16px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-name">David M. Freshwater, LMHC</div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="process.html" class="nav-link">Process</a>
+                <a href="stories.html" class="nav-link">Stories</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <button class="nav-cta" onclick="showConsultationForm()">Begin</button>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
+    <!-- Mobile Navigation -->
+    <div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
+    <nav class="mobile-nav">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="process.html" class="nav-link">Process</a>
+            <a href="stories.html" class="nav-link">Stories</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
+            <button class="nav-cta" onclick="showConsultationForm(); toggleMobileMenu();">Begin</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <h2>Stories of Transformation</h2>
+            
+            <p class="disclaimer">The following narratives illustrate the process of psychoanalytic work. They are composite accounts drawn from various clinical experiences, with all identifying details carefully altered to protect confidentiality.</p>
+
+<!-- Story 1 -->
+<div class="story-container fade-in">
+    <div class="story-card" onclick="toggleStory(this)">
+        <div class="story-header">
+            <div class="story-meta">
+                <span class="story-time">15 min read</span>
+            </div>
+            <h3 class="story-title">Stomach</h3>
+            <p class="story-preview">Perfect wife. Perfect employee. Pain no doctor can explain.</p>
+            <div class="story-expand-icon">
+                <svg viewBox="0 0 30 30">
+                    <circle cx="10" cy="12" r="6" />
+                    <circle cx="20" cy="12" r="6" />
+                    <circle cx="15" cy="20" r="6" />
+                </svg>
+            </div>
+        </div>
+        <div class="story-content">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="story-content-inner">
+                <p>Rebecca Murphy called during her lunch break, speaking in the hushed tone of someone hiding in her home office while her family bustled outside the door. At 35, she could coordinate her marketing director schedule, family calendars, and social obligations with apparent ease. Yet she was doubled over with stomach pain that no doctor could explain.</p>
+
+                <p>"It's getting worse," she said, her voice tight. "And I don't know why."</p>
+
+                <p>For three years, she'd seen gastroenterologists, tried elimination diets, underwent endless tests. Everything came back normal. The pain, however, remained stubbornly real – sharp cramping that seemed to follow no logical pattern, appearing at family dinners, work meetings, sometimes even while making grocery lists.</p>
+
+                <p>"My husband thinks I'm being dramatic," she said with a bitter laugh. "He says if the doctors can't find anything, maybe I should try yoga or meditation. Easy for him to say. He just shows up to events I've planned and managed."</p>
+
+                <p>We agreed to meet twice a week, phone sessions that Rebecca squeezed between meetings and school pickups.</p>
+
+                <p>"I don't want to be one of those people who complains constantly," she said during our first session, then immediately apologized for even mentioning her pain. "I know you have patients with real problems."</p>
+
+                <p>"Real problems."</p>
+
+                <p>"You know what I mean. I have a good life. Good job, good marriage, healthy kids. I shouldn't be sitting here whining about stomach aches when there are people with actual illnesses."</p>
+
+                <p>I ended the session there.</p>
+
+                <p>As we worked together, Rebecca mentioned her symptoms in passing, almost dismissively. The pain came and went unpredictably. Sometimes during Sunday dinners with her in-laws. Sometimes alone at her desk. Once, inexplicably, while choosing paint colors for the guest room.</p>
+
+                <p>"There's no pattern," she insisted. "That's what's so frustrating. The doctors think I'm making it up."</p>
+
+                <p>But patterns emerged in other ways. Rebecca was the one who handled everything. The difficult clients at work. The family scheduling. The diplomatic conversations with her mother-in-law.</p>
+
+                <p>"I just smile and nod," she said during one session about her mother-in-law's Sunday visits. "What else can I do? She's Nathan's mother. Family is important to him."</p>
+
+                <p>"And to you?"</p>
+
+                <p>A long pause. "I used to think so. Now I'm not sure what I think anymore."</p>
+
+                <p>Three months in, Rebecca tried to cancel a session. "I'm feeling much better this week," she said when she called. "I don't want to waste your time when there are people who really need help."</p>
+
+                <p>"You're feeling better, so you want to cancel."</p>
+
+                <p>"Well... yes. Isn't that logical?"</p>
+
+                <p>"What happened right before you felt better?"</p>
+
+                <p>Long silence. "Nathan's mother canceled Sunday dinner. Food poisoning." Another pause. "Oh."</p>
+
+                <p>We kept the session.</p>
+
+                <p>At work, Rebecca was known as the fixer. The one who could handle angry clients, smooth over conflicts, make everything run seamlessly.</p>
+
+                <p>"Last week, my boss dumped a crisis project on me at 4 PM," she said during a Thursday session. "Clark had screwed it up, but somehow it became my emergency. I was up until midnight fixing it, working from my kitchen table after the kids went to bed."</p>
+
+                <p>"Clark screwed it up."</p>
+
+                <p>"But I'm the one with stomach pain at 2 AM. Clark probably slept great." She laughed bitterly. "He logged off at five while I was still cleaning up his mess."</p>
+
+                <p>"You took in his mess."</p>
+
+                <p>"I always do. That's my job, apparently. Being the one who handles things." She paused. "God, even saying that makes my stomach hurt."</p>
+
+                <p>Rebecca had learned early to be the family peacekeeper. Her own mother had been volatile, unpredictable – volcanic rages followed by days of silence.</p>
+
+                <p>"I never knew which mother I'd get," Rebecca explained. "The one who screamed about a dish in the sink, or the one who wouldn't speak for a week. I learned to read her moods, smooth things over before they exploded."</p>
+
+                <p>"Smooth things over."</p>
+
+                <p>"Anticipate her needs. Accommodate myself to her." She paused. "I was eight years old, managing a grown woman's emotions."</p>
+
+                <p>"Anticipate. Accommodate. Eight years old."</p>
+
+                <p>I ended the session there.</p>
+
+                <p>Rebecca called for our next session sounding shaken.</p>
+
+                <p>"I couldn't stop thinking about what you said. 'Anticipate. Accommodate. Eight years old.' I kept repeating it all week." Her voice was different - rawer than usual. "Then I heard it. What I've been saying without knowing it."</p>
+
+                <p>"Hmm."</p>
+
+                <p>"Anticip-ATE. Accommod-ATE. Eight - ate." She laughed, but it sounded more like a sob. "I've been telling you all along. I ATE everything. I was eight years old and I ATE my mother's rage. I ATE her silence. I ATE her instability."</p>
+
+                <p>She was crying now. "I became a little garbage disposal for emotions. Whatever she couldn't handle, I ate. And I got so good at it. So good that I'm still doing it - with Nathan's mother, with my boss, with everyone."</p>
+
+                <p>"Still eating."</p>
+
+                <p>"Everything. Everyone's disappointment, frustration, anger. I eat it so they don't have to feel it. And my stomach - God, my stomach has been trying to tell me it's full. It can't digest any more of other people's emotions."</p>
+
+                <p>A long pause.</p>
+
+                <p>"Eight ate," she whispered. "That little girl is still in there, eating everything to keep the peace. She doesn't know the danger has passed. She doesn't know she can stop."</p>
+
+                <p>Eight months into our work, Rebecca was describing another family dinner. The pain had been particularly severe – she'd barely touched her food.</p>
+
+                <p>"She spent twenty minutes explaining how I was ruining Emma's development by working full-time. I just sat there, nodding, while my stomach twisted into knots."</p>
+
+                <p>"Twisted into knots."</p>
+
+                <p>"Like someone was wringing out my intestines. But I kept smiling. Nathan was scrolling through his phone. The kids were fighting. And I just... sat there."</p>
+
+                <p>"What did you want to say?"</p>
+
+                <p>"That it's none of her business. That Nathan and I made this decision together. That I love my work and I'm good at it." Her voice grew stronger. "That I'm tired of pretending her opinions matter more than mine."</p>
+
+                <p>"But you said nothing."</p>
+
+                <p>"I can't. It would upset Nathan. Cause drama. Ruin the relationship."</p>
+
+                <p>"So you let it ruin you instead."</p>
+
+                <p>The words hung between us. Rebecca was quiet for a long time.</p>
+
+                <p>"Yes," she finally whispered. "I let it ruin me. Every Sunday. Every holiday. Every family dinner. I let it eat away at me."</p>
+
+                <p>During a particularly difficult session, Rebecca was recounting her mother-in-law's latest visit. Her voice carried exhaustion rather than its usual diplomatic tone.</p>
+
+                <p>"She kept commenting on how much weight I'd gained, while loading more food onto my plate. 'Rebecca needs to watch her figure, but also, why isn't she eating my cooking?'" Rebecca's voice cracked. "I just sat there, smiling, swallowing that shit."</p>
+
+                <p>I ended the session there.</p>
+
+                <p>As our work deepened, Rebecca began to distinguish between physical hunger and emotional starvation. She realized she'd been so busy feeding everyone else – literally and metaphorically – that she'd lost touch with her own appetite.</p>
+
+                <p>The breakthrough came during a transferential moment in our work. I was running fifteen minutes late for our Tuesday session due to an emergency with another client. When I called Rebecca, she immediately reassured me: "Oh, no problem at all! These things happen. I'll just wait."</p>
+
+                <p>During our session, she mentioned feeling "a bit off" but continued discussing her week as usual. Midway through, while describing another family conflict she'd mediated, her voice suddenly changed.</p>
+
+                <p>"I'm sorry, I need to stop talking. My stomach is cramping."</p>
+
+                <p>I could hear her breathing change, becoming shallow and strained.</p>
+
+                <p>"The pain started when I was waiting for you to call," she said quietly. "But I told myself it was fine, that I understood."</p>
+
+                <p>"You told yourself it was fine."</p>
+
+                <p>"Yes, I—" She stopped abruptly. "Oh my God. I'm doing it right now, aren't I? I'm swallowing your lateness, just like I swallow everything else."</p>
+
+                <p>"What would happen if you didn't?"</p>
+
+                <p>A long pause. Her breathing was still labored. "I'd tell you that I was frustrated. That I rearranged my day for this appointment. That waiting with no explanation brought up..." Her voice cracked. "That it reminded me of being little, waiting for my mother to notice me."</p>
+
+                <p>"And saying that would mean?"</p>
+
+                <p>"That I'm demanding. Difficult. Too much." The words came out in a rush. "That you might not want to work with me anymore."</p>
+
+                <p>"So instead you make your body hold the frustration."</p>
+
+                <p>"I can't stomach this anymore." The words emerged like a sob. "I can't keep taking on everyone else's needs and ignoring my own."</p>
+
+                <p>As she spoke these words, I could hear her breathing begin to deepen. The cramping, she reported, was subsiding.</p>
+
+                <p>"My stomach just relaxed," she said with wonder. "The pain stopped when I said I couldn't stomach it anymore."</p>
+
+                <p>"You've been feeding everyone while you starve."</p>
+
+                <p>Complete silence. Then: "Oh my God. Yes. I prepare elaborate meals, organize perfect gatherings, make sure everyone's fed and happy. But I'm... I'm starving. Emotionally starving."</p>
+
+                <p>"Starving."</p>
+
+                <p>"Starving myself, but so full of other people's crap!" Then, her voice was barely a whisper. "No wonder my stomach rebels."</p>
+
+                <p>Learning to speak her frustrations required patience and practice. The first real test came three weeks after our breakthrough session.</p>
+
+                <p>"I told Nathan about the stomach pain," she reported during our Thursday call. "Really told him. Not the medical version, but what it means. He was... confused at first."</p>
+
+                <p>"Confused."</p>
+
+                <p>"He said 'But you never said you were unhappy.' Like my contentment was just a fact of nature." She sighed. "I realized he'd never had to think about whether I was happy. I'd made it look so effortless."</p>
+
+                <p>The conversation had continued over several days. Nathan struggled to understand how he'd missed her distress.</p>
+
+                <p>"I had to explain that the smile at Sunday dinners wasn't joy – it was performance. That when I said 'whatever you want' about restaurants or movies, I was disappearing, not being agreeable."</p>
+
+                <p>"How did he respond?"</p>
+
+                <p>"He went quiet for a long time. Then he said something that surprised me: 'I always wondered why you never seemed to want anything. I thought you were just... easy-going.'" Rebecca's voice wavered. "Easy-going. As if having no preferences was a personality trait."</p>
+
+                <p>The change in Nathan wasn't immediate or smooth. Years of patterns don't shift overnight.</p>
+
+                <p>Two months later: "Nathan started noticing things. Last week he watched me pack the kids' lunches while answering work emails and listening to Emma's math homework struggles. He said, 'You're doing three things at once and I'm just... drinking coffee.' Like he was seeing it for the first time."</p>
+
+                <p>"Seeing it for the first time."</p>
+
+                <p>"I've been doing three things at once for fifteen years. He just never noticed because I made it look easy. Made myself too efficient at swallowing the burden."</p>
+
+                <p>Progress came in small moments. Nathan started intervening when his mother made comments – not dramatically, but consistently.</p>
+
+                <p>"She criticized how I'd dressed Emma for church last Sunday," Rebecca said. "Nathan said, 'Mom, Rebecca has great judgment about the kids.' Small thing, but his mother looked shocked. I felt my stomach unclench a little."</p>
+
+                <p>But the changes weren't linear. Three months later, Rebecca reported a setback:</p>
+
+                <p>"We had his whole family over for Easter. I fell right back into the old pattern – cooking for twelve people, managing all the conversations, smoothing over his brother's political rants. Nathan just... reverted. Sat there while I orchestrated everything."</p>
+
+                <p>"How did your stomach feel?"</p>
+
+                <p>"Awful. Sharp pain for two days afterward. But here's what's different – I recognized it. I knew what was happening while it was happening. That night I said, 'I can't keep being the family emotional manager.' Nathan looked stricken. He said, 'I didn't even realize I'd stopped helping.'"</p>
+
+                <p>"Stopped helping."</p>
+
+                <p>"The awareness comes and goes for him. Sometimes he sees it clearly, sometimes he slips back into thinking things just... happen. Like meals appear and social dynamics manage themselves."</p>
+
+                <p>The conversation with her mother-in-law took another two months to happen. Rebecca practiced in our sessions, finding words that weren't accusatory but were true.</p>
+
+                <p>"I said, 'When you comment on my parenting choices, it hurts me. I need you to trust that Nathan and I are doing our best.'" Rebecca's voice shook as she recounted it. "She was offended. Said I was being too sensitive."</p>
+
+                <p>"Too sensitive."</p>
+
+                <p>"But Nathan – Nathan surprised me. He said, 'Mom, Rebecca's right. We need you to respect our decisions.' Then he added something that made me cry: 'And I need to stop expecting Rebecca to handle all the family dynamics alone.'"</p>
+
+                <p>Her mother-in-law didn't transform, but the dynamic shifted. "She still makes comments," Rebecca said. "But now Nathan hears them. I don't have to swallow them alone."</p>
+
+                <p>Six months later, another test: "She made a comment about the kids watching too much TV while I was literally helping with homework. The old me would have just absorbed the criticism. Instead, I said, 'They get one hour after homework. That works for our family.' She didn't like it, but Nathan backed me up immediately."</p>
+
+                <p>The physical symptoms didn't disappear overnight. During stressful family events, her stomach would still clench. But now she recognized it as a signal.</p>
+
+                <p>"Last Sunday, I felt the pain starting when she made a comment about my cooking. So I said, 'I put a lot of effort into this meal.' Just that. And the pain... lessened."</p>
+
+                <p>At work, Rebecca began setting boundaries that had seemed impossible before.</p>
+
+                <p>"Clark tried to dump another project on me yesterday," she reported. "Five o'clock Slack message, just like before. But this time I said, 'I can't take this on. You'll need to handle it or ask someone else.'"</p>
+
+                <p>"How did that feel?"</p>
+
+                <p>"Terrifying. Then... free. He seemed shocked, even through text. Spent an hour trying to convince me, then apparently stayed late to fix his own mess. No stomach pain for me."</p>
+
+                <p>But the workplace changes had consequences. "My boss mentioned that I seem 'less flexible' lately. Said it in that tone that suggests I should be worried." Rebecca's voice was steady, though. "A year ago, that would have sent me into panic mode. Now I think: good. I'm less flexible about absorbing other people's poor planning."</p>
+
+                <p>Three months later: "Clark tried the Friday afternoon crisis again. This time I didn't even respond to the Slack until Monday morning. Wrote: 'Saw your message over the weekend. For future urgent projects, please plan ahead or involve other team members.' He was furious, but our director said I was right to set boundaries."</p>
+
+                <p>A year into our work, Rebecca finally addressed the family pattern with her own mother.</p>
+
+                <p>"I told her about the stomach pain. About how I'd learned to make myself palatable for her moods as a child." Rebecca's voice was careful, measured. "She got defensive at first. Said she was a good mother, that I was being dramatic."</p>
+
+                <p>"Dramatic."</p>
+
+                <p>"Then I said something I'd never said before: 'I was eight years old, managing your emotions. That wasn't my job.' She went very quiet."</p>
+
+                <p>"Very quiet."</p>
+
+                <p>"After about ten minutes, she started crying. Said her own mother had been the same way – unpredictable, volatile. That she'd sworn she wouldn't do that to me, but..." Rebecca's voice cracked. "She said she never realized I was taking care of her instead of the other way around."</p>
+
+                <p>"Never realized."</p>
+
+                <p>"But then she said something that frustrated me: 'I just thought you were naturally such a helpful child.' Like my hypervigilance was some kind of gift instead of survival."</p>
+
+                <p>The relationship with her mother remained complicated. "She tries now," Rebecca reported months later. "But she still slips into old patterns. Last week she called upset about something with my father, and I could feel myself starting to absorb her anxiety. But I said, 'Mom, that sounds really hard. Have you talked to Dad about it?' Instead of just taking it on."</p>
+
+                <p>"How did she respond?"</p>
+
+                <p>"She was quiet for a moment, then said, 'You're right. I should talk to him.' It was the first time she'd ever actually considered solving a problem instead of just dumping it on me."</p>
+
+                <p>Eighteen months in, Rebecca had what she called her "worst relapse."</p>
+
+                <p>"Emma was having friendship drama, Nathan's dad was in the hospital, work was insane, and his mother decided this was the perfect time to critique how we handle money." Rebecca's voice was exhausted. "I just... collapsed back into the old pattern. Managed everyone's emotions, fixed every problem, smiled through every criticism."</p>
+
+                <p>"And your stomach?"</p>
+
+                <p>"Agony. Three days of pain so bad I could barely stand. But here's what's different – I knew what was happening. I called Nathan after day two and said, 'I'm drowning. I need help.' He looked around and saw the chaos I'd been quietly managing and said, 'Oh my God, you've been holding all of this alone.'"</p>
+
+                <p>"Holding all of this alone."</p>
+
+                <p>"He canceled his golf weekend and stayed home. Dealt with his mother directly. Took Emma to lunch and let her cry about her friends. Visited his dad without me having to coordinate it." She paused. "The stomach pain stopped that night."</p>
+
+                <p>"What did you learn?"</p>
+
+                <p>"That I don't have to be perfect at this. That backsliding doesn't erase progress. And that Nathan can step up – he just needs to see the need clearly instead of assuming I'll handle it invisibly."</p>
+
+                <p>After two and a half years of sessions, Rebecca's transformation was evident not just in her body, but in her presence. She spoke with a different kind of authority – not the efficient manager who kept everything running smoothly, but someone who knew her own worth.</p>
+
+                <p>"I was promoted to VP of Marketing," she told me. "My boss said I'd changed. That I was more assertive, clearer in my communication. He didn't know I'd spent years learning to stop swallowing my words."</p>
+
+                <p>Her relationship with Nathan had deepened through the struggles. "We actually talk now," she said. "Not just about schedules and kids, but about what we need from each other. Last week I said, 'I need you to take over Sunday meal planning.' He said, 'Of course, I should have been doing that all along.' But he wouldn't have seen it if I hadn't said it."</p>
+
+                <p>"Said it."</p>
+
+                <p>"I spent so many years thinking that if he really loved me, he'd just know what I needed. But people can't read minds. I have to actually use my voice."</p>
+
+                <p>The stomach pain still visited occasionally – usually when she was falling back into old patterns. But now she understood its language.</p>
+
+                <p>"My body was trying to protect me," she reflected in one of our later sessions. "It was saying what I couldn't: that I couldn't stomach my life as it was. Now I listen before it has to scream."</p>
+
+                <p>The dynamic with Nathan's mother continued to evolve slowly. "She still makes comments, but they bounce off me differently now. Last Sunday she said, 'I don't know how you find time to work with two children.' I said, 'Nathan and I are a good team,' and left it at that. No explanation, no defense. Just truth."</p>
+
+                <p>"How did Nathan respond?"</p>
+
+                <p>"He added, 'Rebecca's work is important to her, and we make it work as a family.' Six months ago, he would have stayed silent and expected me to navigate that alone."</p>
+
+                <p>Even her relationship with work continued to shift. "I hired an assistant," she reported. "My boss initially said the budget was tight, but I made a case for how my time was better spent on strategy than administrative tasks. A year ago, I would have just worked longer hours."</p>
+
+                <p>"The interesting thing is that my team respects me more now that I have boundaries. When I say something is urgent, they know I mean it. When I push back on unrealistic deadlines, they listen instead of assuming I'll just figure out how to make it work."</p>
+
+                <p>In our final session, Rebecca reflected on the journey.</p>
+
+                <p>"I used to think being a good person meant absorbing everyone else's difficult emotions. Making myself smaller so others could be comfortable. I thought that was love, that was service." She paused. "But it wasn't helping anyone. Nathan never learned to manage his mother because I always buffered their relationship. My kids never saw me having needs or setting boundaries. I was teaching them that women disappear themselves for others."</p>
+
+                <p>"Teaching them."</p>
+
+                <p>"Emma said something last week that stopped me cold. She said, 'Mom, I like how you tell people what you think now. Before, you were like a ghost sometimes.'" Rebecca's voice wavered. "A ghost. My own daughter saw me disappearing."</p>
+
+                <p>"Disappearing."</p>
+
+                <p>"But now she sees me handling conflict directly, having opinions, taking up space. She's learning that she doesn't have to make herself small for others to be comfortable."</p>
+
+                <p>Rebecca's stomach still spoke to her, but now she understood its vocabulary. The pain had been a protest, her body's last resort when her voice failed. Her body had known what her mind couldn't admit: that she was full. Full of other people's emotions, expectations, needs. Now, finally, there was room for her own.</p>
+
+                <p>"The eight-year-old is still in there," she said softly. "But now she knows the adults can handle their own feelings. She doesn't have to eat everything anymore. She can just... be a kid."</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- Story 2 -->
+            <div class="story-container fade-in">
+                <div class="story-card" onclick="toggleStory(this)">
+                    <div class="story-header">
+                        <div class="story-meta">
+                            <span class="story-time">12 min read</span>
+                        </div>
+                        <h3 class="story-title">Story Title 2</h3>
+                        <p class="story-preview">Preview text for story 2 goes here.</p>
+                        <div class="story-expand-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="story-content-inner">
+                            <!-- Story content will go here -->
+                            <p>Story content goes here...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="story-container fade-in">
+                <div class="story-card" onclick="toggleStory(this)">
+                    <div class="story-header">
+                        <div class="story-meta">
+                            <span class="story-time">14 min read</span>
+                        </div>
+                        <h3 class="story-title">Story Title 3</h3>
+                        <p class="story-preview">Preview text for story 3 goes here.</p>
+                        <div class="story-expand-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="story-content-inner">
+                            <!-- Story content will go here -->
+                            <p>Story content goes here...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story 4 -->
+            <div class="story-container fade-in">
+                <div class="story-card" onclick="toggleStory(this)">
+                    <div class="story-header">
+                        <div class="story-meta">
+                            <span class="story-time">10 min read</span>
+                        </div>
+                        <h3 class="story-title">Story Title 4</h3>
+                        <p class="story-preview">Preview text for story 4 goes here.</p>
+                        <div class="story-expand-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="story-content-inner">
+                            <!-- Story content will go here -->
+                            <p>Story content goes here...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Floating CTA Button -->
+    <button class="btn-floating" id="floatingConsult" onclick="showConsultationForm()">
+        Request Consultation
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-name-license">David M. Freshwater, LMHC #10001743</p>
+                <p class="footer-services">Licensed Psychotherapist • Private Pay • Online Sessions</p>
+                <p class="footer-location">Serving all of Massachusetts including Boston, Cambridge, Newton, Brookline, Wellesley, Lexington, and Concord</p>
+                <p class="footer-copyright">© 2024 David M. Freshwater, LMHC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Consultation Form Modal -->
+    <div class="form-overlay" id="formOverlay">
+        <div class="form-container">
+            <button class="form-close" onclick="hideConsultationForm()" aria-label="Close form">×</button>
+            <h3 class="form-title">Request Initial Consultation</h3>
+            <form id="consultationForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="message">What brings you to therapy?</label>
+                    <textarea id="message" name="message" class="form-textarea" rows="4" required></textarea>
+                </div>
+                <div id="formMessage" class="form-message"></div>
+                <div class="form-buttons">
+                    <button type="submit" class="form-btn form-btn-submit">Send Request</button>
+                    <button type="button" class="form-btn" onclick="hideConsultationForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const mobileNav = document.querySelector('.mobile-nav');
+            const overlay = document.querySelector('.mobile-overlay');
+            const btn = document.querySelector('.mobile-menu-btn');
+            
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            btn.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (mobileNav.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+        
+        // Add shadow to nav on scroll and show/hide floating button
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const floatingBtn = document.getElementById('floatingConsult');
+            
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 20px rgba(15, 27, 60, 0.1)';
+            } else {
+                nav.style.boxShadow = '0 1px 3px rgba(15, 27, 60, 0.05)';
+            }
+            
+            // Show floating button after scrolling past hero
+            if (window.scrollY > 600) {
+                floatingBtn.classList.add('visible');
+            } else {
+                floatingBtn.classList.remove('visible');
+            }
+        });
+        
+        // Toggle story expansion
+        function toggleStory(card) {
+            const isExpanded = card.classList.contains('expanded');
+            
+            // Close all other stories
+            document.querySelectorAll('.story-card').forEach(c => {
+                if (c !== card) {
+                    c.classList.remove('expanded');
+                }
+            });
+            
+            // Toggle current story
+            card.classList.toggle('expanded');
+            
+            // If expanding, scroll to top of the card
+            if (!isExpanded) {
+                setTimeout(() => {
+                    const rect = card.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const targetScroll = rect.top + scrollTop - 100;
+                    
+                    window.scrollTo({
+                        top: targetScroll,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+                
+                // Start tracking reading progress
+                trackReadingProgress(card);
+            }
+        }
+        
+        // Track reading progress
+        function trackReadingProgress(card) {
+            const content = card.querySelector('.story-content');
+            const progressBar = card.querySelector('.progress-fill');
+            
+            function updateProgress() {
+                if (!card.classList.contains('expanded')) return;
+                
+                const contentRect = content.getBoundingClientRect();
+                const contentHeight = content.scrollHeight;
+                const windowHeight = window.innerHeight;
+                const scrolled = -contentRect.top + 100; // Account for sticky nav
+                
+                const progress = Math.min(Math.max(scrolled / (contentHeight - windowHeight), 0), 1);
+                progressBar.style.width = `${progress * 100}%`;
+            }
+            
+            window.addEventListener('scroll', updateProgress);
+            updateProgress();
+        }
+        
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Animate story cards on load
+        window.addEventListener('load', function() {
+            const storyContainers = document.querySelectorAll('.story-container');
+            storyContainers.forEach((container, index) => {
+                setTimeout(() => {
+                    container.classList.add('fade-in');
+                }, index * 200);
+            });
+        });
+        
+        // Form functions
+        function showConsultationForm() {
+            const overlay = document.getElementById('formOverlay');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hideConsultationForm() {
+            const overlay = document.getElementById('formOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('consultationForm').reset();
+            
+            // Hide any messages
+            const formMessage = document.getElementById('formMessage');
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
+        }
+        
+        // Close form when clicking outside
+        document.getElementById('formOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideConsultationForm();
+            }
+        });
+        
+        // Handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const submitBtn = event.target.querySelector('.form-btn-submit');
+            const originalText = submitBtn.textContent;
+            const formMessage = document.getElementById('formMessage');
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Hide any previous messages
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
+            
+            // Simulate form submission (replace with your actual submission logic)
+            setTimeout(() => {
+                // Show success message
+                formMessage.textContent = 'Thank you for your request. I\'ll be in touch within 24-48 hours to schedule your consultation.';
+                formMessage.className = 'form-message success';
+                formMessage.style.display = 'block';
+                
+                // Reset form
+                document.getElementById('consultationForm').reset();
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                // Auto-close after 5 seconds
+                setTimeout(() => {
+                    hideConsultationForm();
+                }, 5000);
+            }, 1500);
+        }
+        
+        // Close mobile menu when clicking nav links
+        document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMobileMenu();
+            });
+        });
+    </script>
+</body>
+</html>
