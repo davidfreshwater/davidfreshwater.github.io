@@ -266,138 +266,143 @@
             font-style: italic;
         }
         
-        /* Story Cards */
-        .story-container {
-            margin-bottom: 40px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-        }
-        
-        .story-container.fade-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .story-card {
-            background: #FFFFFF;
-            border: 1px solid #E8E8E8;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .story-card:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
-        }
-        
-        .story-header {
-            padding: 40px;
-            position: relative;
-        }
-        
-        .story-meta {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 16px;
-        }
-        
-        .story-time {
-            font-size: 14px;
-            color: #757575;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-        
-        .story-title {
-            font-size: 32px;
-            margin-bottom: 16px;
-            color: #1C1C1C;
-        }
-        
-        .story-preview {
-            font-size: 18px;
-            color: #424242;
-            line-height: 1.6;
-        }
-        
-        .story-expand-icon {
-            position: absolute;
-            top: 40px;
-            right: 40px;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .story-expand-icon svg {
-            width: 30px;
-            height: 30px;
-            stroke: #1e3a5f;
-            opacity: 0.5;
-            transition: all 0.3s ease;
-        }
-        
-        .story-card:hover .story-expand-icon svg {
-            opacity: 1;
-            transform: scale(1.1);
-        }
-        
-        .story-card.expanded .story-expand-icon {
-            transform: rotate(45deg);
-        }
-        
-        /* Story Content */
-        .story-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-        }
-        
-        .story-card.expanded .story-content {
-            max-height: none;
-        }
-        
-        .progress-bar {
-            position: sticky;
-            top: 80px;
-            height: 4px;
-            background: #F0F0F0;
-            z-index: 10;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: #1e3a5f;
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-        
-        .story-content-inner {
-            padding: 0 40px 40px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .story-content-inner p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #212121;
-            margin-bottom: 24px;
-        }
-        
-        .story-content-inner p:first-child {
-            font-size: 20px;
-            font-weight: 500;
-            color: #1C1C1C;
-            margin-bottom: 32px;
-        }
-        
+     /* Story Cards */
+.story-container {
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.story-container.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.story-card {
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.story-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.story-header {
+    padding: 40px;
+    position: relative;
+}
+
+.story-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.story-time {
+    font-size: 14px;
+    color: #757575;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.story-title {
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: #1C1C1C;
+}
+
+.story-preview {
+    font-size: 18px;
+    color: #424242;
+    line-height: 1.6;
+}
+
+.story-expand-icon {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.story-expand-icon svg {
+    width: 30px;
+    height: 30px;
+    stroke: #1e3a5f;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.story-card:hover .story-expand-icon svg {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.story-card.expanded .story-expand-icon {
+    transform: rotate(45deg);
+}
+
+/* Story Content */
+.story-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.story-card.expanded .story-content {
+    max-height: none;
+}
+
+.story-card.expanded .story-header {
+    padding-bottom: 20px;
+}
+
+.progress-bar {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #F0F0F0;
+    z-index: 10;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #1e3a5f;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.story-content-inner {
+    padding: 20px 40px 40px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.story-content-inner p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #212121;
+    margin-bottom: 24px;
+}
+
+.story-content-inner p:first-child {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1C1C1C;
+    margin-bottom: 32px;
+}
         /* Floating CTA Button */
         .btn-floating {
             position: fixed;
@@ -730,134 +735,140 @@
             border: 1px solid rgba(239, 68, 68, 0.2);
         }
         
-        /* Mobile Responsiveness */
-        @media (max-width: 968px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: flex;
-            }
-            
-            .section {
-                padding-top: 100px;
-                padding-bottom: 60px;
-            }
-            
-            h2 {
-                font-size: 36px;
-            }
-            
-            .story-header {
-                padding: 32px 24px;
-            }
-            
-            .story-title {
-                font-size: 28px;
-            }
-            
-            .story-expand-icon {
-                top: 32px;
-                right: 24px;
-            }
-            
-            .story-content-inner {
-                padding: 0 24px 32px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            h2 {
-                font-size: 32px;
-                margin-bottom: 40px;
-            }
-            
-            .disclaimer {
-                padding: 20px 24px;
-                font-size: 15px;
-                margin-bottom: 40px;
-            }
-            
-            .story-container {
-                margin-bottom: 32px;
-            }
-            
-            .story-header {
-                padding: 24px 20px;
-            }
-            
-            .story-title {
-                font-size: 24px;
-            }
-            
-            .story-preview {
-                font-size: 16px;
-            }
-            
-            .story-expand-icon {
-                width: 32px;
-                height: 32px;
-                top: 24px;
-                right: 20px;
-            }
-            
-            .story-expand-icon svg {
-                width: 24px;
-                height: 24px;
-            }
-            
-            .story-content-inner {
-                padding: 0 20px 24px;
-            }
-            
-            .story-content-inner p {
-                font-size: 16px;
-                line-height: 1.7;
-            }
-            
-            @media (max-width: 480px) {
-                .btn-floating {
-                    bottom: 1rem;
-                    right: 1rem;
-                    padding: 14px 24px;
-                    font-size: 14px;
-                }
-            }
-            
-            .form-container {
-                padding: 32px 24px;
-                width: 95%;
-                max-width: 450px;
-            }
-            
-            .form-title {
-                font-size: 24px;
-                margin-bottom: 24px;
-            }
-            
-            .form-group {
-                margin-bottom: 20px;
-            }
-            
-            .form-close {
-                top: 12px;
-                right: 12px;
-                width: 36px;
-                height: 36px;
-                font-size: 24px;
-            }
-            
-            .form-buttons {
-                gap: 12px;
-                flex-direction: column;
-            }
-            
-            .form-btn {
-                width: 100%;
-                padding: 16px 24px;
-            }
-        }
+   /* Mobile Responsiveness */
+@media (max-width: 968px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .section {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+    
+    h2 {
+        font-size: 36px;
+    }
+    
+    .story-header {
+        padding: 32px 24px;
+    }
+    
+    .story-card.expanded .story-header {
+        padding-bottom: 16px;
+    }
+    
+    .story-title {
+        font-size: 28px;
+    }
+    
+    .story-expand-icon {
+        top: 32px;
+        right: 24px;
+    }
+    
+    .story-content-inner {
+        padding: 20px 24px 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    .disclaimer {
+        padding: 20px 24px;
+        font-size: 15px;
+        margin-bottom: 40px;
+    }
+    
+    .story-container {
+        margin-bottom: 32px;
+    }
+    
+    .story-header {
+        padding: 24px 20px;
+    }
+    
+    .story-card.expanded .story-header {
+        padding-bottom: 12px;
+    }
+    
+    .story-title {
+        font-size: 24px;
+    }
+    
+    .story-preview {
+        font-size: 16px;
+    }
+    
+    .story-expand-icon {
+        width: 32px;
+        height: 32px;
+        top: 24px;
+        right: 20px;
+    }
+    
+    .story-expand-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .story-content-inner {
+        padding: 16px 20px 24px;
+    }
+    
+    .story-content-inner p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+    
+    .btn-floating {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 14px 24px;
+        font-size: 14px;
+    }
+    
+    .form-container {
+        padding: 32px 24px;
+        width: 95%;
+        max-width: 450px;
+    }
+    
+    .form-title {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-close {
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+    }
+    
+    .form-buttons {
+        gap: 12px;
+        flex-direction: column;
+    }
+    
+    .form-btn {
+        width: 100%;
+        padding: 16px 24px;
+    }
+}
     </style>
 </head>
 <body>
