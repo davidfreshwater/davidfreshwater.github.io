@@ -274,11 +274,6 @@
     transition: all 0.5s ease;
 }
 
-.story-container.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .story-card {
     background: #FFFFFF;
     border: 1px solid #E8E8E8;
@@ -913,7 +908,7 @@
             <p class="disclaimer">The following narratives illustrate the process of psychoanalytic work. They are composite accounts drawn from various clinical experiences, with all identifying details carefully altered to protect confidentiality.</p>
 
 <!-- Story 1 -->
-<div class="story-container fade-in">
+<div class="story-container">
     <div class="story-card" onclick="toggleStory(this)">
         <div class="story-header">
             <div class="story-meta">
@@ -1235,7 +1230,7 @@
 </div>
 
 <!-- Story 2 -->
-<div class="story-container fade-in">
+<div class="story-container">
     <div class="story-card" onclick="toggleStory(this)">
         <div class="story-header">
             <div class="story-meta">
@@ -1545,7 +1540,7 @@
 </div>
 
 <!-- Story 3 -->
-<div class="story-container fade-in">
+<div class="story-container">
     <div class="story-card" onclick="toggleStory(this)">
         <div class="story-header">
             <div class="story-meta">
@@ -1997,7 +1992,7 @@
 </div>
 
 <!-- Story 4 -->
-<div class="story-container fade-in">
+<div class="story-container">
     <div class="story-card" onclick="toggleStory(this)">
         <div class="story-header">
             <div class="story-meta">
@@ -2455,23 +2450,24 @@
             updateProgress();
         }
         
-        // Animate story cards on load
-        window.addEventListener('load', function() {
-            const storyContainers = document.querySelectorAll('.story-container');
-            storyContainers.forEach((container, index) => {
-                setTimeout(() => {
-                    container.classList.add('fade-in');
-                }, index * 200);
-            });
-            
-            // Also animate other fade-in elements
-            const fadeElements = document.querySelectorAll('.fade-in');
-            fadeElements.forEach((el, index) => {
-                setTimeout(() => {
-                    el.classList.add('visible');
-                }, (index + storyContainers.length) * 200);
-            });
-        });
+// Animate story cards on load
+window.addEventListener('load', function() {
+    const storyContainers = document.querySelectorAll('.story-container');
+    storyContainers.forEach((container, index) => {
+        setTimeout(() => {
+            container.style.opacity = '1';
+            container.style.transform = 'translateY(0)';
+        }, index * 200);
+    });
+    
+    // Also animate other fade-in elements (but not story containers)
+    const fadeElements = document.querySelectorAll('.fade-in:not(.story-container)');
+    fadeElements.forEach((el, index) => {
+        setTimeout(() => {
+            el.classList.add('visible');
+        }, (index + storyContainers.length) * 200);
+    });
+});
         
         // Form functions
         function showConsultationForm() {
