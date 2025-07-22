@@ -873,9 +873,8 @@
         
         .testimonial-cards {
             position: relative;
-            min-height: 300px; /* Increased height but with better overflow handling */
-            max-height: 350px; /* Added max-height to prevent excessive growth */
-            overflow: hidden; /* Prevent cards from extending beyond container */
+            min-height: 300px;
+            overflow: visible; /* Changed to visible to allow cards to expand naturally */
         }
         
         .testimonial-card {
@@ -883,10 +882,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            max-height: 350px; /* Limit individual card height */
-            overflow-y: auto; /* Allow scrolling within card if needed */
             background: white;
-            padding: 2.5rem; /* Slightly reduced padding */
+            padding: 2.5rem;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             opacity: 0;
@@ -897,14 +894,15 @@
         .testimonial-card.active {
             opacity: 1;
             visibility: visible;
+            position: relative; /* Changed from absolute to allow natural height */
         }
         
         .testimonial-text {
-            font-size: 1.0625rem; /* Slightly smaller font */
-            line-height: 1.7; /* Tighter line height */
+            font-size: 1.0625rem;
+            line-height: 1.7;
             color: #424242;
             font-style: italic;
-            margin-bottom: 1.5rem; /* Reduced margin */
+            margin-bottom: 1.5rem;
             font-family: 'Playfair Display', serif;
         }
         
@@ -993,8 +991,7 @@
             }
             
             .testimonial-cards {
-                min-height: 280px; /* Controlled height for mobile */
-                max-height: 320px;
+                min-height: auto; /* Allow natural height on mobile */
             }
             
             .testimonial-nav {
@@ -1004,21 +1001,20 @@
             }
             
             .testimonial-nav.prev {
-                left: 10px;
+                left: -10px; /* Adjusted positioning */
             }
             
             .testimonial-nav.next {
-                right: 10px;
+                right: -10px; /* Adjusted positioning */
             }
             
             .testimonial-card {
-                padding: 1.75rem; /* Reduced mobile padding */
-                max-height: 320px;
+                padding: 2rem; /* Comfortable mobile padding */
             }
             
             .testimonial-text {
-                font-size: 0.95rem; /* Smaller mobile font */
-                line-height: 1.6;
+                font-size: 1rem; /* Readable mobile font size */
+                line-height: 1.7;
             }
             
             .recognition-grid {
@@ -1181,8 +1177,20 @@
             }
             
             .testimonial-cards {
-                min-height: 300px; /* Controlled mobile height */
-                max-height: 340px;
+                min-height: auto; /* Allow natural height on mobile */
+            }
+            
+            .testimonial-card {
+                padding: 1.5rem; /* Adjusted mobile padding */
+            }
+            
+            .testimonial-text {
+                font-size: 0.9rem; /* Optimized mobile font size */
+                line-height: 1.65;
+            }
+            
+            .testimonials-section {
+                padding: 80px 0 100px; /* Adjusted section padding */
             }
         }
     </style>
