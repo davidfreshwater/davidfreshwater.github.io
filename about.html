@@ -95,7 +95,15 @@
       }
     }
     </script>
-    
+    </script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function(){
+        emailjs.init("SapDsG2u7LsAmvQMW");
+    })();
+</script>
+    <style>
+        * {
     <style>
         /* Reset & Base Styles */
         * {
@@ -1353,40 +1361,63 @@
             }
         });
         
-        // Handle form submission
-        function handleFormSubmit(event) {
-            event.preventDefault();
+// Handle form submission with EmailJS
+function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const submitBtn = form.querySelector('.form-btn-submit');
+    const originalText = submitBtn.textContent;
+    const formMessage = document.getElementById('formMessage');
+    
+    // Show loading state
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    
+    // Hide any previous messages
+    formMessage.style.display = 'none';
+    formMessage.className = 'form-message';
+    
+    // Prepare template parameters
+    const templateParams = {
+        from_name: form.name.value,
+        from_email: form.email.value,
+        phone: form.phone.value,
+        message: form.message.value,
+        to_name: 'David',
+        reply_to: form.email.value
+    };
+    
+    // Send email using EmailJS
+    emailjs.send('service_qera1v7', 'template_ndishzq', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
             
-            const submitBtn = event.target.querySelector('.form-btn-submit');
-            const originalText = submitBtn.textContent;
-            const formMessage = document.getElementById('formMessage');
+            // Show success message
+            formMessage.textContent = 'Thank you for your request. I\'ll be in touch within 24-48 hours to schedule your consultation.';
+            formMessage.className = 'form-message success';
+            formMessage.style.display = 'block';
             
-            // Show loading state
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
+            // Reset form
+            form.reset();
             
-            // Hide any previous messages
-            formMessage.style.display = 'none';
-            formMessage.className = 'form-message';
+            // Reset button
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
             
-            // Simulate form submission (replace with your actual submission logic)
-            setTimeout(() => {
-                // Show success message
-                formMessage.textContent = 'Thank you for your request. I\'ll be in touch within 24-48 hours to schedule your consultation.';
-                formMessage.className = 'form-message success';
-                formMessage.style.display = 'block';
-                
-                // Reset form
-                document.getElementById('consultationForm').reset();
-                
-                // Reset button
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                
-                // NO AUTO-CLOSE - User must close the form manually
-                // The form stays open so users can read the success message
-            }, 1500);
-        }
+        }, function(error) {
+            console.error('FAILED...', error);
+            
+            // Show error message
+            formMessage.textContent = 'Sorry, there was an error sending your request. Please try again or contact me directly.';
+            formMessage.className = 'form-message error';
+            formMessage.style.display = 'block';
+            
+            // Reset button
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
+}
         
         // Close mobile menu when clicking nav links
         document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
