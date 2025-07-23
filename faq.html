@@ -1163,10 +1163,8 @@
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
                 
-                // Auto-close after 5 seconds
-                setTimeout(() => {
-                    hideConsultationForm();
-                }, 5000);
+                // NO AUTO-CLOSE - User must close the form manually
+                // The form stays open so users can read the success message
             }, 1500);
         }
         
