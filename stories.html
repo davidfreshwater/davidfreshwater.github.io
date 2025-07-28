@@ -326,18 +326,126 @@
             color: #212121;
         }
         
-        /* Placeholder for Stories Content */
-        .stories-placeholder {
-            text-align: center;
-            padding: 60px 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            margin: 40px 0;
-        }
-        
-        .stories-placeholder p {
-            color: #666;
+        /* Story Cards */
+        .disclaimer {
             font-style: italic;
+            color: #666;
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-left: 3px solid #1e3a5f;
+            border-radius: 4px;
+        }
+
+        .story-container {
+            margin-bottom: 2rem;
+        }
+
+        .story-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .story-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .story-card.expanded {
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .story-header {
+            padding: 2rem;
+            position: relative;
+        }
+
+        .story-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .story-time {
+            font-size: 0.875rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .story-title {
+            margin: 0 0 0.75rem 0;
+            font-size: 2rem;
+            color: #1C1C1C;
+        }
+
+        .story-title::after {
+            display: none;
+        }
+
+        .story-preview {
+            font-size: 1.1rem;
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .story-expand-icon {
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .story-expand-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: #1e3a5f;
+            transition: transform 0.3s ease;
+        }
+
+        .story-card.expanded .story-expand-icon {
+            background: #1e3a5f;
+        }
+
+        .story-card.expanded .story-expand-icon svg {
+            stroke: white;
+            transform: rotate(45deg);
+        }
+
+        .story-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .story-card.expanded .story-content {
+            max-height: none;
+        }
+
+        .story-content-inner {
+            padding: 0 2rem 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .story-content-inner p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .story-content-inner p:first-child {
+            margin-top: 2rem;
         }
         
         /* CTA Section */
@@ -662,6 +770,28 @@
             }
         }
         
+        @media (max-width: 768px) {
+            .story-header {
+                padding: 1.5rem;
+            }
+            
+            .story-title {
+                font-size: 1.5rem;
+            }
+            
+            .story-preview {
+                font-size: 1rem;
+            }
+            
+            .story-expand-icon {
+                right: 1.5rem;
+            }
+            
+            .story-content-inner {
+                padding: 0 1.5rem 1.5rem;
+            }
+        }
+        
         @media (max-width: 480px) {
             main {
                 padding: 80px 0 40px;
@@ -766,7 +896,6 @@
         </div>
     </nav>
 
-  
     <!-- Main Content -->
     <main class="section">
         <div class="container">
@@ -774,25 +903,24 @@
             
             <p class="disclaimer">The following narratives illustrate the process of psychoanalytic work. They are composite accounts drawn from various clinical experiences, with all identifying details carefully altered to protect confidentiality.</p>
 
-<!-- Story 1 -->
-<div class="story-container">
-    <div class="story-card" onclick="toggleStory(this)">
-        <div class="story-header">
-            <div class="story-meta">
-                <span class="story-time">25 min read</span>
-            </div>
-            <h3 class="story-title">Stomach</h3>
-            <p class="story-preview">Perfect wife. Perfect employee. Pain no doctor can explain.</p>
-            <div class="story-expand-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M5 12h14"/>
-                </svg>
-            </div>
-        </div>
-        <div class="story-content">
-    <div class="story-content-inner">
-        
-        <p>Rebecca Murphy called during her lunch break, speaking in the hushed tone of someone hiding in her home office while her family bustled outside the door. At 38, she could coordinate her marketing director schedule, family calendars, and social obligations with apparent ease. Yet she was doubled over with stomach pain that no doctor could explain.</p>
+            <!-- Story 1 -->
+            <div class="story-container">
+                <div class="story-card" onclick="toggleStory(this)">
+                    <div class="story-header">
+                        <div class="story-meta">
+                            <span class="story-time">25 min read</span>
+                        </div>
+                        <h3 class="story-title">Stomach</h3>
+                        <p class="story-preview">Perfect wife. Perfect employee. Pain no doctor can explain.</p>
+                        <div class="story-expand-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-content-inner">
+                          <p>Rebecca Murphy called during her lunch break, speaking in the hushed tone of someone hiding in her home office while her family bustled outside the door. At 38, she could coordinate her marketing director schedule, family calendars, and social obligations with apparent ease. Yet she was doubled over with stomach pain that no doctor could explain.</p>
     <p>"It's getting worse," she said, her voice tight. "And I don't know why."</p>
 
     <p>For three years, she'd seen gastroenterologists, tried elimination diets, underwent endless tests. Everything came back normal. The pain, however, remained stubbornly real – sharp cramping that seemed to follow no logical pattern, appearing at family dinners, work meetings, sometimes even while making grocery lists.</p>
@@ -1074,29 +1202,29 @@
     <p>Rebecca's stomach still spoke to her, but now she understood its vocabulary. The pain had been a protest, her body's last resort when her voice failed. Her body had known what her mind couldn't admit: that she was full. Full of other people's emotions, expectations, needs. Now, finally, there was room for her own.</p>
 
     <p>"The eight-year-old is still in there," she said softly. "But now she knows the adults can handle their own feelings. She doesn't have to eat everything anymore. She can just... be a kid."</p>
-</div>
-        </div>
-    </div>
-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<!-- Story 2 -->
-<div class="story-container">
-    <div class="story-card" onclick="toggleStory(this)">
-        <div class="story-header">
-            <div class="story-meta">
-                <span class="story-time">20 min read</span>
-            </div>
-            <h3 class="story-title">Wasted</h3>
-            <p class="story-preview">Second-generation immigrant. Investment banking. Drinking alone.</p>
-            <div class="story-expand-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M5 12h14"/>
-                </svg>
-            </div>
-        </div>
-        <div class="story-content">
-            <div class="story-content-inner">
-                <p>When Daniel Chen first called, there was a long pause before he spoke. At 34, he worked in investment banking, but his first words revealed something else entirely.</p>
+            <!-- Story 2 -->
+            <div class="story-container">
+                <div class="story-card" onclick="toggleStory(this)">
+                    <div class="story-header">
+                        <div class="story-meta">
+                            <span class="story-time">20 min read</span>
+                        </div>
+                        <h3 class="story-title">Wasted</h3>
+                        <p class="story-preview">Second-generation immigrant. Investment banking. Drinking alone.</p>
+                        <div class="story-expand-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-content-inner">
+                            <p>When Daniel Chen first called, there was a long pause before he spoke. At 34, he worked in investment banking, but his first words revealed something else entirely.</p>
 
                 <p>"I feel like an impostor in my own life."</p>
 
@@ -1377,31 +1505,30 @@
                 <p>"Some Fridays, after a brutal week of due diligence, I still think about numbing out with scotch. The old escape routes call to me. But I don't need them anymore. Because now when I'm frustrated, it's my frustration. When I'm struggling, it's with something I chose. Even the hard days are mine."</p>
 
                 <p>When we ended our final call, I sat with the silence. Daniel Chen had found a way to stop wasting himself - not by rejecting his father's sacrifices or his Harvard education, but by using them differently. He'd transformed from someone who needed wine to whine into someone who could speak his truth sober. The boy who once chose between games and his future had become a man who found a way to have both. Some endings aren't about choosing one life over another, but about finding the courage to live the life that was always yours.</p>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Story 3 -->
-<div class="story-container">
-    <div class="story-card" onclick="toggleStory(this)">
-        <div class="story-header">
-            <div class="story-meta">
-                <span class="story-time">20 min read</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h3 class="story-title">Eliminated</h3>
-            <p class="story-preview">Six years together. No ring. Everything arranged her boyfriend's way.</p>
-            <div class="story-expand-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M5 12h14"/>
-                </svg>
-            </div>
-        </div>
-        <div class="story-content">
-            <div class="story-content-inner">
-        <div class="story-content">
-    <div class="story-content-inner">
-        <p>Elena Martinez apologizes for everything. Even on video, sitting in her own apartment, she apologizes for her internet connection, for her cellphone ringing, for not immediately knowing the answer to a question I ask. By the end of our first session, she has apologized about ten times.</p>
+
+            <!-- Story 3 -->
+            <div class="story-container">
+                <div class="story-card" onclick="toggleStory(this)">
+                    <div class="story-header">
+                        <div class="story-meta">
+                            <span class="story-time">20 min read</span>
+                        </div>
+                        <h3 class="story-title">Eliminated</h3>
+                        <p class="story-preview">Six years together. No ring. Everything arranged her boyfriend's way.</p>
+                        <div class="story-expand-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-content-inner">
+                          <p>Elena Martinez apologizes for everything. Even on video, sitting in her own apartment, she apologizes for her internet connection, for her cellphone ringing, for not immediately knowing the answer to a question I ask. By the end of our first session, she has apologized about ten times.</p>
 
         <p>"I think I might be broken," she says quietly. Sometimes it's hard to hear what she's saying, and I have to ask her to repeat herself. Through the pixelated screen, her apartment behind her tells its own story - everything arranged just so, nothing out of place. "Like, fundamentally broken. Michael says I'm too sensitive, too anxious, too... much. And I think he's right."</p>
 
@@ -1674,12 +1801,12 @@
         <p>After we hang up, I sit in the silence for a moment. Elena Martinez - the woman who once took up a quarter of her video screen and apologized for just about everything - has just ended our therapeutic relationship with quiet authority.</p>
 
         <p>The woman who forgot how to exist has not only remembered - she's learned to live loudly, take up space, and choose herself without apology.</p>
-    </div>
-</div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
     </main>
 
     <!-- CTA Section -->
@@ -1757,6 +1884,26 @@
                 document.body.style.overflow = 'hidden';
             } else {
                 document.body.style.overflow = '';
+            }
+        }
+        
+        // Toggle story expansion
+        function toggleStory(card) {
+            card.classList.toggle('expanded');
+            
+            // Close other expanded stories
+            const allCards = document.querySelectorAll('.story-card');
+            allCards.forEach(otherCard => {
+                if (otherCard !== card && otherCard.classList.contains('expanded')) {
+                    otherCard.classList.remove('expanded');
+                }
+            });
+            
+            // Scroll to the card if expanding
+            if (card.classList.contains('expanded')) {
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
             }
         }
         
