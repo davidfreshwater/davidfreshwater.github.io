@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stories of Transformation | David M. Freshwater, LMHC | Online Therapy Massachusetts</title>
-    <meta name="description" content="Read stories of transformation through psychoanalytic therapy. Composite accounts of how people overcome self-sabotage, relationship patterns, and unexplained symptoms.">
-    <meta name="keywords" content="therapy stories, transformation stories, psychoanalytic therapy, client stories, therapy success, Massachusetts therapist">
+    <title>Client Stories & Transformations | David M. Freshwater, LMHC | Insurance Accepted</title>
+    <meta name="description" content="Read stories of transformation from therapy with David M. Freshwater, LMHC. See how depth therapy creates lasting change. In-network with BCBS, UnitedHealthcare, Aetna, Harvard Pilgrim, Tufts and more.">
+    <meta name="keywords" content="therapy success stories, client testimonials, therapy transformations, David Freshwater LMHC, Massachusetts therapy stories, depth therapy results, insurance accepted therapy">
     
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Stories of Transformation - David M. Freshwater, LMHC">
-    <meta property="og:description" content="Discover how deep therapeutic work creates lasting change through composite stories from clinical practice.">
+    <meta property="og:title" content="Client Stories & Transformations | David M. Freshwater, LMHC">
+    <meta property="og:description" content="Real stories of transformation through depth therapy. In-network provider accepting major insurance plans. See how this approach creates lasting change.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://davidfreshwater.github.io/stories.html">
+    <meta property="og:image" content="https://davidfreshwater.github.io/image/dmfheadshot.jpg">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://davidfreshwater.github.io/stories.html">
@@ -21,12 +22,51 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
-   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script type="text/javascript">
-    (function(){
-        emailjs.init("SapDsG2u7LsAmvQMW");
-    })();
-</script>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Client Stories & Transformations",
+      "description": "Real stories of transformation through depth therapy with David M. Freshwater, LMHC. In-network provider accepting major insurance plans.",
+      "url": "https://davidfreshwater.github.io/stories.html",
+      "provider": {
+        "@type": "MentalHealthProfessional",
+        "name": "David M. Freshwater, LMHC",
+        "hasCredential": "Licensed Mental Health Counselor",
+        "acceptsInsurance": true,
+        "paymentAccepted": ["Cash", "Check", "Blue Cross Blue Shield", "UnitedHealthcare", "Aetna", "Harvard Pilgrim Health Care", "Tufts Health Plan", "Insurance"],
+        "areaServed": {
+          "@type": "State",
+          "name": "Massachusetts"
+        }
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://davidfreshwater.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Stories",
+            "item": "https://davidfreshwater.github.io/stories.html"
+          }
+        ]
+      }
+    }
+    </script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("SapDsG2u7LsAmvQMW");
+        })();
+    </script>
     
     <style>
         * {
@@ -98,6 +138,11 @@
         
         .nav-link:hover {
             color: #1e3a5f;
+        }
+        
+        .nav-link.active {
+            color: #1e3a5f;
+            font-weight: 500;
         }
         
         .nav-cta {
@@ -235,17 +280,24 @@
         }
         
         /* Main Content */
-        .section {
-            padding-top: 120px;
-            padding-bottom: 80px;
+        main {
+            padding: 140px 0 80px;
             min-height: 100vh;
         }
         
-        h2 {
-            font-size: 42px;
+        h1 {
+            font-size: 48px;
             font-weight: 500;
-            margin-bottom: 48px;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            color: #1C1C1C;
             text-align: center;
+        }
+        
+        h2 {
+            font-size: 36px;
+            font-weight: 500;
+            margin-bottom: 32px;
             color: #1C1C1C;
             position: relative;
         }
@@ -253,206 +305,39 @@
         h2::after {
             content: '';
             position: absolute;
-            bottom: -16px;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: -12px;
+            left: 0;
             width: 40px;
             height: 2px;
             background: #1e3a5f;
         }
         
-        .disclaimer {
-            background: #F8F8F8;
-            padding: 24px 32px;
-            border-radius: 8px;
-            font-size: 16px;
-            line-height: 1.6;
-            color: #424242;
-            margin-bottom: 60px;
-            border-left: 3px solid #1e3a5f;
-            font-style: italic;
-        }
-        
-     /* Story Cards */
-.story-container {
-    margin-bottom: 40px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
-}
-
-.story-card {
-    background: #FFFFFF;
-    border: 1px solid #E8E8E8;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.story-card:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-}
-
-.story-header {
-    padding: 40px;
-    position: relative;
-}
-
-.story-meta {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 16px;
-}
-
-.story-time {
-    font-size: 14px;
-    color: #757575;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.story-title {
-    font-size: 32px;
-    margin-bottom: 16px;
-    color: #1C1C1C;
-}
-
-.story-preview {
-    font-size: 18px;
-    color: #424242;
-    line-height: 1.6;
-}
-
-.story-expand-icon {
-    position: absolute;
-    top: 40px;
-    right: 40px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.story-expand-icon svg {
-    width: 30px;
-    height: 30px;
-    stroke: #1e3a5f;
-    opacity: 0.5;
-    transition: all 0.3s ease;
-}
-
-.story-card:hover .story-expand-icon svg {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-.story-card.expanded .story-expand-icon {
-    transform: rotate(45deg);
-}
-
-/* Story Content */
-.story-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-}
-
-.story-card.expanded .story-content {
-    max-height: none;
-}
-
-.story-card.expanded .story-header {
-    padding-bottom: 20px;
-}
-
-
-.story-content-inner {
-    padding: 20px 40px 40px;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.story-content-inner p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #212121;
-    margin-bottom: 24px;
-}
-
-.story-content-inner p:first-child {
-    font-size: 20px;
-    font-weight: 500;
-    color: #1C1C1C;
-    margin-bottom: 32px;
-}
-        /* Floating CTA Button */
-        .btn-floating {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #1e3a5f;
-            color: white;
-            padding: 16px 32px;
-            border-radius: 40px;
-            font-size: 15px;
+        h3 {
+            font-size: 28px;
             font-weight: 500;
-            letter-spacing: 0.03em;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
-            border: none;
-            font-family: inherit;
-            z-index: 100;
-            opacity: 0;
-            transform: translateY(20px);
-            pointer-events: none;
+            margin: 48px 0 24px 0;
+            color: #1C1C1C;
         }
         
-        .btn-floating.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: all;
+        p {
+            margin-bottom: 24px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #212121;
         }
         
-        .btn-floating:hover {
-            background: #152942;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(30, 58, 95, 0.35);
-        }
-        
-        /* FAQ CTA Box */
-        .faq-cta {
+        /* Placeholder for Stories Content */
+        .stories-placeholder {
             text-align: center;
-            margin: 60px 0 40px;
-            padding: 32px;
+            padding: 60px 20px;
             background: #f8f9fa;
             border-radius: 8px;
-            border: 1px solid #e9ecef;
+            margin: 40px 0;
         }
         
-        .faq-cta p {
-            margin-bottom: 16px;
-            color: #495057;
+        .stories-placeholder p {
+            color: #666;
             font-style: italic;
-            font-size: 17px;
-        }
-        
-        .subtle-cta {
-            color: #1e3a5f;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-        
-        .subtle-cta:hover {
-            color: #152942;
-            letter-spacing: 0.02em;
         }
         
         /* CTA Section */
@@ -495,16 +380,40 @@
             box-shadow: 0 12px 40px rgba(30, 58, 95, 0.35);
         }
         
-        /* Fade in animation */
-        .fade-in {
+        /* Floating Button */
+        .btn-floating {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #1e3a5f;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
+            border: none;
+            font-family: inherit;
+            z-index: 100;
             opacity: 0;
             transform: translateY(20px);
-            transition: all 0.8s ease;
+            pointer-events: none;
         }
         
-        .fade-in.visible {
+        .btn-floating.visible {
             opacity: 1;
             transform: translateY(0);
+            pointer-events: all;
+        }
+        
+        .btn-floating:hover {
+            background: #152942;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(30, 58, 95, 0.35);
         }
         
         /* Footer */
@@ -513,6 +422,7 @@
             color: #E8E8E8;
             padding: 60px 0 40px;
             text-align: center;
+            margin-top: 0;
         }
         
         .footer-content p {
@@ -721,140 +631,105 @@
             border: 1px solid rgba(239, 68, 68, 0.2);
         }
         
-   /* Mobile Responsiveness */
-@media (max-width: 968px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .mobile-menu-btn {
-        display: flex;
-    }
-    
-    .section {
-        padding-top: 100px;
-        padding-bottom: 60px;
-    }
-    
-    h2 {
-        font-size: 36px;
-    }
-    
-    .story-header {
-        padding: 32px 24px;
-    }
-    
-    .story-card.expanded .story-header {
-        padding-bottom: 16px;
-    }
-    
-    .story-title {
-        font-size: 28px;
-    }
-    
-    .story-expand-icon {
-        top: 32px;
-        right: 24px;
-    }
-    
-    .story-content-inner {
-        padding: 20px 24px 32px;
-    }
-}
-
-@media (max-width: 480px) {
-    h2 {
-        font-size: 32px;
-        margin-bottom: 40px;
-    }
-    
-    .disclaimer {
-        padding: 20px 24px;
-        font-size: 15px;
-        margin-bottom: 40px;
-    }
-    
-    .story-container {
-        margin-bottom: 32px;
-    }
-    
-    .story-header {
-        padding: 24px 20px;
-    }
-    
-    .story-card.expanded .story-header {
-        padding-bottom: 12px;
-    }
-    
-    .story-title {
-        font-size: 24px;
-    }
-    
-    .story-preview {
-        font-size: 16px;
-    }
-    
-    .story-expand-icon {
-        width: 32px;
-        height: 32px;
-        top: 24px;
-        right: 20px;
-    }
-    
-    .story-expand-icon svg {
-        width: 24px;
-        height: 24px;
-    }
-    
-    .story-content-inner {
-        padding: 16px 20px 24px;
-    }
-    
-    .story-content-inner p {
-        font-size: 16px;
-        line-height: 1.7;
-    }
-    
-    .btn-floating {
-        bottom: 1rem;
-        right: 1rem;
-        padding: 14px 24px;
-        font-size: 14px;
-    }
-    
-    .form-container {
-        padding: 32px 24px;
-        width: 95%;
-        max-width: 450px;
-    }
-    
-    .form-title {
-        font-size: 24px;
-        margin-bottom: 24px;
-    }
-    
-    .form-group {
-        margin-bottom: 20px;
-    }
-    
-    .form-close {
-        top: 12px;
-        right: 12px;
-        width: 36px;
-        height: 36px;
-        font-size: 24px;
-    }
-    
-    .form-buttons {
-        gap: 12px;
-        flex-direction: column;
-    }
-    
-    .form-btn {
-        width: 100%;
-        padding: 16px 24px;
-    }
-}
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            nav .container {
+                padding: 16px 20px;
+            }
+            
+            main {
+                padding: 100px 0 60px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            h3 {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            main {
+                padding: 80px 0 40px;
+            }
+            
+            h1 {
+                font-size: 28px;
+                margin-bottom: 24px;
+            }
+            
+            h2 {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+            
+            h3 {
+                font-size: 20px;
+                margin: 32px 0 16px 0;
+            }
+            
+            p {
+                font-size: 16px;
+            }
+            
+            .cta-section {
+                padding: 60px 0;
+            }
+            
+            .btn-floating {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 14px 24px;
+                font-size: 14px;
+            }
+            
+            .form-container {
+                padding: 32px 24px;
+                width: 95%;
+                max-width: 450px;
+            }
+            
+            .form-title {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+            
+            .form-group {
+                margin-bottom: 20px;
+            }
+            
+            .form-close {
+                top: 12px;
+                right: 12px;
+                width: 36px;
+                height: 36px;
+                font-size: 24px;
+            }
+            
+            .form-buttons {
+                gap: 12px;
+                flex-direction: column;
+            }
+            
+            .form-btn {
+                width: 100%;
+                padding: 16px 24px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -866,7 +741,7 @@
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="process.html" class="nav-link">Process</a>
-                <a href="stories.html" class="nav-link">Stories</a>
+                <a href="stories.html" class="nav-link active">Stories</a>
                 <a href="faq.html" class="nav-link">FAQ</a>
                 <button class="nav-cta" onclick="showConsultationForm()">Begin</button>
             </div>
@@ -885,12 +760,13 @@
             <a href="index.html" class="nav-link">Home</a>
             <a href="about.html" class="nav-link">About</a>
             <a href="process.html" class="nav-link">Process</a>
-            <a href="stories.html" class="nav-link">Stories</a>
+            <a href="stories.html" class="nav-link active">Stories</a>
             <a href="faq.html" class="nav-link">FAQ</a>
             <button class="nav-cta" onclick="showConsultationForm(); toggleMobileMenu();">Begin</button>
         </div>
     </nav>
 
+  
     <!-- Main Content -->
     <main class="section">
         <div class="container">
@@ -1804,31 +1680,18 @@
         </div>
     </div>
 </div>
-
-            <!-- FAQ CTA Box -->
-            <div class="faq-cta fade-in">
-                <p>Have questions about how this work happens?</p>
-                <a href="faq.html" class="subtle-cta">Read frequently asked questions →</a>
-            </div>
-
-        </div>
     </main>
 
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-          <h2>Ready to Begin?</h2>
-<p style="font-size: 1.1rem; margin-bottom: 3rem;">
-    If these stories resonate with you, let's explore whether this approach might be right for you.
-</p>
+            <h2>Ready to Write Your Story?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 3rem;">
+                Every transformation begins with a single conversation.
+            </p>
             <button class="btn" onclick="showConsultationForm()">Request Consultation</button>
         </div>
     </section>
-
-    <!-- Floating CTA Button -->
-    <button class="btn-floating" id="floatingConsult" onclick="showConsultationForm()">
-        Request Consultation
-    </button>
 
     <!-- Footer -->
     <footer class="footer">
@@ -1841,6 +1704,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating Button -->
+    <button class="btn-floating" id="floatingConsult" onclick="showConsultationForm()">
+        Request Consultation
+    </button>
 
     <!-- Consultation Form Modal -->
     <div class="form-overlay" id="formOverlay">
@@ -1903,61 +1771,13 @@
                 nav.style.boxShadow = '0 1px 3px rgba(15, 27, 60, 0.05)';
             }
             
-            // Show floating button after scrolling past hero
-            if (window.scrollY > 600) {
+            // Show floating button after scrolling past header
+            if (window.scrollY > 300) {
                 floatingBtn.classList.add('visible');
             } else {
                 floatingBtn.classList.remove('visible');
             }
         });
-        
-        // Toggle story expansion
-        function toggleStory(card) {
-            const isExpanded = card.classList.contains('expanded');
-            
-            // Close all other stories
-            document.querySelectorAll('.story-card').forEach(c => {
-                if (c !== card) {
-                    c.classList.remove('expanded');
-                }
-            });
-            
-            // Toggle current story
-            card.classList.toggle('expanded');
-            
-            // If expanding, scroll to top of the card
-            if (!isExpanded) {
-                setTimeout(() => {
-                    const rect = card.getBoundingClientRect();
-                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    const targetScroll = rect.top + scrollTop - 100;
-                    
-                    window.scrollTo({
-                        top: targetScroll,
-                        behavior: 'smooth'
-                    });
-                }, 100);
-            }
-        }
-        
-// Animate story cards on load
-window.addEventListener('load', function() {
-    const storyContainers = document.querySelectorAll('.story-container');
-    storyContainers.forEach((container, index) => {
-        setTimeout(() => {
-            container.style.opacity = '1';
-            container.style.transform = 'translateY(0)';
-        }, index * 200);
-    });
-    
-    // Also animate other fade-in elements (but not story containers)
-    const fadeElements = document.querySelectorAll('.fade-in:not(.story-container)');
-    fadeElements.forEach((el, index) => {
-        setTimeout(() => {
-            el.classList.add('visible');
-        }, (index + storyContainers.length) * 200);
-    });
-});
         
         // Form functions
         function showConsultationForm() {
@@ -1985,63 +1805,63 @@ window.addEventListener('load', function() {
             }
         });
         
-   // Handle form submission with EmailJS
-function handleFormSubmit(event) {
-    event.preventDefault();
-    
-    const form = event.target;
-    const submitBtn = form.querySelector('.form-btn-submit');
-    const originalText = submitBtn.textContent;
-    const formMessage = document.getElementById('formMessage');
-    
-    // Show loading state
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-    
-    // Hide any previous messages
-    formMessage.style.display = 'none';
-    formMessage.className = 'form-message';
-    
-    // Prepare template parameters
-    const templateParams = {
-        from_name: form.name.value,
-        from_email: form.email.value,
-        phone: form.phone.value,
-        message: form.message.value,
-        to_name: 'David',
-        reply_to: form.email.value
-    };
-    
-    // Send email using EmailJS
-    emailjs.send('service_qera1v7', 'template_ndishzq', templateParams)
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
+        // Handle form submission with EmailJS
+        function handleFormSubmit(event) {
+            event.preventDefault();
             
-            // Show success message
-            formMessage.textContent = 'Thank you for your request. I\'ll be in touch within 24-48 hours to schedule your consultation.';
-            formMessage.className = 'form-message success';
-            formMessage.style.display = 'block';
+            const form = event.target;
+            const submitBtn = form.querySelector('.form-btn-submit');
+            const originalText = submitBtn.textContent;
+            const formMessage = document.getElementById('formMessage');
             
-            // Reset form
-            form.reset();
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
             
-            // Reset button
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
+            // Hide any previous messages
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
             
-        }, function(error) {
-            console.error('FAILED...', error);
+            // Prepare template parameters
+            const templateParams = {
+                from_name: form.name.value,
+                from_email: form.email.value,
+                phone: form.phone.value,
+                message: form.message.value,
+                to_name: 'David',
+                reply_to: form.email.value
+            };
             
-            // Show error message
-            formMessage.textContent = 'Sorry, there was an error sending your request. Please try again or contact me directly.';
-            formMessage.className = 'form-message error';
-            formMessage.style.display = 'block';
-            
-            // Reset button
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        });
-}
+            // Send email using EmailJS
+            emailjs.send('service_qera1v7', 'template_ndishzq', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Show success message
+                    formMessage.textContent = 'Thank you for your request. I\'ll be in touch within 24-48 hours to schedule your consultation.';
+                    formMessage.className = 'form-message success';
+                    formMessage.style.display = 'block';
+                    
+                    // Reset form
+                    form.reset();
+                    
+                    // Reset button
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    
+                }, function(error) {
+                    console.error('FAILED...', error);
+                    
+                    // Show error message
+                    formMessage.textContent = 'Sorry, there was an error sending your request. Please try again or contact me directly.';
+                    formMessage.className = 'form-message error';
+                    formMessage.style.display = 'block';
+                    
+                    // Reset button
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+        }
         
         // Close mobile menu when clicking nav links
         document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
