@@ -7,16 +7,32 @@
     <meta name="description" content="Read stories of transformation from therapy with David M. Freshwater, LMHC. See how depth therapy creates lasting change. In-network with BCBS, UnitedHealthcare, Aetna, Harvard Pilgrim, Tufts and more.">
     <meta name="keywords" content="therapy success stories, client testimonials, therapy transformations, David Freshwater LMHC, Massachusetts therapy stories, depth therapy results, insurance accepted therapy">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17449054142">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17449054142');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17449054142"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17449054142');
+    </script>
+    
+    <!-- Event snippet for Submit lead form conversion page -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17449054142/N58tCKGF7IEbEL7frYBB',
+          'value': 1.0,
+          'currency': 'USD',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
     
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Client Stories & Transformations | David M. Freshwater, LMHC">
