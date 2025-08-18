@@ -1223,6 +1223,11 @@ function handleFormSubmit(event) {
     emailjs.send('service_qera1v7', 'template_ndishzq', templateParams)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
+
+                    // Track Google Ads conversion
+                    if (typeof gtag_report_conversion === 'function') {
+                        gtag_report_conversion();
+                    }
             
             // Show success message
             formMessage.textContent = 'Thank you for your request. I\'ll be in touch within 24-48 hours to schedule your consultation.';
