@@ -16,24 +16,6 @@
       gtag('config', 'AW-17449054142');
     </script>
     
-    <!-- Event snippet for Submit lead form conversion page -->
-    <script>
-    function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
-      };
-      gtag('event', 'conversion', {
-          'send_to': 'AW-17449054142/N58tCKGF7IEbEL7frYBB',
-          'value': 1.0,
-          'currency': 'USD',
-          'event_callback': callback
-      });
-      return false;
-    }
-    </script>
-    
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Client Stories & Transformations | David M. Freshwater, LMHC">
     <meta property="og:description" content="Real stories of transformation through depth therapy. In-network provider accepting major insurance plans. See how this approach creates lasting change.">
@@ -86,13 +68,6 @@
         ]
       }
     }
-    </script>
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init("SapDsG2u7LsAmvQMW");
-        })();
     </script>
     
     <style>
@@ -184,9 +159,7 @@
             text-transform: uppercase;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(30, 58, 95, 0.2);
-            cursor: pointer;
-            border: none;
-            font-family: inherit;
+            display: inline-block;
         }
         
         .nav-cta:hover {
@@ -475,34 +448,34 @@
             margin-top: 2rem;
         }
 
-/* Approach CTA */
-.approach-cta {
-    text-align: center;
-    margin: 40px 0;
-    padding: 24px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    border: 1px solid #e9ecef;
-}
+        /* Approach CTA */
+        .approach-cta {
+            text-align: center;
+            margin: 40px 0;
+            padding: 24px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
 
-.approach-cta p {
-    margin-bottom: 16px;
-    color: #495057;
-    font-style: italic;
-}
+        .approach-cta p {
+            margin-bottom: 16px;
+            color: #495057;
+            font-style: italic;
+        }
 
-.subtle-cta {
-    color: #1e3a5f;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
+        .subtle-cta {
+            color: #1e3a5f;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
 
-.subtle-cta:hover {
-    color: #152942;
-    letter-spacing: 0.02em;
-}
+        .subtle-cta:hover {
+            color: #152942;
+            letter-spacing: 0.02em;
+        }
         
         /* CTA Section */
         .cta-section {
@@ -533,9 +506,6 @@
             letter-spacing: 0.03em;
             transition: all 0.3s ease;
             box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
         }
         
         .btn:hover {
@@ -557,15 +527,14 @@
             font-weight: 500;
             letter-spacing: 0.03em;
             text-decoration: none;
-            cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
-            border: none;
-            font-family: inherit;
             z-index: 100;
             opacity: 0;
             transform: translateY(20px);
             pointer-events: none;
+            display: inline-block;
+            text-align: center;
         }
         
         .btn-floating.visible {
@@ -578,6 +547,7 @@
             background: #152942;
             transform: translateY(-3px);
             box-shadow: 0 12px 40px rgba(30, 58, 95, 0.35);
+            color: white;
         }
         
         /* Footer */
@@ -621,178 +591,16 @@
             border-top: 1px solid #333333;
         }
         
-        /* Form Modal Styles */
-        .form-overlay {
-            position: fixed;
-            inset: 0;
-            background-color: rgba(26, 26, 26, 0.8);
-            z-index: 2000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .form-overlay.active {
-            display: flex;
-        }
-        
-        .form-container {
-            background-color: #FFFFFF;
-            padding: 48px;
-            max-width: 500px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            border-radius: 8px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            position: relative;
+        /* Fade in animation */
+        .fade-in {
             opacity: 0;
-            transform: scale(0.9);
-            transition: all 0.3s ease;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
         }
         
-        .form-overlay.active .form-container {
+        .fade-in.visible {
             opacity: 1;
-            transform: scale(1);
-        }
-        
-        .form-title {
-            font-size: 28px;
-            font-weight: 500;
-            font-family: 'Playfair Display', serif;
-            color: #1C1C1C;
-            margin-bottom: 32px;
-            text-align: center;
-        }
-        
-        .form-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 28px;
-            color: #757575;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            border-radius: 50%;
-        }
-        
-        .form-close:hover {
-            color: #1C1C1C;
-            background: #F0F0F0;
-            transform: rotate(90deg);
-        }
-        
-        .form-group {
-            margin-bottom: 24px;
-        }
-        
-        .form-label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            color: #424242;
-            text-transform: uppercase;
-        }
-        
-        .form-input,
-        .form-textarea {
-            width: 100%;
-            padding: 12px 16px;
-            background: #FFFFFF;
-            border: 1px solid #E0E0E0;
-            border-radius: 4px;
-            color: #1C1C1C;
-            font-size: 16px;
-            font-family: inherit;
-            transition: all 0.3s ease;
-        }
-        
-        .form-input:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: #1e3a5f;
-            box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
-        }
-        
-        .form-textarea {
-            resize: vertical;
-            min-height: 120px;
-            line-height: 1.6;
-        }
-        
-        .form-buttons {
-            display: flex;
-            gap: 16px;
-            margin-top: 32px;
-            justify-content: center;
-        }
-        
-        .form-btn {
-            padding: 14px 32px;
-            background: transparent;
-            color: #1C1C1C;
-            border: 1px solid #E0E0E0;
-            border-radius: 40px;
-            font-size: 16px;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: inherit;
-        }
-        
-        .form-btn:hover {
-            border-color: #1e3a5f;
-            background: #F8F8F8;
-        }
-        
-        .form-btn-submit {
-            background-color: #1e3a5f;
-            color: white;
-            border-color: #1e3a5f;
-        }
-        
-        .form-btn-submit:hover {
-            background-color: #152942;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
-        }
-        
-        .form-btn-submit:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-        
-        .form-message {
-            padding: 12px 16px;
-            margin-top: 20px;
-            text-align: center;
-            font-size: 15px;
-            border-radius: 4px;
-            display: none;
-        }
-        
-        .form-message.success {
-            background-color: rgba(34, 197, 94, 0.1);
-            color: #16a34a;
-            border: 1px solid rgba(34, 197, 94, 0.2);
-        }
-        
-        .form-message.error {
-            background-color: rgba(239, 68, 68, 0.1);
-            color: #dc2626;
-            border: 1px solid rgba(239, 68, 68, 0.2);
+            transform: translateY(0);
         }
         
         /* Responsive Design */
@@ -882,39 +690,6 @@
                 padding: 14px 24px;
                 font-size: 14px;
             }
-            
-            .form-container {
-                padding: 32px 24px;
-                width: 95%;
-                max-width: 450px;
-            }
-            
-            .form-title {
-                font-size: 24px;
-                margin-bottom: 24px;
-            }
-            
-            .form-group {
-                margin-bottom: 20px;
-            }
-            
-            .form-close {
-                top: 12px;
-                right: 12px;
-                width: 36px;
-                height: 36px;
-                font-size: 24px;
-            }
-            
-            .form-buttons {
-                gap: 12px;
-                flex-direction: column;
-            }
-            
-            .form-btn {
-                width: 100%;
-                padding: 16px 24px;
-            }
         }
     </style>
 </head>
@@ -929,7 +704,7 @@
                 <a href="process.html" class="nav-link">Process</a>
                 <a href="stories.html" class="nav-link active">Stories</a>
                 <a href="faq.html" class="nav-link">FAQ</a>
-                <button class="nav-cta" onclick="showConsultationForm()">Begin</button>
+                <a href="contact.html" class="nav-cta">Begin</a>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
                 <span></span>
@@ -948,11 +723,11 @@
             <a href="process.html" class="nav-link">Process</a>
             <a href="stories.html" class="nav-link active">Stories</a>
             <a href="faq.html" class="nav-link">FAQ</a>
-            <button class="nav-cta" onclick="showConsultationForm(); toggleMobileMenu();">Begin</button>
+            <a href="contact.html" class="nav-cta">Begin</a>
         </div>
     </nav>
 
-    <!-- Main Content -->
+        <!-- Main Content -->
     <main class="section">
         <div class="container">
             <h1>Stories of Transformation</h1    `>
@@ -1872,7 +1647,7 @@
             <p style="font-size: 1.1rem; margin-bottom: 3rem;">
                 Every transformation begins with a single conversation.
             </p>
-            <button class="btn" onclick="showConsultationForm()">Request Consultation</button>
+            <a href="contact.html" class="btn">Request Consultation</a>
         </div>
     </section>
 
@@ -1889,42 +1664,29 @@
     </footer>
 
     <!-- Floating Button -->
-    <button class="btn-floating" id="floatingConsult" onclick="showConsultationForm()">
+    <a href="contact.html" class="btn-floating" id="floatingConsult">
         Request Consultation
-    </button>
-
-    <!-- Consultation Form Modal -->
-    <div class="form-overlay" id="formOverlay">
-        <div class="form-container">
-            <button class="form-close" onclick="hideConsultationForm()" aria-label="Close form">×</button>
-            <h3 class="form-title">Request Initial Consultation</h3>
-            <form id="consultationForm" onsubmit="handleFormSubmit(event)">
-                <div class="form-group">
-                    <label class="form-label" for="name">Name</label>
-                    <input type="text" id="name" name="name" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="email">Email</label>
-                    <input type="email" id="email" name="email" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="message">What brings you to therapy?</label>
-                    <textarea id="message" name="message" class="form-textarea" rows="4" required></textarea>
-                </div>
-                <div id="formMessage" class="form-message"></div>
-                <div class="form-buttons">
-                    <button type="submit" class="form-btn form-btn-submit">Send Request</button>
-                    <button type="button" class="form-btn" onclick="hideConsultationForm()">Cancel</button>
-                </div>
-            </form>
-        </div>
-    </div>
+    </a>
 
     <script>
+        // Initialize scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
         // Mobile menu functionality
         function toggleMobileMenu() {
             const mobileNav = document.querySelector('.mobile-nav');
@@ -1982,100 +1744,16 @@
             }
         });
         
-        // Form functions
-        function showConsultationForm() {
-            const overlay = document.getElementById('formOverlay');
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function hideConsultationForm() {
-            const overlay = document.getElementById('formOverlay');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-            document.getElementById('consultationForm').reset();
-            
-            // Hide any messages
-            const formMessage = document.getElementById('formMessage');
-            formMessage.style.display = 'none';
-            formMessage.className = 'form-message';
-        }
-        
-        // Close form when clicking outside
-        document.getElementById('formOverlay').addEventListener('click', function(e) {
-            if (e.target === this) {
-                hideConsultationForm();
-            }
-        });
-        
-        // Handle form submission with EmailJS
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            
-            const form = event.target;
-            const submitBtn = form.querySelector('.form-btn-submit');
-            const originalText = submitBtn.textContent;
-            const formMessage = document.getElementById('formMessage');
-            
-            // Show loading state
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            // Hide any previous messages
-            formMessage.style.display = 'none';
-            formMessage.className = 'form-message';
-            
-            // Prepare template parameters
-            const templateParams = {
-                from_name: form.name.value,
-                from_email: form.email.value,
-                phone: form.phone.value,
-                message: form.message.value,
-                to_name: 'David',
-                reply_to: form.email.value
-            };
-            
-            // Send email using EmailJS
-            emailjs.send('service_qera1v7', 'template_ndishzq', templateParams)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-
-                    // Track Google Ads conversion
-                    if (typeof gtag_report_conversion === 'function') {
-                        gtag_report_conversion();
-                    }
-                    
-                    // Show success message
-                    formMessage.textContent = 'Thank you for your request. I\'ll be in touch within 24-48 hours to schedule your consultation.';
-                    formMessage.className = 'form-message success';
-                    formMessage.style.display = 'block';
-                    
-                    // Reset form
-                    form.reset();
-                    
-                    // Reset button
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                    
-                }, function(error) {
-                    console.error('FAILED...', error);
-                    
-                    // Show error message
-                    formMessage.textContent = 'Sorry, there was an error sending your request. Please try again or contact me directly.';
-                    formMessage.className = 'form-message error';
-                    formMessage.style.display = 'block';
-                    
-                    // Reset button
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                });
-        }
-        
         // Close mobile menu when clicking nav links
         document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 toggleMobileMenu();
             });
+        });
+
+        // Initialize when page loads
+        window.addEventListener('load', () => {
+            initScrollAnimations();
         });
     </script>
 </body>
